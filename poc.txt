@@ -12773,10 +12773,9 @@
 ./poc/cisco/cisco-edge-340_7.yaml
 ./poc/cisco/cisco-email-security-detect.yaml
 ./poc/cisco/cisco-email-security-detect_1.yaml
-./poc/cisco/cisco-expressway-panel.yaml
-./poc/cisco/cisco-expressway-panel_1.yaml
-./poc/cisco/cisco-expressway-panel_2.yaml
+./poc/cisco/cisco-expressway-panel_1_2.yaml
 ./poc/cisco/cisco-expressway-panel_2_3.yaml
+./poc/cisco/cisco-expressway-panel_3.yaml
 ./poc/cisco/cisco-expressway.yaml
 ./poc/cisco/cisco-finesse-login-938.yaml
 ./poc/cisco/cisco-finesse-login-939.yaml
@@ -35232,6 +35231,7 @@
 ./poc/cve/CVE-2017-1000163_61.yaml
 ./poc/cve/CVE-2017-1000163_62.yaml
 ./poc/cve/CVE-2017-1000163_63.yaml
+./poc/cve/CVE-2017-1000163_64.yaml
 ./poc/cve/CVE-2017-1000163_6_2.yaml
 ./poc/cve/CVE-2017-1000163_7.yaml
 ./poc/cve/CVE-2017-1000163_8.yaml
@@ -35670,6 +35670,7 @@
 ./poc/cve/CVE-2017-11586_53.yaml
 ./poc/cve/CVE-2017-11586_54.yaml
 ./poc/cve/CVE-2017-11586_55.yaml
+./poc/cve/CVE-2017-11586_56.yaml
 ./poc/cve/CVE-2017-11586_6.yaml
 ./poc/cve/CVE-2017-11586_7.yaml
 ./poc/cve/CVE-2017-11586_8.yaml
@@ -43232,6 +43233,7 @@
 ./poc/cve/CVE-2018-19136_55.yaml
 ./poc/cve/CVE-2018-19136_56.yaml
 ./poc/cve/CVE-2018-19136_57.yaml
+./poc/cve/CVE-2018-19136_58.yaml
 ./poc/cve/CVE-2018-19136_6.yaml
 ./poc/cve/CVE-2018-19136_7.yaml
 ./poc/cve/CVE-2018-19136_8.yaml
@@ -49758,6 +49760,7 @@
 ./poc/cve/CVE-2019-18957_53.yaml
 ./poc/cve/CVE-2019-18957_54.yaml
 ./poc/cve/CVE-2019-18957_55.yaml
+./poc/cve/CVE-2019-18957_56.yaml
 ./poc/cve/CVE-2019-18957_6.yaml
 ./poc/cve/CVE-2019-18957_7.yaml
 ./poc/cve/CVE-2019-18957_8.yaml
@@ -57654,6 +57657,7 @@
 ./poc/cve/CVE-2020-29279_13.yaml
 ./poc/cve/CVE-2020-29279_14.yaml
 ./poc/cve/CVE-2020-29279_15.yaml
+./poc/cve/CVE-2020-29279_16.yaml
 ./poc/cve/CVE-2020-29279_2.yaml
 ./poc/cve/CVE-2020-29279_3.yaml
 ./poc/cve/CVE-2020-29279_4.yaml
@@ -73987,6 +73991,7 @@
 ./poc/cve/CVE-2021-33766_1.yaml
 ./poc/cve/CVE-2021-33766_10.yaml
 ./poc/cve/CVE-2021-33766_11.yaml
+./poc/cve/CVE-2021-33766_12.yaml
 ./poc/cve/CVE-2021-33766_2.yaml
 ./poc/cve/CVE-2021-33766_3.yaml
 ./poc/cve/CVE-2021-33766_4.yaml
@@ -90122,6 +90127,7 @@
 ./poc/cve/CVE-2022-25322_21.yaml
 ./poc/cve/CVE-2022-25322_22.yaml
 ./poc/cve/CVE-2022-25322_23.yaml
+./poc/cve/CVE-2022-25322_24.yaml
 ./poc/cve/CVE-2022-25322_3.yaml
 ./poc/cve/CVE-2022-25322_4.yaml
 ./poc/cve/CVE-2022-25322_5.yaml
@@ -91334,6 +91340,7 @@
 ./poc/cve/CVE-2022-27228_5.yaml
 ./poc/cve/CVE-2022-27228_6.yaml
 ./poc/cve/CVE-2022-27228_7.yaml
+./poc/cve/CVE-2022-27228_8.yaml
 ./poc/cve/CVE-2022-27231-2fdddb69319b339fb649fa7d6324dab9_1.yaml
 ./poc/cve/CVE-2022-27231-wp_statistics-fb7e922a-fae0-46f9-b8c1-0986b88f2813.yaml
 ./poc/cve/CVE-2022-27231.yaml
@@ -96834,6 +96841,7 @@
 ./poc/cve/CVE-2022-37122_18.yaml
 ./poc/cve/CVE-2022-37122_19.yaml
 ./poc/cve/CVE-2022-37122_2.yaml
+./poc/cve/CVE-2022-37122_20.yaml
 ./poc/cve/CVE-2022-37122_3.yaml
 ./poc/cve/CVE-2022-37122_3_1.yaml
 ./poc/cve/CVE-2022-37122_4.yaml
@@ -143288,6 +143296,7 @@
 ./poc/cve/CVE-2024-10146-simple_file_list-078b58df-ca2f-4c44-896b-f0e0f7d3bf2b.yaml
 ./poc/cve/CVE-2024-10146_1_2.yaml
 ./poc/cve/CVE-2024-10146_2.yaml
+./poc/cve/CVE-2024-10146_3.yaml
 ./poc/cve/CVE-2024-10147-002fcce0581627f4a9b1f3dab00143e0.yaml
 ./poc/cve/CVE-2024-10147-steel-b1ed1ef4-8867-499b-8f73-296280573462.yaml
 ./poc/cve/CVE-2024-10147.yaml
@@ -167656,6 +167665,7 @@
 ./poc/cve/CVE-2024-41713_9.yaml
 ./poc/cve/CVE-2024-4180-409e69e1543a97473f3477623d0cf79d_1.yaml
 ./poc/cve/CVE-2024-4180-the_events_calendar-8b93655b-9a26-4515-8ae2-105271aba9c4.yaml
+./poc/cve/CVE-2024-4180_1.yaml
 ./poc/cve/CVE-2024-4180_1_2.yaml
 ./poc/cve/CVE-2024-4180_2.yaml
 ./poc/cve/CVE-2024-4180_3.yaml
@@ -179611,6 +179621,7 @@
 ./poc/cve/CVE-2024-6690_3.yaml
 ./poc/cve/CVE-2024-6690_4.yaml
 ./poc/cve/CVE-2024-6690_5.yaml
+./poc/cve/CVE-2024-6690_6.yaml
 ./poc/cve/CVE-2024-6691-easy_digital_downloads-0459a6bd-334d-43b7-b289-271108564a53.yaml
 ./poc/cve/CVE-2024-6691.yaml
 ./poc/cve/CVE-2024-6691_3.yaml
@@ -183508,6 +183519,7 @@
 ./poc/cve/CVE-2024-9772_3.yaml
 ./poc/cve/CVE-2024-9772_30.yaml
 ./poc/cve/CVE-2024-9772_31.yaml
+./poc/cve/CVE-2024-9772_32.yaml
 ./poc/cve/CVE-2024-9772_4.yaml
 ./poc/cve/CVE-2024-9772_5.yaml
 ./poc/cve/CVE-2024-9772_6.yaml
@@ -211619,6 +211631,9 @@
 ./poc/default/exacqvision-default-login_3.yaml
 ./poc/default/exacqvision-default-login_4.yaml
 ./poc/default/exacqvision-default-password.yaml
+./poc/default/express-default-page_1_1.yaml
+./poc/default/express-default-page_2_1.yaml
+./poc/default/express-default-page_3_3.yaml
 ./poc/default/feiyuxing-default-login.yaml
 ./poc/default/feiyuxing-default-login_1.yaml
 ./poc/default/feiyuxing-default-login_2.yaml
@@ -232533,8 +232548,9 @@
 ./poc/nodejs/chilexpress-oficial_1_2.yaml
 ./poc/nodejs/chilexpress-oficial_3.yaml
 ./poc/nodejs/chilexpress_oficial-0999a738-9fae-4043-99eb-ff222a7608fa.yaml
-./poc/nodejs/cisco-expressway-panel_1_2.yaml
-./poc/nodejs/cisco-expressway-panel_3.yaml
+./poc/nodejs/cisco-expressway-panel.yaml
+./poc/nodejs/cisco-expressway-panel_1.yaml
+./poc/nodejs/cisco-expressway-panel_2.yaml
 ./poc/nodejs/cisco-expressway_2.yaml
 ./poc/nodejs/clevernode-related-content-6a7b80438e41045ded23449d584ea06d_3.yaml
 ./poc/nodejs/clevernode-related-content_1_3.yaml
@@ -232575,9 +232591,6 @@
 ./poc/nodejs/eks-node-group-remote-access_2.yaml
 ./poc/nodejs/erlang-node.yaml
 ./poc/nodejs/express-default-page.yaml
-./poc/nodejs/express-default-page_1_1.yaml
-./poc/nodejs/express-default-page_2_1.yaml
-./poc/nodejs/express-default-page_3_3.yaml
 ./poc/nodejs/express-lfr (copy 1).yaml
 ./poc/nodejs/express-lfr-json (copy 1).yaml
 ./poc/nodejs/express-lfr-json.yaml
