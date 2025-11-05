@@ -1,31 +1,31 @@
-id: doctreat-02990dd6-707a-4154-8f01-f4e27a9deb05
+id: scape-b58f6681-800e-4ae1-8f89-2160c4446064
 
 info:
   name: >
-    Doctreat <= 1.6.7 - Reflected Cross-Site Scripting
+    Scape <= 1.5.13 - Unauthenticated PHP Object Injection
   author: topscoder
-  severity: medium
+  severity: critical
   description: >
     
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/02990dd6-707a-4154-8f01-f4e27a9deb05?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/b58f6681-800e-4ae1-8f89-2160c4446064?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
     cve-id: 
   metadata:
-    fofa-query: "wp-content/themes/doctreat/"
-    google-query: inurl:"/wp-content/themes/doctreat/"
-    shodan-query: 'http.html:"wp-content/themes/doctreat/"'
-  tags: cve,wordpress,wp-theme,doctreat,medium,candidate
+    fofa-query: "wp-content/themes/scape/"
+    google-query: inurl:"/wp-content/themes/scape/"
+    shodan-query: 'http.html:"wp-content/themes/scape/"'
+  tags: cve,wordpress,wp-theme,scape,critical,candidate
 
 http:
   - method: GET
     redirects: true
     max-redirects: 3
     path:
-      - "{{BaseURL}}/wp-content/themes/doctreat/style.css"
+      - "{{BaseURL}}/wp-content/themes/scape/style.css"
 
     extractors:
       - type: regex
@@ -43,9 +43,9 @@ http:
 
       - type: word
         words:
-          - "doctreat"
+          - "scape"
         part: body
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.6.7')
+          - compare_versions(version, '<= 1.5.13')

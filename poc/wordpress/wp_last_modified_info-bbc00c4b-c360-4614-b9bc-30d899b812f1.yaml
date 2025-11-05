@@ -1,15 +1,15 @@
-id: wp_last_modified_info-66db1cd8-92c7-4d12-9f49-6fa5fbc98d6c
+id: wp_last_modified_info-bbc00c4b-c360-4614-b9bc-30d899b812f1
 
 info:
   name: >
-    WP Last Modified Info <= 1.9.2 - Authenticated (Contributor+) Stored Cross-Site Scripting
+    Last Modified Info <= 1.9.2 - Authenticated (Contributor+) Remote Code Execution
   author: topscoder
   severity: low
   description: >
     
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/66db1cd8-92c7-4d12-9f49-6fa5fbc98d6c?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/bbc00c4b-c360-4614-b9bc-30d899b812f1?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 

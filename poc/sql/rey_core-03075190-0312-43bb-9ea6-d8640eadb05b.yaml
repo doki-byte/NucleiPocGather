@@ -1,31 +1,31 @@
-id: kiotvietsync-f19a9bbb-9c7b-490f-b016-2e72ab2b35a5
+id: rey_core-03075190-0312-43bb-9ea6-d8640eadb05b
 
 info:
   name: >
-    KiotViet Sync <= 1.8.5 - Missing Authorization
+    Rey Core <= 3.1.8 - Authenticated (Contributor+) Stored Cross-Site Scripting
   author: topscoder
-  severity: high
+  severity: low
   description: >
     
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/f19a9bbb-9c7b-490f-b016-2e72ab2b35a5?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/03075190-0312-43bb-9ea6-d8640eadb05b?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
     cve-id: 
   metadata:
-    fofa-query: "wp-content/plugins/kiotvietsync/"
-    google-query: inurl:"/wp-content/plugins/kiotvietsync/"
-    shodan-query: 'http.html:"wp-content/plugins/kiotvietsync/"'
-  tags: cve,wordpress,wp-plugin,kiotvietsync,high,candidate
+    fofa-query: "wp-content/plugins/Rey-Core/"
+    google-query: inurl:"/wp-content/plugins/Rey-Core/"
+    shodan-query: 'http.html:"wp-content/plugins/Rey-Core/"'
+  tags: cve,wordpress,wp-plugin,Rey-Core,low,candidate
 
 http:
   - method: GET
     redirects: true
     max-redirects: 3
     path:
-      - "{{BaseURL}}/wp-content/plugins/kiotvietsync/readme.txt"
+      - "{{BaseURL}}/wp-content/plugins/Rey-Core/readme.txt"
 
     extractors:
       - type: regex
@@ -43,9 +43,9 @@ http:
 
       - type: word
         words:
-          - "kiotvietsync"
+          - "Rey-Core"
         part: body
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.8.5')
+          - compare_versions(version, '<= 3.1.8')
