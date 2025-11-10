@@ -611,12 +611,12 @@
 ./poc/airflow/airflow-debug_7.yaml
 ./poc/airflow/airflow-debug_7_1.yaml
 ./poc/airflow/airflow-default-credentials.yaml
-./poc/airflow/airflow-default-login-234.yaml
+./poc/airflow/airflow-default-credentials_1.yaml
+./poc/airflow/airflow-default-login-234_1_1.yaml
 ./poc/airflow/airflow-default-login-234_2.yaml
 ./poc/airflow/airflow-default-login-235.yaml
-./poc/airflow/airflow-default-login-236.yaml
+./poc/airflow/airflow-default-login.yaml
 ./poc/airflow/airflow-default-login_1_3.yaml
-./poc/airflow/airflow-default-login_2_1.yaml
 ./poc/airflow/airflow-default-login_3.yaml
 ./poc/airflow/airflow-detect-237.yaml
 ./poc/airflow/airflow-detect-238.yaml
@@ -12779,8 +12779,9 @@
 ./poc/cisco/cisco-edge-340_7.yaml
 ./poc/cisco/cisco-email-security-detect.yaml
 ./poc/cisco/cisco-email-security-detect_1.yaml
-./poc/cisco/cisco-expressway.yaml
-./poc/cisco/cisco-expressway_2.yaml
+./poc/cisco/cisco-expressway-panel_1_2.yaml
+./poc/cisco/cisco-expressway-panel_2_3.yaml
+./poc/cisco/cisco-expressway-panel_3.yaml
 ./poc/cisco/cisco-finesse-login-938.yaml
 ./poc/cisco/cisco-finesse-login-939.yaml
 ./poc/cisco/cisco-finesse-login-940.yaml
@@ -12996,8 +12997,6 @@
 ./poc/cisco/cisco-unified-communications-log4j_5.yaml
 ./poc/cisco/cisco-unified-communications-log4j_6.yaml
 ./poc/cisco/cisco-unified-communications-log4j_7.yaml
-./poc/cisco/cisco-unity-express-panel-detect.yaml
-./poc/cisco/cisco-unity-express-panel-detect_1.yaml
 ./poc/cisco/cisco-unity-panel.yaml
 ./poc/cisco/cisco-unity-panel_1.yaml
 ./poc/cisco/cisco-unity-panel_2_2.yaml
@@ -35245,6 +35244,7 @@
 ./poc/cve/CVE-2017-1000163_7.yaml
 ./poc/cve/CVE-2017-1000163_70.yaml
 ./poc/cve/CVE-2017-1000163_71.yaml
+./poc/cve/CVE-2017-1000163_72.yaml
 ./poc/cve/CVE-2017-1000163_8.yaml
 ./poc/cve/CVE-2017-1000163_9.yaml
 ./poc/cve/CVE-2017-1000170-22b977968cdfc3441165a4a3380516b6.yaml
@@ -43270,6 +43270,7 @@
 ./poc/cve/CVE-2018-19136_63.yaml
 ./poc/cve/CVE-2018-19136_64.yaml
 ./poc/cve/CVE-2018-19136_65.yaml
+./poc/cve/CVE-2018-19136_66.yaml
 ./poc/cve/CVE-2018-19136_7.yaml
 ./poc/cve/CVE-2018-19136_8.yaml
 ./poc/cve/CVE-2018-19136_9.yaml
@@ -49804,6 +49805,7 @@
 ./poc/cve/CVE-2019-18957_61.yaml
 ./poc/cve/CVE-2019-18957_62.yaml
 ./poc/cve/CVE-2019-18957_63.yaml
+./poc/cve/CVE-2019-18957_64.yaml
 ./poc/cve/CVE-2019-18957_7.yaml
 ./poc/cve/CVE-2019-18957_8.yaml
 ./poc/cve/CVE-2019-18957_9.yaml
@@ -60652,6 +60654,7 @@
 ./poc/cve/CVE-2020-8656_19.yaml
 ./poc/cve/CVE-2020-8656_2.yaml
 ./poc/cve/CVE-2020-8656_20.yaml
+./poc/cve/CVE-2020-8656_21.yaml
 ./poc/cve/CVE-2020-8656_3.yaml
 ./poc/cve/CVE-2020-8656_4.yaml
 ./poc/cve/CVE-2020-8656_5.yaml
@@ -73847,6 +73850,7 @@
 ./poc/cve/CVE-2021-3287_1.yaml
 ./poc/cve/CVE-2021-3287_10.yaml
 ./poc/cve/CVE-2021-3287_11.yaml
+./poc/cve/CVE-2021-3287_12.yaml
 ./poc/cve/CVE-2021-3287_2.yaml
 ./poc/cve/CVE-2021-3287_3.yaml
 ./poc/cve/CVE-2021-3287_4.yaml
@@ -74764,6 +74768,7 @@
 ./poc/cve/CVE-2021-35064_18.yaml
 ./poc/cve/CVE-2021-35064_19.yaml
 ./poc/cve/CVE-2021-35064_2.yaml
+./poc/cve/CVE-2021-35064_20.yaml
 ./poc/cve/CVE-2021-35064_3.yaml
 ./poc/cve/CVE-2021-35064_4.yaml
 ./poc/cve/CVE-2021-35064_5.yaml
@@ -97887,6 +97892,7 @@
 ./poc/cve/CVE-2022-38627_21.yaml
 ./poc/cve/CVE-2022-38627_22.yaml
 ./poc/cve/CVE-2022-38627_23.yaml
+./poc/cve/CVE-2022-38627_24.yaml
 ./poc/cve/CVE-2022-38627_3.yaml
 ./poc/cve/CVE-2022-38627_4.yaml
 ./poc/cve/CVE-2022-38627_5.yaml
@@ -143417,6 +143423,7 @@
 ./poc/cve/CVE-2024-10146_6.yaml
 ./poc/cve/CVE-2024-10146_7.yaml
 ./poc/cve/CVE-2024-10146_8.yaml
+./poc/cve/CVE-2024-10146_9.yaml
 ./poc/cve/CVE-2024-10147-002fcce0581627f4a9b1f3dab00143e0.yaml
 ./poc/cve/CVE-2024-10147-steel-b1ed1ef4-8867-499b-8f73-296280573462.yaml
 ./poc/cve/CVE-2024-10147.yaml
@@ -179750,6 +179757,7 @@
 ./poc/cve/CVE-2024-6690_11.yaml
 ./poc/cve/CVE-2024-6690_12.yaml
 ./poc/cve/CVE-2024-6690_13.yaml
+./poc/cve/CVE-2024-6690_14.yaml
 ./poc/cve/CVE-2024-6690_2.yaml
 ./poc/cve/CVE-2024-6690_3.yaml
 ./poc/cve/CVE-2024-6690_4.yaml
@@ -183664,6 +183672,7 @@
 ./poc/cve/CVE-2024-9772_38.yaml
 ./poc/cve/CVE-2024-9772_39.yaml
 ./poc/cve/CVE-2024-9772_4.yaml
+./poc/cve/CVE-2024-9772_40.yaml
 ./poc/cve/CVE-2024-9772_5.yaml
 ./poc/cve/CVE-2024-9772_6.yaml
 ./poc/cve/CVE-2024-9772_7.yaml
@@ -211079,10 +211088,10 @@
 ./poc/default/aem-default-login_2.yaml
 ./poc/default/aem-default-login_3_1.yaml
 ./poc/default/aem-default-login_4.yaml
-./poc/default/airflow-default-credentials_1.yaml
-./poc/default/airflow-default-login-234_1_1.yaml
-./poc/default/airflow-default-login.yaml
+./poc/default/airflow-default-login-234.yaml
+./poc/default/airflow-default-login-236.yaml
 ./poc/default/airflow-default-login_1.yaml
+./poc/default/airflow-default-login_2_1.yaml
 ./poc/default/airflow-default-login_5.yaml
 ./poc/default/airflow-v3-default-login.yaml
 ./poc/default/airflow-v3-default-login_1.yaml
@@ -212023,7 +212032,8 @@
 ./poc/default/exacqvision-default-login_3.yaml
 ./poc/default/exacqvision-default-login_4.yaml
 ./poc/default/exacqvision-default-password.yaml
-./poc/default/express-default-page_3_3.yaml
+./poc/default/express-default-page_1_1.yaml
+./poc/default/express-default-page_2_1.yaml
 ./poc/default/feiyuxing-default-login.yaml
 ./poc/default/feiyuxing-default-login_1.yaml
 ./poc/default/feiyuxing-default-login_2.yaml
@@ -224673,7 +224683,7 @@
 ./poc/http/rmihttpserver.yaml
 ./poc/http/spnego-http.yaml
 ./poc/http/spnego-http_1_1.yaml
-./poc/http/te-cl-http-smuggling.yaml
+./poc/http/te-cl-http-smuggling_3.yaml
 ./poc/http/te.cl-http-smuggling.yaml
 ./poc/http/wanhu-oa-downloadhttp-file-read.yaml
 ./poc/ibm/IBM-Signup-Exposure (copy 1)_2.yaml
@@ -232949,10 +232959,11 @@
 ./poc/nodejs/chilexpress_oficial-0999a738-9fae-4043-99eb-ff222a7608fa.yaml
 ./poc/nodejs/cisco-expressway-panel.yaml
 ./poc/nodejs/cisco-expressway-panel_1.yaml
-./poc/nodejs/cisco-expressway-panel_1_2.yaml
 ./poc/nodejs/cisco-expressway-panel_2.yaml
-./poc/nodejs/cisco-expressway-panel_2_3.yaml
-./poc/nodejs/cisco-expressway-panel_3.yaml
+./poc/nodejs/cisco-expressway.yaml
+./poc/nodejs/cisco-expressway_2.yaml
+./poc/nodejs/cisco-unity-express-panel-detect.yaml
+./poc/nodejs/cisco-unity-express-panel-detect_1.yaml
 ./poc/nodejs/clevernode-related-content-6a7b80438e41045ded23449d584ea06d_3.yaml
 ./poc/nodejs/clevernode-related-content_1_3.yaml
 ./poc/nodejs/clevernode_related_content-e70a1197-b5b1-4f30-a253-89eb198c670e.yaml
@@ -232992,8 +233003,7 @@
 ./poc/nodejs/eks-node-group-remote-access_2.yaml
 ./poc/nodejs/erlang-node.yaml
 ./poc/nodejs/express-default-page.yaml
-./poc/nodejs/express-default-page_1_1.yaml
-./poc/nodejs/express-default-page_2_1.yaml
+./poc/nodejs/express-default-page_3_3.yaml
 ./poc/nodejs/express-lfr (copy 1).yaml
 ./poc/nodejs/express-lfr-json (copy 1).yaml
 ./poc/nodejs/express-lfr-json.yaml
