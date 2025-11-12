@@ -1,15 +1,15 @@
-id: learnpress_import_export-9e169776-0475-45b8-8e8f-ac98cee558a3
+id: learnpress_import_export-462d6d01-ce4c-4c76-932a-6466f9a8d807
 
 info:
   name: >
-    LearnPress Export Import <= 4.0.9 - Reflected Cross-Site Scripting
+    LearnPress Export Import <= 4.0.9 - Unauthenticated Local File Inclusion
   author: topscoder
-  severity: medium
+  severity: critical
   description: >
     
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/9e169776-0475-45b8-8e8f-ac98cee558a3?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/462d6d01-ce4c-4c76-932a-6466f9a8d807?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -18,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/learnpress-import-export/"
     google-query: inurl:"/wp-content/plugins/learnpress-import-export/"
     shodan-query: 'http.html:"wp-content/plugins/learnpress-import-export/"'
-  tags: cve,wordpress,wp-plugin,learnpress-import-export,medium,candidate
+  tags: cve,wordpress,wp-plugin,learnpress-import-export,critical,candidate
 
 http:
   - method: GET

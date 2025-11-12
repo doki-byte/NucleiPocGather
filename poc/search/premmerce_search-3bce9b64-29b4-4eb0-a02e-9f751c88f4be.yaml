@@ -1,15 +1,15 @@
-id: premmerce_search-869b8923-d8f9-4a14-89ef-6e8871fa114c
+id: premmerce_search-3bce9b64-29b4-4eb0-a02e-9f751c88f4be
 
 info:
   name: >
-    Premmerce Product Search for WooCommerce <= 2.2.4 - Authenticated (Administrator+) Stored Cross-Site Scripting
+    Premmerce Product Search for WooCommerce <= 2.2.4 - Unauthenticated Local File Inclusion
   author: topscoder
-  severity: low
+  severity: critical
   description: >
     
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/869b8923-d8f9-4a14-89ef-6e8871fa114c?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/3bce9b64-29b4-4eb0-a02e-9f751c88f4be?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -18,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/premmerce-search/"
     google-query: inurl:"/wp-content/plugins/premmerce-search/"
     shodan-query: 'http.html:"wp-content/plugins/premmerce-search/"'
-  tags: cve,wordpress,wp-plugin,premmerce-search,low,candidate
+  tags: cve,wordpress,wp-plugin,premmerce-search,critical,candidate
 
 http:
   - method: GET
