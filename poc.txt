@@ -610,6 +610,8 @@
 ./poc/airflow/airflow-debug_6.yaml
 ./poc/airflow/airflow-debug_7.yaml
 ./poc/airflow/airflow-debug_7_1.yaml
+./poc/airflow/airflow-default-credentials_1.yaml
+./poc/airflow/airflow-default-login-234_1_1.yaml
 ./poc/airflow/airflow-default-login_5.yaml
 ./poc/airflow/airflow-detect-237.yaml
 ./poc/airflow/airflow-detect-238.yaml
@@ -633,6 +635,7 @@
 ./poc/airflow/airflow-panel_6.yaml
 ./poc/airflow/airflow-unauth.yaml
 ./poc/airflow/airflow-unauth.yml
+./poc/airflow/airflow-v3-default-login_1.yaml
 ./poc/airflow/airflow-workflow_2.yaml
 ./poc/airflow/airflow.yaml
 ./poc/airflow/apache-airflow.yaml
@@ -12782,6 +12785,12 @@
 ./poc/cisco/cisco-edge-340_7.yaml
 ./poc/cisco/cisco-email-security-detect.yaml
 ./poc/cisco/cisco-email-security-detect_1.yaml
+./poc/cisco/cisco-expressway-panel_1.yaml
+./poc/cisco/cisco-expressway-panel_1_2.yaml
+./poc/cisco/cisco-expressway-panel_2_3.yaml
+./poc/cisco/cisco-expressway-panel_3.yaml
+./poc/cisco/cisco-expressway.yaml
+./poc/cisco/cisco-expressway_2.yaml
 ./poc/cisco/cisco-finesse-login-938.yaml
 ./poc/cisco/cisco-finesse-login-939.yaml
 ./poc/cisco/cisco-finesse-login-940.yaml
@@ -35251,6 +35260,7 @@
 ./poc/cve/CVE-2017-1000163_75.yaml
 ./poc/cve/CVE-2017-1000163_76.yaml
 ./poc/cve/CVE-2017-1000163_77.yaml
+./poc/cve/CVE-2017-1000163_78.yaml
 ./poc/cve/CVE-2017-1000163_8.yaml
 ./poc/cve/CVE-2017-1000163_9.yaml
 ./poc/cve/CVE-2017-1000170-22b977968cdfc3441165a4a3380516b6.yaml
@@ -35699,6 +35709,7 @@
 ./poc/cve/CVE-2017-11586_64.yaml
 ./poc/cve/CVE-2017-11586_65.yaml
 ./poc/cve/CVE-2017-11586_66.yaml
+./poc/cve/CVE-2017-11586_67.yaml
 ./poc/cve/CVE-2017-11586_7.yaml
 ./poc/cve/CVE-2017-11586_8.yaml
 ./poc/cve/CVE-2017-11586_9.yaml
@@ -43291,6 +43302,7 @@
 ./poc/cve/CVE-2018-19136_7.yaml
 ./poc/cve/CVE-2018-19136_70.yaml
 ./poc/cve/CVE-2018-19136_71.yaml
+./poc/cve/CVE-2018-19136_72.yaml
 ./poc/cve/CVE-2018-19136_8.yaml
 ./poc/cve/CVE-2018-19136_9.yaml
 ./poc/cve/CVE-2018-19137.yaml
@@ -49829,6 +49841,7 @@
 ./poc/cve/CVE-2019-18957_66.yaml
 ./poc/cve/CVE-2019-18957_67.yaml
 ./poc/cve/CVE-2019-18957_68.yaml
+./poc/cve/CVE-2019-18957_69.yaml
 ./poc/cve/CVE-2019-18957_7.yaml
 ./poc/cve/CVE-2019-18957_8.yaml
 ./poc/cve/CVE-2019-18957_9.yaml
@@ -54339,6 +54352,7 @@
 ./poc/cve/CVE-2020-14644_3.yaml
 ./poc/cve/CVE-2020-14644_4.yaml
 ./poc/cve/CVE-2020-14644_5.yaml
+./poc/cve/CVE-2020-14644_6.yaml
 ./poc/cve/CVE-2020-14645_3.yaml
 ./poc/cve/CVE-2020-14652.yaml
 ./poc/cve/CVE-2020-14690_1.yaml
@@ -74808,6 +74822,7 @@
 ./poc/cve/CVE-2021-35064_20.yaml
 ./poc/cve/CVE-2021-35064_21.yaml
 ./poc/cve/CVE-2021-35064_22.yaml
+./poc/cve/CVE-2021-35064_23.yaml
 ./poc/cve/CVE-2021-35064_3.yaml
 ./poc/cve/CVE-2021-35064_4.yaml
 ./poc/cve/CVE-2021-35064_5.yaml
@@ -97941,6 +97956,7 @@
 ./poc/cve/CVE-2022-38627_24.yaml
 ./poc/cve/CVE-2022-38627_25.yaml
 ./poc/cve/CVE-2022-38627_26.yaml
+./poc/cve/CVE-2022-38627_27.yaml
 ./poc/cve/CVE-2022-38627_3.yaml
 ./poc/cve/CVE-2022-38627_4.yaml
 ./poc/cve/CVE-2022-38627_5.yaml
@@ -143470,6 +143486,7 @@
 ./poc/cve/CVE-2024-10146_12.yaml
 ./poc/cve/CVE-2024-10146_13.yaml
 ./poc/cve/CVE-2024-10146_14.yaml
+./poc/cve/CVE-2024-10146_15.yaml
 ./poc/cve/CVE-2024-10146_1_2.yaml
 ./poc/cve/CVE-2024-10146_2.yaml
 ./poc/cve/CVE-2024-10146_3.yaml
@@ -179825,6 +179842,7 @@
 ./poc/cve/CVE-2024-6690_18.yaml
 ./poc/cve/CVE-2024-6690_19.yaml
 ./poc/cve/CVE-2024-6690_2.yaml
+./poc/cve/CVE-2024-6690_20.yaml
 ./poc/cve/CVE-2024-6690_3.yaml
 ./poc/cve/CVE-2024-6690_4.yaml
 ./poc/cve/CVE-2024-6690_5.yaml
@@ -185013,6 +185031,7 @@
 ./poc/cve/CVE-2025-12471-social_pug-fe848a09-edd3-4eea-befb-909d15ba1994.yaml
 ./poc/cve/CVE-2025-12475-blocksy_companion-dd13eb67-3bd5-41c4-a47f-5f55656ea5b9.yaml
 ./poc/cve/CVE-2025-12480.yaml
+./poc/cve/CVE-2025-12482-ameliabooking-cacf2e32-12cf-41a9-a57f-1135c165494c.yaml
 ./poc/cve/CVE-2025-1249-events_manager-1508ae48-099c-44a2-a1c8-000a5e5acbef.yaml
 ./poc/cve/CVE-2025-1249.yaml
 ./poc/cve/CVE-2025-12493-woolentor_addons-12bb4bb9-e908-43ad-8fb1-59418580f5e1.yaml
@@ -201911,6 +201930,7 @@
 ./poc/cve/CVE-2025-6441-a014365bf122a0fc49ffb51a0340d92e_2.yaml
 ./poc/cve/CVE-2025-6441-c0ad03aac8259eabe4a5fa732d9a36ed_3.yaml
 ./poc/cve/CVE-2025-6441-webinar_ignition-52c19707-df18-4239-af46-12ea5ee86a4b.yaml
+./poc/cve/CVE-2025-64446.yaml
 ./poc/cve/CVE-2025-6459-3183a66979de8177d5f86c9888a8ade5_1.yaml
 ./poc/cve/CVE-2025-6459-ap_plugin_scripteo-22fa8290-ebab-4fa4-bcba-0053c3b79f76.yaml
 ./poc/cve/CVE-2025-6462-elisqlreports-a6811f19-07fb-4c05-977f-90f9c5d89bb4.yaml
@@ -211338,9 +211358,7 @@
 ./poc/default/aem-default-login_3_1.yaml
 ./poc/default/aem-default-login_4.yaml
 ./poc/default/airflow-default-credentials.yaml
-./poc/default/airflow-default-credentials_1.yaml
 ./poc/default/airflow-default-login-234.yaml
-./poc/default/airflow-default-login-234_1_1.yaml
 ./poc/default/airflow-default-login-234_2.yaml
 ./poc/default/airflow-default-login-235.yaml
 ./poc/default/airflow-default-login-236.yaml
@@ -211350,7 +211368,6 @@
 ./poc/default/airflow-default-login_2_1.yaml
 ./poc/default/airflow-default-login_3.yaml
 ./poc/default/airflow-v3-default-login.yaml
-./poc/default/airflow-v3-default-login_1.yaml
 ./poc/default/alibaba-canal-default-password-261.yaml
 ./poc/default/alibaba-canal-default-password-262.yaml
 ./poc/default/alibaba-canal-default-password.yaml
@@ -212290,7 +212307,7 @@
 ./poc/default/exacqvision-default-login_4.yaml
 ./poc/default/exacqvision-default-password.yaml
 ./poc/default/express-default-page.yaml
-./poc/default/express-default-page_2_1.yaml
+./poc/default/express-default-page_1_1.yaml
 ./poc/default/express-default-page_3_3.yaml
 ./poc/default/feiyuxing-default-login.yaml
 ./poc/default/feiyuxing-default-login_1.yaml
@@ -212996,6 +213013,7 @@
 ./poc/default/nocobase-default-login.yaml
 ./poc/default/nocobase-default-login_1.yaml
 ./poc/default/nodered-default-login.yaml
+./poc/default/nodered-default-login_3.yaml
 ./poc/default/nps-default-login-9142.yaml
 ./poc/default/nps-default-login-9142_2_3.yaml
 ./poc/default/nps-default-login-9142_3.yaml
@@ -233225,13 +233243,7 @@
 ./poc/nodejs/chilexpress-oficial_3.yaml
 ./poc/nodejs/chilexpress_oficial-0999a738-9fae-4043-99eb-ff222a7608fa.yaml
 ./poc/nodejs/cisco-expressway-panel.yaml
-./poc/nodejs/cisco-expressway-panel_1.yaml
-./poc/nodejs/cisco-expressway-panel_1_2.yaml
 ./poc/nodejs/cisco-expressway-panel_2.yaml
-./poc/nodejs/cisco-expressway-panel_2_3.yaml
-./poc/nodejs/cisco-expressway-panel_3.yaml
-./poc/nodejs/cisco-expressway.yaml
-./poc/nodejs/cisco-expressway_2.yaml
 ./poc/nodejs/cisco-unity-express-panel-detect.yaml
 ./poc/nodejs/cisco-unity-express-panel-detect_1.yaml
 ./poc/nodejs/clevernode-related-content-6a7b80438e41045ded23449d584ea06d_3.yaml
@@ -233272,7 +233284,7 @@
 ./poc/nodejs/drupal_module-quick_node_clone-access-bypass_1.yaml
 ./poc/nodejs/eks-node-group-remote-access_2.yaml
 ./poc/nodejs/erlang-node.yaml
-./poc/nodejs/express-default-page_1_1.yaml
+./poc/nodejs/express-default-page_2_1.yaml
 ./poc/nodejs/express-lfr (copy 1).yaml
 ./poc/nodejs/express-lfr-json (copy 1).yaml
 ./poc/nodejs/express-lfr-json.yaml
@@ -233479,7 +233491,6 @@
 ./poc/nodejs/nodejs-framework-exceptions_1.yaml
 ./poc/nodejs/nodejs-framework-exceptions_2.yaml
 ./poc/nodejs/nodejs-framework-exceptions_3.yaml
-./poc/nodejs/nodered-default-login_3.yaml
 ./poc/nodejs/npm-access-token.yaml
 ./poc/nodejs/npm-access-token_1_3.yaml
 ./poc/nodejs/npm-access-token_2.yaml
@@ -253700,6 +253711,7 @@
 ./poc/other/ameliabooking-c3ac21bf069e8e981f23c9e7fb5f0d68_1.yaml
 ./poc/other/ameliabooking-c5ead57986c0f13f183279f2155f1409_1.yaml
 ./poc/other/ameliabooking-c9aa2a44-5a71-4a10-9876-3d54b8d268c5.yaml
+./poc/other/ameliabooking-cacf2e32-12cf-41a9-a57f-1135c165494c.yaml
 ./poc/other/ameliabooking-ea984974-2835-4bad-b7ca-975ad21c80e5.yaml
 ./poc/other/ameliabooking-f1a0f113a878a6a03825a9e8f93738d2.yaml
 ./poc/other/ameliabooking-f55c3476b5c9c9b48f2320fef7d91f96_1.yaml
@@ -323648,6 +323660,7 @@
 ./poc/other/test.yaml
 ./poc/other/test.yml
 ./poc/other/test2.yaml
+./poc/other/test_1.yml
 ./poc/other/test_3.yml
 ./poc/other/testimonial-549ddee9-9f38-40e2-ac50-bff5366c0b94.yaml
 ./poc/other/testimonial-9be5e54c-286a-4fec-95fb-27e3517f3eb8.yaml
@@ -337553,6 +337566,7 @@
 ./poc/php/phpinfo-6.yaml
 ./poc/php/phpinfo-7.yaml
 ./poc/php/phpinfo-8.yaml
+./poc/php/phpinfo-9.yaml
 ./poc/php/phpinfo-9517.yaml
 ./poc/php/phpinfo-9517_1.yaml
 ./poc/php/phpinfo-9518.yaml
@@ -337567,7 +337581,6 @@
 ./poc/php/phpinfo-9521_1.yaml
 ./poc/php/phpinfo-9522.yaml
 ./poc/php/phpinfo-9522_1.yaml
-./poc/php/phpinfo-9_3.yaml
 ./poc/php/phpinfo-detection_3.yaml
 ./poc/php/phpinfo-disclosure-env.yaml
 ./poc/php/phpinfo-disclosure.yaml
