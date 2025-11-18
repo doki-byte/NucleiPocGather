@@ -1,15 +1,15 @@
-id: rometheme_for_elementor-bab07bc7-d428-4ef9-91e8-4203fc8a32dd
+id: rometheme_for_elementor-a4601d9e-02bb-4b27-b16e-7cfc0fc19919
 
 info:
   name: >
-    RTMKit <= 1.6.5 - Authenticated (Contributor+) Arbitrary File Upload
+    RTMKit Addons <= 1.6.5 - Authenticated (Contributor+) Stored Cross-Site Scripting via Accordion Repeater Block Attribute
   author: topscoder
   severity: low
   description: >
     
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/bab07bc7-d428-4ef9-91e8-4203fc8a32dd?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/a4601d9e-02bb-4b27-b16e-7cfc0fc19919?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 

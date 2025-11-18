@@ -1,15 +1,15 @@
-id: survey_maker-835353e7-871d-4daf-9ed4-86321daf2366
+id: survey_maker-4a7b6fa4-13a5-410a-979e-fbced2a3373b
 
 info:
   name: >
-    Survey Maker <= 5.1.9.4 - Missing Authorization to Unauthenticated Information Exposure
+    Survey Maker <= 5.1.9.4 - Missing Authorization
   author: topscoder
   severity: high
   description: >
     
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/835353e7-871d-4daf-9ed4-86321daf2366?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/4a7b6fa4-13a5-410a-979e-fbced2a3373b?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
