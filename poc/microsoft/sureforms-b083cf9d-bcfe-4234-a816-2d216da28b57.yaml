@@ -1,15 +1,15 @@
-id: sureforms-9e8e239a-0ddf-479e-b94b-7844ff6e9e81
+id: sureforms-b083cf9d-bcfe-4234-a816-2d216da28b57
 
 info:
   name: >
-    SureForms <= 1.13.1 - Missing Authorization to Unauthenticated Sensitive Information Exposure
+    SureForms <= 1.13.1 - Cross-Site Request Forgery Protection Bypass via Improper Nonce Distribution
   author: topscoder
-  severity: high
+  severity: medium
   description: >
     
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/9e8e239a-0ddf-479e-b94b-7844ff6e9e81?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/b083cf9d-bcfe-4234-a816-2d216da28b57?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -18,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/sureforms/"
     google-query: inurl:"/wp-content/plugins/sureforms/"
     shodan-query: 'http.html:"wp-content/plugins/sureforms/"'
-  tags: cve,wordpress,wp-plugin,sureforms,high,candidate
+  tags: cve,wordpress,wp-plugin,sureforms,medium,candidate
 
 http:
   - method: GET
