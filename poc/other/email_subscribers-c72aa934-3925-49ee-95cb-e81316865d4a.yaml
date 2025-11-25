@@ -1,15 +1,15 @@
-id: email_subscribers-0b4cbe21-9f1b-425b-8141-ae075baaf717
+id: email_subscribers-c72aa934-3925-49ee-95cb-e81316865d4a
 
 info:
   name: >
-    Email Subscribers & Newsletters <= 5.9.10 - Missing Authentication to Unauthenticated Mailing Queue Trigger
+    Email Subscribers & Newsletters <= 5.9.10 - Authenticated (Administrator+) PHP Object Injection
   author: topscoder
   severity: low
   description: >
     
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/0b4cbe21-9f1b-425b-8141-ae075baaf717?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/c72aa934-3925-49ee-95cb-e81316865d4a?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
