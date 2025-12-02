@@ -1,15 +1,15 @@
-id: subscriptions_memberships_for_paypal-8f706b78-2d67-442c-b7a0-7d7a0fd24b2d
+id: subscriptions_memberships_for_paypal-141c33be-36f5-4db6-92f7-f04fa647af08
 
 info:
   name: >
-    Subscriptions & Memberships for PayPal <= 1.1.7 - Unauthenticated Fake Payment Creation
+    Subscriptions & Memberships for PayPal <= 1.1.7 - Missing Authorization
   author: topscoder
-  severity: low
+  severity: high
   description: >
     
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/8f706b78-2d67-442c-b7a0-7d7a0fd24b2d?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/141c33be-36f5-4db6-92f7-f04fa647af08?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -18,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/subscriptions-memberships-for-paypal/"
     google-query: inurl:"/wp-content/plugins/subscriptions-memberships-for-paypal/"
     shodan-query: 'http.html:"wp-content/plugins/subscriptions-memberships-for-paypal/"'
-  tags: cve,wordpress,wp-plugin,subscriptions-memberships-for-paypal,low,candidate
+  tags: cve,wordpress,wp-plugin,subscriptions-memberships-for-paypal,high,candidate
 
 http:
   - method: GET
