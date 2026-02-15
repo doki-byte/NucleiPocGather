@@ -1,15 +1,15 @@
-id: blog_in_blog-d53161ad-cc5f-4433-b288-a8095cdfd7db
+id: blog_in_blog-5c6a88c3-18b7-470f-8014-373ead66dcfa
 
 info:
   name: >
-    Blog-in-Blog <= 2.0.0 - Authenticated (Editor+) Local File Inclusion via Shortcode
+    Blog-in-Blog <= 2.0.0 - Authenticated (Editor+) Stored Cross-Site Scripting via Shortcode
   author: topscoder
   severity: low
   description: >
     
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/d53161ad-cc5f-4433-b288-a8095cdfd7db?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/5c6a88c3-18b7-470f-8014-373ead66dcfa?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
