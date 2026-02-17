@@ -1,31 +1,31 @@
-id: diza-e9612b5c-ed04-41f6-9936-c850b0ef04d0
+id: belletrist-1dcdc56b-88c6-442b-871d-07fa0c238048
 
 info:
   name: >
-    Diza <= 1.3.15 - Authenticated (Contributor+) Local File Inclusion
+    Belletrist <= 1.2 - Unauthenticated Local File Inclusion
   author: topscoder
-  severity: low
+  severity: critical
   description: >
     
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/e9612b5c-ed04-41f6-9936-c850b0ef04d0?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/1dcdc56b-88c6-442b-871d-07fa0c238048?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
     cve-id: 
   metadata:
-    fofa-query: "wp-content/themes/diza/"
-    google-query: inurl:"/wp-content/themes/diza/"
-    shodan-query: 'http.html:"wp-content/themes/diza/"'
-  tags: cve,wordpress,wp-theme,diza,low,candidate
+    fofa-query: "wp-content/themes/belletrist/"
+    google-query: inurl:"/wp-content/themes/belletrist/"
+    shodan-query: 'http.html:"wp-content/themes/belletrist/"'
+  tags: cve,wordpress,wp-theme,belletrist,critical,candidate
 
 http:
   - method: GET
     redirects: true
     max-redirects: 3
     path:
-      - "{{BaseURL}}/wp-content/themes/diza/style.css"
+      - "{{BaseURL}}/wp-content/themes/belletrist/style.css"
 
     extractors:
       - type: regex
@@ -43,9 +43,9 @@ http:
 
       - type: word
         words:
-          - "diza"
+          - "belletrist"
         part: body
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.3.15')
+          - compare_versions(version, '<= 1.2')

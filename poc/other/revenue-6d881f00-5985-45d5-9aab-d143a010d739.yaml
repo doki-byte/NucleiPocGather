@@ -1,31 +1,31 @@
-id: simplified-9fe2a19a-b6ed-409f-a496-a005f87d06e6
+id: revenue-6d881f00-5985-45d5-9aab-d143a010d739
 
 info:
   name: >
-    Simplified <= 1.0.11 - Authenticated (Administrator+) Server-Side Request Forgery
+    WowRevenue <= 2.1.3 - Missing Authorization to Authenticated (Subscriber+) Arbitrary Plugin Installation/Activation
   author: topscoder
   severity: low
   description: >
     
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/9fe2a19a-b6ed-409f-a496-a005f87d06e6?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/6d881f00-5985-45d5-9aab-d143a010d739?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
     cve-id: 
   metadata:
-    fofa-query: "wp-content/plugins/simplified/"
-    google-query: inurl:"/wp-content/plugins/simplified/"
-    shodan-query: 'http.html:"wp-content/plugins/simplified/"'
-  tags: cve,wordpress,wp-plugin,simplified,low,candidate
+    fofa-query: "wp-content/plugins/revenue/"
+    google-query: inurl:"/wp-content/plugins/revenue/"
+    shodan-query: 'http.html:"wp-content/plugins/revenue/"'
+  tags: cve,wordpress,wp-plugin,revenue,low,candidate
 
 http:
   - method: GET
     redirects: true
     max-redirects: 3
     path:
-      - "{{BaseURL}}/wp-content/plugins/simplified/readme.txt"
+      - "{{BaseURL}}/wp-content/plugins/revenue/readme.txt"
 
     extractors:
       - type: regex
@@ -43,9 +43,9 @@ http:
 
       - type: word
         words:
-          - "simplified"
+          - "revenue"
         part: body
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.0.11')
+          - compare_versions(version, '<= 2.1.3')

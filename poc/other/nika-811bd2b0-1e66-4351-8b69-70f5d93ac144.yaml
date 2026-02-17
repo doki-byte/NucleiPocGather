@@ -1,31 +1,31 @@
-id: struktur-e3c1be94-f517-4292-a7dd-5206e9157546
+id: nika-811bd2b0-1e66-4351-8b69-70f5d93ac144
 
 info:
   name: >
-    Struktur <= 2.5.1 - Authenticated (Subscriber+) Insecure Direct Object Reference
+    Nika <= 1.2.14 - Unauthenticated Local File Inclusion
   author: topscoder
-  severity: low
+  severity: critical
   description: >
     
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/e3c1be94-f517-4292-a7dd-5206e9157546?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/811bd2b0-1e66-4351-8b69-70f5d93ac144?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
     cve-id: 
   metadata:
-    fofa-query: "wp-content/themes/struktur/"
-    google-query: inurl:"/wp-content/themes/struktur/"
-    shodan-query: 'http.html:"wp-content/themes/struktur/"'
-  tags: cve,wordpress,wp-theme,struktur,low,candidate
+    fofa-query: "wp-content/themes/nika/"
+    google-query: inurl:"/wp-content/themes/nika/"
+    shodan-query: 'http.html:"wp-content/themes/nika/"'
+  tags: cve,wordpress,wp-theme,nika,critical,candidate
 
 http:
   - method: GET
     redirects: true
     max-redirects: 3
     path:
-      - "{{BaseURL}}/wp-content/themes/struktur/style.css"
+      - "{{BaseURL}}/wp-content/themes/nika/style.css"
 
     extractors:
       - type: regex
@@ -43,9 +43,9 @@ http:
 
       - type: word
         words:
-          - "struktur"
+          - "nika"
         part: body
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 2.5.1')
+          - compare_versions(version, '<= 1.2.14')

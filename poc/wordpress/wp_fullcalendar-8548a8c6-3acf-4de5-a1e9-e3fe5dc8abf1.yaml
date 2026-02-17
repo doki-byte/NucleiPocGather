@@ -1,15 +1,15 @@
-id: wp_fullcalendar-45c2ad78-6cae-4d32-b595-54a466ff2469
+id: wp_fullcalendar-8548a8c6-3acf-4de5-a1e9-e3fe5dc8abf1
 
 info:
   name: >
-    FullCalendar <= 1.6 - Unauthenticated Information Exposure
+    FullCalendar <= 1.6 - Missing Authorization
   author: topscoder
-  severity: low
+  severity: high
   description: >
     
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/45c2ad78-6cae-4d32-b595-54a466ff2469?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/8548a8c6-3acf-4de5-a1e9-e3fe5dc8abf1?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -18,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/wp-fullcalendar/"
     google-query: inurl:"/wp-content/plugins/wp-fullcalendar/"
     shodan-query: 'http.html:"wp-content/plugins/wp-fullcalendar/"'
-  tags: cve,wordpress,wp-plugin,wp-fullcalendar,low,candidate
+  tags: cve,wordpress,wp-plugin,wp-fullcalendar,high,candidate
 
 http:
   - method: GET
