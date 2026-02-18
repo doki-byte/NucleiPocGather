@@ -1,15 +1,15 @@
-id: eventprime_event_calendar_management-42aa82ff-0d37-4040-b8fc-84d29534a4b7
+id: eventprime_event_calendar_management-0e2a2769-1309-4aad-8411-4445efea2b66
 
 info:
   name: >
-    EventPrime <= 4.2.8.4 - Missing Authorization to Unauthenticated Image Upload via 'ep_upload_file_media' AJAX Endpoint
+    EventPrime <= 4.2.8.4 - Missing Authorization to Authenticated (Subscriber+) Arbitrary Event Modification via 'event_id' Parameter
   author: topscoder
-  severity: high
+  severity: low
   description: >
     
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/42aa82ff-0d37-4040-b8fc-84d29534a4b7?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/0e2a2769-1309-4aad-8411-4445efea2b66?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -18,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/eventprime-event-calendar-management/"
     google-query: inurl:"/wp-content/plugins/eventprime-event-calendar-management/"
     shodan-query: 'http.html:"wp-content/plugins/eventprime-event-calendar-management/"'
-  tags: cve,wordpress,wp-plugin,eventprime-event-calendar-management,high,candidate
+  tags: cve,wordpress,wp-plugin,eventprime-event-calendar-management,low,candidate
 
 http:
   - method: GET

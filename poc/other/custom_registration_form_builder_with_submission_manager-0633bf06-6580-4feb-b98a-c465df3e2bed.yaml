@@ -1,15 +1,15 @@
-id: custom_registration_form_builder_with_submission_manager-d3088e5b-9e3c-4021-b99a-26ac90ece82e
+id: custom_registration_form_builder_with_submission_manager-0633bf06-6580-4feb-b98a-c465df3e2bed
 
 info:
   name: >
-    RegistrationMagic <= 6.0.6.9 - Cross-Site Request Forgery
+    RegistrationMagic – Custom Registration Forms, User Registration, Payment, and User Login <= 6.0.6.9 - Unauthenticated Payment Bypass via rm_process_paypal_sdk_payment
   author: topscoder
-  severity: medium
+  severity: low
   description: >
     
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/d3088e5b-9e3c-4021-b99a-26ac90ece82e?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/0633bf06-6580-4feb-b98a-c465df3e2bed?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -18,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/custom-registration-form-builder-with-submission-manager/"
     google-query: inurl:"/wp-content/plugins/custom-registration-form-builder-with-submission-manager/"
     shodan-query: 'http.html:"wp-content/plugins/custom-registration-form-builder-with-submission-manager/"'
-  tags: cve,wordpress,wp-plugin,custom-registration-form-builder-with-submission-manager,medium,candidate
+  tags: cve,wordpress,wp-plugin,custom-registration-form-builder-with-submission-manager,low,candidate
 
 http:
   - method: GET
