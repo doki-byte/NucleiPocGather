@@ -472,7 +472,7 @@
 ./poc/apache/apache-dubbo-detect_1.yaml
 ./poc/apache/apache-dubbo-detect_1_1.yaml
 ./poc/apache/apache-dubbo-detect_2.yaml
-./poc/apache/apache-dubbo_1.yaml
+./poc/apache/apache-dubbo.yaml
 ./poc/apache/apache-feed2js-ssrf.yaml
 ./poc/apache/apache-filename-brute-force-352.yaml
 ./poc/apache/apache-filename-brute-force-353.yaml
@@ -620,9 +620,9 @@
 ./poc/apache/apache-solr-log4j-rce_11.yaml
 ./poc/apache/apache-solr-log4j-rce_12.yaml
 ./poc/apache/apache-solr-log4j-rce_1_1.yaml
-./poc/apache/apache-solr-log4j-rce_2_1.yaml
+./poc/apache/apache-solr-log4j-rce_2.yaml
 ./poc/apache/apache-solr-log4j-rce_3.yaml
-./poc/apache/apache-solr-log4j-rce_4_1.yaml
+./poc/apache/apache-solr-log4j-rce_4.yaml
 ./poc/apache/apache-solr-log4j-rce_5.yaml
 ./poc/apache/apache-solr-log4j-rce_6.yaml
 ./poc/apache/apache-solr-log4j-rce_7.yaml
@@ -11392,6 +11392,7 @@
 ./poc/auth/unauthenticated-frp-10897.yaml
 ./poc/auth/unauthenticated-frp.yaml
 ./poc/auth/unauthenticated-frp_1.yaml
+./poc/auth/unauthenticated-frp_10.yaml
 ./poc/auth/unauthenticated-frp_4.yaml
 ./poc/auth/unauthenticated-frp_5.yaml
 ./poc/auth/unauthenticated-frp_6.yaml
@@ -37993,6 +37994,7 @@
 ./poc/cve/CVE-2015-5688_38.yaml
 ./poc/cve/CVE-2015-5688_39.yaml
 ./poc/cve/CVE-2015-5688_4.yaml
+./poc/cve/CVE-2015-5688_40.yaml
 ./poc/cve/CVE-2015-5688_5.yaml
 ./poc/cve/CVE-2015-5688_6.yaml
 ./poc/cve/CVE-2015-5688_7.yaml
@@ -53492,6 +53494,7 @@
 ./poc/cve/CVE-2018-1335_22.yaml
 ./poc/cve/CVE-2018-1335_23.yaml
 ./poc/cve/CVE-2018-1335_24.yaml
+./poc/cve/CVE-2018-1335_25.yaml
 ./poc/cve/CVE-2018-1335_3.yaml
 ./poc/cve/CVE-2018-1335_6.yaml
 ./poc/cve/CVE-2018-1335_7.yaml
@@ -61466,7 +61469,6 @@
 ./poc/cve/CVE-2019-12370.yaml
 ./poc/cve/CVE-2019-12401_1.yaml
 ./poc/cve/CVE-2019-12422_2.yaml
-./poc/cve/CVE-2019-12461 2.yaml
 ./poc/cve/CVE-2019-12461.yaml
 ./poc/cve/CVE-2019-12461_10.yaml
 ./poc/cve/CVE-2019-12461_11.yaml
@@ -61501,6 +61503,7 @@
 ./poc/cve/CVE-2019-12461_38.yaml
 ./poc/cve/CVE-2019-12461_39.yaml
 ./poc/cve/CVE-2019-12461_4.yaml
+./poc/cve/CVE-2019-12461_40.yaml
 ./poc/cve/CVE-2019-12461_5.yaml
 ./poc/cve/CVE-2019-12461_6.yaml
 ./poc/cve/CVE-2019-12461_8.yaml
@@ -63875,6 +63878,7 @@
 ./poc/cve/CVE-2019-16097_21.yaml
 ./poc/cve/CVE-2019-16097_22.yaml
 ./poc/cve/CVE-2019-16097_23.yaml
+./poc/cve/CVE-2019-16097_24.yaml
 ./poc/cve/CVE-2019-16097_3.yaml
 ./poc/cve/CVE-2019-16097_4.yaml
 ./poc/cve/CVE-2019-16097_7.yaml
@@ -65013,7 +65017,6 @@
 ./poc/cve/CVE-2019-17550_1.yaml
 ./poc/cve/CVE-2019-17550_2_2.yaml
 ./poc/cve/CVE-2019-17553_2.yaml
-./poc/cve/CVE-2019-17558 2_1.yaml
 ./poc/cve/CVE-2019-17558.yaml
 ./poc/cve/CVE-2019-17558_1.yaml
 ./poc/cve/CVE-2019-17558_10.yaml
@@ -65027,6 +65030,7 @@
 ./poc/cve/CVE-2019-17558_18.yaml
 ./poc/cve/CVE-2019-17558_19.yaml
 ./poc/cve/CVE-2019-17558_2.yaml
+./poc/cve/CVE-2019-17558_20.yaml
 ./poc/cve/CVE-2019-17558_3.yaml
 ./poc/cve/CVE-2019-17558_4.yaml
 ./poc/cve/CVE-2019-17558_5.yaml
@@ -72886,8 +72890,8 @@
 ./poc/cve/CVE-2020-14780.yaml
 ./poc/cve/CVE-2020-14784.yaml
 ./poc/cve/CVE-2020-14788.yaml
-./poc/cve/CVE-2020-14815-4563_3.yaml
 ./poc/cve/CVE-2020-14815.yaml
+./poc/cve/CVE-2020-14815_1.yaml
 ./poc/cve/CVE-2020-14820_1.yaml
 ./poc/cve/CVE-2020-14825.yaml
 ./poc/cve/CVE-2020-14842.yaml
@@ -73220,6 +73224,7 @@
 ./poc/cve/CVE-2020-15500_42.yaml
 ./poc/cve/CVE-2020-15500_43.yaml
 ./poc/cve/CVE-2020-15500_44.yaml
+./poc/cve/CVE-2020-15500_45.yaml
 ./poc/cve/CVE-2020-15500_5.yaml
 ./poc/cve/CVE-2020-15500_7.yaml
 ./poc/cve/CVE-2020-15500_9.yaml
@@ -77609,6 +77614,7 @@
 ./poc/cve/CVE-2020-27986_19.yaml
 ./poc/cve/CVE-2020-27986_2.yaml
 ./poc/cve/CVE-2020-27986_20.yaml
+./poc/cve/CVE-2020-27986_21.yaml
 ./poc/cve/CVE-2020-27986_3.yaml
 ./poc/cve/CVE-2020-27986_4.yaml
 ./poc/cve/CVE-2020-27986_8.yaml
@@ -81149,7 +81155,6 @@
 ./poc/cve/CVE-2020-6171_37.yaml
 ./poc/cve/CVE-2020-6171_38.yaml
 ./poc/cve/CVE-2020-6171_39.yaml
-./poc/cve/CVE-2020-6171_4.yaml
 ./poc/cve/CVE-2020-6171_40.yaml
 ./poc/cve/CVE-2020-6171_41.yaml
 ./poc/cve/CVE-2020-6171_42.yaml
@@ -81163,6 +81168,7 @@
 ./poc/cve/CVE-2020-6171_50.yaml
 ./poc/cve/CVE-2020-6171_51.yaml
 ./poc/cve/CVE-2020-6171_52.yaml
+./poc/cve/CVE-2020-6171_53.yaml
 ./poc/cve/CVE-2020-6171_7.yaml
 ./poc/cve/CVE-2020-6171_8.yaml
 ./poc/cve/CVE-2020-6171_9.yaml
@@ -96538,6 +96544,7 @@
 ./poc/cve/CVE-2021-26722.yaml
 ./poc/cve/CVE-2021-26722_1.yaml
 ./poc/cve/CVE-2021-26722_2.yaml
+./poc/cve/CVE-2021-26722_3.yaml
 ./poc/cve/CVE-2021-26723.yaml
 ./poc/cve/CVE-2021-26723_1.yaml
 ./poc/cve/CVE-2021-26723_10.yaml
@@ -236098,6 +236105,7 @@
 ./poc/cve/CVE-2025-13657-helpdesk_contact_form-342ece60-faf1-4fee-bf1e-6f6107f32861.yaml
 ./poc/cve/CVE-2025-13660-guest_support-01299aba-0dff-47fd-9e90-ee84f00a0f3b.yaml
 ./poc/cve/CVE-2025-13666-helloprint-4b07ed75-6ee3-4a1a-b165-439a9135b059.yaml
+./poc/cve/CVE-2025-13673-tutor-007df869-dacb-4b0a-9c98-50586934cdab.yaml
 ./poc/cve/CVE-2025-13675-tiger-4750b57e-7d8d-49d7-bbbf-46483eb97bd9.yaml
 ./poc/cve/CVE-2025-13676-justclick_subscriber-f1420ec8-55e4-448d-8230-228d1e566b97.yaml
 ./poc/cve/CVE-2025-13677-simple_download_counter-b82a0f71-29d7-469a-8c69-5ab68d599cb9.yaml
@@ -272301,7 +272309,7 @@
 ./poc/directory_listing/flir-path-traversal_1.yaml
 ./poc/directory_listing/flir-path-traversal_4.yaml
 ./poc/directory_listing/flir-path-traversal_5.yaml
-./poc/directory_listing/forked-daapd-path-traversal_3.yaml
+./poc/directory_listing/forked-daapd-path-traversal_1.yaml
 ./poc/directory_listing/generic-path-traversal.yaml
 ./poc/directory_listing/generic-path-traversal_3.yaml
 ./poc/directory_listing/hidden-path-traversal.yaml
@@ -273441,10 +273449,10 @@
 ./poc/exposed/apache-php-env-disclosure.yaml
 ./poc/exposed/apache-server-info-disclosure_.yaml
 ./poc/exposed/apache-server-info-disclosure__1_1.yaml
-./poc/exposed/apache-source-code-disclosure_2.yaml
+./poc/exposed/apache-source-code-disclosure.yaml
 ./poc/exposed/apache-spark-enviroment-exposure.yaml
 ./poc/exposed/apache-tomcat-snoop-ip-disclosure_1_1.yaml
-./poc/exposed/apachespark-ui-exposed_1.yaml
+./poc/exposed/apachespark-ui-exposed.yaml
 ./poc/exposed/apdisk-disclosure.yaml
 ./poc/exposed/apdisk-disclosure_1.yaml
 ./poc/exposed/api-exposures.yaml
@@ -273497,7 +273505,7 @@
 ./poc/exposed/axiom-digitalocean-key-exposure_1.yaml
 ./poc/exposed/azure-apim-nv-plaintext-exposure_2.yaml
 ./poc/exposed/azure-apim-secret-key-disclosure.yaml
-./poc/exposed/azure-functionapp-public-exposure_2.yaml
+./poc/exposed/azure-functionapp-public-exposure_1.yaml
 ./poc/exposed/azure-pipelines-config-disclosure.yaml
 ./poc/exposed/azure-pipelines-exposed.yaml
 ./poc/exposed/azure-pipelines-exposed_1.yaml
@@ -273654,9 +273662,14 @@
 ./poc/exposed/disclosure-path-env.yaml
 ./poc/exposed/django-debug-exposure-7029.yaml
 ./poc/exposed/django-debug-exposure-7029_1.yaml
+./poc/exposed/django-debug-exposure-7030.yaml
 ./poc/exposed/django-debug-exposure-7030_3.yaml
+./poc/exposed/django-debug-exposure-7031_3.yaml
+./poc/exposed/django-debug-exposure.yaml
+./poc/exposed/django-debug-exposure_2.yaml
 ./poc/exposed/django-debug-exposure_4.yaml
 ./poc/exposed/django-variables-exposed.yaml
+./poc/exposed/django-variables-exposed_2.yaml
 ./poc/exposed/dlink-cve-2020-25078-account-disclosure.yaml
 ./poc/exposed/docker-credentials-exposure.yaml
 ./poc/exposed/docker-daemon-exposed.yaml
@@ -273726,11 +273739,11 @@
 ./poc/exposed/easycvr-user-info-disclosure.yaml
 ./poc/exposed/easycvr-userlist-info-disclosure.yaml
 ./poc/exposed/ecology-HrmService-info-disclosure.yaml
+./poc/exposed/editor-exposure.yaml
 ./poc/exposed/editor-exposure_1.yaml
 ./poc/exposed/editor-exposure_2.yaml
 ./poc/exposed/editor-exposure_3_1.yaml
 ./poc/exposed/editor-exposure_4.yaml
-./poc/exposed/editor-exposure_4_1.yaml
 ./poc/exposed/editor-exposure_6.yaml
 ./poc/exposed/editor-exposure_8.yaml
 ./poc/exposed/editor-file-exposure.yaml
@@ -273770,12 +273783,10 @@
 ./poc/exposed/exposed-adb_5.yaml
 ./poc/exposed/exposed-alps-spring-1.yaml
 ./poc/exposed/exposed-alps-spring-1_2.yaml
-./poc/exposed/exposed-alps-spring-2.yaml
 ./poc/exposed/exposed-alps-spring-2_1.yaml
 ./poc/exposed/exposed-alps-spring-3.yaml
 ./poc/exposed/exposed-alps-spring-7283.yaml
 ./poc/exposed/exposed-alps-spring-7284.yaml
-./poc/exposed/exposed-alps-spring-7285.yaml
 ./poc/exposed/exposed-alps-spring-7285_1.yaml
 ./poc/exposed/exposed-alps-spring.yaml
 ./poc/exposed/exposed-alps-spring_1.yaml
@@ -273845,7 +273856,7 @@
 ./poc/exposed/exposed-filezilla.yaml
 ./poc/exposed/exposed-git-directory.yaml
 ./poc/exposed/exposed-git-repository.yaml
-./poc/exposed/exposed-gitcreds.yaml
+./poc/exposed/exposed-gitcredentials.yaml
 ./poc/exposed/exposed-github.yaml
 ./poc/exposed/exposed-gitignore-1.yaml
 ./poc/exposed/exposed-gitignore-1_1.yaml
@@ -273915,7 +273926,7 @@
 ./poc/exposed/exposed-mcp-server.yaml
 ./poc/exposed/exposed-mcp-server_1.yaml
 ./poc/exposed/exposed-mcp-sse-server.yaml
-./poc/exposed/exposed-merge-metadata-servlet.yaml
+./poc/exposed/exposed-merge-metadata-servlet_1.yaml
 ./poc/exposed/exposed-mysql-initial-7321.yaml
 ./poc/exposed/exposed-mysql-initial-7322.yaml
 ./poc/exposed/exposed-mysql-initial-7323.yaml
@@ -273934,11 +273945,11 @@
 ./poc/exposed/exposed-nomad_3.yaml
 ./poc/exposed/exposed-pagespeed-global-admin-7331.yaml
 ./poc/exposed/exposed-pagespeed-global-admin.yaml
+./poc/exposed/exposed-pagespeed-global-admin_1.yaml
 ./poc/exposed/exposed-pagespeed-global-admin_1_1.yaml
-./poc/exposed/exposed-pagespeed-global-admin_3.yaml
 ./poc/exposed/exposed-phpmyadmin.yaml
 ./poc/exposed/exposed-pii.yaml
-./poc/exposed/exposed-pii_3.yaml
+./poc/exposed/exposed-pii_1.yaml
 ./poc/exposed/exposed-pki-cert.yaml
 ./poc/exposed/exposed-prometheus-log-7332.yaml
 ./poc/exposed/exposed-prometheus-log.yaml
@@ -273977,6 +273988,7 @@
 ./poc/exposed/exposed-sharepoint-list_3.yaml
 ./poc/exposed/exposed-smb_2.yaml
 ./poc/exposed/exposed-sonarqube.yaml
+./poc/exposed/exposed-springboot.yaml
 ./poc/exposed/exposed-sqlite-manager-1.yaml
 ./poc/exposed/exposed-sqlite-manager-1_2.yaml
 ./poc/exposed/exposed-sqlite-manager-2.yaml
@@ -273989,6 +274001,7 @@
 ./poc/exposed/exposed-sqlite-manager_2.yaml
 ./poc/exposed/exposed-sqlite-manager_2_1.yaml
 ./poc/exposed/exposed-sqlite-manager_5.yaml
+./poc/exposed/exposed-struts.yaml
 ./poc/exposed/exposed-svn-7351.yaml
 ./poc/exposed/exposed-svn-7352.yaml
 ./poc/exposed/exposed-svn-7353.yaml
@@ -274183,7 +274196,7 @@
 ./poc/exposed/google-adk-api-exposed.yaml
 ./poc/exposed/google-adk-webui-exposed.yaml
 ./poc/exposed/grafana-api-key-exposure.yaml
-./poc/exposed/grafana-datasource-credentials-exposure.yml
+./poc/exposed/grafana-datasource-credentials-exposure_2.yml
 ./poc/exposed/grafana-exposed-configuration.yaml
 ./poc/exposed/graphql-playground-exposure.yaml
 ./poc/exposed/graylog-api-exposure.yaml
@@ -274315,17 +274328,13 @@
 ./poc/exposed/iotawatt-app-exposure_3.yaml
 ./poc/exposed/iotawatt-app-exposure_4.yaml
 ./poc/exposed/iotawatt-app-exposure_6.yaml
-./poc/exposed/java-melody-exposed-1.yaml
 ./poc/exposed/java-melody-exposed-1_2.yaml
-./poc/exposed/java-melody-exposed-2_3.yaml
-./poc/exposed/java-melody-exposed-8221.yaml
-./poc/exposed/java-melody-exposed-8222.yaml
+./poc/exposed/java-melody-exposed-2_1.yaml
 ./poc/exposed/java-melody-exposed-8223.yaml
 ./poc/exposed/java-melody-exposed-8224.yaml
 ./poc/exposed/java-melody-exposed-8224_2.yaml
-./poc/exposed/java-melody-exposed.yaml
+./poc/exposed/java-melody-exposed_1.yaml
 ./poc/exposed/java-melody-exposed_2_1.yaml
-./poc/exposed/java-melody-exposed_3.yaml
 ./poc/exposed/jenkins-credentials-disclosure_2.yml
 ./poc/exposed/jenkins-exposed.yaml
 ./poc/exposed/jenkins-home-dir-exposure.yaml
@@ -274362,7 +274371,7 @@
 ./poc/exposed/jolokia-info-disclosure_8.yaml
 ./poc/exposed/jolokia-info-disclosure_9.yaml
 ./poc/exposed/joomla-sensitive-config.yaml
-./poc/exposed/joomla-version-disclosure_1.yaml
+./poc/exposed/joomla-version-disclosure.yaml
 ./poc/exposed/jsherp-admin-info-disclosure.yaml
 ./poc/exposed/jsherp-v33-info-disclosure.yaml
 ./poc/exposed/jupyter-notebooks-exposed.yaml
@@ -274389,12 +274398,12 @@
 ./poc/exposed/kyan-credential-exposure-8554.yaml
 ./poc/exposed/kyan-credential-exposure-8555.yaml
 ./poc/exposed/kyan-credential-exposure.yaml
-./poc/exposed/kyan-credential-exposure_1_1.yaml
+./poc/exposed/kyan-credential-exposure_1.yaml
 ./poc/exposed/kyan-credential-exposure_3.yaml
 ./poc/exposed/kyan-credential-exposure_6.yaml
 ./poc/exposed/kyan-network-credentials-disclosure-8556.yaml
 ./poc/exposed/kyan-network-credentials-disclosure.yaml
-./poc/exposed/kyan-network-credentials-disclosure_1.yaml
+./poc/exposed/kyan-network-credentials-disclosure_3.yaml
 ./poc/exposed/landray-syszonepersoninfo-disclosure.yaml
 ./poc/exposed/laravel-debug-mode-database-credentials-disclosure.yaml
 ./poc/exposed/laravel-env-disclosure.yaml
@@ -274450,8 +274459,8 @@
 ./poc/exposed/maipu-wuxian-exportconfigbyhttp-disclosure.yaml
 ./poc/exposed/mapbox-token-disclosure.yaml
 ./poc/exposed/mapbox-token-disclosure_1.yaml
-./poc/exposed/mapbox-token-disclosure_2.yaml
 ./poc/exposed/mapbox-token-disclosure_3.yaml
+./poc/exposed/mapbox-token-disclosure_4.yaml
 ./poc/exposed/mfp-unauth-exposure.yaml
 ./poc/exposed/mfp-unauth-exposure_1.yaml
 ./poc/exposed/mobsf-framework-exposure.yaml
@@ -274601,7 +274610,7 @@
 ./poc/exposed/phpunit-result-cache-exposure_7.yaml
 ./poc/exposed/pinata-keys-exposed.yaml
 ./poc/exposed/pipeline-config-exposure.yaml
-./poc/exposed/pki-validation-exposure_3.yaml
+./poc/exposed/pki-validation-exposure.yaml
 ./poc/exposed/pmb-local-file-disclosure-9615.yaml
 ./poc/exposed/pmb-local-file-disclosure-9616.yaml
 ./poc/exposed/pmb-local-file-disclosure-9617.yaml
@@ -274671,6 +274680,7 @@
 ./poc/exposed/pyproject-disclosure_2_1.yaml
 ./poc/exposed/pyproject-disclosure_3.yaml
 ./poc/exposed/pyproject-disclosure_5.yaml
+./poc/exposed/python-venv-exposure.yaml
 ./poc/exposed/qianxin-360tianqing-adminlogconf-disclosure.yaml
 ./poc/exposed/qianxin-tianqing-info-disclosure_1.yaml
 ./poc/exposed/qianxin-tianqing-info-disclosure_1_1.yaml
@@ -274697,7 +274707,7 @@
 ./poc/exposed/rails-secret-token-disclosure-9810.yaml
 ./poc/exposed/rails-secret-token-disclosure.yaml
 ./poc/exposed/rails-secret-token-disclosure_1_1.yaml
-./poc/exposed/rails-secret-token-disclosure_2_3.yaml
+./poc/exposed/rails-secret-token-disclosure_2.yaml
 ./poc/exposed/rails-secret-token-disclosure_4.yaml
 ./poc/exposed/rails-secret-token-disclosure_5.yaml
 ./poc/exposed/rails-secret-token-disclosure_7.yaml
@@ -274741,7 +274751,7 @@
 ./poc/exposed/roundcube-log-disclosure-9906.yaml
 ./poc/exposed/roundcube-log-disclosure-9907.yaml
 ./poc/exposed/roundcube-log-disclosure.yaml
-./poc/exposed/roundcube-log-disclosure_1_2.yaml
+./poc/exposed/roundcube-log-disclosure_1.yaml
 ./poc/exposed/roundcube-log-disclosure_3_1.yaml
 ./poc/exposed/roundcube-log-disclosure_4.yaml
 ./poc/exposed/roundcube-log-disclosure_5.yaml
@@ -274958,6 +274968,7 @@
 ./poc/exposed/tomcat-cookie-exposed_1.yaml
 ./poc/exposed/tomcat-cookie-exposed_1_1.yaml
 ./poc/exposed/tomcat-cookie-exposed_2.yaml
+./poc/exposed/tomcat-exposed-docs.yaml
 ./poc/exposed/tomcat-exposed-docs_1.yaml
 ./poc/exposed/tomcat-exposed-docs_3.yaml
 ./poc/exposed/tomcat-exposed-docs_5.yaml
@@ -275057,7 +275068,7 @@
 ./poc/exposed/viminfo-disclosure.yaml
 ./poc/exposed/viminfo-disclosure_2.yaml
 ./poc/exposed/viminfo-disclosure_4.yaml
-./poc/exposed/vpc-endpoint-exposed_3.yaml
+./poc/exposed/vpc-endpoint-exposed.yaml
 ./poc/exposed/vscode-sftp-exposure.yaml
 ./poc/exposed/wallet-recovery-phrase-disclosure_2.yml
 ./poc/exposed/watchguard-credentials-disclosure-11105.yaml
@@ -279232,9 +279243,10 @@
 ./poc/java/ecology-springframework-directoryTraversal.yaml
 ./poc/java/embed-ispring-b6fe75098511d48baa555e9c08e61fd1.yaml
 ./poc/java/embed_ispring-19c3d7dd-ccde-463c-abd9-f2c67961251a.yaml
+./poc/java/exposed-alps-spring-2.yaml
 ./poc/java/exposed-alps-spring-3_3.yaml
+./poc/java/exposed-alps-spring-7285.yaml
 ./poc/java/exposed-alps-spring_7.yaml
-./poc/java/exposed-struts.yaml
 ./poc/java/facemeeting-struts2-rce.yaml
 ./poc/java/fastspring-2c13d2bd3b17da87e15b2429f2a85187.yaml
 ./poc/java/fastspring-e96d118a-e38c-4043-9550-5f5ab0d83dc7.yaml
@@ -279278,8 +279290,12 @@
 ./poc/java/j2ee-lfi.yaml
 ./poc/java/java-cim.yaml
 ./poc/java/java-ftp-proxy-detect.yaml
+./poc/java/java-melody-exposed-1.yaml
 ./poc/java/java-melody-exposed-2.yaml
-./poc/java/java-melody-exposed_1.yaml
+./poc/java/java-melody-exposed-8221.yaml
+./poc/java/java-melody-exposed-8222.yaml
+./poc/java/java-melody-exposed.yaml
+./poc/java/java-melody-exposed_3.yaml
 ./poc/java/java-melody-stat.yaml
 ./poc/java/java-melody-xss-8225.yaml
 ./poc/java/java-melody-xss-8225_1.yaml
@@ -279380,7 +279396,7 @@
 ./poc/java/jboss-web-service_1_1.yaml
 ./poc/java/jboss-web-service_2_1.yaml
 ./poc/java/jboss-web-service_3.yaml
-./poc/java/jboss-workflow_2.yaml
+./poc/java/jboss-workflow.yaml
 ./poc/java/jboss-xml-console-unauthorized.yaml
 ./poc/java/jboss.yaml
 ./poc/java/jboss_3.yaml
@@ -279706,7 +279722,6 @@
 ./poc/java/springboot-heapdump-10462.yaml
 ./poc/java/springboot-heapdump-10463.yaml
 ./poc/java/springboot-heapdump-10464.yaml
-./poc/java/springboot-heapdump-10465.yaml
 ./poc/java/springboot-heapdump-2.yaml
 ./poc/java/springboot-heapdump-v2.yaml
 ./poc/java/springboot-heapdump.yaml
@@ -279934,7 +279949,6 @@
 ./poc/java/tomcat-examples-login_4.yaml
 ./poc/java/tomcat-examples-login_5.yaml
 ./poc/java/tomcat-examples-login_CVE-2022-34305.yaml
-./poc/java/tomcat-exposed-docs.yaml
 ./poc/java/tomcat-exposed-docs_2_1.yaml
 ./poc/java/tomcat-exposed-docs_4.yaml
 ./poc/java/tomcat-exposed.yaml
@@ -281340,6 +281354,7 @@
 ./poc/local_file_inclusion/bullwark-momentum-lfi_4.yaml
 ./poc/local_file_inclusion/bullwark-momentum-lfi_6.yaml
 ./poc/local_file_inclusion/bullwark-momentum-lfi_8.yaml
+./poc/local_file_inclusion/bullwark-momentum-lfi_9.yaml
 ./poc/local_file_inclusion/cab-fare-calculator-lfi-818.yaml
 ./poc/local_file_inclusion/cab-fare-calculator-lfi-818_1.yaml
 ./poc/local_file_inclusion/cab-fare-calculator-lfi-819.yaml
@@ -286199,7 +286214,7 @@
 ./poc/nginx/nginx-version-9121.yaml
 ./poc/nginx/nginx-version-9122.yaml
 ./poc/nginx/nginx-version-9123.yaml
-./poc/nginx/nginx-version-discovery_2.yaml
+./poc/nginx/nginx-version-discovery.yaml
 ./poc/nginx/nginx-version.yaml
 ./poc/nginx/nginx-version_2.yaml
 ./poc/nginx/nginx-version_5.yaml
@@ -377682,6 +377697,7 @@
 ./poc/other/turn-off-comments-for-all-posts.yaml
 ./poc/other/turn-off-comments-for-all-posts_1.yaml
 ./poc/other/turn_off_comments_for_all_posts-3ee49082-5255-4ab7-9562-bd786a32382c.yaml
+./poc/other/tutor-007df869-dacb-4b0a-9c98-50586934cdab.yaml
 ./poc/other/tutor-00ec14d4-d97b-40b1-b61b-05e911f49bb0.yaml
 ./poc/other/tutor-018c942c74a65c124e20e8b0d3ade5aa.yaml
 ./poc/other/tutor-050647a8-6743-46e4-b31c-0b5bd4a1007f.yaml
@@ -389380,11 +389396,7 @@
 ./poc/python/django-debug-enabled.yaml
 ./poc/python/django-debug-exposed-404.yaml
 ./poc/python/django-debug-exposure-7028.yaml
-./poc/python/django-debug-exposure-7030.yaml
-./poc/python/django-debug-exposure-7031_3.yaml
 ./poc/python/django-debug-exposure-csrf.yaml
-./poc/python/django-debug-exposure.yaml
-./poc/python/django-debug-exposure_2.yaml
 ./poc/python/django-debug-toolbar.yaml
 ./poc/python/django-debug-v2.yaml
 ./poc/python/django-debug.yaml
@@ -389408,7 +389420,6 @@
 ./poc/python/django-secret-key_4.yaml
 ./poc/python/django-secret.key.yaml
 ./poc/python/django-secret.key_2.yaml
-./poc/python/django-variables-exposed_2.yaml
 ./poc/python/django-variables-exposed_3.yaml
 ./poc/python/django.yaml
 ./poc/python/django_3.yaml
@@ -389494,7 +389505,6 @@
 ./poc/python/python-scanner-9748.yaml
 ./poc/python/python-scanner.yaml
 ./poc/python/python-scanner_2.yaml
-./poc/python/python-venv-exposure.yaml
 ./poc/python/yaml-poc-djangoproject-django-unsafe_config-CT-157837.yml
 ./poc/rabbitmq/rabbitmq-dashboard-9776.yaml
 ./poc/rabbitmq/rabbitmq-dashboard-9777.yaml
@@ -394714,6 +394724,7 @@
 ./poc/remote_code_execution/ruijie-eg-rce_6.yaml
 ./poc/remote_code_execution/ruijie-eg-rce_7.yaml
 ./poc/remote_code_execution/ruijie-eg-rce_8.yaml
+./poc/remote_code_execution/ruijie-eg-rce_9.yaml
 ./poc/remote_code_execution/ruijie-eweb-rce-cnvd-2021-09650.yaml
 ./poc/remote_code_execution/ruijie-eweb-rce.yaml
 ./poc/remote_code_execution/ruijie-nbr-and-smartweb-level15-rce_1.yaml
@@ -399551,7 +399562,7 @@
 ./poc/sharepoint/microsoft-sharepoint_3.yaml
 ./poc/sharepoint/sharepoint-amsi.yaml
 ./poc/sharepoint/sharepoint-favicon.yaml
-./poc/sharepoint/sharepoint-toolshell-backdoor_3.yaml
+./poc/sharepoint/sharepoint-toolshell-backdoor.yaml
 ./poc/sharepoint/sharepoint-version.yaml
 ./poc/sharepoint/sharepoint-workflow.yaml
 ./poc/shopify/CVE-2019-25214-wpshopify-d04f11b4-ee58-428b-aaa2-dc7d9f3e68e3.yaml
@@ -427644,6 +427655,7 @@
 ./poc/wordpress/CVE-2026-24593-another_wordpress_classifieds_plugin-da3b7218-4655-4def-a3f9-9931d6943583.yaml
 ./poc/wordpress/CVE-2026-24616-wp_popups_lite-302b004c-0443-4f47-8493-8bc7c5a25788.yaml
 ./poc/wordpress/CVE-2026-24626-logo_slider_wp-a6b5cca3-7911-4bb0-b54b-ae19ce570c5c.yaml
+./poc/wordpress/CVE-2026-2471-wp_mail_logging-10e4c52d-c82f-4393-9a56-5714b3a108d1.yaml
 ./poc/wordpress/CVE-2026-2489-tp2wp_importer-4eacf7b7-100b-423d-920f-14f3e33f5f60.yaml
 ./poc/wordpress/CVE-2026-24941-wp_job_portal-b613d4ab-6e96-428b-b853-bda5950a6027.yaml
 ./poc/wordpress/CVE-2026-2495-wpnakama-7ffa92be-9d38-40d9-954d-d890136b5aa1.yaml
@@ -438310,6 +438322,7 @@
 ./poc/wordpress/wp_mail_log-a3d14d8f-61f4-4942-9eff-42264bb036bb.yaml
 ./poc/wordpress/wp_mail_log-a5155cee-df51-4da3-be86-38df2ab9908f.yaml
 ./poc/wordpress/wp_mail_log-bf169c9c-26f6-4af7-926e-1be34e638fd6.yaml
+./poc/wordpress/wp_mail_logging-10e4c52d-c82f-4393-9a56-5714b3a108d1.yaml
 ./poc/wordpress/wp_mail_logging-5c8a4708-eb74-45e1-ba47-e245491a8c2f.yaml
 ./poc/wordpress/wp_mail_logging-79ff583b-f18a-4e04-9c23-9d3a4eca8c6b.yaml
 ./poc/wordpress/wp_mail_logging-de00d13b-fab9-4284-9594-abd000fbb7ef.yaml
