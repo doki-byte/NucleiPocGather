@@ -14880,7 +14880,7 @@
 ./poc/cisco/cisco-sendgrid_5.yaml
 ./poc/cisco/cisco-sla-responder.yaml
 ./poc/cisco/cisco-smartinstall.yaml
-./poc/cisco/cisco-ssl-vpn_1.yaml
+./poc/cisco/cisco-ssl-vpn.yaml
 ./poc/cisco/cisco-ssl-vpn_3.yaml
 ./poc/cisco/cisco-telepresence-976.yaml
 ./poc/cisco/cisco-telepresence-977.yaml
@@ -16380,7 +16380,7 @@
 ./poc/crlf_injection/cRlf.yaml
 ./poc/crlf_injection/crlf-1266.yaml
 ./poc/crlf_injection/crlf-extended_1.yaml
-./poc/crlf_injection/crlf_3.yaml
+./poc/crlf_injection/crlf.yaml
 ./poc/cross_site_request_forgery/csrf.yaml
 ./poc/cross_site_request_forgery/csrf2.yaml
 ./poc/cve/._CVE-2022-22965.yaml
@@ -218082,7 +218082,7 @@
 ./poc/cve/CVE-2024-47335.yaml
 ./poc/cve/CVE-2024-47336-865f1b98ba42b6fae59f2983e1315398.yaml
 ./poc/cve/CVE-2024-47336.yaml
-./poc/cve/CVE-2024-47336_1_2.yaml
+./poc/cve/CVE-2024-47336_1.yaml
 ./poc/cve/CVE-2024-47337-73e783323bc220c33becfeba650b5d34.yaml
 ./poc/cve/CVE-2024-47337-joy_of_text-4afb151c-4e6b-4441-a190-becd4fe78019_1.yaml
 ./poc/cve/CVE-2024-47337.yaml
@@ -273322,6 +273322,7 @@
 ./poc/exposed/CVE-2025-22552-affiliate_disclosure_statement-c565f455-6c83-42af-9f79-dcf4d03320a8.yaml
 ./poc/exposed/CVE-2025-22771-sensitive_chinese_words_scanner-444f6a49-9d7a-4661-bab7-06d16f5f0317.yaml
 ./poc/exposed/CVE-2025-49344-sensitive_tag_cloud-aed630d4-7f8b-4b42-8209-aa8a536349da.yaml
+./poc/exposed/Django-Debug-Disclosure.yaml
 ./poc/exposed/Elmah-log-disclosure.yaml
 ./poc/exposed/FCKEditor-Exposed.yaml
 ./poc/exposed/GLPI_Exposed_Data_1.yaml
@@ -273451,6 +273452,7 @@
 ./poc/exposed/apache-server-info-disclosure__1_1.yaml
 ./poc/exposed/apache-source-code-disclosure.yaml
 ./poc/exposed/apache-spark-enviroment-exposure.yaml
+./poc/exposed/apache-tomcat-snoop-ip-disclosure.yaml
 ./poc/exposed/apache-tomcat-snoop-ip-disclosure_1_1.yaml
 ./poc/exposed/apachespark-ui-exposed.yaml
 ./poc/exposed/apdisk-disclosure.yaml
@@ -273536,7 +273538,7 @@
 ./poc/exposed/bitbucket-oauth-exposure.yaml
 ./poc/exposed/bitbucket-oauth-exposure_2.yaml
 ./poc/exposed/bitly-secret-key-disclosure.yaml
-./poc/exposed/bitrix-full-path-disclosure.yaml
+./poc/exposed/bitrix-full-path-disclosure_1.yaml
 ./poc/exposed/broadcom-backupsettings-exposure.yaml
 ./poc/exposed/cadvisor-exposure.yaml
 ./poc/exposed/cadvisor-exposure_1.yaml
@@ -273645,7 +273647,7 @@
 ./poc/exposed/database.json-exposure.yaml
 ./poc/exposed/database.json-exposure_1.yaml
 ./poc/exposed/datang-ac-disclosure.yaml
-./poc/exposed/dd-wrt-controlpanel-exposure_3.yaml
+./poc/exposed/dd-wrt-controlpanel-exposure.yaml
 ./poc/exposed/dede-cms-radminpass-disclosure.yaml
 ./poc/exposed/deployment-interface-exposed.yaml
 ./poc/exposed/deployment-interface-exposed_3.yaml
@@ -273660,11 +273662,12 @@
 ./poc/exposed/dgraph-dashboard-exposure_8.yaml
 ./poc/exposed/dgraph-dashboard-exposure_9.yaml
 ./poc/exposed/disclosure-path-env.yaml
+./poc/exposed/django-debug-exposure-7028.yaml
 ./poc/exposed/django-debug-exposure-7029.yaml
 ./poc/exposed/django-debug-exposure-7029_1.yaml
 ./poc/exposed/django-debug-exposure-7030.yaml
 ./poc/exposed/django-debug-exposure-7030_3.yaml
-./poc/exposed/django-debug-exposure-7031_3.yaml
+./poc/exposed/django-debug-exposure-csrf.yaml
 ./poc/exposed/django-debug-exposure.yaml
 ./poc/exposed/django-debug-exposure_2.yaml
 ./poc/exposed/django-debug-exposure_4.yaml
@@ -273785,13 +273788,16 @@
 ./poc/exposed/exposed-alps-spring-1_2.yaml
 ./poc/exposed/exposed-alps-spring-2_1.yaml
 ./poc/exposed/exposed-alps-spring-3.yaml
+./poc/exposed/exposed-alps-spring-3_3.yaml
 ./poc/exposed/exposed-alps-spring-7283.yaml
 ./poc/exposed/exposed-alps-spring-7284.yaml
+./poc/exposed/exposed-alps-spring-7285.yaml
 ./poc/exposed/exposed-alps-spring-7285_1.yaml
 ./poc/exposed/exposed-alps-spring.yaml
 ./poc/exposed/exposed-alps-spring_1.yaml
 ./poc/exposed/exposed-alps-spring_2_2.yaml
 ./poc/exposed/exposed-alps-spring_5.yaml
+./poc/exposed/exposed-alps-spring_7.yaml
 ./poc/exposed/exposed-api-docs.yaml
 ./poc/exposed/exposed-api-env-variables.yaml
 ./poc/exposed/exposed-authentication-asmx-7286.yaml
@@ -273988,7 +273994,6 @@
 ./poc/exposed/exposed-sharepoint-list_3.yaml
 ./poc/exposed/exposed-smb_2.yaml
 ./poc/exposed/exposed-sonarqube.yaml
-./poc/exposed/exposed-springboot.yaml
 ./poc/exposed/exposed-sqlite-manager-1.yaml
 ./poc/exposed/exposed-sqlite-manager-1_2.yaml
 ./poc/exposed/exposed-sqlite-manager-2.yaml
@@ -274328,12 +274333,14 @@
 ./poc/exposed/iotawatt-app-exposure_3.yaml
 ./poc/exposed/iotawatt-app-exposure_4.yaml
 ./poc/exposed/iotawatt-app-exposure_6.yaml
+./poc/exposed/java-melody-exposed-1.yaml
 ./poc/exposed/java-melody-exposed-1_2.yaml
+./poc/exposed/java-melody-exposed-2.yaml
 ./poc/exposed/java-melody-exposed-2_1.yaml
+./poc/exposed/java-melody-exposed-8221.yaml
 ./poc/exposed/java-melody-exposed-8223.yaml
 ./poc/exposed/java-melody-exposed-8224.yaml
 ./poc/exposed/java-melody-exposed-8224_2.yaml
-./poc/exposed/java-melody-exposed_1.yaml
 ./poc/exposed/java-melody-exposed_2_1.yaml
 ./poc/exposed/jenkins-credentials-disclosure_2.yml
 ./poc/exposed/jenkins-exposed.yaml
@@ -274920,6 +274927,7 @@
 ./poc/exposed/sound4-file-disclosure_4.yaml
 ./poc/exposed/source-code-disclosure.yaml
 ./poc/exposed/source-code-disclosure_1.yaml
+./poc/exposed/springboot-exposures.yaml
 ./poc/exposed/springboot-exposures_1.yaml
 ./poc/exposed/springboot-exposures_1_1.yaml
 ./poc/exposed/sqs-queue-exposed_3.yaml
@@ -274970,8 +274978,12 @@
 ./poc/exposed/tomcat-cookie-exposed_2.yaml
 ./poc/exposed/tomcat-exposed-docs.yaml
 ./poc/exposed/tomcat-exposed-docs_1.yaml
+./poc/exposed/tomcat-exposed-docs_2_1.yaml
 ./poc/exposed/tomcat-exposed-docs_3.yaml
+./poc/exposed/tomcat-exposed-docs_4.yaml
 ./poc/exposed/tomcat-exposed-docs_5.yaml
+./poc/exposed/tomcat-exposed.yaml
+./poc/exposed/tomcat-server-xml-disclosure.yaml
 ./poc/exposed/tomcat-version-disclosure.yaml
 ./poc/exposed/tongda-contact-list-disclosure.yaml
 ./poc/exposed/tongda-contact-list-exposure.yaml
@@ -275604,7 +275616,7 @@
 ./poc/fuzz/random-fuzz-01_3.yaml
 ./poc/fuzz/random-fuzz-02-9823.yaml
 ./poc/fuzz/random-fuzz-02-9823_1.yaml
-./poc/fuzz/random-fuzz-03.yaml
+./poc/fuzz/random-fuzz-03-9825.yaml
 ./poc/fuzz/random-fuzz-03_2.yaml
 ./poc/fuzz/ssti-fuzz.yaml
 ./poc/fuzz/waf-fuzz.yaml
@@ -279159,7 +279171,6 @@
 ./poc/java/apache-tomcat-snoop-376.yaml
 ./poc/java/apache-tomcat-snoop-377.yaml
 ./poc/java/apache-tomcat-snoop-cookie-handling.yaml
-./poc/java/apache-tomcat-snoop-ip-disclosure.yaml
 ./poc/java/apache-tomcat-snoop_1.yaml
 ./poc/java/apache-tomcat-snoop_2.yaml
 ./poc/java/apache-tomcat-snoop_5.yaml
@@ -279244,9 +279255,6 @@
 ./poc/java/embed-ispring-b6fe75098511d48baa555e9c08e61fd1.yaml
 ./poc/java/embed_ispring-19c3d7dd-ccde-463c-abd9-f2c67961251a.yaml
 ./poc/java/exposed-alps-spring-2.yaml
-./poc/java/exposed-alps-spring-3_3.yaml
-./poc/java/exposed-alps-spring-7285.yaml
-./poc/java/exposed-alps-spring_7.yaml
 ./poc/java/facemeeting-struts2-rce.yaml
 ./poc/java/fastspring-2c13d2bd3b17da87e15b2429f2a85187.yaml
 ./poc/java/fastspring-e96d118a-e38c-4043-9550-5f5ab0d83dc7.yaml
@@ -279290,11 +279298,9 @@
 ./poc/java/j2ee-lfi.yaml
 ./poc/java/java-cim.yaml
 ./poc/java/java-ftp-proxy-detect.yaml
-./poc/java/java-melody-exposed-1.yaml
-./poc/java/java-melody-exposed-2.yaml
-./poc/java/java-melody-exposed-8221.yaml
 ./poc/java/java-melody-exposed-8222.yaml
 ./poc/java/java-melody-exposed.yaml
+./poc/java/java-melody-exposed_1.yaml
 ./poc/java/java-melody-exposed_3.yaml
 ./poc/java/java-melody-stat.yaml
 ./poc/java/java-melody-xss-8225.yaml
@@ -279678,7 +279684,6 @@
 ./poc/java/springboot-env_5.yaml
 ./poc/java/springboot-env_7.yaml
 ./poc/java/springboot-env_8.yaml
-./poc/java/springboot-exposures.yaml
 ./poc/java/springboot-features.yaml
 ./poc/java/springboot-features_1.yaml
 ./poc/java/springboot-features_1_1.yaml
@@ -279722,6 +279727,7 @@
 ./poc/java/springboot-heapdump-10462.yaml
 ./poc/java/springboot-heapdump-10463.yaml
 ./poc/java/springboot-heapdump-10464.yaml
+./poc/java/springboot-heapdump-10465.yaml
 ./poc/java/springboot-heapdump-2.yaml
 ./poc/java/springboot-heapdump-v2.yaml
 ./poc/java/springboot-heapdump.yaml
@@ -279949,9 +279955,6 @@
 ./poc/java/tomcat-examples-login_4.yaml
 ./poc/java/tomcat-examples-login_5.yaml
 ./poc/java/tomcat-examples-login_CVE-2022-34305.yaml
-./poc/java/tomcat-exposed-docs_2_1.yaml
-./poc/java/tomcat-exposed-docs_4.yaml
-./poc/java/tomcat-exposed.yaml
 ./poc/java/tomcat-found.yaml
 ./poc/java/tomcat-manager-bruteforce.yaml
 ./poc/java/tomcat-manager-bruteforce_2.yaml
@@ -280036,7 +280039,6 @@
 ./poc/java/tomcat-scripts_3.yaml
 ./poc/java/tomcat-scripts_4.yaml
 ./poc/java/tomcat-scripts_5.yaml
-./poc/java/tomcat-server-xml-disclosure.yaml
 ./poc/java/tomcat-stacktraces.yaml
 ./poc/java/tomcat-stacktraces_2.yaml
 ./poc/java/tomcat-stacktraces_4.yaml
@@ -388639,7 +388641,7 @@
 ./poc/php/php-shell-plugin-d41d8cd98f00b204e9800998ecf8427e.yaml
 ./poc/php/php-shell-plugin_1.yaml
 ./poc/php/php-shell.yaml
-./poc/php/php-shell_1_3.yaml
+./poc/php/php-shell_1.yaml
 ./poc/php/php-support-tickets.yaml
 ./poc/php/php-support-tickets_2.yaml
 ./poc/php/php-symfony-debug.yaml
@@ -389395,8 +389397,7 @@
 ./poc/python/django-debug-enable.yaml
 ./poc/python/django-debug-enabled.yaml
 ./poc/python/django-debug-exposed-404.yaml
-./poc/python/django-debug-exposure-7028.yaml
-./poc/python/django-debug-exposure-csrf.yaml
+./poc/python/django-debug-exposure-7031_3.yaml
 ./poc/python/django-debug-toolbar.yaml
 ./poc/python/django-debug-v2.yaml
 ./poc/python/django-debug.yaml
@@ -389425,7 +389426,6 @@
 ./poc/python/django_3.yaml
 ./poc/python/django_cms_1.yaml
 ./poc/python/djangoapi.yaml
-./poc/python/djangodebug-220331-222254.yaml
 ./poc/python/djangodebug.yaml
 ./poc/python/djangodebug_1.yaml
 ./poc/python/flask-redis-docker.yaml
@@ -398138,7 +398138,7 @@
 ./poc/samba/samba-detect.yaml
 ./poc/samba/samba-detect_1.yaml
 ./poc/samba/samba-detect_1_1.yaml
-./poc/samba/samba-detect_2_3.yaml
+./poc/samba/samba-detect_2.yaml
 ./poc/samba/samba-detect_3.yaml
 ./poc/samba/samba-swat-panel-9991.yaml
 ./poc/samba/samba-swat-panel-9992.yaml
@@ -414584,8 +414584,8 @@
 ./poc/sql/sandbox-fb1c328a478519b5a25179685bf0026a.yaml
 ./poc/sql/sandbox-theme-d41d8cd98f00b204e9800998ecf8427e.yaml
 ./poc/sql/sandbox-theme_1.yaml
+./poc/sql/sandbox.yaml
 ./poc/sql/sandbox_1.yaml
-./poc/sql/sandbox_3.yaml
 ./poc/sql/sastra_essential_addons_for_elementor-4edc7ef9-33db-4433-8ef2-cd06089ee8d5.yaml
 ./poc/sql/save-as-image-by-pdfcrowd-5d81e5db7fc3dfd7b9314de0d7b3496b.yaml
 ./poc/sql/save-as-pdf-by-pdfcrowd-39048db87de4975f2c9462e53dd2a695.yaml
