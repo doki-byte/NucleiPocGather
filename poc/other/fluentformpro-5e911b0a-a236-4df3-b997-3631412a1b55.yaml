@@ -1,15 +1,15 @@
-id: fluentformpro-e5c62e54-da06-4b44-ba70-63065e664b0d
+id: fluentformpro-5e911b0a-a236-4df3-b997-3631412a1b55
 
 info:
   name: >
-    Fluent Forms Pro Add On Pack <= 6.1.17 - Missing Authorization to Unauthenticated Payment Status modification
+    Fluent Forms Pro <= 6.1.17 - Unauthenticated Stored Cross-Site Scripting via Draft Form Submission
   author: topscoder
   severity: high
   description: >
     
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/e5c62e54-da06-4b44-ba70-63065e664b0d?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/5e911b0a-a236-4df3-b997-3631412a1b55?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
