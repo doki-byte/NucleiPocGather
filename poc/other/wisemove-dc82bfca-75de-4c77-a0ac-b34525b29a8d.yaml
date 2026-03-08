@@ -1,4 +1,4 @@
-id: wise_move-dc82bfca-75de-4c77-a0ac-b34525b29a8d
+id: wisemove-dc82bfca-75de-4c77-a0ac-b34525b29a8d
 
 info:
   name: >
@@ -15,33 +15,25 @@ info:
     cvss-score: 
     cve-id: 
   metadata:
-    fofa-query: "wp-content/themes/wise-move/"
-    google-query: inurl:"/wp-content/themes/wise-move/"
-    shodan-query: 'http.html:"wp-content/themes/wise-move/"'
-  tags: cve,wordpress,wp-theme,wise-move,critical,candidate
+    fofa-query: "wp-content/themes/wisemove/"
+    google-query: inurl:"/wp-content/themes/wisemove/"
+    shodan-query: 'http.html:"wp-content/themes/wisemove/"'
+  tags: cve,wordpress,wp-theme,wisemove,critical,candidate
 
 http:
   - method: GET
     redirects: true
     max-redirects: 3
     path:
-      - "{{BaseURL}}/wp-content/themes/wise-move/style.css"
+      - "{{BaseURL}}/wp-content/themes/wisemove/style.css"
 
     extractors:
       - type: regex
         name: version
         part: body
         group: 1
-        internal: true
         regex:
-          - "(?mi)Version: ([0-9.]+)"
-
-      - type: regex
-        name: version
-        part: body
-        group: 1
-        regex:
-          - "(?mi)Version: ([0-9.]+)"
+          - "(?mi)Version:\\s*([0-9.]+)"
 
     matchers-condition: and
     matchers:
@@ -51,7 +43,7 @@ http:
 
       - type: word
         words:
-          - "wise-move"
+          - "wisemove"
         part: body
 
       - type: dsl

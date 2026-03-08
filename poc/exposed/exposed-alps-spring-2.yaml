@@ -1,4 +1,4 @@
-id: exposed-alps-spring 3
+id: exposed-alps-spring 2
 info:
   name: Exposed Spring Data REST Application-Level Profile Semantics (ALPS)
   author: dwisiswant0
@@ -12,7 +12,7 @@ requests:
     threads: 100
     raw:
       - |
-        GET /alps/profile HTTP/1.1
+        GET /api/profile HTTP/1.1
         Host: {{Subdomains}}
         User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
         Accept-Encoding: gzip, deflate

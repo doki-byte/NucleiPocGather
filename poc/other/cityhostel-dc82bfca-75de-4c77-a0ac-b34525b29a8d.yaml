@@ -1,4 +1,4 @@
-id: wise_move-dc82bfca-75de-4c77-a0ac-b34525b29a8d
+id: cityhostel-dc82bfca-75de-4c77-a0ac-b34525b29a8d
 
 info:
   name: >
@@ -15,33 +15,25 @@ info:
     cvss-score: 
     cve-id: 
   metadata:
-    fofa-query: "wp-content/themes/wise-move/"
-    google-query: inurl:"/wp-content/themes/wise-move/"
-    shodan-query: 'http.html:"wp-content/themes/wise-move/"'
-  tags: cve,wordpress,wp-theme,wise-move,critical,candidate
+    fofa-query: "wp-content/themes/cityhostel/"
+    google-query: inurl:"/wp-content/themes/cityhostel/"
+    shodan-query: 'http.html:"wp-content/themes/cityhostel/"'
+  tags: cve,wordpress,wp-theme,cityhostel,critical,candidate
 
 http:
   - method: GET
     redirects: true
     max-redirects: 3
     path:
-      - "{{BaseURL}}/wp-content/themes/wise-move/style.css"
+      - "{{BaseURL}}/wp-content/themes/cityhostel/style.css"
 
     extractors:
       - type: regex
         name: version
         part: body
         group: 1
-        internal: true
         regex:
-          - "(?mi)Version: ([0-9.]+)"
-
-      - type: regex
-        name: version
-        part: body
-        group: 1
-        regex:
-          - "(?mi)Version: ([0-9.]+)"
+          - "(?mi)Version:\\s*([0-9.]+)"
 
     matchers-condition: and
     matchers:
@@ -51,9 +43,9 @@ http:
 
       - type: word
         words:
-          - "wise-move"
+          - "cityhostel"
         part: body
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.1.15')
+          - compare_versions(version, '<= 1.2.3')
