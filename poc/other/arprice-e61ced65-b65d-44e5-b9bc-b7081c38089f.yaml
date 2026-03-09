@@ -1,15 +1,15 @@
-id: arprice-efff81ea-b88e-4f51-b8db-1f8255e7736a
+id: arprice-e61ced65-b65d-44e5-b9bc-b7081c38089f
 
 info:
   name: >
-    ARPrice <= 4.1.3 - Authenticated (Subscriber+) PHP Object Injection
+    ARPrice <= 4.1.3 - Authenticated (Contributor+) Stored Cross-Site Scripting
   author: topscoder
   severity: low
   description: >
     
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/efff81ea-b88e-4f51-b8db-1f8255e7736a?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/e61ced65-b65d-44e5-b9bc-b7081c38089f?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
