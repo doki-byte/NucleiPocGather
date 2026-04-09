@@ -4,6 +4,7 @@ info:
   name: Jira Service Desk Signup
   author: TechbrunchFR
   severity: medium
+  tags: jira,atlassian,service
 
 requests:
   - method: POST
@@ -12,6 +13,7 @@ requests:
     headers:
       Content-Type: application/json
     body: '{"email":"invalid","signUpContext":{},"secondaryEmail":"","usingNewUi":true}'
+    matchers-condition: and
     matchers:
       - type: word
         words:

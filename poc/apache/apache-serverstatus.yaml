@@ -3,9 +3,9 @@ id: apache-serverstatus
 info:
   name: Apache Server Status Page
   author: notnotnotveg
-  severity: low
+  severity: informative
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/server-status"
