@@ -12,7 +12,7 @@ info:
     verified: true
     max-request: 1
     fofa-query: title="Anteon:"
-  tags: anteon,misconfig,dashboard,unauth,vuln
+  tags: anteon,misconfig,dashboard,unauth
 
 http:
   - method: GET

@@ -10,7 +10,7 @@ info:
     verified: true
     max-request: 1
     fofa-query: title="Dell Remote web"
-  tags: dell,remote-web,panel,login,discovery
+  tags: dell,remote-web,panel,login
 
 http:
   - method: GET
