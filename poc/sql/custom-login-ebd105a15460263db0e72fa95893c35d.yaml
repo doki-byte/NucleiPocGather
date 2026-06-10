@@ -1,0 +1,52 @@
+http:
+- extractors:
+  - group: 1
+    internal: true
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - custom-login
+  - dsl:
+    - compare_versions(version, '<= 4.1.0')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/custom-login/readme.txt'
+  redirects: true
+id: custom-login-ebd105a15460263db0e72fa95893c35d
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/custom-login/
+    google-query: inurl:"/wp-content/plugins/custom-login/"
+    shodan-query: 'vuln:'
+  name: 'Custom Login <= 4.1.0 - Missing Authorization
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/b23afc11-c31d-4569-8f4b-8141eef7b3d9?source=api-scan
+  severity: high
+  tags: cve,wordpress,wp-plugin,custom-login,high

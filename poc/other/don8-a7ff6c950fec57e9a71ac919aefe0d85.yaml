@@ -1,0 +1,53 @@
+http:
+- extractors:
+  - group: 1
+    internal: true
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - don8
+  - dsl:
+    - compare_versions(version, '<= 0.4')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/don8/readme.txt'
+  redirects: true
+id: don8-a7ff6c950fec57e9a71ac919aefe0d85
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/don8/
+    google-query: inurl:"/wp-content/plugins/don8/"
+    shodan-query: 'vuln:'
+  name: 'Don8 <= 0.4 - Authenticated (Administrator+) Stored Cross-Site Scripting
+    via settings
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/a9b2b094-9a2d-4c73-be5f-b2a6f3da9233?source=api-scan
+  severity: low
+  tags: cve,wordpress,wp-plugin,don8,low

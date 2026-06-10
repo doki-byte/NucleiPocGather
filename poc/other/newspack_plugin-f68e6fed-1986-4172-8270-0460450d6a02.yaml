@@ -1,0 +1,45 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - newspack-plugin
+  - dsl:
+    - compare_versions(version, '<= 3.8.6')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/newspack-plugin/readme.txt'
+  redirects: true
+id: newspack_plugin-f68e6fed-1986-4172-8270-0460450d6a02
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/newspack-plugin/
+    google-query: inurl:"/wp-content/plugins/newspack-plugin/"
+    shodan-query: http.html:"wp-content/plugins/newspack-plugin/"
+  name: 'Newspack <= 3.8.6 - Missing Authorization
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/f68e6fed-1986-4172-8270-0460450d6a02?source=api-scan
+  severity: high
+  tags: cve,wordpress,wp-plugin,newspack-plugin,high,candidate

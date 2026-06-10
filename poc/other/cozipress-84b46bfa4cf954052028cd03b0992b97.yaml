@@ -1,0 +1,52 @@
+http:
+- extractors:
+  - group: 1
+    internal: true
+    name: version
+    part: body
+    regex:
+    - '(?mi)Version: ([0-9.]+)'
+    type: regex
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - '(?mi)Version: ([0-9.]+)'
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - cozipress
+  - dsl:
+    - compare_versions(version, '<= 1.0.30')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/themes/cozipress/style.css'
+  redirects: true
+id: cozipress-84b46bfa4cf954052028cd03b0992b97
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/themes/cozipress/
+    google-query: inurl:"/wp-content/themes/cozipress/"
+    shodan-query: 'vuln:'
+  name: 'CoziPress <= 1.0.30 - Authenticated (Contributor+) Stored Cross-Site Scripting
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/a807658d-cdfc-48cc-8dfe-1dd2773fcbcf?source=api-scan
+  severity: low
+  tags: cve,wordpress,wp-theme,cozipress,low

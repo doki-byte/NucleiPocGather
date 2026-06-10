@@ -1,0 +1,42 @@
+http:
+- matchers:
+  - condition: and
+    part: body
+    type: word
+    words:
+    - '"object":"list"'
+    - '"data":'
+  - condition: and
+    dsl:
+    - status_code == 200
+    - contains(content_type, "application/json")
+    - contains(header, "uvicorn")
+    type: dsl
+  matchers-condition: and
+  raw:
+  - 'GET /v1/models HTTP/1.1
+
+    Host: {{Hostname}}
+
+    '
+id: xinference-detect
+info:
+  author: rxerium
+  description: 'Xinference (Xorbits Inference) was detected. Xinference is a distributed
+    LLM inference framework supporting multiple model types including LLMs, embeddings,
+    and multimodal models. The API endpoint exposes an OpenAI-compatible interface
+    with model information.
+
+    '
+  metadata:
+    max-request: 1
+    product: xinference
+    shodan-query: port:9997 http.html:"xinference"
+    vendor: xorbitsai
+    verified: true
+  name: Xinference - Detect
+  reference:
+  - https://github.com/xorbitsai/inference
+  - https://inference.readthedocs.io/
+  severity: info
+  tags: ai,detect,discovery,inference,llm,tech,xinference

@@ -1,0 +1,22 @@
+http:
+- matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - Zebra Technologies
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/index.html'
+id: zebra-detect
+info:
+  author: Nate
+  description: Detect Zebra Printers
+  metadata:
+    max-request: 1
+  name: Zebra
+  severity: info
+  tags: tech,zebra

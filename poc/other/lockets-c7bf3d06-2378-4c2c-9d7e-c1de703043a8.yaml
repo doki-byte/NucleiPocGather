@@ -1,0 +1,45 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - lockets
+  - dsl:
+    - compare_versions(version, '<= 0.999')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/lockets/readme.txt'
+  redirects: true
+id: lockets-c7bf3d06-2378-4c2c-9d7e-c1de703043a8
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/lockets/
+    google-query: inurl:"/wp-content/plugins/lockets/"
+    shodan-query: http.html:"wp-content/plugins/lockets/"
+  name: 'Lockets <= 0.999 - Reflected Cross-Site Scripting
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/c7bf3d06-2378-4c2c-9d7e-c1de703043a8?source=api-scan
+  severity: medium
+  tags: cve,wordpress,wp-plugin,lockets,medium,candidate

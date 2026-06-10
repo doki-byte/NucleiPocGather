@@ -1,0 +1,52 @@
+http:
+- extractors:
+  - group: 1
+    internal: true
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - cp-polls
+  - dsl:
+    - compare_versions(version, '< 1.0.5')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/cp-polls/readme.txt'
+  redirects: true
+id: cp-polls-abf3872b7b4716105dcc77b3ed499383
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/cp-polls/
+    google-query: inurl:"/wp-content/plugins/cp-polls/"
+    shodan-query: 'vuln:'
+  name: 'Polls CP < 1.0.5 - Cross-Site Scripting
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/3137db18-6032-4ba5-9790-c1a7a95072b4?source=api-scan
+  severity: high
+  tags: cve,wordpress,wp-plugin,cp-polls,high

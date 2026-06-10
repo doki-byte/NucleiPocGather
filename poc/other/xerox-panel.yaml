@@ -1,0 +1,30 @@
+http:
+- matchers:
+  - condition: and
+    type: word
+    words:
+    - /XUX-nwave/
+    - xuxInitialize
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/home/index.html#hashHome'
+id: xerox-panel
+info:
+  author: DhiyaneshDk
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  description: 'Xerox Fuji / VersaLink Login Panel was discovered
+
+    '
+  metadata:
+    fofa-query: body="/XUX-nwave/"
+    max-request: 1
+    runzero-match: service["http.body"] matches "(?i)/XUX-nwave/"
+  name: Xerox Fuji/VersaLink Login - Panel
+  severity: info
+  tags: panel,xerox,discovery,login

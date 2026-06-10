@@ -1,0 +1,52 @@
+http:
+- extractors:
+  - group: 1
+    internal: true
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - i-dump-iphone-to-wordpress-photo-uploader
+  - dsl:
+    - compare_versions(version, '<= 1.8')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/i-dump-iphone-to-wordpress-photo-uploader/readme.txt'
+  redirects: true
+id: i-dump-iphone-to-wordpress-photo-uploader-b98b2d350ee470fd15abfee4298aae8a
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/i-dump-iphone-to-wordpress-photo-uploader/
+    google-query: inurl:"/wp-content/plugins/i-dump-iphone-to-wordpress-photo-uploader/"
+    shodan-query: 'vuln:'
+  name: 'iDump iPhone to WordPress Photo Uploader <= 1.8 - Arbitrary File Upload
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/1e37e54b-9c00-4d04-9c81-791242d45d6c?source=api-scan
+  severity: critical
+  tags: cve,wordpress,wp-plugin,i-dump-iphone-to-wordpress-photo-uploader,critical

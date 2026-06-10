@@ -1,0 +1,52 @@
+http:
+- extractors:
+  - group: 1
+    internal: true
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - image-intense
+  - dsl:
+    - compare_versions(version, '<= 3.2.5')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/image-intense/readme.txt'
+  redirects: true
+id: image-intense-6255458bcc1c89ef95b70e7c9beed846
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/image-intense/
+    google-query: inurl:"/wp-content/plugins/image-intense/"
+    shodan-query: 'vuln:'
+  name: 'Image Intense <= 3.2.5 - SQL Injection
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/3e8a25d1-4bd8-4ecf-ac10-a333abaac328?source=api-scan
+  severity: critical
+  tags: cve,wordpress,wp-plugin,image-intense,critical

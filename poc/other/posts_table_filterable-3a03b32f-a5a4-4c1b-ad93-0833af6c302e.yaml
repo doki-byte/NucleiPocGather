@@ -1,0 +1,44 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - posts-table-filterable
+  - dsl:
+    - compare_versions(version, '<= 1.0.4.3')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/posts-table-filterable/readme.txt'
+  redirects: true
+id: posts_table_filterable-3a03b32f-a5a4-4c1b-ad93-0833af6c302e
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/posts-table-filterable/
+    google-query: inurl:"/wp-content/plugins/posts-table-filterable/"
+    shodan-query: http.html:"wp-content/plugins/posts-table-filterable/"
+  name: "TableOn \u2013 WordPress Posts Table Filterable <= 1.0.4.3 - Unauthenticated\
+    \ PHP Object Injection\n"
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/3a03b32f-a5a4-4c1b-ad93-0833af6c302e?source=api-scan
+  severity: critical
+  tags: cve,wordpress,wp-plugin,posts-table-filterable,critical,candidate

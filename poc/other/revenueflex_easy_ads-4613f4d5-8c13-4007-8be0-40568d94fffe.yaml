@@ -1,0 +1,44 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - revenueflex-easy-ads
+  - dsl:
+    - compare_versions(version, '<= 1.5')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/revenueflex-easy-ads/readme.txt'
+  redirects: true
+id: revenueflex_easy_ads-4613f4d5-8c13-4007-8be0-40568d94fffe
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/revenueflex-easy-ads/
+    google-query: inurl:"/wp-content/plugins/revenueflex-easy-ads/"
+    shodan-query: http.html:"wp-content/plugins/revenueflex-easy-ads/"
+  name: "Auto Ad Inserter \u2013 Increase Google Adsense and Ad Manager Revenue <=\
+    \ 1.5 - Missing Authorization to Authenticated (Editor+) Settings Update\n"
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/4613f4d5-8c13-4007-8be0-40568d94fffe?source=api-scan
+  severity: low
+  tags: cve,wordpress,wp-plugin,revenueflex-easy-ads,low,candidate

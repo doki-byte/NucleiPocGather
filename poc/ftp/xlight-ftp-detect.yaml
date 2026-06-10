@@ -1,0 +1,29 @@
+id: xlight-ftp-detect
+info:
+  author: pussycat0x
+  description: Xlight FTP service was detected.
+  metadata:
+    max-request: 1
+    shodan-query: Xlight FTP Server
+    verified: true
+  name: Xlight FTP Service - Detect
+  severity: info
+  tags: network,ftp,xlight,detect,tcp,discovery
+tcp:
+- extractors:
+  - group: 1
+    name: version
+    regex:
+    - Xlight FTP Server ([0-9.]+)
+    type: regex
+  host:
+  - '{{Hostname}}'
+  inputs:
+  - data: 0
+    type: hex
+  matchers:
+  - type: word
+    words:
+    - Xlight FTP Server
+  port: 21
+  read-size: 1024

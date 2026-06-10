@@ -1,0 +1,45 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - iconize
+  - dsl:
+    - compare_versions(version, '<= 1.2.4')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/iconize/readme.txt'
+  redirects: true
+id: iconize-431bcb93-396f-470b-94c9-66a9a2973552
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/iconize/
+    google-query: inurl:"/wp-content/plugins/iconize/"
+    shodan-query: http.html:"wp-content/plugins/iconize/"
+  name: 'Iconize <= 1.2.4 - Authenticated (Admin+) Remote Code Execution
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/431bcb93-396f-470b-94c9-66a9a2973552?source=api-scan
+  severity: low
+  tags: cve,wordpress,wp-plugin,iconize,low,candidate

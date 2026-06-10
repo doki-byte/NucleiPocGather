@@ -1,0 +1,45 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - menus-plus
+  - dsl:
+    - compare_versions(version, '<= 1.9.6')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/menus-plus/readme.txt'
+  redirects: true
+id: menus_plus-4f2fd4a2-4a99-479e-aa9d-3d847ba8f00c
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/menus-plus/
+    google-query: inurl:"/wp-content/plugins/menus-plus/"
+    shodan-query: http.html:"wp-content/plugins/menus-plus/"
+  name: 'Menus Plus+ <= 1.9.6 - Authenticated (Subscriber+) SQL Injection
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/4f2fd4a2-4a99-479e-aa9d-3d847ba8f00c?source=api-scan
+  severity: low
+  tags: cve,wordpress,wp-plugin,menus-plus,low,candidate

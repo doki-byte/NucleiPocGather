@@ -1,0 +1,46 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - processing-projects
+  - dsl:
+    - compare_versions(version, '<= 1.0.2')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/processing-projects/readme.txt'
+  redirects: true
+id: processing_projects-1682d8d5-665d-4ed8-825c-556e3d3184e3
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/processing-projects/
+    google-query: inurl:"/wp-content/plugins/processing-projects/"
+    shodan-query: http.html:"wp-content/plugins/processing-projects/"
+  name: 'Processing Projects <= 1.0.2 - Authenticated (Contributor+) Stored Cross-Site
+    Scripting
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/1682d8d5-665d-4ed8-825c-556e3d3184e3?source=api-scan
+  severity: low
+  tags: cve,wordpress,wp-plugin,processing-projects,low,candidate

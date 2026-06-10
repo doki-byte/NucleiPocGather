@@ -1,0 +1,44 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - mshop-npay
+  - dsl:
+    - compare_versions(version, '<= 3.3.7')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/mshop-npay/readme.txt'
+  redirects: true
+id: mshop_npay-dab587c3-54f3-4619-8de0-8740d6451f96
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/mshop-npay/
+    google-query: inurl:"/wp-content/plugins/mshop-npay/"
+    shodan-query: http.html:"wp-content/plugins/mshop-npay/"
+  name: "\uC6B0\uCEE4\uBA38\uC2A4 \uB124\uC774\uBC84\uD398\uC774 <= 3.3.7 - Authenticated\
+    \ (Contributor+) Stored Cross-Site Scripting via mnp_purchase Shortcode\n"
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/dab587c3-54f3-4619-8de0-8740d6451f96?source=api-scan
+  severity: low
+  tags: cve,wordpress,wp-plugin,mshop-npay,low,candidate

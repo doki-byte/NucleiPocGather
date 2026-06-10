@@ -1,0 +1,46 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - real-wp-shop-lite
+  - dsl:
+    - compare_versions(version, '<= 2.0.8')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/real-wp-shop-lite/readme.txt'
+  redirects: true
+id: real_wp_shop_lite-9dd75955-3c9e-4cac-b952-f705a2129707
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/real-wp-shop-lite/
+    google-query: inurl:"/wp-content/plugins/real-wp-shop-lite/"
+    shodan-query: http.html:"wp-content/plugins/real-wp-shop-lite/"
+  name: 'Real WP Shop Lite Ajax eCommerce Shopping Cart <= 2.0.8 - Authenticated (Administrator+)
+    Stored Cross-Site Scripting
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/9dd75955-3c9e-4cac-b952-f705a2129707?source=api-scan
+  severity: low
+  tags: cve,wordpress,wp-plugin,real-wp-shop-lite,low,candidate

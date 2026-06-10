@@ -1,0 +1,45 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - ig-shortcodes
+  - dsl:
+    - compare_versions(version, '<= 3.1')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/ig-shortcodes/readme.txt'
+  redirects: true
+id: ig_shortcodes-188498ae-e985-470f-9c71-666875ceb333
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/ig-shortcodes/
+    google-query: inurl:"/wp-content/plugins/ig-shortcodes/"
+    shodan-query: http.html:"wp-content/plugins/ig-shortcodes/"
+  name: 'IG Shortcodes <= 3.1 - Authenticated (Contributor+) Stored Cross-Site Scripting
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/188498ae-e985-470f-9c71-666875ceb333?source=api-scan
+  severity: low
+  tags: cve,wordpress,wp-plugin,ig-shortcodes,low,candidate

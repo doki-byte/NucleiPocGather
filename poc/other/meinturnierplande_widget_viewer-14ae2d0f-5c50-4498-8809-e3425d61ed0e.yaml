@@ -1,0 +1,46 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - meinturnierplande-widget-viewer
+  - dsl:
+    - compare_versions(version, '<= 1.1')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/meinturnierplande-widget-viewer/readme.txt'
+  redirects: true
+id: meinturnierplande_widget_viewer-14ae2d0f-5c50-4498-8809-e3425d61ed0e
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/meinturnierplande-widget-viewer/
+    google-query: inurl:"/wp-content/plugins/meinturnierplande-widget-viewer/"
+    shodan-query: http.html:"wp-content/plugins/meinturnierplande-widget-viewer/"
+  name: 'MeinTurnierplan.de Widget Viewer <= 1.1 - Authenticated (Contributor+) Stored
+    Cross-Site Scripting
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/14ae2d0f-5c50-4498-8809-e3425d61ed0e?source=api-scan
+  severity: low
+  tags: cve,wordpress,wp-plugin,meinturnierplande-widget-viewer,low,candidate

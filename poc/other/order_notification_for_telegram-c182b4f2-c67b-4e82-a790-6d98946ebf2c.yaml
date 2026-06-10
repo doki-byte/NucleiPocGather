@@ -1,0 +1,46 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - order-notification-for-telegram
+  - dsl:
+    - compare_versions(version, '<= 1.0.1')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/order-notification-for-telegram/readme.txt'
+  redirects: true
+id: order_notification_for_telegram-c182b4f2-c67b-4e82-a790-6d98946ebf2c
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/order-notification-for-telegram/
+    google-query: inurl:"/wp-content/plugins/order-notification-for-telegram/"
+    shodan-query: http.html:"wp-content/plugins/order-notification-for-telegram/"
+  name: 'Order Notification for Telegram <= 1.0.1 - Missing Authorization to Unauthenticated
+    Send Telegram Test Message
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/c182b4f2-c67b-4e82-a790-6d98946ebf2c?source=api-scan
+  severity: high
+  tags: cve,wordpress,wp-plugin,order-notification-for-telegram,high,candidate

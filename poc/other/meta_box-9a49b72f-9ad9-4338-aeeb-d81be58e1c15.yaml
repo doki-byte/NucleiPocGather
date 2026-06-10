@@ -1,0 +1,44 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - meta-box
+  - dsl:
+    - compare_versions(version, '<= 5.9.10')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/meta-box/readme.txt'
+  redirects: true
+id: meta_box-9a49b72f-9ad9-4338-aeeb-d81be58e1c15
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/meta-box/
+    google-query: inurl:"/wp-content/plugins/meta-box/"
+    shodan-query: http.html:"wp-content/plugins/meta-box/"
+  name: "Meta Box \u2013 WordPress Custom Fields Framework <= 5.9.10 - Missing Authorization\
+    \ to Information Exposure\n"
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/9a49b72f-9ad9-4338-aeeb-d81be58e1c15?source=api-scan
+  severity: high
+  tags: cve,wordpress,wp-plugin,meta-box,high,candidate

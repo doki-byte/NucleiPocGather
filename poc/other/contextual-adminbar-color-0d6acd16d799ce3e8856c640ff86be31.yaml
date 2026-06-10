@@ -1,0 +1,52 @@
+http:
+- extractors:
+  - group: 1
+    internal: true
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - contextual-adminbar-color
+  - dsl:
+    - compare_versions(version, '<= 0.2')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/contextual-adminbar-color/readme.txt'
+  redirects: true
+id: contextual-adminbar-color-0d6acd16d799ce3e8856c640ff86be31
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/contextual-adminbar-color/
+    google-query: inurl:"/wp-content/plugins/contextual-adminbar-color/"
+    shodan-query: 'vuln:'
+  name: 'Contextual Adminbar Color <= 0.2 - Stored Cross-Site Scripting
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/db3a9106-2d90-44fe-a86b-9ea882f56eb4?source=api-scan
+  severity: high
+  tags: cve,wordpress,wp-plugin,contextual-adminbar-color,high

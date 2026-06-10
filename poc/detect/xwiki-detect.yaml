@@ -1,0 +1,36 @@
+http:
+- extractors:
+  - group: 1
+    regex:
+    - <html.*?data-xwiki-page="(.*?)"
+    type: regex
+  host-redirects: true
+  matchers:
+  - condition: and
+    dsl:
+    - status_code == 200 || status_code == 401
+    - contains(body, "xwikiplatformversion")
+    type: dsl
+  matchers-condition: and
+  max-redirects: 2
+  method: GET
+  path:
+  - '{{BaseURL}}'
+  - '{{BaseURL}}/xwiki/'
+  stop-at-first-match: true
+id: xwiki-detect
+info:
+  author: matejsmycka
+  description: 'XWiki Platform was discovered.
+
+    '
+  metadata:
+    fofa-query: body="data-xwiki-reference"
+    max-request: 2
+    product: xwiki
+    shodan-query: html:"data-xwiki-reference"
+    vendor: xwiki
+    verified: true
+  name: XWiki - Detection
+  severity: info
+  tags: xwiki,detect,tech

@@ -1,0 +1,46 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - responsive-food-and-drink-menu
+  - dsl:
+    - compare_versions(version, '<= 2.3')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/responsive-food-and-drink-menu/readme.txt'
+  redirects: true
+id: responsive_food_and_drink_menu-342ccae4-2e77-4a4f-963f-689b882eb7f0
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/responsive-food-and-drink-menu/
+    google-query: inurl:"/wp-content/plugins/responsive-food-and-drink-menu/"
+    shodan-query: http.html:"wp-content/plugins/responsive-food-and-drink-menu/"
+  name: 'Responsive Food and Drink Menu <= 2.3 - Authenticated (Contributor+) Stored
+    Cross-Site Scripting via display_pdf_menus Shortcode
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/342ccae4-2e77-4a4f-963f-689b882eb7f0?source=api-scan
+  severity: low
+  tags: cve,wordpress,wp-plugin,responsive-food-and-drink-menu,low,candidate

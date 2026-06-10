@@ -1,0 +1,35 @@
+http:
+- extractors:
+  - group: 1
+    part: body
+    regex:
+    - script.js\?v=([0-9.]+)
+    type: regex
+  matchers:
+  - condition: and
+    dsl:
+    - status_code == 200
+    - "contains_any(to_lower(body), \"<title>ypareo\", \"<title>NetYPar\xE9o\")"
+    type: dsl
+  method: GET
+  path:
+  - '{{BaseURL}}/index.php'
+  - '{{BaseURL}}/net-ypareo/index.php'
+  - '{{BaseURL}}/netypareo/index.php'
+  - '{{BaseURL}}/index.html'
+  stop-at-first-match: true
+id: ypareo-panel
+info:
+  author: righettod
+  description: "YPAREO was detected \u2014 an Enterprise Resource Planning system.\n"
+  metadata:
+    max-request: 4
+    runzero-match: service["http.body"] matches "(?i)ypareo"
+    shodan-query: http.html:"ypareo"
+    verified: true
+  name: YPAREO Panel - Detect
+  reference:
+  - https://www.ypareo.com/legacy
+  - https://www.ymag.fr/
+  severity: info
+  tags: panel,ymag,login,detect,discovery

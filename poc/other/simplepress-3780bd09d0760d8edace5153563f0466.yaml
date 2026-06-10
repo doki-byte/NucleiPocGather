@@ -1,0 +1,50 @@
+http:
+- extractors:
+  - group: 1
+    internal: true
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - simplepress
+  - dsl:
+    - compare_versions(version, '< 6.6.1')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/simplepress/readme.txt'
+  redirects: true
+id: simplepress-3780bd09d0760d8edace5153563f0466
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/simplepress/
+    google-query: inurl:"/wp-content/plugins/simplepress/"
+    shodan-query: 'vuln:'
+  name: "Simple:Press \u2013 WordPress Forum Plugin <= 6.6.0 - Arbitrary File Upload\n"
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/53eba5b4-7cc0-48e1-bb9c-6ed3207151ab?source=api-scan
+  severity: critical
+  tags: cve,wordpress,wp-plugin,simplepress,critical

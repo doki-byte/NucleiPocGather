@@ -1,0 +1,46 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - https-links-in-content
+  - dsl:
+    - compare_versions(version, '<= 0.2.4')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/https-links-in-content/readme.txt'
+  redirects: true
+id: https_links_in_content-5cbbcc3f-b51b-4336-ab92-c6dca4c1510a
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/https-links-in-content/
+    google-query: inurl:"/wp-content/plugins/https-links-in-content/"
+    shodan-query: http.html:"wp-content/plugins/https-links-in-content/"
+  name: 'HTTP to HTTPS link changer by Eyga.net <= 0.2.4 - Cross-Site Request Forgery
+    to Stored Cross-Site Scripting
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/5cbbcc3f-b51b-4336-ab92-c6dca4c1510a?source=api-scan
+  severity: medium
+  tags: cve,wordpress,wp-plugin,https-links-in-content,medium,candidate

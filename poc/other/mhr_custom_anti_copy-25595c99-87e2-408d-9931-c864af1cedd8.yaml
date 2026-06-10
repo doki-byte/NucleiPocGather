@@ -1,0 +1,46 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - mhr-custom-anti-copy
+  - dsl:
+    - compare_versions(version, '<= 2.0')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/mhr-custom-anti-copy/readme.txt'
+  redirects: true
+id: mhr_custom_anti_copy-25595c99-87e2-408d-9931-c864af1cedd8
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/mhr-custom-anti-copy/
+    google-query: inurl:"/wp-content/plugins/mhr-custom-anti-copy/"
+    shodan-query: http.html:"wp-content/plugins/mhr-custom-anti-copy/"
+  name: 'MHR-Custom-Anti-Copy <= 2.0 - Cross-Site Request Forgery to Stored Cross-Site
+    Scripting
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/25595c99-87e2-408d-9931-c864af1cedd8?source=api-scan
+  severity: medium
+  tags: cve,wordpress,wp-plugin,mhr-custom-anti-copy,medium,candidate

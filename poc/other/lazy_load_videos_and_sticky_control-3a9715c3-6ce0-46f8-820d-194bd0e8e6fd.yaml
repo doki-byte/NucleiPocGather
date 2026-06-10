@@ -1,0 +1,46 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - lazy-load-videos-and-sticky-control
+  - dsl:
+    - compare_versions(version, '<= 3.0.0')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/lazy-load-videos-and-sticky-control/readme.txt'
+  redirects: true
+id: lazy_load_videos_and_sticky_control-3a9715c3-6ce0-46f8-820d-194bd0e8e6fd
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/lazy-load-videos-and-sticky-control/
+    google-query: inurl:"/wp-content/plugins/lazy-load-videos-and-sticky-control/"
+    shodan-query: http.html:"wp-content/plugins/lazy-load-videos-and-sticky-control/"
+  name: 'Lazy load videos and sticky control <= 3.0.0 - Authenticated (Contributor+)
+    Stored Cross-Site Scripting
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/3a9715c3-6ce0-46f8-820d-194bd0e8e6fd?source=api-scan
+  severity: low
+  tags: cve,wordpress,wp-plugin,lazy-load-videos-and-sticky-control,low,candidate

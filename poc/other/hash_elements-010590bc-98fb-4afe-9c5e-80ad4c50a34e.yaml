@@ -1,0 +1,46 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - hash-elements
+  - dsl:
+    - compare_versions(version, '<= 1.4.7')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/hash-elements/readme.txt'
+  redirects: true
+id: hash_elements-010590bc-98fb-4afe-9c5e-80ad4c50a34e
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/hash-elements/
+    google-query: inurl:"/wp-content/plugins/hash-elements/"
+    shodan-query: http.html:"wp-content/plugins/hash-elements/"
+  name: 'Hash Elements <= 1.4.7 - Missing Authorization to Unauthenticated Draft Post
+    Title Exposure
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/010590bc-98fb-4afe-9c5e-80ad4c50a34e?source=api-scan
+  severity: high
+  tags: cve,wordpress,wp-plugin,hash-elements,high,candidate

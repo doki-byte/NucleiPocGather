@@ -1,0 +1,45 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - pdf2post
+  - dsl:
+    - compare_versions(version, '<= 2.4.0')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/pdf2post/readme.txt'
+  redirects: true
+id: pdf2post-ac53f2b6-85fe-4475-975f-6dbd15fa87f4
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/pdf2post/
+    google-query: inurl:"/wp-content/plugins/pdf2post/"
+    shodan-query: http.html:"wp-content/plugins/pdf2post/"
+  name: 'PDF 2 Post <= 2.4.0 - Authenticated (Subscriber+) Remote Code Execution
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/ac53f2b6-85fe-4475-975f-6dbd15fa87f4?source=api-scan
+  severity: low
+  tags: cve,wordpress,wp-plugin,pdf2post,low,candidate

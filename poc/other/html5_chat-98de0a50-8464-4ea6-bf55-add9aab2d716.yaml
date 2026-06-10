@@ -1,0 +1,45 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - html5-chat
+  - dsl:
+    - compare_versions(version, '<= 1.07')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/html5-chat/readme.txt'
+  redirects: true
+id: html5_chat-98de0a50-8464-4ea6-bf55-add9aab2d716
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/html5-chat/
+    google-query: inurl:"/wp-content/plugins/html5-chat/"
+    shodan-query: http.html:"wp-content/plugins/html5-chat/"
+  name: 'HTML5 chat <= 1.07 - Authenticated (Contributor+) Stored Cross-Site Scripting
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/98de0a50-8464-4ea6-bf55-add9aab2d716?source=api-scan
+  severity: low
+  tags: cve,wordpress,wp-plugin,html5-chat,low,candidate

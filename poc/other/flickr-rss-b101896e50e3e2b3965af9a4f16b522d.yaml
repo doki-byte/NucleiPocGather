@@ -1,0 +1,52 @@
+http:
+- extractors:
+  - group: 1
+    internal: true
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - flickr-rss
+  - dsl:
+    - compare_versions(version, '<= 5.3.1')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/flickr-rss/readme.txt'
+  redirects: true
+id: flickr-rss-b101896e50e3e2b3965af9a4f16b522d
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/flickr-rss/
+    google-query: inurl:"/wp-content/plugins/flickr-rss/"
+    shodan-query: 'vuln:'
+  name: 'flickrRSS <= 5.3.1 - Cross-Site Scripting via flickrRSS_set
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/a8f91e58-942c-417f-ad82-5bd99ab5e81a?source=api-scan
+  severity: high
+  tags: cve,wordpress,wp-plugin,flickr-rss,high

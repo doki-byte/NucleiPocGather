@@ -1,0 +1,34 @@
+http:
+- host-redirects: true
+  matchers:
+  - condition: or
+    type: word
+    words:
+    - "Zelle\xAE is a direct and fast way to send and receive money with enrolled\
+      \ friends, family and others you trust. Look for Zelle\xAE in your banking app\
+      \ to get started."
+    - Send money with Zelle
+  - status:
+    - 200
+    type: status
+  - dsl:
+    - '!contains(host,"zellepay.com")'
+    type: dsl
+  matchers-condition: and
+  max-redirects: 2
+  method: GET
+  path:
+  - '{{BaseURL}}'
+id: zelle-phish
+info:
+  author: rxerium
+  description: 'A Zelle phishing website was detected
+
+    '
+  metadata:
+    max-request: 1
+  name: Zelle phishing Detection
+  reference:
+  - https://zellepay.com
+  severity: info
+  tags: phishing,zelle,osint,discovery

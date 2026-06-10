@@ -1,0 +1,44 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - quick-license-manager
+  - dsl:
+    - compare_versions(version, '<= 2.4.17')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/quick-license-manager/readme.txt'
+  redirects: true
+id: quick_license_manager-7c781c8a-1ffb-438b-bf78-9d386fbd16eb
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/quick-license-manager/
+    google-query: inurl:"/wp-content/plugins/quick-license-manager/"
+    shodan-query: http.html:"wp-content/plugins/quick-license-manager/"
+  name: "Quick License Manager \u2013 WooCommerce Plugin <= 2.4.17 - Reflected Cross-Site\
+    \ Scripting\n"
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/7c781c8a-1ffb-438b-bf78-9d386fbd16eb?source=api-scan
+  severity: medium
+  tags: cve,wordpress,wp-plugin,quick-license-manager,medium,candidate

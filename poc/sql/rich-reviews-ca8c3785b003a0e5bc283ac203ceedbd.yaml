@@ -1,0 +1,52 @@
+http:
+- extractors:
+  - group: 1
+    internal: true
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - rich-reviews
+  - dsl:
+    - compare_versions(version, '< 1.9.6')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/rich-reviews/readme.txt'
+  redirects: true
+id: rich-reviews-ca8c3785b003a0e5bc283ac203ceedbd
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/rich-reviews/
+    google-query: inurl:"/wp-content/plugins/rich-reviews/"
+    shodan-query: 'vuln:'
+  name: 'Rich Reviews by Starfish <= 1.9.5 - SQL Injection
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/1625a77d-bbca-4d18-ae6f-03030ac51d5b?source=api-scan
+  severity: critical
+  tags: cve,wordpress,wp-plugin,rich-reviews,critical

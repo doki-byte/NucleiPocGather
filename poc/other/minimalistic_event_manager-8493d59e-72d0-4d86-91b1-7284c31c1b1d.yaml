@@ -1,0 +1,45 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - minimalistic-event-manager
+  - dsl:
+    - compare_versions(version, '<= 1.1.1')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/minimalistic-event-manager/readme.txt'
+  redirects: true
+id: minimalistic_event_manager-8493d59e-72d0-4d86-91b1-7284c31c1b1d
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/minimalistic-event-manager/
+    google-query: inurl:"/wp-content/plugins/minimalistic-event-manager/"
+    shodan-query: http.html:"wp-content/plugins/minimalistic-event-manager/"
+  name: 'Minimalistic Event Manager <= 1.1.1 - Missing Authorization
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/8493d59e-72d0-4d86-91b1-7284c31c1b1d?source=api-scan
+  severity: high
+  tags: cve,wordpress,wp-plugin,minimalistic-event-manager,high,candidate

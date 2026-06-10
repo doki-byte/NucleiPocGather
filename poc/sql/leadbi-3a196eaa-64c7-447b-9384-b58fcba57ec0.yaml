@@ -1,0 +1,46 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - leadbi
+  - dsl:
+    - compare_versions(version, '<= 1.7')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/leadbi/readme.txt'
+  redirects: true
+id: leadbi-3a196eaa-64c7-447b-9384-b58fcba57ec0
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/leadbi/
+    google-query: inurl:"/wp-content/plugins/leadbi/"
+    shodan-query: http.html:"wp-content/plugins/leadbi/"
+  name: 'LeadBI Plugin for WordPress <= 1.7 - Authenticated (Contributor+) Stored
+    Cross-Site Scripting via ''form_id'' Shortcode Attribute
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/3a196eaa-64c7-447b-9384-b58fcba57ec0?source=api-scan
+  severity: low
+  tags: cve,wordpress,wp-plugin,leadbi,low,candidate

@@ -1,0 +1,45 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - list-urls
+  - dsl:
+    - compare_versions(version, '<= 0.2')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/list-urls/readme.txt'
+  redirects: true
+id: list_urls-e475e420-7ab7-4f29-aacf-d758af90694c
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/list-urls/
+    google-query: inurl:"/wp-content/plugins/list-urls/"
+    shodan-query: http.html:"wp-content/plugins/list-urls/"
+  name: 'List Urls <= 0.2 - Reflected Cross-Site Scripting
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/e475e420-7ab7-4f29-aacf-d758af90694c?source=api-scan
+  severity: medium
+  tags: cve,wordpress,wp-plugin,list-urls,medium,candidate

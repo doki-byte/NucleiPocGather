@@ -1,0 +1,46 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - pressapps-knowledge-base
+  - dsl:
+    - compare_versions(version, '<= 4.2.1')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/pressapps-knowledge-base/readme.txt'
+  redirects: true
+id: pressapps_knowledge_base-0b5148bc-d06a-4857-b780-92c370098ff3
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/pressapps-knowledge-base/
+    google-query: inurl:"/wp-content/plugins/pressapps-knowledge-base/"
+    shodan-query: http.html:"wp-content/plugins/pressapps-knowledge-base/"
+  name: 'PressApps Knowledge Base Contextual Sidebar Addon <= 4.2.1 - Unauthenticated
+    PHP Object Injection
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/0b5148bc-d06a-4857-b780-92c370098ff3?source=api-scan
+  severity: critical
+  tags: cve,wordpress,wp-plugin,pressapps-knowledge-base,critical,candidate

@@ -1,0 +1,46 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - magicpost
+  - dsl:
+    - compare_versions(version, '<= 1.2.1')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/magicpost/readme.txt'
+  redirects: true
+id: magicpost-f81355fa-5b12-4b03-bd3d-f9e2cb734390
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/magicpost/
+    google-query: inurl:"/wp-content/plugins/magicpost/"
+    shodan-query: http.html:"wp-content/plugins/magicpost/"
+  name: 'MagicPost <= 1.2.1 - Authenticated (Contributor+) Stored Cross-Site Scripting
+    via wb_share_social Shortcode
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/f81355fa-5b12-4b03-bd3d-f9e2cb734390?source=api-scan
+  severity: low
+  tags: cve,wordpress,wp-plugin,magicpost,low,candidate

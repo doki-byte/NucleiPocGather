@@ -1,0 +1,45 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - lbg-audio3-html5
+  - dsl:
+    - compare_versions(version, '<= 3.1.6')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/lbg-audio3-html5/readme.txt'
+  redirects: true
+id: lbg_audio3_html5-e3d9b2d2-d8eb-42c2-a807-ccee30798581
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/lbg-audio3-html5/
+    google-query: inurl:"/wp-content/plugins/lbg-audio3-html5/"
+    shodan-query: http.html:"wp-content/plugins/lbg-audio3-html5/"
+  name: 'Sticky HTML5 Music Player <= 3.1.6 - Authenticated (Contributor+) SQL Injection
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/e3d9b2d2-d8eb-42c2-a807-ccee30798581?source=api-scan
+  severity: low
+  tags: cve,wordpress,wp-plugin,lbg-audio3-html5,low,candidate

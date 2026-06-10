@@ -1,0 +1,45 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - leadinfo
+  - dsl:
+    - compare_versions(version, '<= 1.1')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/leadinfo/readme.txt'
+  redirects: true
+id: leadinfo-d1c4052b-e8e9-47da-8a36-c67f16ab2553
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/leadinfo/
+    google-query: inurl:"/wp-content/plugins/leadinfo/"
+    shodan-query: http.html:"wp-content/plugins/leadinfo/"
+  name: 'Leadinfo <= 1.1 - Missing Authorization to Unauthenticated Settings Change
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/d1c4052b-e8e9-47da-8a36-c67f16ab2553?source=api-scan
+  severity: high
+  tags: cve,wordpress,wp-plugin,leadinfo,high,candidate

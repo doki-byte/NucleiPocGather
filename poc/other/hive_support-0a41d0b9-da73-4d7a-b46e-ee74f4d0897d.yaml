@@ -1,0 +1,43 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - hive-support
+  - dsl:
+    - compare_versions(version, '<= 1.1.6')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/hive-support/readme.txt'
+  redirects: true
+id: hive_support-0a41d0b9-da73-4d7a-b46e-ee74f4d0897d
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/hive-support/
+    google-query: inurl:"/wp-content/plugins/hive-support/"
+    shodan-query: http.html:"wp-content/plugins/hive-support/"
+  name: "Hive Support \u2013 WordPress Help Desk <= 1.1.6 - Missing Authorization\n"
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/0a41d0b9-da73-4d7a-b46e-ee74f4d0897d?source=api-scan
+  severity: high
+  tags: cve,wordpress,wp-plugin,hive-support,high,candidate

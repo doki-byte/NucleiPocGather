@@ -1,0 +1,52 @@
+http:
+- extractors:
+  - group: 1
+    internal: true
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - rbxgallery
+  - dsl:
+    - compare_versions(version, '< 3.1')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/rbxgallery/readme.txt'
+  redirects: true
+id: rbxgallery-0afd09d3bebe9f136a82dc448971c35c
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/rbxgallery/
+    google-query: inurl:"/wp-content/plugins/rbxgallery/"
+    shodan-query: 'vuln:'
+  name: 'RBX Gallery < 3.1 - Arbitrary File Upload
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/c1804afe-55a1-428f-ae5d-99d68f61d33b?source=api-scan
+  severity: critical
+  tags: cve,wordpress,wp-plugin,rbxgallery,critical

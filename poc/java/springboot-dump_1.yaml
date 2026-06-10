@@ -1,28 +1,16 @@
-id: springboot-dump
+id: springboot-dump 1
 info:
+  author: pussycat0x
+  description: Performs a thread dump
   name: Detect Springboot Dump Actuator
-  author:
-  - l0ne1y
-  description: |-
-    SpringBoot Dump Actuator配置不当导致信息泄露
-    Actuator 是 springboot 提供的用来对应用系统进行自省和监控的功能模块，借助于 Actuator 开发者可以很方便地对应用系统某些监控指标进行查看、统计等。在 Actuator 启用的情况下，如果没有做好相关权限控制，非法用户可通过访问默认的执行器端点（endpoints）来获取应用系统中的监控信息。Actuator 配置不当导致应用系统监控信息泄露对应用系统及其用户的危害是巨大的。Dump Actuator可转储执行线程。
-  severity: low
-  remediation: |-
-    #### 官方修复方案：
-    升级系统至无漏洞版本，或于官网下载安全补丁
-
-    #### 临时修复方案：
-    1、配置所有的安全机制
-    2、最小原则，关掉或限制不使用的服务
-    3、更改默认账户信息
-    4、使用日志和警报
-    5、回显信息不显示任何与实际错误相关的信息
-    6、检查和修复安全配置项
+  severity: medium
+  tags: springboot,exposure
 requests:
-- matchers:
-  - type: word
-    condition: and
+- attack: sniper
+  matchers:
+  - condition: and
     part: body
+    type: word
     words:
     - threadName
     - threadId
@@ -30,11 +18,20 @@ requests:
     - lockName
     - stackTrace
     - methodName
-  - type: status
-    status:
+  - status:
     - 200
+    type: status
   matchers-condition: and
-  path:
-  - '{{BaseURL}}/dump'
-  - '{{BaseURL}}/actuator/dump'
-  method: GET
+  payloads:
+    Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+  raw:
+  - 'GET /dump HTTP/1.1
+
+    Host: {{Subdomains}}
+
+    User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
+
+    Accept: */*
+
+    '
+  threads: 100

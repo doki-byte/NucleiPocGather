@@ -1,0 +1,52 @@
+http:
+- extractors:
+  - group: 1
+    internal: true
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - ruven-toolkit
+  - dsl:
+    - compare_versions(version, '<= 2.0')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/ruven-toolkit/readme.txt'
+  redirects: true
+id: ruven-toolkit-b8c001dba518758b0714eba788f0bbd3
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/ruven-toolkit/
+    google-query: inurl:"/wp-content/plugins/ruven-toolkit/"
+    shodan-query: 'vuln:'
+  name: 'Ruven Toolkit <= 2.0 - Reflected Cross-Site Scripting
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/01b9f536-cdab-4e38-b935-008cbd899a98?source=api-scan
+  severity: medium
+  tags: cve,wordpress,wp-plugin,ruven-toolkit,medium

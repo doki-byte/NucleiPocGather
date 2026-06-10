@@ -1,0 +1,45 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - sell-with-razorpay
+  - dsl:
+    - compare_versions(version, '<= 1.0')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/sell-with-razorpay/readme.txt'
+  redirects: true
+id: sell_with_razorpay-a410fd9b-f3e8-4a5d-a360-10c6586b951e
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/sell-with-razorpay/
+    google-query: inurl:"/wp-content/plugins/sell-with-razorpay/"
+    shodan-query: http.html:"wp-content/plugins/sell-with-razorpay/"
+  name: 'Sale with Razorpay <= 1.0 - Reflected Cross-Site Scripting
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/a410fd9b-f3e8-4a5d-a360-10c6586b951e?source=api-scan
+  severity: medium
+  tags: cve,wordpress,wp-plugin,sell-with-razorpay,medium,candidate

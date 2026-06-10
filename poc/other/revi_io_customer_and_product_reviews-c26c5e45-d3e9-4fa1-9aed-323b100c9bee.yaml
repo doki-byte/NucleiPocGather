@@ -1,0 +1,45 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - revi-io-customer-and-product-reviews
+  - dsl:
+    - compare_versions(version, '<= 5.7.3')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/revi-io-customer-and-product-reviews/readme.txt'
+  redirects: true
+id: revi_io_customer_and_product_reviews-c26c5e45-d3e9-4fa1-9aed-323b100c9bee
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/revi-io-customer-and-product-reviews/
+    google-query: inurl:"/wp-content/plugins/revi-io-customer-and-product-reviews/"
+    shodan-query: http.html:"wp-content/plugins/revi-io-customer-and-product-reviews/"
+  name: 'Revi.io <= 5.7.3 - Reflected Cross-Site Scripting
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/c26c5e45-d3e9-4fa1-9aed-323b100c9bee?source=api-scan
+  severity: medium
+  tags: cve,wordpress,wp-plugin,revi-io-customer-and-product-reviews,medium,candidate

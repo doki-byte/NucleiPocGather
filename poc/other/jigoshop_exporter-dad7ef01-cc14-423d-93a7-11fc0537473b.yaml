@@ -1,0 +1,43 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - jigoshop-exporter
+  - dsl:
+    - compare_versions(version, '<= 1.5.8')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/jigoshop-exporter/readme.txt'
+  redirects: true
+id: jigoshop_exporter-dad7ef01-cc14-423d-93a7-11fc0537473b
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/jigoshop-exporter/
+    google-query: inurl:"/wp-content/plugins/jigoshop-exporter/"
+    shodan-query: http.html:"wp-content/plugins/jigoshop-exporter/"
+  name: "Jigoshop \u2013 Store Exporter <= 1.5.8 - Reflected Cross-Site Scripting\n"
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/dad7ef01-cc14-423d-93a7-11fc0537473b?source=api-scan
+  severity: medium
+  tags: cve,wordpress,wp-plugin,jigoshop-exporter,medium,candidate

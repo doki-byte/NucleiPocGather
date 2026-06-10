@@ -1,0 +1,45 @@
+http:
+- extractors:
+  - group: 1
+    part: body
+    regex:
+    - '>PHP Version <\/td><td class="v">([0-9.]+)'
+    type: regex
+  host-redirects: true
+  matchers:
+  - condition: and
+    part: body
+    type: word
+    words:
+    - PHP Extension
+    - PHP Version
+    - xampp
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  max-redirects: 2
+  method: GET
+  path:
+  - '{{BaseURL}}{{paths}}'
+  payloads:
+    paths:
+    - /phpinfo.php
+    - /dashboard/phpinfo.php
+  stop-at-first-match: true
+id: xampp-phpinfo-detect
+info:
+  author: pussycat0x
+  description: 'XAMPPHPinfo page was detected. The output of the phpinfo() command
+    can reveal sensitive and detailed PHP environment information.
+
+    '
+  metadata:
+    runzero-match: any(each(service["html.titles"]), {# matches "(?i)XAMPP"})
+    shodan-query: http.title:"XAMPP"
+    verified: true
+  name: XAMPP PHP info Page - Detect
+  remediation: Remove PHP Info pages from publicly accessible sites, or restrict access
+    to authorized users only.
+  severity: low
+  tags: config,exposure,phpinfo,vuln,xampp

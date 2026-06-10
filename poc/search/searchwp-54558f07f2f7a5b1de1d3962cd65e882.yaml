@@ -1,0 +1,53 @@
+http:
+- extractors:
+  - group: 1
+    internal: true
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - searchwp
+  - dsl:
+    - compare_versions(version, '<= 4.2.5')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/searchwp/readme.txt'
+  redirects: true
+id: searchwp-54558f07f2f7a5b1de1d3962cd65e882
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/searchwp/
+    google-query: inurl:"/wp-content/plugins/searchwp/"
+    shodan-query: 'vuln:'
+  name: 'SearchWP Premium <= 4.2.5 - Authenticated (Subscriber+) Nonce Leakage and
+    Authorization Bypass
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/00a1b66d-d81c-4539-846b-ff66301a94ca?source=api-scan
+  severity: low
+  tags: cve,wordpress,wp-plugin,searchwp,low

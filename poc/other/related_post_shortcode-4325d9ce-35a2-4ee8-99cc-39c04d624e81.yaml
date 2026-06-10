@@ -1,0 +1,46 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - related-post-shortcode
+  - dsl:
+    - compare_versions(version, '<= 1.2')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/related-post-shortcode/readme.txt'
+  redirects: true
+id: related_post_shortcode-4325d9ce-35a2-4ee8-99cc-39c04d624e81
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/related-post-shortcode/
+    google-query: inurl:"/wp-content/plugins/related-post-shortcode/"
+    shodan-query: http.html:"wp-content/plugins/related-post-shortcode/"
+  name: 'Related Post Shortcode <= 1.2 - Authenticated (Administrator+) Stored Cross-Site
+    Scripting
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/4325d9ce-35a2-4ee8-99cc-39c04d624e81?source=api-scan
+  severity: low
+  tags: cve,wordpress,wp-plugin,related-post-shortcode,low,candidate

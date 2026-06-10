@@ -1,0 +1,52 @@
+http:
+- extractors:
+  - group: 1
+    internal: true
+    name: version
+    part: body
+    regex:
+    - '(?mi)Version: ([0-9.]+)'
+    type: regex
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - '(?mi)Version: ([0-9.]+)'
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - sentient
+  - dsl:
+    - compare_versions(version, '<= 1.0')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/themes/sentient/style.css'
+  redirects: true
+id: sentient-cc9db930f569b6837ab5aed1f9582e62
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/themes/sentient/
+    google-query: inurl:"/wp-content/themes/sentient/"
+    shodan-query: 'vuln:'
+  name: 'WooThemes WooFramework < 5.3.10 - Remote Code Execution via Shortcodes
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/0728e7ac-2091-41de-90a0-e231c4b99ab0?source=api-scan
+  severity: critical
+  tags: cve,wordpress,wp-theme,sentient,critical

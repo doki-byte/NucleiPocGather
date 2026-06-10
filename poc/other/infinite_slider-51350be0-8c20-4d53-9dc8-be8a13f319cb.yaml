@@ -1,0 +1,45 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - infinite-slider
+  - dsl:
+    - compare_versions(version, '<= 2.0.1')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/infinite-slider/readme.txt'
+  redirects: true
+id: infinite_slider-51350be0-8c20-4d53-9dc8-be8a13f319cb
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/infinite-slider/
+    google-query: inurl:"/wp-content/plugins/infinite-slider/"
+    shodan-query: http.html:"wp-content/plugins/infinite-slider/"
+  name: 'Infinite Slider <= 2.0.1 - Reflected Cross-Site Scripting
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/51350be0-8c20-4d53-9dc8-be8a13f319cb?source=api-scan
+  severity: medium
+  tags: cve,wordpress,wp-plugin,infinite-slider,medium,candidate

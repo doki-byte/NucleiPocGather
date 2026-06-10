@@ -1,0 +1,45 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - pixel-gallery
+  - dsl:
+    - compare_versions(version, '<= 1.6.7')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/pixel-gallery/readme.txt'
+  redirects: true
+id: pixel_gallery-a3fbf26b-c7d8-4c44-b3c1-c4e028465a9e
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/pixel-gallery/
+    google-query: inurl:"/wp-content/plugins/pixel-gallery/"
+    shodan-query: http.html:"wp-content/plugins/pixel-gallery/"
+  name: "Pixel Gallery Addons for Elementor \u2013 Easy Grid, Creative Gallery, Drag\
+    \ and Drop Grid, Custom Grid Layout, Portfolio Gallery <= 1.6.7 - Authenticated\
+    \ (Contributor+) Stored Cross-Site Scripting\n"
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/a3fbf26b-c7d8-4c44-b3c1-c4e028465a9e?source=api-scan
+  severity: low
+  tags: cve,wordpress,wp-plugin,pixel-gallery,low,candidate

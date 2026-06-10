@@ -1,0 +1,52 @@
+http:
+- extractors:
+  - group: 1
+    internal: true
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - piwik-pro
+  - dsl:
+    - compare_versions(version, '>= 0.2.35', '<= 0.4.3')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/piwik-pro/readme.txt'
+  redirects: true
+id: piwik-pro-2da2736617c7a47fefe70a7097beafe4
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/piwik-pro/
+    google-query: inurl:"/wp-content/plugins/piwik-pro/"
+    shodan-query: 'vuln:'
+  name: 'Various Affected Software (Various Versions) - Arbitrary File Upload
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/5d5d9ef7-3832-495c-b61b-7e24c2e60893?source=api-scan
+  severity: critical
+  tags: cve,wordpress,wp-plugin,piwik-pro,critical

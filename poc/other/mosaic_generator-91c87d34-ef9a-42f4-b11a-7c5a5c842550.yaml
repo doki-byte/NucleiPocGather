@@ -1,0 +1,46 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - mosaic-generator
+  - dsl:
+    - compare_versions(version, '<= 1.0.5')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/mosaic-generator/readme.txt'
+  redirects: true
+id: mosaic_generator-91c87d34-ef9a-42f4-b11a-7c5a5c842550
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/mosaic-generator/
+    google-query: inurl:"/wp-content/plugins/mosaic-generator/"
+    shodan-query: http.html:"wp-content/plugins/mosaic-generator/"
+  name: 'Mosaic Generator <= 1.0.5 - Authenticated (Contributor+) Stored Cross-Site
+    Scripting via ''c'' Parameter
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/91c87d34-ef9a-42f4-b11a-7c5a5c842550?source=api-scan
+  severity: low
+  tags: cve,wordpress,wp-plugin,mosaic-generator,low,candidate

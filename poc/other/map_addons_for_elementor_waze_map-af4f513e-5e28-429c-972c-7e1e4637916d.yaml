@@ -1,0 +1,46 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - map-addons-for-elementor-waze-map
+  - dsl:
+    - compare_versions(version, '<= 1.1.5')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/map-addons-for-elementor-waze-map/readme.txt'
+  redirects: true
+id: map_addons_for_elementor_waze_map-af4f513e-5e28-429c-972c-7e1e4637916d
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/map-addons-for-elementor-waze-map/
+    google-query: inurl:"/wp-content/plugins/map-addons-for-elementor-waze-map/"
+    shodan-query: http.html:"wp-content/plugins/map-addons-for-elementor-waze-map/"
+  name: 'Local Business Addons For Elementor <= 1.1.5 - Authenticated (Contributor+)
+    Stored Cross-Site Scripting
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/af4f513e-5e28-429c-972c-7e1e4637916d?source=api-scan
+  severity: low
+  tags: cve,wordpress,wp-plugin,map-addons-for-elementor-waze-map,low,candidate

@@ -1,0 +1,46 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - gp-notification-bar
+  - dsl:
+    - compare_versions(version, '<= 1.1')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/gp-notification-bar/readme.txt'
+  redirects: true
+id: gp_notification_bar-542831f3-1e32-4761-b3a6-a5fd90213bbc
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/gp-notification-bar/
+    google-query: inurl:"/wp-content/plugins/gp-notification-bar/"
+    shodan-query: http.html:"wp-content/plugins/gp-notification-bar/"
+  name: 'Notification Bar, Sticky Notification Bar, Sticky Welcome Bar for any theme
+    <= 1.1 - Authenticated (Administrator+) Stored Cross-Site Scripting
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/542831f3-1e32-4761-b3a6-a5fd90213bbc?source=api-scan
+  severity: low
+  tags: cve,wordpress,wp-plugin,gp-notification-bar,low,candidate

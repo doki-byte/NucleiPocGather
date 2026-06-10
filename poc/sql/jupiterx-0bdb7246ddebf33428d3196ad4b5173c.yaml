@@ -1,0 +1,53 @@
+http:
+- extractors:
+  - group: 1
+    internal: true
+    name: version
+    part: body
+    regex:
+    - '(?mi)Version: ([0-9.]+)'
+    type: regex
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - '(?mi)Version: ([0-9.]+)'
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - jupiterx
+  - dsl:
+    - compare_versions(version, '<= 2.0.6')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/themes/jupiterx/style.css'
+  redirects: true
+id: jupiterx-0bdb7246ddebf33428d3196ad4b5173c
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/themes/jupiterx/
+    google-query: inurl:"/wp-content/themes/jupiterx/"
+    shodan-query: 'vuln:'
+  name: 'JupiterX Theme <= 2.0.6 and Jupiter Theme <= 6.10.1 - Authenticated Path
+    Traversal and Local File Inclusion
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/089cde8a-2896-4e4c-90c1-30605ccc919d?source=api-scan
+  severity: low
+  tags: cve,wordpress,wp-theme,jupiterx,low

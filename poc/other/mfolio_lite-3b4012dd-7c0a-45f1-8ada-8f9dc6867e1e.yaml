@@ -1,0 +1,46 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - mfolio-lite
+  - dsl:
+    - compare_versions(version, '<= 1.2.1')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/mfolio-lite/readme.txt'
+  redirects: true
+id: mfolio_lite-3b4012dd-7c0a-45f1-8ada-8f9dc6867e1e
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/mfolio-lite/
+    google-query: inurl:"/wp-content/plugins/mfolio-lite/"
+    shodan-query: http.html:"wp-content/plugins/mfolio-lite/"
+  name: 'mFolio Lite <= 1.2.1 - Missing Authorization to Authenticated (Author+) File
+    Upload via EXE and SVG Files
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/3b4012dd-7c0a-45f1-8ada-8f9dc6867e1e?source=api-scan
+  severity: low
+  tags: cve,wordpress,wp-plugin,mfolio-lite,low,candidate

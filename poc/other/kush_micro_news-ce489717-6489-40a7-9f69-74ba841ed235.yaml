@@ -1,0 +1,45 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - kush-micro-news
+  - dsl:
+    - compare_versions(version, '<= 1.6.7')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/kush-micro-news/readme.txt'
+  redirects: true
+id: kush_micro_news-ce489717-6489-40a7-9f69-74ba841ed235
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/kush-micro-news/
+    google-query: inurl:"/wp-content/plugins/kush-micro-news/"
+    shodan-query: http.html:"wp-content/plugins/kush-micro-news/"
+  name: 'Kush Micro News <= 1.6.7 - Unauthenticated Stored Cross-Site Scripting
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/ce489717-6489-40a7-9f69-74ba841ed235?source=api-scan
+  severity: high
+  tags: cve,wordpress,wp-plugin,kush-micro-news,high,candidate

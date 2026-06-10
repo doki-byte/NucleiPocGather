@@ -1,0 +1,53 @@
+http:
+- extractors:
+  - group: 1
+    internal: true
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - whatsapp
+  - dsl:
+    - compare_versions(version, '<= 1.0.1')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/whatsapp/readme.txt'
+  redirects: true
+id: whatsapp-d2849c5a94eab99299abb9cd24dbee03
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/whatsapp/
+    google-query: inurl:"/wp-content/plugins/whatsapp/"
+    shodan-query: 'vuln:'
+  name: 'WhatsApp Share Button <= 1.0.1 - Authenticated (Contributor+) Stored Cross-Site
+    Scripting via Shortcode
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/77911b0f-c028-49ae-b85e-15909d806e30?source=api-scan
+  severity: low
+  tags: cve,wordpress,wp-plugin,whatsapp,low

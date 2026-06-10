@@ -1,0 +1,45 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - payment-qr-woo
+  - dsl:
+    - compare_versions(version, '<= 1.1.6')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/payment-qr-woo/readme.txt'
+  redirects: true
+id: payment_qr_woo-0462df4d-1be5-4834-817a-8df0300d3188
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/payment-qr-woo/
+    google-query: inurl:"/wp-content/plugins/payment-qr-woo/"
+    shodan-query: http.html:"wp-content/plugins/payment-qr-woo/"
+  name: 'Payment QR WooCommerce <= 1.1.6 - Missing Authorization
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/0462df4d-1be5-4834-817a-8df0300d3188?source=api-scan
+  severity: high
+  tags: cve,wordpress,wp-plugin,payment-qr-woo,high,candidate

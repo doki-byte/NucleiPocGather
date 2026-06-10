@@ -1,0 +1,30 @@
+http:
+- host-redirects: true
+  matchers:
+  - type: word
+    words:
+    - <title>Zoho - Cloud Software Suite and SaaS Applications for Businesses
+  - status:
+    - 200
+    type: status
+  - dsl:
+    - '!contains(host,"zoho.com")'
+    type: dsl
+  matchers-condition: and
+  max-redirects: 2
+  method: GET
+  path:
+  - '{{BaseURL}}'
+id: zoho-phish
+info:
+  author: rxerium
+  description: 'A Zoho phishing website was detected
+
+    '
+  metadata:
+    max-request: 1
+  name: Zoho phishing Detection
+  reference:
+  - https://zoho.com
+  severity: info
+  tags: phishing,zoho,business,osint,discovery

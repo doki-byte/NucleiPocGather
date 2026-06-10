@@ -1,0 +1,52 @@
+http:
+- extractors:
+  - group: 1
+    internal: true
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - shibboleth
+  - dsl:
+    - compare_versions(version, '<= 1.6')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/shibboleth/readme.txt'
+  redirects: true
+id: shibboleth-ad20443ab19a29c3f311377cfe70c5bc
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/shibboleth/
+    google-query: inurl:"/wp-content/plugins/shibboleth/"
+    shodan-query: 'vuln:'
+  name: 'Shibboleth <= 1.6 - Reflected Cross-Site Scripting
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/7cd8ea73-81f3-41fe-bb1e-403d2645ff39?source=api-scan
+  severity: medium
+  tags: cve,wordpress,wp-plugin,shibboleth,medium

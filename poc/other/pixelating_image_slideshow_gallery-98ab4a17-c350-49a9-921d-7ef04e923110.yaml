@@ -1,0 +1,46 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - pixelating-image-slideshow-gallery
+  - dsl:
+    - compare_versions(version, '<= 8.0')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/pixelating-image-slideshow-gallery/readme.txt'
+  redirects: true
+id: pixelating_image_slideshow_gallery-98ab4a17-c350-49a9-921d-7ef04e923110
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/pixelating-image-slideshow-gallery/
+    google-query: inurl:"/wp-content/plugins/pixelating-image-slideshow-gallery/"
+    shodan-query: http.html:"wp-content/plugins/pixelating-image-slideshow-gallery/"
+  name: 'Pixelating image slideshow gallery <= 8.0 - Authenticated (Contributor+)
+    SQL Injection
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/98ab4a17-c350-49a9-921d-7ef04e923110?source=api-scan
+  severity: low
+  tags: cve,wordpress,wp-plugin,pixelating-image-slideshow-gallery,low,candidate

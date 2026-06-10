@@ -1,0 +1,52 @@
+http:
+- extractors:
+  - group: 1
+    internal: true
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - site-audit
+  - dsl:
+    - compare_versions(version, '<= 1.2.4')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/site-audit/readme.txt'
+  redirects: true
+id: site-audit-582cb3f54651a96feb2b966c41290cb1
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/site-audit/
+    google-query: inurl:"/wp-content/plugins/site-audit/"
+    shodan-query: 'vuln:'
+  name: 'My Site Audit <= 1.2.5 - Authenticated (Admin+) Stored Cross-Site Scripting
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/13c607d9-a8fe-4a03-972c-d0c1b752c7d8?source=api-scan
+  severity: low
+  tags: cve,wordpress,wp-plugin,site-audit,low

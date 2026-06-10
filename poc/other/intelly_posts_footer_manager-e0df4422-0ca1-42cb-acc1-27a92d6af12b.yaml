@@ -1,0 +1,46 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - intelly-posts-footer-manager
+  - dsl:
+    - compare_versions(version, '<= 2.2.0')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/intelly-posts-footer-manager/readme.txt'
+  redirects: true
+id: intelly_posts_footer_manager-e0df4422-0ca1-42cb-acc1-27a92d6af12b
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/intelly-posts-footer-manager/
+    google-query: inurl:"/wp-content/plugins/intelly-posts-footer-manager/"
+    shodan-query: http.html:"wp-content/plugins/intelly-posts-footer-manager/"
+  name: 'Posts Footer Manager <= 2.2.0 - Authenticated (Administrator+) Stored Cross-Site
+    Scripting
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/e0df4422-0ca1-42cb-acc1-27a92d6af12b?source=api-scan
+  severity: low
+  tags: cve,wordpress,wp-plugin,intelly-posts-footer-manager,low,candidate

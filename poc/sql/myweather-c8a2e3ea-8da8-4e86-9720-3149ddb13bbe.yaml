@@ -1,0 +1,45 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - myweather
+  - dsl:
+    - compare_versions(version, '<= 2.5.1')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/myweather/readme.txt'
+  redirects: true
+id: myweather-c8a2e3ea-8da8-4e86-9720-3149ddb13bbe
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/myweather/
+    google-query: inurl:"/wp-content/plugins/myweather/"
+    shodan-query: http.html:"wp-content/plugins/myweather/"
+  name: 'addWeather <= 2.5.1 - Cross-Site Request Forgery to Stored Cross-Site Scripting
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/c8a2e3ea-8da8-4e86-9720-3149ddb13bbe?source=api-scan
+  severity: medium
+  tags: cve,wordpress,wp-plugin,myweather,medium,candidate

@@ -1,0 +1,46 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - map-store-location
+  - dsl:
+    - compare_versions(version, '<= 1.2.1')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/map-store-location/readme.txt'
+  redirects: true
+id: map_store_location-3c5640b6-f59d-407e-a553-c3834390104f
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/map-store-location/
+    google-query: inurl:"/wp-content/plugins/map-store-location/"
+    shodan-query: http.html:"wp-content/plugins/map-store-location/"
+  name: 'Map Store Locator <= 1.2.1 - Authenticated (Contributor+) Stored Cross-Site
+    Scripting
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/3c5640b6-f59d-407e-a553-c3834390104f?source=api-scan
+  severity: low
+  tags: cve,wordpress,wp-plugin,map-store-location,low,candidate

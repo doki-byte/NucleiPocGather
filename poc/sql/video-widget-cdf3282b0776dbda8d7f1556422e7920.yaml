@@ -1,0 +1,52 @@
+http:
+- extractors:
+  - group: 1
+    internal: true
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - video-widget
+  - dsl:
+    - compare_versions(version, '<= 1.2.3')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/video-widget/readme.txt'
+  redirects: true
+id: video-widget-cdf3282b0776dbda8d7f1556422e7920
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/video-widget/
+    google-query: inurl:"/wp-content/plugins/video-widget/"
+    shodan-query: 'vuln:'
+  name: 'Video Widget <= 1.2.3 - Authenticated (Admin+) Stored Cross-Site Scripting
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/29652f77-032c-4637-9dbf-cfd26b56ff19?source=api-scan
+  severity: low
+  tags: cve,wordpress,wp-plugin,video-widget,low

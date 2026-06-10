@@ -1,0 +1,45 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - code-engine
+  - dsl:
+    - compare_versions(version, '<= 0.3.2')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/code-engine/readme.txt'
+  redirects: true
+id: code_engine-26add730-5421-45c9-9300-230b3da68e1d
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/code-engine/
+    google-query: inurl:"/wp-content/plugins/code-engine/"
+    shodan-query: http.html:"wp-content/plugins/code-engine/"
+  name: 'Code Engine <= 0.3.2 - Authenticated (Contributor+) Stored Cross-Site Scripting
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/26add730-5421-45c9-9300-230b3da68e1d?source=api-scan
+  severity: low
+  tags: cve,wordpress,wp-plugin,code-engine,low,candidate

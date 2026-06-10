@@ -1,45 +1,48 @@
-id: springboot-env
-
+id: springboot-env 1
 info:
-  name: Detect Springboot Env Actuator
-  author: that_juan_,dwisiswant0,wdahlenb,philippedelteil,stupidfish
-  severity: low
+  author: that_juan_,dwisiswant0,wdahlenb
   description: Sensitive environment variables may not be masked
-  tags: springboot,exposure
-
+  name: Detect Springboot Env Actuator
+  severity: low
+  tags: springboot,disclosure
 requests:
-  - method: GET
-    path:
-      - "{{BaseURL}}/env"
-      - "{{BaseURL}}/actuator/env"
-      - "{{BaseURL}}/actuator;/env;"
+- attack: sniper
+  matchers:
+  - condition: or
+    part: body
+    type: word
+    words:
+    - applicationConfig
+    - activeProfiles
+  - condition: or
+    part: body
+    type: word
+    words:
+    - server.port
+    - local.server.port
+  - status:
+    - 200
+    type: status
+  - condition: or
+    part: header
+    type: word
+    words:
+    - application/json
+    - application/vnd.spring-boot.actuator
+    - application/vnd.spring-boot.actuator.v1+json
+  matchers-condition: and
+  payloads:
+    Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+  raw:
+  - 'GET /env HTTP/1.1
 
-    stop-at-first-match: true
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - "applicationConfig"
-          - "activeProfiles"
-        condition: or
+    Host: {{Subdomains}}
 
-      - type: word
-        part: body
-        words:
-          - "server.port"
-          - "local.server.port"
-        condition: or
+    User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
 
-      - type: word
-        part: header
-        words:
-          - "application/json"
-          - "application/vnd.spring-boot.actuator"
-          - "application/vnd.spring-boot.actuator.v1+json"
-          - "application/vnd.spring-boot.actuator.v2+json"
-        condition: or
+    Accept-Encoding: gzip, deflate
 
-      - type: status
-        status:
-          - 200
+    Accept: */*
+
+    '
+  threads: 100

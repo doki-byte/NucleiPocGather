@@ -1,0 +1,43 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - pushbiz
+  - dsl:
+    - compare_versions(version, '<= 1.0')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/pushbiz/readme.txt'
+  redirects: true
+id: pushbiz-4e018ce5-ec78-42a9-ab70-4fb3eaa347b9
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/pushbiz/
+    google-query: inurl:"/wp-content/plugins/pushbiz/"
+    shodan-query: http.html:"wp-content/plugins/pushbiz/"
+  name: "pushBIZ \u2013 Push Notification <= 1.0 - Reflected Cross-Site Scripting\n"
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/4e018ce5-ec78-42a9-ab70-4fb3eaa347b9?source=api-scan
+  severity: medium
+  tags: cve,wordpress,wp-plugin,pushbiz,medium,candidate

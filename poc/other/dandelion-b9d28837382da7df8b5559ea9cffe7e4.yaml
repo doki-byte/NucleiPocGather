@@ -1,0 +1,52 @@
+http:
+- extractors:
+  - group: 1
+    internal: true
+    name: version
+    part: body
+    regex:
+    - '(?mi)Version: ([0-9.]+)'
+    type: regex
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - '(?mi)Version: ([0-9.]+)'
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - dandelion
+  - dsl:
+    - compare_versions(version, '<= 2.6.5')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/themes/dandelion/style.css'
+  redirects: true
+id: dandelion-b9d28837382da7df8b5559ea9cffe7e4
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/themes/dandelion/
+    google-query: inurl:"/wp-content/themes/dandelion/"
+    shodan-query: 'vuln:'
+  name: 'Dendelion < 2.6.6 - Arbitrary File Upload
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/d0fb6bf0-48b8-48cc-8080-8fe19c36ce7c?source=api-scan
+  severity: critical
+  tags: cve,wordpress,wp-theme,dandelion,critical

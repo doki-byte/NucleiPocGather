@@ -1,0 +1,46 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - gtpayment-donation
+  - dsl:
+    - compare_versions(version, '<= 1.0.0')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/gtpayment-donation/readme.txt'
+  redirects: true
+id: gtpayment_donation-1eff0c32-8475-4efa-b412-32746d1ebbaf
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/gtpayment-donation/
+    google-query: inurl:"/wp-content/plugins/gtpayment-donation/"
+    shodan-query: http.html:"wp-content/plugins/gtpayment-donation/"
+  name: 'GTPayment Donations <= 1.0.0 - Cross-Site Request Forgery to Stored Cross-Site
+    Scripting
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/1eff0c32-8475-4efa-b412-32746d1ebbaf?source=api-scan
+  severity: medium
+  tags: cve,wordpress,wp-plugin,gtpayment-donation,medium,candidate

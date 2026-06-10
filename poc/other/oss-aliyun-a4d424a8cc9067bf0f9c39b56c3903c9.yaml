@@ -1,0 +1,52 @@
+http:
+- extractors:
+  - group: 1
+    internal: true
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - oss-aliyun
+  - dsl:
+    - compare_versions(version, '<= 1.4.10')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/oss-aliyun/readme.txt'
+  redirects: true
+id: oss-aliyun-a4d424a8cc9067bf0f9c39b56c3903c9
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/oss-aliyun/
+    google-query: inurl:"/wp-content/plugins/oss-aliyun/"
+    shodan-query: 'vuln:'
+  name: 'OSS Aliyun <= 1.4.10 - Authenticated (Administrator+) SQL Injection
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/738eb021-1166-4fbe-a502-2db12c6533c3?source=api-scan
+  severity: low
+  tags: cve,wordpress,wp-plugin,oss-aliyun,low

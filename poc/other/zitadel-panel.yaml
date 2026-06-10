@@ -1,0 +1,33 @@
+http:
+- host-redirects: true
+  matchers:
+  - condition: and
+    dsl:
+    - contains_all(body, "ZITADEL", "<cnsl-root>")
+    - status_code == 200
+    type: dsl
+  max-redirects: 2
+  method: GET
+  path:
+  - '{{BaseURL}}/ui/console/'
+id: zitadel-panel
+info:
+  author: ChrisJr404
+  description: 'Detected ZITADEL was an open-source identity infrastructure platform
+    providing OIDC, OAuth 2.0, SAML and machine-user IAM.
+
+    '
+  metadata:
+    fofa-query: title="ZITADEL"
+    max-request: 1
+    product: zitadel
+    runzero-match: any(each(service["html.titles"]), {# matches "(?i)ZITADEL"})
+    shodan-query: '"X-Zitadel"'
+    vendor: zitadel
+    verified: true
+  name: ZITADEL Panel - Detect
+  reference:
+  - https://github.com/zitadel/zitadel
+  - https://zitadel.com/docs
+  severity: info
+  tags: detect,iam,oidc,panel,zitadel

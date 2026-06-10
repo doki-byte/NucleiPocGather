@@ -1,0 +1,29 @@
+id: x2-wsftp-detect
+info:
+  author: pussycat0x
+  description: X2 WS_FTP service was detected.
+  metadata:
+    max-request: 1
+    shodan-query: X2 WS_FTP Server
+    verified: true
+  name: X2 WS_FTP Service - Detect
+  severity: info
+  tags: network,ftp,wsftp,detect,tcp,discovery
+tcp:
+- extractors:
+  - group: 1
+    name: version
+    regex:
+    - X2 WS_FTP Server ([0-9.]+)
+    type: regex
+  host:
+  - '{{Hostname}}'
+  inputs:
+  - data: 0
+    type: hex
+  matchers:
+  - type: word
+    words:
+    - X2 WS_FTP Server
+  port: 21
+  read-size: 1024

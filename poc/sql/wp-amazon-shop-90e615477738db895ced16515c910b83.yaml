@@ -1,0 +1,53 @@
+http:
+- extractors:
+  - group: 1
+    internal: true
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - wp-amazon-shop
+  - dsl:
+    - compare_versions(version, '<= 2.1.2')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/wp-amazon-shop/readme.txt'
+  redirects: true
+id: wp-amazon-shop-90e615477738db895ced16515c910b83
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/wp-amazon-shop/
+    google-query: inurl:"/wp-content/plugins/wp-amazon-shop/"
+    shodan-query: 'vuln:'
+  name: 'Dropshipping & Affiliation with Amazon <= 2.1.2 - Authenticated (Subscriber+)
+    Arbitrary File Upload
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/17240c75-4e2a-45d2-8114-414c7e81af87?source=api-scan
+  severity: low
+  tags: cve,wordpress,wp-plugin,wp-amazon-shop,low

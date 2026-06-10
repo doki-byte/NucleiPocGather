@@ -1,0 +1,45 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - ink-official
+  - dsl:
+    - compare_versions(version, '<= 4.1.2')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/ink-official/readme.txt'
+  redirects: true
+id: ink_official-fe99d636-bb71-431e-88d6-130767341c83
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/ink-official/
+    google-query: inurl:"/wp-content/plugins/ink-official/"
+    shodan-query: http.html:"wp-content/plugins/ink-official/"
+  name: 'INK Official <= 4.1.2 - Authenticated (Contributor+) Arbitrary File Upload
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/fe99d636-bb71-431e-88d6-130767341c83?source=api-scan
+  severity: low
+  tags: cve,wordpress,wp-plugin,ink-official,low,candidate

@@ -1,0 +1,52 @@
+http:
+- extractors:
+  - group: 1
+    internal: true
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - link2player
+  - dsl:
+    - compare_versions(version, '<= 0.2')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/link2player/readme.txt'
+  redirects: true
+id: link2player-5a7ed7ecb4b829d29e810d56609f164b
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/link2player/
+    google-query: inurl:"/wp-content/plugins/link2player/"
+    shodan-query: 'vuln:'
+  name: 'Link2Player <= 0.2 - Cross-Site Scripting
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/70c6bfb9-46d4-43ed-a6b4-9fe1fc9aa945?source=api-scan
+  severity: high
+  tags: cve,wordpress,wp-plugin,link2player,high

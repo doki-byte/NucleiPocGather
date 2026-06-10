@@ -1,0 +1,37 @@
+http:
+- host-redirects: true
+  matchers:
+  - part: body
+    type: word
+    words:
+    - Xinference
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  max-redirects: 2
+  method: GET
+  path:
+  - '{{BaseURL}}'
+id: xinference-panel
+info:
+  author: rxerium
+  description: 'Xinference (Xorbits Inference) is a powerful and versatile library
+    designed to
+
+    serve language, speech recognition, and multimodal models
+
+    '
+  metadata:
+    max-request: 1
+    product: xinference
+    runzero-match: any(each(service["html.titles"]), {# matches "Xinference"})
+    shodan-query: http.title:"Xinference"
+    vendor: xorbitsai
+    verified: true
+  name: Xinference Panel - Detect
+  reference:
+  - https://github.com/xorbitsai/inference
+  - https://inference.readthedocs.io
+  severity: info
+  tags: ai,detect,discovery,inference,llm,panel,xinference

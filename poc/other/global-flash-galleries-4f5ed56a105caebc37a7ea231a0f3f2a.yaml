@@ -1,0 +1,52 @@
+http:
+- extractors:
+  - group: 1
+    internal: true
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - global-flash-galleries
+  - dsl:
+    - compare_versions(version, '<= 0.15.1')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/global-flash-galleries/readme.txt'
+  redirects: true
+id: global-flash-galleries-4f5ed56a105caebc37a7ea231a0f3f2a
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/global-flash-galleries/
+    google-query: inurl:"/wp-content/plugins/global-flash-galleries/"
+    shodan-query: 'vuln:'
+  name: 'Global Flash Gallery <= 0.15.1 - SQL Injection
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/08c14611-c785-484d-9fdf-7d71c39f63df?source=api-scan
+  severity: critical
+  tags: cve,wordpress,wp-plugin,global-flash-galleries,critical

@@ -1,0 +1,45 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - openai-tools-for-wp-wc
+  - dsl:
+    - compare_versions(version, '<= 2.1.5')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/openai-tools-for-wp-wc/readme.txt'
+  redirects: true
+id: openai_tools_for_wp_wc-20b3b64f-e6d7-4ccd-98f3-417390bd2393
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/openai-tools-for-wp-wc/
+    google-query: inurl:"/wp-content/plugins/openai-tools-for-wp-wc/"
+    shodan-query: http.html:"wp-content/plugins/openai-tools-for-wp-wc/"
+  name: 'OpenAI Tools for WordPress & WooCommerce <= 2.1.5 - Missing Authorization
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/20b3b64f-e6d7-4ccd-98f3-417390bd2393?source=api-scan
+  severity: high
+  tags: cve,wordpress,wp-plugin,openai-tools-for-wp-wc,high,candidate

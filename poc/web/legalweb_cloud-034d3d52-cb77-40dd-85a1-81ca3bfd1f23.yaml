@@ -1,0 +1,46 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - legalweb-cloud
+  - dsl:
+    - compare_versions(version, '<= 1.1.2')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/legalweb-cloud/readme.txt'
+  redirects: true
+id: legalweb_cloud-034d3d52-cb77-40dd-85a1-81ca3bfd1f23
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/legalweb-cloud/
+    google-query: inurl:"/wp-content/plugins/legalweb-cloud/"
+    shodan-query: http.html:"wp-content/plugins/legalweb-cloud/"
+  name: 'LegalWeb Cloud <= 1.1.2 - Authenticated (Contributor+) Stored Cross-Site
+    Scripting
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/034d3d52-cb77-40dd-85a1-81ca3bfd1f23?source=api-scan
+  severity: low
+  tags: cve,wordpress,wp-plugin,legalweb-cloud,low,candidate

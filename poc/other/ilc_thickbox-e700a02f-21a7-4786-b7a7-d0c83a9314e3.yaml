@@ -1,0 +1,45 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - ilc-thickbox
+  - dsl:
+    - compare_versions(version, '<= 1.0')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/ilc-thickbox/readme.txt'
+  redirects: true
+id: ilc_thickbox-e700a02f-21a7-4786-b7a7-d0c83a9314e3
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/ilc-thickbox/
+    google-query: inurl:"/wp-content/plugins/ilc-thickbox/"
+    shodan-query: http.html:"wp-content/plugins/ilc-thickbox/"
+  name: 'ILC Thickbox <= 1.0 - Cross-Site Request Forgery to Settings Update
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/e700a02f-21a7-4786-b7a7-d0c83a9314e3?source=api-scan
+  severity: medium
+  tags: cve,wordpress,wp-plugin,ilc-thickbox,medium,candidate

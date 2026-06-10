@@ -1,0 +1,52 @@
+http:
+- extractors:
+  - group: 1
+    internal: true
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - wordpress-https
+  - dsl:
+    - compare_versions(version, '<= 3.4.0')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/wordpress-https/readme.txt'
+  redirects: true
+id: wordpress-https-fc212cc7eec653319494b488cc7fe53d
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/wordpress-https/
+    google-query: inurl:"/wp-content/plugins/wordpress-https/"
+    shodan-query: 'vuln:'
+  name: 'WordPress HTTPS (SSL) <= 3.4.0 - Missing Authorization to Settings Change
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/49e4dc41-dd5a-4689-9818-e742d1def2f0?source=api-scan
+  severity: high
+  tags: cve,wordpress,wp-plugin,wordpress-https,high

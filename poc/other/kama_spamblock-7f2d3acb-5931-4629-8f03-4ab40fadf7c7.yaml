@@ -1,0 +1,45 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - kama-spamblock
+  - dsl:
+    - compare_versions(version, '<= 1.8.2')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/kama-spamblock/readme.txt'
+  redirects: true
+id: kama_spamblock-7f2d3acb-5931-4629-8f03-4ab40fadf7c7
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/kama-spamblock/
+    google-query: inurl:"/wp-content/plugins/kama-spamblock/"
+    shodan-query: http.html:"wp-content/plugins/kama-spamblock/"
+  name: 'Kama SpamBlock <= 1.8.2 - Reflected Cross-Site Scripting
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/7f2d3acb-5931-4629-8f03-4ab40fadf7c7?source=api-scan
+  severity: medium
+  tags: cve,wordpress,wp-plugin,kama-spamblock,medium,candidate

@@ -1,0 +1,46 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - responsive-youtube-videos
+  - dsl:
+    - compare_versions(version, '<= 2.1')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/responsive-youtube-videos/readme.txt'
+  redirects: true
+id: responsive_youtube_videos-f723be00-79f1-4a24-8502-2c5844ccc5de
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/responsive-youtube-videos/
+    google-query: inurl:"/wp-content/plugins/responsive-youtube-videos/"
+    shodan-query: http.html:"wp-content/plugins/responsive-youtube-videos/"
+  name: 'Responsive Videos <= 2.1 - Authenticated (Contributor+) Stored Cross-Site
+    Scripting
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/f723be00-79f1-4a24-8502-2c5844ccc5de?source=api-scan
+  severity: low
+  tags: cve,wordpress,wp-plugin,responsive-youtube-videos,low,candidate

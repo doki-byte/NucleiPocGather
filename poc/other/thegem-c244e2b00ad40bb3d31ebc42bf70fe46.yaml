@@ -1,0 +1,52 @@
+http:
+- extractors:
+  - group: 1
+    internal: true
+    name: version
+    part: body
+    regex:
+    - '(?mi)Version: ([0-9.]+)'
+    type: regex
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - '(?mi)Version: ([0-9.]+)'
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - thegem
+  - dsl:
+    - compare_versions(version, '< 5.8.1.1')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/themes/thegem/style.css'
+  redirects: true
+id: thegem-c244e2b00ad40bb3d31ebc42bf70fe46
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/themes/thegem/
+    google-query: inurl:"/wp-content/themes/thegem/"
+    shodan-query: 'vuln:'
+  name: 'TheGem < 5.8.1.1 - Missing Authorization
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/074e8e37-147d-47ea-93ed-652d7de7be9e?source=api-scan
+  severity: high
+  tags: cve,wordpress,wp-theme,thegem,high

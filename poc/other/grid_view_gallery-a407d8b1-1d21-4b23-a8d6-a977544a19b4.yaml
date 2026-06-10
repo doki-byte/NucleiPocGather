@@ -1,0 +1,45 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - grid-view-gallery
+  - dsl:
+    - compare_versions(version, '<= 1.0')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/grid-view-gallery/readme.txt'
+  redirects: true
+id: grid_view_gallery-a407d8b1-1d21-4b23-a8d6-a977544a19b4
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/grid-view-gallery/
+    google-query: inurl:"/wp-content/plugins/grid-view-gallery/"
+    shodan-query: http.html:"wp-content/plugins/grid-view-gallery/"
+  name: 'Grid View Gallery <= 1.0 - Authenticated (Editor+) PHP Object Injection
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/a407d8b1-1d21-4b23-a8d6-a977544a19b4?source=api-scan
+  severity: low
+  tags: cve,wordpress,wp-plugin,grid-view-gallery,low,candidate

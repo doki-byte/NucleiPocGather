@@ -1,0 +1,46 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - post-lockdown
+  - dsl:
+    - compare_versions(version, '<= 4.0.2')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/post-lockdown/readme.txt'
+  redirects: true
+id: post_lockdown-447cef6f-fa2e-4087-946d-6e0214830ea9
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/post-lockdown/
+    google-query: inurl:"/wp-content/plugins/post-lockdown/"
+    shodan-query: http.html:"wp-content/plugins/post-lockdown/"
+  name: 'Post Lockdown <= 4.0.2 - Missing Authorization to Authenticated (Subscriber+)
+    Post Disclosure
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/447cef6f-fa2e-4087-946d-6e0214830ea9?source=api-scan
+  severity: low
+  tags: cve,wordpress,wp-plugin,post-lockdown,low,candidate

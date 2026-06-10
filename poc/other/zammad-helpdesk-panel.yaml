@@ -1,32 +1,32 @@
-id: zammad-helpdesk-panel
-
-info:
-  name: Zammad Helpdesk Panel - Detect
-  author: righettod
-  severity: info
-  description: |
-    Zammad is an open source helpdesk and customer support system that provides ticket management, live chat, and knowledge base functionality. This template detects exposed Zammad installations.
-  reference:
-    - https://github.com/zammad/zammad
-    - https://zammad.org/
-  metadata:
-    verified: true
-    max-request: 1
-    vendor: zammad
-    product: zammad
-    shodan-query: http.title:"Zammad Helpdesk"
-    fofa-query: title="Zammad Helpdesk"
-  tags: panel,zammad,detect,helpdesk,ticketing
-
 http:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
+- matchers:
+  - condition: and
+    dsl:
+    - status_code == 200
+    - contains_any(to_lower(body), "<title>zammad helpdesk</title>", "zammad_form_script")
+    type: dsl
+  method: GET
+  path:
+  - '{{BaseURL}}'
+id: zammad-helpdesk-panel
+info:
+  author: righettod
+  description: 'Zammad is an open source helpdesk and customer support system that
+    provides ticket management, live chat, and knowledge base functionality. This
+    template detects exposed Zammad installations.
 
-    matchers:
-      - type: dsl
-        dsl:
-          - 'status_code == 200'
-          - 'contains_any(to_lower(body), "<title>zammad helpdesk</title>", "zammad_form_script")'
-        condition: and
-# digest: 4a0a00473045022100bfc7e908b11a7a44392c9b866a28edcf10c9129c94cca522ca9ab30f1e3c18a9022039c57bbc02e3fd2b6249b952629d99edd3b60d10d1f0a2044060733c58ecf2b4:922c64590222798bb761d5b6d8e72950
+    '
+  metadata:
+    fofa-query: title="Zammad Helpdesk"
+    max-request: 1
+    product: zammad
+    runzero-match: any(each(service["html.titles"]), {# matches "(?i)Zammad Helpdesk"})
+    shodan-query: http.title:"Zammad Helpdesk"
+    vendor: zammad
+    verified: true
+  name: Zammad Helpdesk Panel - Detect
+  reference:
+  - https://github.com/zammad/zammad
+  - https://zammad.org/
+  severity: info
+  tags: panel,zammad,detect,helpdesk,ticketing,discovery

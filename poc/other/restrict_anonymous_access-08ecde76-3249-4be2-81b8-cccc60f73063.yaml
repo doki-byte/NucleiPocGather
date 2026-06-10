@@ -1,0 +1,46 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - restrict-anonymous-access
+  - dsl:
+    - compare_versions(version, '<= 1.2')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/restrict-anonymous-access/readme.txt'
+  redirects: true
+id: restrict_anonymous_access-08ecde76-3249-4be2-81b8-cccc60f73063
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/restrict-anonymous-access/
+    google-query: inurl:"/wp-content/plugins/restrict-anonymous-access/"
+    shodan-query: http.html:"wp-content/plugins/restrict-anonymous-access/"
+  name: 'Restrict Anonymous Access <= 1.2 - Authenticated (Contributor+) Stored Cross-Site
+    Scripting
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/08ecde76-3249-4be2-81b8-cccc60f73063?source=api-scan
+  severity: low
+  tags: cve,wordpress,wp-plugin,restrict-anonymous-access,low,candidate

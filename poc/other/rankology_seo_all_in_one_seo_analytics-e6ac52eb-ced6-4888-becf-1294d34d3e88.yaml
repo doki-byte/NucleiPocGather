@@ -1,0 +1,44 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - rankology-seo-all-in-one-seo-analytics
+  - dsl:
+    - compare_versions(version, '<= 2.2.4')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/rankology-seo-all-in-one-seo-analytics/readme.txt'
+  redirects: true
+id: rankology_seo_all_in_one_seo_analytics-e6ac52eb-ced6-4888-becf-1294d34d3e88
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/rankology-seo-all-in-one-seo-analytics/
+    google-query: inurl:"/wp-content/plugins/rankology-seo-all-in-one-seo-analytics/"
+    shodan-query: http.html:"wp-content/plugins/rankology-seo-all-in-one-seo-analytics/"
+  name: "Rankology SEO \u2013 On-site SEO <= 2.2.4 - Missing Authorization to Authenticated\
+    \ (Subscriber+) Arbitrary Options Update\n"
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/e6ac52eb-ced6-4888-becf-1294d34d3e88?source=api-scan
+  severity: low
+  tags: cve,wordpress,wp-plugin,rankology-seo-all-in-one-seo-analytics,low,candidate
