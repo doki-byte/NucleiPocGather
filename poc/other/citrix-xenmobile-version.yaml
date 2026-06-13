@@ -32,18 +32,14 @@ http:
 id: citrix-xenmobile-version
 info:
   author: Puben
-  classification:
-    cpe: cpe:2.3:a:citrix:xenmobile_server:*:*:*:*:*:*:*:*
   description: 'Template for XenMobile-detection (even if login-page is deactivated)
     and the specific version and rolling patch from js/app/init.js endpoint
 
     '
   metadata:
-    max-request: 2
-    product: xenmobile_server
+    max-request: 1
     shodan-query: title:"XenMobile - Console"
-    vendor: citrix
     verified: true
   name: Citrix XenMobile Version - Detect
   severity: info
-  tags: tech,edb,citrix,version,detect,discovery
+  tags: tech,edb,citrix,version,detect

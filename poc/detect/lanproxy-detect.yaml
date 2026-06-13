@@ -25,4 +25,4 @@ info:
     '
   name: LanProxy
   severity: info
-  tags: lanproxy,detect
+  tags: cloud

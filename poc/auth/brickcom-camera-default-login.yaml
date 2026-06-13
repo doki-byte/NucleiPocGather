@@ -32,8 +32,6 @@ info:
   metadata:
     fofa-query: title="Brickcom"
     max-request: 1
-    runzero-match: any(each(service["http.head.wwwAuthentications"]), {# contains
-      'realm="Brickcom'})
     shodan-query: realm="Brickcom"
     verified: true
   name: Brickcom Camera - Default Login

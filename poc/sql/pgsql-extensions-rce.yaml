@@ -8,7 +8,6 @@ info:
 
     '
   metadata:
-    max-request: 1
     shodan-query: product:"PostgreSQL"
     verified: true
   name: PostgreSQL 8.1  Extensions - Remote Code Execution
@@ -17,7 +16,7 @@ info:
   - https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/SQL%20Injection/PostgreSQL%20Injection.md#using-libcso6
   - https://hacktricks.boitatech.com.br/pentesting-web/sql-injection/postgresql-injection/rce-with-postgresql-extensions
   severity: high
-  tags: postgresql,js,network,rce,vuln
+  tags: postgresql,js,network,rce
 javascript:
 - args:
     Db: '{{database}}'
@@ -45,6 +44,3 @@ javascript:
     - postgres
     usernames:
     - postgres
-  pre-condition: 'isPortOpen(Host,Port);
-
-    '

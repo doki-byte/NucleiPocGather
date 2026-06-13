@@ -13,7 +13,7 @@ info:
   - https://techdocs.broadcom.com/us/en/symantec-security-software/web-and-network-security/edge-swg/7-3/about-ssl-proxy.html
   - https://techdocs.broadcom.com/us/en/symantec-security-software/web-and-network-security/edge-swg/7-3.html
   severity: info
-  tags: network,telnet,bluecoat,proxy,detect,detection,tcp,discovery
+  tags: network,bluecoat,proxy,detect
 tcp:
 - host:
   - '{{Hostname}}'

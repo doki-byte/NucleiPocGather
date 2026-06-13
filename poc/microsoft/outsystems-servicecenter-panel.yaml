@@ -12,12 +12,6 @@ http:
     - status_code == 200
     - contains(body, "Enter your OutSystems credentials")
     type: dsl
-  - condition: or
-    part: set_cookie
-    type: word
-    words:
-    - osVisitor=
-    - osVisit=
   max-redirects: 2
   method: GET
   path:
@@ -27,20 +21,15 @@ http:
 id: outsystems-servicecenter-panel
 info:
   author: righettod
-  classification:
-    cpe: cpe:2.3:a:outsystems:platform_server:*:*:*:*:*:*:*:*
   description: 'OutSystems Service Center login panel was detected.
 
     '
   metadata:
-    max-request: 2
-    product: platform_server
-    runzero-match: service["http.body"] matches "(?i)outsystems"
+    max-request: 1
     shodan-query: http.html:"outsystems"
-    vendor: outsystems
     verified: true
   name: OutSystems Service Center Login Panel - Detect
   reference:
   - https://www.outsystems.com/
   severity: info
-  tags: detect,discovery,login,outsystems,panel
+  tags: panel,outsystems,login,detect

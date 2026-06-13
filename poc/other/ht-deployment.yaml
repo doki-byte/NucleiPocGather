@@ -39,4 +39,4 @@ info:
   remediation: Block access to the file using `.htaccess` on the server. The best-practise
     is to block all the folders/files beginning with `.` except `.well-known` folder.
   severity: medium
-  tags: files,exposure,php,deployment,cache,dg,vuln
+  tags: files,exposure,php,deployment,cache

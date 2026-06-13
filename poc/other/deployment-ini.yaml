@@ -31,7 +31,6 @@ info:
 
     '
   metadata:
-    max-request: 12
     product: ftp-deployment
     vendor: dg
   name: FTP Deployment Config File - Exposure
@@ -42,4 +41,4 @@ info:
 
     '
   severity: medium
-  tags: config,exposure,dg
+  tags: config,exposure

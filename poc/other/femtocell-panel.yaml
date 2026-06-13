@@ -18,7 +18,6 @@ info:
     '
   metadata:
     max-request: 1
-    runzero-match: service["http.body"] matches "(?i)Femtocell Access Point"
     shodan-query: html:"Femtocell Access Point"
     verified: true
   name: Femtocell Access Point Panel - Detect
@@ -26,4 +25,4 @@ info:
   - https://en.wikipedia.org/wiki/Femtocell
   - https://www.facebook.com/photo/?fbid=844447314392456&set=a.467014098802448
   severity: info
-  tags: femtocell,network,panel,login,discovery
+  tags: femtocell,network,panel,login

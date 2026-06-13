@@ -16,11 +16,10 @@ info:
     '
   metadata:
     max-request: 1
-    runzero-match: any(each(service["html.titles"]), {# matches "(?i)ClarityVista"})
     shodan-query: http.title:"ClarityVista"
     verified: true
   name: Chemotargets Clarity Vista Login Panel - Detect
   reference:
   - https://chemotargets.com/clarityvista/
   severity: info
-  tags: panel,chemotargets,login,detect,discovery
+  tags: panel,chemotargets,login,detect

@@ -7,31 +7,45 @@ http:
     - 'X-Version-Id: (\d+\.\d+\.\d+)'
     type: regex
   matchers:
-  - case-insensitive: true
-    part: body
-    type: word
-    words:
-    - content="Mattermost"
   - status:
     - 200
     type: status
+  - part: body
+    type: word
+    words:
+    - content="Mattermost"
+    - content='Mattermost'
   matchers-condition: and
   method: GET
   path:
-  - '{{BaseURL}}/login'
+  - '{{BaseURL}}'
 id: mattermost-panel
 info:
   author: darses
-  description: 'Mattermost Login Panel was discovered.
+  description: 'Mattermost login panel was detected.
 
     '
   metadata:
-    fofa-query: content="Mattermost"
+    fofa-query:
+    - header="X-Version-Id"
+    - title=="Mattermost"
+    - icon_hash="2091779061"
+    - icon_hash="-940958811"
+    - icon_hash="1875634354"
+    - icon_hash="-77128220"
+    - icon_hash="180508508"
+    - icon_hash="1158942057"
+    - icon_hash="-405956582"
+    - icon_hash="-1793549760"
+    - icon_hash="1405455356"
     max-requests: 1
-    runzero-match: service["http.body"] matches "(?i)'content=\"Mattermost\"'"
-    shodan-query: html:'content="Mattermost"'
+    product: mattermost
+    shodan-query:
+    - X-Version-Id
+    - title:"Mattermost"
+    - http.favicon.hash:-1923148462
     vendor: mattermost
     verified: true
-  name: Mattermost Login - Panel
+  name: Mattermost - Panel
   severity: info
-  tags: discovery,login,mattermost,panel
+  tags: detect,panel,mattermost

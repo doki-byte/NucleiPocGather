@@ -5,21 +5,15 @@ http:
     part: header
     type: kval
   matchers:
-  - status:
-    - 200
-    type: status
-  - condition: and
-    part: header
-    type: word
-    words:
-    - 'Content-Security-Policy: default-src ''self'' https://*.duosecurity.com'
-    - 'Referrer-Policy: no-referrer-when-downgrade'
   - condition: and
     part: body
     type: word
     words:
     - <title>Login</title>
-    - loginUserNameInput
+    - loginToFlexDiv
+  - status:
+    - 200
+    type: status
   matchers-condition: and
   method: GET
   path:
@@ -29,7 +23,7 @@ info:
   author: pussycat0x,darses
   classification:
     cpe: cpe:2.3:a:fortinet:fortisiem:*:*:*:*:*:*:*:*
-  description: 'FortiSIEM login panel was detected.
+  description: 'FortiSIEM login panel was discovered.
 
     '
   metadata:
@@ -45,4 +39,4 @@ info:
     verified: true
   name: Fortinet FortiSIEM - Panel
   severity: info
-  tags: panel,fortinet
+  tags: panel,fortinet,login,discovery

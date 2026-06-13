@@ -20,7 +20,7 @@ info:
     max-request: 1
     shodan-query: html:"polyfill.io"
     verified: true
-  name: Polyfill.io - Backdoor
+  name: Polyfill.io - Detection
   reference:
   - https://sansec.io/research/polyfill-supply-chain-attack
   - https://web.archive.org/web/20240229113710/https://github.com/polyfillpolyfill/polyfill-service/issues/2834

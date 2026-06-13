@@ -18,7 +18,7 @@ http:
 id: pterodactyl-panel
 info:
   author: darses
-  description: 'Detects Pterodactyl game server management panel.
+  description: 'Pterodactyl game server management panel was detected.
 
     '
   metadata:
@@ -29,9 +29,6 @@ info:
     - 'Set-Cookie: pterodactyl_session='
     max-request: 1
     product: panel
-    runzero-match: any(each(service["html.titles"]), {# matches "(?i)Pterodactyl"})
-      || service["favicon.ico.image.mmh3"] == "-456405319" || service["favicon.ico.image.mmh3"]
-      == "846001371"
     shodan-query:
     - title:"Pterodactyl"
     - http.favicon.hash:-456405319
@@ -43,4 +40,4 @@ info:
   reference:
   - https://github.com/pterodactyl/panel
   severity: info
-  tags: detect,discovery,oos,panel,pterodactyl
+  tags: detect,panel,pterodactyl

@@ -12,16 +12,11 @@ http:
 id: monitorr-panel
 info:
   author: ritikchaddha
-  classification:
-    cpe: cpe:2.3:a:monitorr:monitorr:*:*:*:*:*:*:*:*
   metadata:
     fofa-query: icon_hash="-211006074"
     max-request: 1
-    product: monitorr
-    runzero-match: service["favicon.ico.image.mmh3"] == "-211006074"
     shodan-query: http.favicon.hash:-211006074
-    vendor: monitorr
     verified: true
   name: Monitorr Panel - Detect
   severity: info
-  tags: detect,discovery,monitorr,panel
+  tags: panel,monitorr,detect

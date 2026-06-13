@@ -1,11 +1,9 @@
 http:
 - matchers:
-  - condition: or
-    part: body
+  - part: body
     type: word
     words:
-    - NI Web-based Configuration & Monitoring
-    - NI Web-based Monitoring
+    - <title>NI Web-based Configuration & Monitoring</title>
   - status:
     - 200
     type: status
@@ -15,15 +13,11 @@ http:
   - '{{BaseURL}}'
 id: ni-web-based-panel
 info:
-  author: DhiyaneshDK,matejsmycka
+  author: DhiyaneshDK
   metadata:
     max-request: 1
-    runzero-match: any(each(service["html.titles"]), {# matches "(?i)NI Web-based
-      Configuration & Monitoring"}) || service["favicon.ico.image.mmh3"] == "1192389544"
-    shodan-query:
-    - title:"NI Web-based Configuration & Monitoring"
-    - http.favicon.hash:1192389544
+    shodan-query: title:"NI Web-based Configuration & Monitoring"
     verified: true
-  name: NI Web-based Configuration & Monitoring - Detect
+  name: NI Web-based Configuration & Monitoring - Panel
   severity: info
-  tags: detect,ni,web-based,panel,discovery
+  tags: detect,ni,web-based,panel

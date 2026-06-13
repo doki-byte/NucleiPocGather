@@ -16,8 +16,6 @@ http:
 id: dlink-unauth-cgi-script
 info:
   author: pussycat0x
-  classification:
-    cpe: cpe:2.3:h:dlink:dns-345:*:*:*:*:*:*:*:*
   description: 'A vulnerability has been identified in the D-Link DNS series network
     storage devices, allowing for the exposure of sensitive device information to
     unauthorized actors. This vulnerability is due to an unauthenticated access flaw
@@ -27,12 +25,9 @@ info:
     '
   metadata:
     fofa-query: app="D_Link-DNS"
-    max-request: 1
-    product: dns-345
-    vendor: dlink
     verified: true
   name: D-Link DNS Series  CGI Script - Unauthenticated
   reference:
   - https://github.com/netsecfish/info_cgi
   severity: low
-  tags: unauth,dlink,misconfig,vuln
+  tags: unauth,dlink,misconfig

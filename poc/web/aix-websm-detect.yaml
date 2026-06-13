@@ -13,7 +13,7 @@ info:
   - https://en.wikipedia.org/wiki/IBM_Web-based_System_Manager
   - https://www.filibeto.org/unix/aix/lib/rel/5.2/wsmadmn.pdf
   severity: info
-  tags: network,aix,detect,detection,tcp,discovery
+  tags: network,aix,detect
 tcp:
 - host:
   - '{{Hostname}}'

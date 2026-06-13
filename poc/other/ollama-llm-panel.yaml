@@ -14,7 +14,6 @@ id: ollama-llm-panel
 info:
   author: pbuff07
   classification:
-    cpe: cpe:2.3:a:ollama:ollama:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200
   description: 'Ollama LLM Panel was detected
@@ -22,10 +21,8 @@ info:
     '
   metadata:
     max-request: 1
-    product: ollama
     shodan-query: Ollama is running
-    vendor: ollama
-    zoomeye-query: app="Ollama"
+    zoomeye-query: app:"Ollama LLM"
   name: Ollama LLM Panel - Detect
   severity: info
-  tags: panel,ollama,llm,detect,discovery,ai
+  tags: panel,ollama,llm,detect

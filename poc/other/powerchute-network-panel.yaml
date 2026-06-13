@@ -16,9 +16,8 @@ info:
   author: DhiyaneshDK
   metadata:
     max-request: 1
-    runzero-match: service["http.body"] matches "(?i)PowerChute Network Shutdown"
     shodan-query: html:"PowerChute Network Shutdown"
     verified: true
   name: PowerChute Network Shutdown Panel - Detect
   severity: info
-  tags: panel,login,powerchute,detect,discovery
+  tags: panel,login,powerchute,detect

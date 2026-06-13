@@ -14,23 +14,33 @@ info:
   reference:
   - https://github.com/sjhilt/Nmap-NSEs/blob/master/minecraft-info.nse
   severity: info
-  tags: js,network,minecraft,enum,discovery
+  tags: js,network,minecraft,enum
 javascript:
-- pre-condition: 'isPortOpen(Host,Port);
-
-    '
 - args:
     Host: '{{Host}}'
     Port: 25565
-  code: "let data = \"fe01\"\nlet c = require(\"nuclei/net\");\nlet conn = c.Open('tcp',\
-    \ `${Host}:${Port}`);\nconn.SendHex(data);\nlet response = conn.RecvString();\n\
-    if (response.includes(\"HTTP/1.1\")) {\n  conn.Close();\n} else {\n  let cleanedResponse\
-    \ = response.replace(/\\x00/g, '');\n  const version = cleanedResponse.slice(16,\
-    \ 30).replace(/(\\d+)(\\d{1})(\\d+)/, \"$1.$2.$3\");\n  const description = cleanedResponse.slice(30,\
-    \ -4);\n  const onlinePlayers = cleanedResponse.slice(-1);\n  const maxPlayers\
-    \ = cleanedResponse.slice(-3);\n  Export(\"Version: \", version , \" Description:\"\
-    , description ,\" Online Players:\", onlinePlayers, \" Maximum Players:\", maxPlayers);\n\
-    }\n"
+  code: 'let data = "fe01"
+
+    let c = require("nuclei/net");
+
+    let conn = c.Open(''tcp'', `${Host}:${Port}`);
+
+    conn.SendHex(data);
+
+    let response = conn.RecvString();
+
+    const version = response.slice(16, 30).replace(/(\d+)(\d{1})(\d+)/, "$1.$2.$3");
+
+    const description = response.slice(30, -4);
+
+    const onlinePlayers = response.slice(-1);
+
+    const maxPlayers = response.slice(-3);
+
+    Export("Version: ", version , " Description:", description ," Online Players:",
+    onlinePlayers, " Maximum Players:", maxPlayers)
+
+    '
   extractors:
   - dsl:
     - response
@@ -39,4 +49,3 @@ javascript:
   - dsl:
     - success == true
     type: dsl
-  matchers-condition: and

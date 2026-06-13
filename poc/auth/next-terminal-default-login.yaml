@@ -37,10 +37,9 @@ info:
   metadata:
     fofa-query: title="Next Terminal"
     max-request: 1
-    runzero-match: any(each(service["html.titles"]), {# matches "(?i)Next Terminal"})
     verified: true
   name: Next Terminal - Default Login
   reference:
   - https://github.com/dushixiang/next-terminal
   severity: high
-  tags: default-login,next,next-terminal,vuln
+  tags: default-login,next-terminal,next

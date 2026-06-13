@@ -39,7 +39,6 @@ info:
     '
   metadata:
     max-request: 2
-    runzero-match: any(each(service["http.bodies"]), {# matches "'NOCOBASE_'"})
     verified: true
     zoomeye-query: app="NocoBase"
   name: NocoBase - Default Login

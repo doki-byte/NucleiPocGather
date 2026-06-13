@@ -14,17 +14,13 @@ http:
 id: phpipam-installer
 info:
   author: DhiyaneshDK
-  classification:
-    cpe: cpe:2.3:a:phpipam:phpipam:*:*:*:*:*:*:*:*
   description: 'PHP IPAM is susceptible to the Installation page exposure due to misconfiguration.
 
     '
   metadata:
     max-request: 1
-    product: phpipam
     shodan-query: html:"phpipam installation wizard"
-    vendor: phpipam
     verified: true
   name: PHP IPAM Installation Page - Exposed
   severity: high
-  tags: misconfig,exposure,install,phpipam,vuln
+  tags: misconfig,exposure,install,phpipam

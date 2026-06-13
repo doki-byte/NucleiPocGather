@@ -47,9 +47,8 @@ info:
     '
   metadata:
     max-request: 2
-    runzero-match: service["favicon.ico.image.mmh3"] == "-121681558"
     shodan-query: http.favicon.hash:-121681558
     verified: true
   name: Allnet - Default Login
   severity: high
-  tags: allnet,default-login,vuln
+  tags: default-login,allnet

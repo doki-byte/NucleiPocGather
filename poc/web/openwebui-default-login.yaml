@@ -37,7 +37,6 @@ info:
   metadata:
     fofa-query: icon_hash:"-286484075"
     max-request: 1
-    runzero-match: service["favicon.ico.image.mmh3"] == "-286484075"
     shodan-query: http.favicon.hash:-286484075
     verified: true
   name: Open WebUI - Default Login

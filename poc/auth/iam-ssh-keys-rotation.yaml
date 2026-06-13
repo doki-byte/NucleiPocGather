@@ -36,8 +36,6 @@ info:
     security and preventing unauthorized access to AWS CodeCommit repositories
 
     '
-  metadata:
-    max-request: 2
   name: SSH Key Rotation - 90-Day Policy
   reference:
   - https://docs.aws.amazon.com/cli/latest/reference/iam/list-ssh-public-keys.html

@@ -6,14 +6,13 @@ info:
 
     '
   metadata:
-    max-request: 40
     shodan-query: product:"PostgreSQL"
     verified: true
   name: Postgresql Default Database - Enumeration
   reference:
   - https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/SQL%20Injection/PostgreSQL%20Injection.md#postgresql-database-name
   severity: high
-  tags: js,network,postgresql,authenticated,enum,discovery
+  tags: js,network,postgresql,authenticated
 javascript:
 - args:
     Db: '{{database}}'
@@ -52,6 +51,3 @@ javascript:
     usernames:
     - postgres
     - admin
-  pre-condition: 'isPortOpen(Host,Port);
-
-    '

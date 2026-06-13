@@ -14,14 +14,10 @@ http:
 id: helm-dashboard-exposure
 info:
   author: DhiyaneshDk
-  classification:
-    cpe: cpe:2.3:a:helm:helm:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
-    product: helm
     shodan-query: http.favicon.hash:-594722214
-    vendor: helm
     verified: true
   name: Helm Dashboard - Exposure
   severity: medium
-  tags: helm,exposure,dashboard,misconfig,vuln
+  tags: helm,exposure,dashboard,misconfig

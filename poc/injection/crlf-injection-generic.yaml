@@ -25,4 +25,4 @@ info:
   reference:
   - https://hackerone.com/reports/858650
   severity: low
-  tags: crlf,generic,hackerone,vuln
+  tags: crlf,generic,hackerone

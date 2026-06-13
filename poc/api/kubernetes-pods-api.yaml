@@ -27,4 +27,4 @@ info:
   - https://github.com/officialhocc/Kubernetes-Kubelet-RCE
   - https://blog.binaryedge.io/2018/12/06/kubernetes-being-hijacked-worldwide/
   severity: critical
-  tags: k8,unauth,kubernetes,devops
+  tags: k8,unauth,kubernetes,devops,misconfig

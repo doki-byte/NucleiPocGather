@@ -22,10 +22,9 @@ info:
     '
   metadata:
     fofa-query: body="Intelbras"
-    max-request: 1
     verified: true
   name: Intelbras DVR - Unrestricted Access
   reference:
   - https://github.com/netsecfish/intelbras_cap_js
   severity: low
-  tags: unauth,intelbras,dvr,misconfig,vuln
+  tags: unauth,intelbras,dvr,misconfig

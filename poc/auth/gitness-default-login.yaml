@@ -27,7 +27,6 @@ info:
   metadata:
     fofa-query: title="Gitness"
     max-request: 2
-    runzero-match: any(each(service["html.titles"]), {# matches "(?i)Gitness"})
     shodan-query: title:"Gitness"
     verified: true
   name: Gitness - Default Login

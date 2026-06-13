@@ -60,7 +60,6 @@ info:
   metadata:
     fofa-query: app="OpenProject"
     max-request: 3
-    runzero-match: any(each(service["html.titles"]), {# matches "(?i)OpenProject"})
     shodan-query: http.title:"OpenProject"
     verified: true
   name: OpenProject - Default Admin Credentials
@@ -69,7 +68,7 @@ info:
   - https://www.openproject.org/docs/api/introduction/
   - https://github.com/opf/openproject
   severity: high
-  tags: auth,default-login,misconfig,openproject
+  tags: openproject,default-login,auth,misconfig
 variables:
   password: admin
   username: admin

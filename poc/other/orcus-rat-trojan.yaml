@@ -16,7 +16,7 @@ info:
   reference:
   - https://github.com/montysecurity/C2-Tracker/blob/main/tracker.py
   severity: info
-  tags: network,c2,ir,osint,cti,orcus,rat,tcp,vuln
+  tags: network,c2,ir,osint,cti,orcus,rat
 tcp:
 - host:
   - '{{Hostname}}'

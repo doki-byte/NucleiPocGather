@@ -14,21 +14,15 @@ http:
 id: beyondtrust-priv-panel
 info:
   author: righettod
-  classification:
-    cpe: cpe:2.3:a:beyondtrust:privileged_remote_access:*:*:*:*:*:*:*:*
   description: 'BeyondTrust Privileged Remote Access login panel was detected.
 
     '
   metadata:
-    max-request: 2
-    product: privileged_remote_access
-    runzero-match: service["http.body"] matches "(?i)BeyondTrust Privileged Remote
-      Access Login"
+    max-request: 1
     shodan-query: http.html:"BeyondTrust Privileged Remote Access Login"
-    vendor: beyondtrust
     verified: true
   name: BeyondTrust Privileged Remote Access - Panel
   reference:
   - https://www.beyondtrust.com/products/privileged-remote-access
   severity: info
-  tags: panel,beyondtrust,login,detect,discovery
+  tags: panel,beyondtrust,login,detect

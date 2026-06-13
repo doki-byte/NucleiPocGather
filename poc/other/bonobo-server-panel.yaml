@@ -23,18 +23,13 @@ http:
 id: bonobo-server-panel
 info:
   author: bhutch
-  classification:
-    cpe: cpe:2.3:a:bonobogitserver:bonobo_git_server:*:*:*:*:*:*:*:*
   description: 'Bonobo Git Server login panel was detected.
 
     '
   metadata:
     max-request: 2
-    product: bonobo_git_server
-    runzero-match: service["favicon.ico.image.mmh3"] == "-219625874"
     shodan-query: http.favicon.hash:-219625874
-    vendor: bonobogitserver
     verified: true
   name: Bonobo Git Server Login Panel - Detect
   severity: info
-  tags: panel,bonobo,git,login,detect,discovery
+  tags: panel,bonobo,git,login,detect

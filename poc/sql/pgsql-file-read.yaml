@@ -5,14 +5,13 @@ info:
 
     '
   metadata:
-    max-request: 8
     shodan-query: product:"PostgreSQL"
     verified: true
   name: PostgreSQL File Read
   reference:
   - https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/SQL%20Injection/PostgreSQL%20Injection.md#postgresql-file-read
   severity: high
-  tags: js,network,postgresql,authenticated,enum,discovery
+  tags: js,network,postgresql,authenticated
 javascript:
 - args:
     Db: '{{database}}'
@@ -45,6 +44,3 @@ javascript:
     usernames:
     - postgres
     - admin
-  pre-condition: 'isPortOpen(Host,Port);
-
-    '

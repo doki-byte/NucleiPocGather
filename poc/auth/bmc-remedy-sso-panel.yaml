@@ -18,12 +18,10 @@ info:
     '
   metadata:
     max-request: 2
-    runzero-match: any(each(service["html.titles"]), {# matches "(?i)BMC Remedy Single
-      Sign-On domain data entry"})
     shodan-query: http.title:"BMC Remedy Single Sign-On domain data entry"
     verified: true
   name: BMC Remedy SSO Login Panel - Detect
   reference:
   - https://www.bmc.com/it-solutions/remedy-itsm.html
   severity: info
-  tags: panel,bmc,login,detect,discovery
+  tags: panel,bmc,login,detect
