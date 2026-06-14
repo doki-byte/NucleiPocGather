@@ -4,15 +4,15 @@ NucleiPocGather，每日更新
 这个项目是一个 Python 脚本，用于批量克隆 GitHub 项目，获取 Nuclei POC，并将 POC 按类别分类存放到文件夹中。同时，使用 GitHub Action 每日自动运行脚本。
 # POC 详情统计
 
-> **当前项目 POC 更新时间：**`2026-06-13 14:26`
+> **当前项目 POC 更新时间：**`2026-06-14 14:50`
 
 | ID | 标签      | 数量 | 目录       | 数量 | 严重性   | 数量 |
 |:---| :-------- | :--- | :--------- | :--- | :------- | :--- |
-| 1 | cve | 104704 | cve | 56994 | medium | 43217 |
-| 2 | wordpress | 98348 | other | 56123 | low | 37029 |
-| 3 | wp-plugin | 90692 | sql | 10804 | high | 27871 |
+| 1 | cve | 104724 | cve | 57012 | medium | 43221 |
+| 2 | wordpress | 98351 | other | 56124 | low | 37029 |
+| 3 | wp-plugin | 90695 | sql | 10802 | high | 27877 |
 | 4 | low | 34802 | wordpress | 7303 | info | 27156 |
-| 5 | medium | 34370 | auth | 4525 | critical | 16035 |
+| 5 | medium | 34370 | auth | 4525 | critical | 16044 |
 | 6 | candidate | 33659 | detect | 1874 | unknown | 135 |
 | 7 | tech | 17907 | remote_code_execution | 1855 | informative | 19 |
 | 8 | detect | 17135 | microsoft | 1418 | meduim | 19 |
