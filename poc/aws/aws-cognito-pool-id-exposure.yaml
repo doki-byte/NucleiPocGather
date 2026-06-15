@@ -7,7 +7,7 @@ info:
   description: This template detects exposed AWS Cognito Identity Pool IDs, User Pool IDs, and Client IDs in HTTP responses, JavaScript files, HTML meta tags, and JWT tokens.
   tags: aws,cognito
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}"

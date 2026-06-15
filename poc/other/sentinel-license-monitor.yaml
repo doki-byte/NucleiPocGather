@@ -16,14 +16,10 @@ http:
 id: sentinel-license-monitor
 info:
   author: DhiyaneshDk
-  classification:
-    cpe: cpe:2.3:a:trioniclabs:sentinel:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
-    product: sentinel
     shodan-query: html:"Sentinel License Monitor"
-    vendor: trioniclabs
     verified: true
   name: Sentinel License Monitor - Detect
   severity: unknown
-  tags: misconfig,sentinel,license,monitor,vuln
+  tags: misconfig,sentinel,license,monitor

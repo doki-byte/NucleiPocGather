@@ -8,11 +8,11 @@ info:
     max-request: 9
     shodan-query: port:445
     verified: true
-  name: SMB  Default Credential - Brutforcing
+  name: SMB Default Credential - Bruteforce
   reference:
   - https://nmap.org/nsedoc/scripts/smb-brute.html
   severity: high
-  tags: js,network,smb,enum,default
+  tags: js,network,smb,enum,default,bruteforce
 javascript:
 - args:
     Host: '{{Host}}'

@@ -16,20 +16,16 @@ http:
 id: sabnzbd-installer
 info:
   author: DhiyaneshDk
-  classification:
-    cpe: cpe:2.3:a:sabnzbd:sabnzbd:*:*:*:*:*:*:*:*
   description: 'Default installation wizard page of SABnzbd was discovered.
 
     '
   metadata:
     fofa-query: body="SABnzbd Quick-Start Wizard"
     max-request: 2
-    product: sabnzbd
     shodan-query: html:"SABnzbd Quick-Start Wizard"
-    vendor: sabnzbd
     verified: true
   name: SABnzbd Quick-Start Wizard - Exposure
   reference:
   - https://www.sabnzbd.org/
   severity: high
-  tags: sabnzbd,wizard,installer,misconfig,vuln
+  tags: sabnzbd,wizard,installer,misconfig

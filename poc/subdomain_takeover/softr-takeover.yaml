@@ -1,9 +1,5 @@
 http:
-- extractors:
-  - dsl:
-    - cname
-    type: dsl
-  matchers:
+- matchers:
   - dsl:
     - Host != ip
     type: dsl
@@ -29,4 +25,4 @@ info:
   - https://github.com/EdOverflow/can-i-take-over-xyz/issues/352
   - https://docs.softr.io/custom-domain-and-publishing/9qTmU2Lj8Gnpr1Ue6dEAkX/add-a-custom-domain-to-your-app/93K5bLJN3n91MRo9uRGdAf
   severity: high
-  tags: takeover,softr,vuln
+  tags: takeover,softr

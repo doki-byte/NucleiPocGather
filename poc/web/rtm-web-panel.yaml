@@ -20,4 +20,4 @@ info:
     verified: true
   name: RTM WEB - Panel
   severity: info
-  tags: panel,login,rtm-web,discovery
+  tags: panel,login,rtm-web

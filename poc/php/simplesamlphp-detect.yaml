@@ -14,19 +14,15 @@ http:
 id: simplesamlphp-detect
 info:
   author: righettod
-  classification:
-    cpe: cpe:2.3:a:simplesamlphp:simplesamlphp:*:*:*:*:*:*:*:*
   description: 'SimpleSAMLphp was detected.
 
     '
   metadata:
-    max-request: 2
-    product: simplesamlphp
+    max-request: 1
     shodan-query: http.title:"SimpleSAMLphp installation page"
-    vendor: simplesamlphp
     verified: true
   name: SimpleSAMLphp - Detect
   reference:
   - https://simplesamlphp.org/
   severity: info
-  tags: tech,simplesamlphp,detect,discovery
+  tags: tech,simplesamlphp,detect
