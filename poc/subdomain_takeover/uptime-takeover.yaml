@@ -1,9 +1,5 @@
 http:
-- extractors:
-  - dsl:
-    - cname
-    type: dsl
-  matchers:
+- matchers:
   - dsl:
     - Host != ip
     type: dsl
@@ -27,4 +23,4 @@ info:
   reference:
   - https://github.com/EdOverflow/can-i-take-over-xyz/issues/368
   severity: high
-  tags: takeover,uptime,vuln
+  tags: takeover,uptime

@@ -34,8 +34,6 @@ info:
     to optimize the cost of AWS Key Management Service (SSE-KMS) for server-side encryption
 
     '
-  metadata:
-    max-request: 2
   name: S3 Bucket Key not enabled
   reference:
   - https://docs.aws.amazon.com/AmazonS3/latest/userguide/manage-versioning-examples.html

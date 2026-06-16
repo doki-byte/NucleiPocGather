@@ -17,20 +17,15 @@ http:
 id: uipath-orchestrator-panel
 info:
   author: righettod
-  classification:
-    cpe: cpe:2.3:a:uipath:orchestrator:*:*:*:*:*:*:*:*
   description: 'UiPath Orchestrator login panel was detected.
 
     '
   metadata:
     max-request: 1
-    product: orchestrator
-    runzero-match: any(each(service["html.titles"]), {# matches "(?i)UiPath Orchestrator"})
     shodan-query: http.title:"UiPath Orchestrator"
-    vendor: uipath
     verified: true
   name: UiPath Orchestrator Login Panel - Detect
   reference:
   - https://www.uipath.com/
   severity: info
-  tags: panel,uipath,login,detect,discovery
+  tags: panel,uipath,login,detect

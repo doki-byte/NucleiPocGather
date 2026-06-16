@@ -1,12 +1,20 @@
 http:
 - matchers:
-  - condition: and
-    dsl:
-    - status_code == 200
-    - contains_any(to_lower(body), "<title>vertigis", "welcome to vertigis", "vertigis
-      fm - login", "<title>weboffice landing page" , "vertigis studio app designer",
-      "vertigis studio web designer", "vertigis studio access control")
-    type: dsl
+  - status:
+    - 200
+    type: status
+  - condition: or
+    type: word
+    words:
+    - <title>vertigis
+    - welcome to vertigis
+    - vertigis fm - login
+    - <title>weboffice landing page
+    - vertigis studio app designer
+    - vertigis studio web designer
+    - vertigis studio access control
+    - vertigisstudio
+  matchers-condition: and
   method: GET
   path:
   - '{{BaseURL}}/login'
@@ -14,6 +22,7 @@ http:
   - '{{BaseURL}}/FM/GeoManLogin.aspx'
   - '{{BaseURL}}/GEBman/GeoManLogin.aspx'
   - '{{BaseURL}}/Geoportal/synserver'
+  - '{{BaseURL}}/ModuleViewer/'
   - '{{BaseURL}}/vertigisstudio/web/designer/locales/en/translations.json'
   - '{{BaseURL}}/vertigisstudio/search/designer/locales/en/translations.json'
   - '{{BaseURL}}/vertigisstudio/mobile/designer/locales/en/translations.json'
@@ -21,16 +30,16 @@ http:
   stop-at-first-match: true
 id: vertigis-detect
 info:
-  author: righettod
+  author: righettod,darses
   description: 'VertiGIS products was detected.
 
     '
   metadata:
-    max-request: 9
+    max-request: 10
     shodan-query: http.title:"vertigis"
     verified: true
   name: VertiGIS - Detect
   reference:
   - https://www.vertigis.com/
   severity: info
-  tags: tech,vertigis,detect,discovery
+  tags: tech,vertigis,detect

@@ -17,19 +17,15 @@ http:
 id: tibco-spotfire-panel
 info:
   author: righettod
-  classification:
-    cpe: cpe:2.3:a:tibco:spotfire_server:*:*:*:*:*:*:*:*
   description: 'TIBCO Spotfire login panel was detected.
 
     '
   metadata:
-    max-request: 2
-    product: spotfire_server
+    max-request: 1
     shodan-query: TIBCO Spotfire Server
-    vendor: tibco
     verified: true
   name: TIBCO Spotfire Login Panel - Detect
   reference:
   - https://www.tibco.com/products/tibco-spotfire
   severity: info
-  tags: detect,discovery,login,panel,tibco
+  tags: panel,tibco,login,detect

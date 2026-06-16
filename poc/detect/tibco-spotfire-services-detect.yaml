@@ -22,19 +22,15 @@ http:
 id: tibco-spotfire-services-detect
 info:
   author: righettod
-  classification:
-    cpe: cpe:2.3:a:tibco:spotfire_statistics_services:*:*:*:*:*:*:*:*
   description: 'TIBCO Spotfire Statistics Services was detected.
 
     '
   metadata:
     max-request: 4
-    product: spotfire_statistics_services
     shodan-query: TIBCO Spotfire Server
-    vendor: tibco
     verified: true
   name: TIBCO Spotfire Statistics Services - Detect
   reference:
   - https://docs.tibco.com/products/tibco-spotfire-statistics-services
   severity: info
-  tags: tech,tibco,detect,discovery
+  tags: tech,tibco,detect

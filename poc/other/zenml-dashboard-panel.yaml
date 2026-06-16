@@ -14,16 +14,11 @@ http:
 id: zenml-dashboard-panel
 info:
   author: DhiyaneshDK
-  classification:
-    cpe: cpe:2.3:a:zenml:zenml:*:*:*:*:*:*:*:*
   metadata:
     fofa-query: body="ZenML"
     max-request: 1
-    product: zenml
-    runzero-match: service["favicon.ico.image.mmh3"] == "-2028554187"
     shodan-query: http.favicon.hash:-2028554187
-    vendor: zenml
     verified: true
   name: ZenML Dashboard Panel - Detect
   severity: info
-  tags: zenml,panel,login,discovery
+  tags: zenml,panel,login

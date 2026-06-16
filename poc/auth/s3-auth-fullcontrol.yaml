@@ -34,8 +34,6 @@ info:
     users, preventing unauthorized operations
 
     '
-  metadata:
-    max-request: 2
   name: Restrict S3 Buckets FULL_CONTROL Access for Authenticated Users
   reference:
   - https://docs.aws.amazon.com/AmazonS3/latest/userguide/manage-versioning-examples.html
