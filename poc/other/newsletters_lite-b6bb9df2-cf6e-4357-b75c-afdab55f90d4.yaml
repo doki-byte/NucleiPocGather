@@ -1,15 +1,15 @@
-id: newsletters_lite-8e2672b5-64a2-4b30-b0be-2a9303d46ac1
+id: newsletters_lite-b6bb9df2-cf6e-4357-b75c-afdab55f90d4
 
 info:
   name: >
-    Newsletters <= 4.13 - Unauthenticated SQL Injection via wpmlsubscriber_id Parameter
+    Newsletters <= 4.13 - Missing Authorization
   author: topscoder
-  severity: critical
+  severity: high
   description: >
     
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/8e2672b5-64a2-4b30-b0be-2a9303d46ac1?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/b6bb9df2-cf6e-4357-b75c-afdab55f90d4?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -18,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/newsletters-lite/"
     google-query: inurl:"/wp-content/plugins/newsletters-lite/"
     shodan-query: 'http.html:"wp-content/plugins/newsletters-lite/"'
-  tags: cve,wordpress,wp-plugin,newsletters-lite,critical,candidate
+  tags: cve,wordpress,wp-plugin,newsletters-lite,high,candidate
 
 http:
   - method: GET

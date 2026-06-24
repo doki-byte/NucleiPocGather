@@ -1,31 +1,31 @@
-id: jet_engine-512f68c0-3041-44b0-86de-b3e640cf5055
+id: listdom-eac6481a-8605-45e4-b5cf-fa8d79fde63a
 
 info:
   name: >
-    JetEngine <= 3.8.10 - Unauthenticated PHP Object Injection
+    Listdom: AI-powered Business Directory with Classifieds Ads Listings <= 5.4.0 - Unauthenticated SQL Injection
   author: topscoder
   severity: critical
   description: >
     
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/512f68c0-3041-44b0-86de-b3e640cf5055?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/eac6481a-8605-45e4-b5cf-fa8d79fde63a?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
     cve-id: 
   metadata:
-    fofa-query: "wp-content/plugins/jet-engine/"
-    google-query: inurl:"/wp-content/plugins/jet-engine/"
-    shodan-query: 'http.html:"wp-content/plugins/jet-engine/"'
-  tags: cve,wordpress,wp-plugin,jet-engine,critical,candidate
+    fofa-query: "wp-content/plugins/listdom/"
+    google-query: inurl:"/wp-content/plugins/listdom/"
+    shodan-query: 'http.html:"wp-content/plugins/listdom/"'
+  tags: cve,wordpress,wp-plugin,listdom,critical,candidate
 
 http:
   - method: GET
     redirects: true
     max-redirects: 3
     path:
-      - "{{BaseURL}}/wp-content/plugins/jet-engine/readme.txt"
+      - "{{BaseURL}}/wp-content/plugins/listdom/readme.txt"
 
     extractors:
       - type: regex
@@ -43,9 +43,9 @@ http:
 
       - type: word
         words:
-          - "jet-engine"
+          - "listdom"
         part: body
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 3.8.10')
+          - compare_versions(version, '<= 5.4.0')

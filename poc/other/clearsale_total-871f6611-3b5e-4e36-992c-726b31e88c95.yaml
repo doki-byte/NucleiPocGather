@@ -1,31 +1,31 @@
-id: geo_my_wp-042f78a4-2256-4286-aa03-8bd8b7a79530
+id: clearsale_total-871f6611-3b5e-4e36-992c-726b31e88c95
 
 info:
   name: >
-    GEO my WP <= 4.5.5 - Unauthenticated SQL Injection via 'swlatlng' / 'nelatlng' Parameters
+    ClearSale Total <= 3.4.2 - Unauthenticated SQL Injection
   author: topscoder
   severity: critical
   description: >
     
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/042f78a4-2256-4286-aa03-8bd8b7a79530?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/871f6611-3b5e-4e36-992c-726b31e88c95?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
     cve-id: 
   metadata:
-    fofa-query: "wp-content/plugins/geo-my-wp/"
-    google-query: inurl:"/wp-content/plugins/geo-my-wp/"
-    shodan-query: 'http.html:"wp-content/plugins/geo-my-wp/"'
-  tags: cve,wordpress,wp-plugin,geo-my-wp,critical,candidate
+    fofa-query: "wp-content/plugins/clearsale-total/"
+    google-query: inurl:"/wp-content/plugins/clearsale-total/"
+    shodan-query: 'http.html:"wp-content/plugins/clearsale-total/"'
+  tags: cve,wordpress,wp-plugin,clearsale-total,critical,candidate
 
 http:
   - method: GET
     redirects: true
     max-redirects: 3
     path:
-      - "{{BaseURL}}/wp-content/plugins/geo-my-wp/readme.txt"
+      - "{{BaseURL}}/wp-content/plugins/clearsale-total/readme.txt"
 
     extractors:
       - type: regex
@@ -43,9 +43,9 @@ http:
 
       - type: word
         words:
-          - "geo-my-wp"
+          - "clearsale-total"
         part: body
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 4.5.5')
+          - compare_versions(version, '<= 3.4.2')

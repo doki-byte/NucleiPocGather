@@ -1,15 +1,15 @@
-id: media_library_assistant-0e399651-8992-4949-b7a7-4e8ce199b47a
+id: media_library_assistant-4414cabb-765d-4ba9-be7a-acaf9ea6e45f
 
 info:
   name: >
-    Media Library Assistant <= 3.35 - Cross-Site Request Forgery via Bulk Action Form
+    Media Library Assistant <= 3.35 - Reflected Cross-Site Scripting
   author: topscoder
   severity: medium
   description: >
     
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/0e399651-8992-4949-b7a7-4e8ce199b47a?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/4414cabb-765d-4ba9-be7a-acaf9ea6e45f?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
