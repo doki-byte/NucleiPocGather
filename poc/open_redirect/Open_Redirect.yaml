@@ -3,9 +3,9 @@ info:
   description: This template can be used to detect Open Redirect vulnerability in
     the host.
   name: Open Redirect Issues
-  severity: Low
+  severity: low
   tags: Open Redirect
-http:
+requests:
 - matchers:
   - status:
     - 302

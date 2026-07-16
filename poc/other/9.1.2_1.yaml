@@ -3,7 +3,7 @@ id: ASVS-4-0-3-V9-1-2
 info:
   name: ASVS 9.1.2 Check
   author: AmirHossein Raeisi
-  severity: Low
+  severity: low
   classification:
     cwe-id: CWE-918
   reference:

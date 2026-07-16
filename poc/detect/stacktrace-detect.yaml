@@ -39,5 +39,5 @@ info:
   metadata:
     max-request: 3
   name: Stacktrace detect
-  severity: Low
+  severity: low
   tags: stacktrace,detect

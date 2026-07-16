@@ -53,7 +53,7 @@ info:
   - https://github.com/andresriancho/w3af/blob/master/w3af/plugins/audit/xxe.py
   - https://github.com/projectdiscovery/nuclei-templates/blob/main/dast/vulnerabilities/xxe/generic-xxe.yaml
   - https://owasp.org/www-project-web-security-testing-guide/v42/4-Web_Application_Security_Testing/07-Input_Validation_Testing/07-Testing_for_XML_Injection
-  severity: High
+  severity: high
   tags: asvs,5.5.2
 variables:
   rletter: '{{rand_base(6,''abc'')}}'

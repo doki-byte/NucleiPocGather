@@ -66,5 +66,5 @@ info:
   name: CRLF Injection Detection
   reference:
   - https://book.hacktricks.xyz/pentesting-web/crlf-0d-0a
-  severity: High
+  severity: high
   tags: crlf, crlf-ext, header-injection, response-splitting, xss

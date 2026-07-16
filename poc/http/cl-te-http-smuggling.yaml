@@ -2,7 +2,7 @@ id: CL-TE-http-smuggling
 info:
   name: HTTP request smuggling, basic CL.TE vulnerability
   author: pdteam, akincibor
-  severity: Low
+  severity: low
 requests:
   - raw:
       - |

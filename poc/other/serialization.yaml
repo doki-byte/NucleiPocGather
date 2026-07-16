@@ -3,7 +3,7 @@ id: Serialization
 info:
   name: Serialization
   author: Excis3
-  severity: Critical
+  severity: critical
   description: Serialization issue.
   tags: cve,cisco
 

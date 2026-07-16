@@ -27,4 +27,4 @@ info:
   name: Jelly Template Injection on ServiceNow
   reference:
   - https://www.assetnote.io/resources/research/chaining-three-bugs-to-access-all-your-servicenow-data
-  severity: Critical
+  severity: critical

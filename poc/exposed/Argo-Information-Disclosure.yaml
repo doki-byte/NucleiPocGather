@@ -3,9 +3,9 @@ info:
   author: Excis3
   description: Disclosure of argo database information.
   name: Argo information disclosure
-  severity: High
+  severity: high
   tags: argo
-http:
+requests:
 - matchers:
   - part: body
     type: word

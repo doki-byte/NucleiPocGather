@@ -51,5 +51,5 @@ info:
   author: rahulkadavil
   description: This template can be used to detect Hardcoded sensitive data from apk
   name: Sensitive Data exsposure in Android apk file
-  severity: Medium
+  severity: medium
   tags: Sensitive Information Disclosure

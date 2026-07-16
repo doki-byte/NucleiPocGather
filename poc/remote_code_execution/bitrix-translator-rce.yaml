@@ -3,7 +3,7 @@ id: bitrix-translator-rce
 info:
   name: Bitrix Translate Module RCE version based detection
   author: collapsz,salavoz,vulnspace
-  severity: Medium
+  severity: medium
   description: A vulnerability in Traslate Module allows authenticated attacker to achieve remote code execution or escalate privilegies in system.
   reference:
     - https://sploitus.com/exploit?id=PACKETSTORM:212893

@@ -30,4 +30,4 @@ info:
   author: Constant Vigneron
   description: A basic http template for nuclei
   name: Assessment Basic HTTP Template
-  severity: INFO
+  severity: info

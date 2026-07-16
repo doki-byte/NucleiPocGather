@@ -9,7 +9,7 @@ info:
   metadata:
     plugin_namespace: simple-history
     wpscan: https://wpscan.com/plugin/simple-history
-  tags: tech,wordpress,wp-plugin,top-200,discovery
+  tags: tech,wordpress,wp-plugin,top-200
 
 http:
   - method: GET
@@ -46,4 +46,3 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-

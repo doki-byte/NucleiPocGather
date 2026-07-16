@@ -3,9 +3,9 @@ info:
   author: Excis3
   description: Serialization issue.
   name: Serialization
-  severity: Critical
+  severity: critical
   tags: cve,cisco
-http:
+requests:
 - matchers:
   - part: body
     type: word

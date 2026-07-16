@@ -3,7 +3,7 @@ id: ethereum-unused-variable
 info:
   name: Unused Variable
   author: Juan Pablo Lopez Yacubian
-  severity: Low
+  severity: low
   description: Unnecessary variables increase contract size and complexity.
   tags: ethereum,low
 

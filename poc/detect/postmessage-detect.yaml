@@ -32,5 +32,5 @@ info:
   metadata:
     max-request: 1
   name: postMessage functions detection
-  severity: Low
+  severity: low
   tags: postmessage,detect

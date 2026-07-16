@@ -3,9 +3,9 @@ info:
   author: sss
   description: Telerik
   name: Telerik
-  severity: High
+  severity: high
   tags: Telerik
-http:
+requests:
 - matchers:
   - part: body
     type: word

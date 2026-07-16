@@ -3,7 +3,7 @@ info:
   name: weedFs_51pwn_api_leak
   author:
   - 51pwn
-  severity: Critical
+  severity: critical
   description: |-
     weedFs_51pwn_api_leak
     default port: 9333
@@ -11,7 +11,7 @@ info:
     ipfs default 8080,5001
 
   tags: weed,web,leak,ipfs
-http:
+requests:
   - raw:
       - |
         GET /dir/lookup?volumeId=3 HTTP/1.1

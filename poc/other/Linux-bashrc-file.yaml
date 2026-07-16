@@ -10,9 +10,9 @@ info:
   reference:
   - null
   remediation: remove access to .bashrc file
-  severity: Medium
+  severity: medium
   tags: config,exposure,linux
-http:
+requests:
 - matchers:
   - condition: or
     dsl:

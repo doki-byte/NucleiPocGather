@@ -2,7 +2,7 @@ id: reflected-xss
 info:
   name: Reflected Cross-Site Scripting (XSS)
   author: KhukuriRimal
-  severity: Critical
+  severity: critical
   description: Detects reflected XSS vulnerability
 http:
   - method: GET

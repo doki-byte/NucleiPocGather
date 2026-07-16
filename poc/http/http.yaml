@@ -1,15 +1,15 @@
 id: http
 info:
-  name: Zimbra http config
+  name: WildFly Application Server
   author: nmap,cn-kali-team
   tags: detect,tech,http,service
   severity: info
   metadata:
-    info: redirect to https
-    product: zimbra_collaboration_suite
+    product: wildfly
     rarity: 1
-    vendor: zimbra
+    vendor: redhat
     verified: true
+    version: 15.0.0 - 29.0.1
 tcp:
 - name: get-request
   inputs:
@@ -21,4 +21,4 @@ tcp:
   - name: http
     type: regex
     regex:
-    - '^HTTP/1\.1 302 Found\r\n(?:Date: .*\r\n)?Expires: .*\r\nCache-Control: no-store, no-cache, must-revalidate, max-age=0\r\nPragma: no-cache\r\n(?:X-Frame-Options: SAMEORIGIN\r\n)?Content-Type: text/html; charset=[Uu][Tt][Ff]-8\r\nContent-Language: en-US\r\nLocation: https://[^/]+/[^?]*\?zinitmode=http\r\nContent-Length: 0\r\n\r\n$'
+    - '^HTTP/1\.1 200 OK\r\nConnection: close\r\nLast-Modified: .*\r\nContent-Length: \d+\r\nContent-Type: text/html\r\nAccept-Ranges: bytes\r\nDate: .*\r\n\r\n<!DOCTYPE html>\n\n<html>\n<head>\n    <!-- proper charset -->\n    <meta http-equiv="content-type" content="text/html;charset=utf-8" />\n    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" />\n\n    <title>Welcome to WildFly</title>'

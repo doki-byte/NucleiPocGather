@@ -3,7 +3,7 @@ info:
   author: Tomitom13
   description: Password in HTML comment
   name: HTML source code
-  severity: Critical
+  severity: critical
   tags: password,comment,html,rootme
 requests:
 - extractors:

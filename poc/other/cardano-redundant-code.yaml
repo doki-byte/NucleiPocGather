@@ -3,7 +3,7 @@ id: cardano-redundant-code
 info:
   name: Redundant Code
   author: Juan Pablo Lopez Yacubian
-  severity: Low
+  severity: low
   description: Redundant logic increases code complexity and maintenance difficulty.
   tags: cardano,low
 

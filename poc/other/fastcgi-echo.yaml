@@ -12,7 +12,7 @@ info:
   metadata:
     verified: true
     google-dork: inurl:fcgi-bin/echo
-  tags: exposure,logs,oracle,fastcgi,edb
+  tags: exposure,logs,oracle,fastcgi
 
 requests:
   - method: GET

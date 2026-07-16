@@ -2,8 +2,8 @@ id: IBM InfoPrint Directory Traversal
 info:
   author: Harsh Bothra
   name: IBM InfoPrint 4247-Z03 Impact Matrix Printer - Directory Traversal
-  severity: Medium
-http:
+  severity: medium
+requests:
 - matchers:
   - status:
     - 200

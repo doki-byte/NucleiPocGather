@@ -3,7 +3,7 @@ id: ios-app-permission-given
 info:
   name: iOS App Permission
   author: adibarsyad
-  severity: Medium
+  severity: medium
   description: Check Info.plist for permission given to the application
 
 file:

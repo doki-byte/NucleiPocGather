@@ -4,12 +4,11 @@ info:
   name: HTTPBin - Open Redirect
   author: Adam Crosser
   severity: low
-  reference:
-    - https://github.com/postmanlabs/httpbin
   metadata:
     shodan-query:
       - html:"https://github.com/requests/httpbin"
       - title:"httpbin.org"
+  reference: https://github.com/postmanlabs/httpbin
   tags: redirect,httpbin,oss
 
 requests:

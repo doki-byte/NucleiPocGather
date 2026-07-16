@@ -6,7 +6,7 @@ info:
 
     '
   name: Backup Files Finder (information disclosure)
-  severity: High
+  severity: high
 requests:
 - matchers:
   - type: word

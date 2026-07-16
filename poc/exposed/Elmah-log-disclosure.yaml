@@ -3,7 +3,7 @@ id: Elmah-Log-Disclosure
 info:
   name: Elmah Log Disclosure
   author: Excis3
-  severity: Critical
+  severity: critical
   description: Unauthenticated exposure of logs.
   tags: log
 
