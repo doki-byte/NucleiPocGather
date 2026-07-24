@@ -2,7 +2,7 @@ id: td_subscription-b6f0fe85-1b70-49b4-9c89-d00584362459
 
 info:
   name: >
-    tagDiv Opt-In Builder <= 1.7.4 - Unauthenticated Stored Cross-Site Scripting
+    tagDiv Opt-In Builder <= 1.7.5 - Unauthenticated Stored Cross-Site Scripting
   author: topscoder
   severity: high
   description: >
@@ -48,4 +48,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.7.4')
+          - compare_versions(version, '<= 1.7.5')

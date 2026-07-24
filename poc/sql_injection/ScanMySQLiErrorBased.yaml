@@ -3,7 +3,8 @@ id: ScanMySQLiErrorBased
 info:
   name:  MySQLInjection Detected
   author: Hernan Rodriguez
-  severity: high
+  severity: High
+
 requests:
   - method: GET
 

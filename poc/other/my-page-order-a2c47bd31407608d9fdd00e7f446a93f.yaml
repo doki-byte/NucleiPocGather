@@ -1,0 +1,54 @@
+http:
+- extractors:
+  - group: 1
+    internal: true
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - my-page-order
+  - dsl:
+    - compare_versions(version, '<= 4.3')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/my-page-order/readme.txt'
+  redirects: true
+id: my-page-order-a2c47bd31407608d9fdd00e7f446a93f
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H
+    cvss-score: 8.8
+  description: "The  My Page Order plugin for WordPress is vulnerable to Cross-Site\
+    \ Request Forgery to Stored Cross-Site Scripting via the \u2018pages' and 'hdnParentID\u2019\
+    \ parameters in versions up to, and including, 4.3 due to insufficient input sanitization\
+    \ and output escaping. This makes it possible for authenticated attackers to inject\
+    \ arbitrary web scripts that execute in a victim's browser."
+  metadata:
+    fofa-query: wp-content/plugins/my-page-order/
+    google-query: inurl:"/wp-content/plugins/my-page-order/"
+    shodan-query: 'vuln:'
+  name: My Page Order <= 4.3 - Cross-Site Request Forgery to Cross-Site Scripting
+  reference:
+  - http://cinu.pl/research/wp-plugins/mail_88e91a1dd014479789092dba7d5652b8.html
+  - http://blog.cinu.pl/2015/11/php-static-code-analysis-vs-top-1000-wordpress-plugins.html
+  severity: high
+  tags: cve,wordpress,wp-plugin,my-page-order,high

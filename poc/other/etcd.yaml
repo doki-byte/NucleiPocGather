@@ -3,7 +3,7 @@ info:
   name: etcd_51pwn_api_leak
   author:
   - 51pwn
-  severity: critical
+  severity: Critical
   description: |-
     etcd_51pwn_api_leak
     default port: 2379

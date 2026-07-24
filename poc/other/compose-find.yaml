@@ -3,8 +3,8 @@ info:
   author: SirBugs
   description: Checks for common Docker Compose configuration keys.
   name: Docker Compose Check
-  severity: critical
-requests:
+  severity: Critical
+http:
 - matchers:
   - part: body
     type: word

@@ -1,0 +1,53 @@
+http:
+- extractors:
+  - group: 1
+    internal: true
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - funcaptcha
+  - dsl:
+    - compare_versions(version, '<= 0.3.3')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/funcaptcha/readme.txt'
+  redirects: true
+id: funcaptcha-d41d8cd98f00b204e9800998ecf8427e
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: "The FunCaptcha \u2013 Anti-Spam CAPTCHA plugin for WordPress is vulnerable\
+    \ to Cross-Site Request Forgery in versions before 0.3.3. This is due to missing\
+    \ or incorrect nonce validation on the funcaptcha_get_settings_post function.\
+    \ This makes it possible for unauthenticated attackers to manipulate plugin settings\
+    \ via a forged request granted they can trick a site administrator into performing\
+    \ an action such as clicking on a link."
+  metadata:
+    fofa-query: wp-content/plugins/funcaptcha/
+    google-query: inurl:"/wp-content/plugins/funcaptcha/"
+    shodan-query: 'vuln:'
+  name: "FunCaptcha \u2013 Anti-Spam CAPTCHA < 0.3.3 - Cross-Site Request Forgery"
+  reference: null
+  severity: medium
+  tags: cve,wordpress,wp-plugin,funcaptcha,medium

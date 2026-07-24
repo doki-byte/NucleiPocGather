@@ -6,10 +6,11 @@ info:
   severity: medium
   tags: exposure
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/lfm.php"
+
     matchers-condition: and
     matchers:
       - type: status

@@ -1,13 +1,15 @@
 id: smtp-proxy
 info:
-  name: IronMail SMTP proxy
+  name: Symantec Mail Security smtp proxy
   author: nmap,cn-kali-team
   tags: detect,tech,smtp-proxy,service
   severity: info
   metadata:
-    product: ironmail
+    hostname: $1
+    operating_system: Windows
+    product: mail_security
     rarity: 3
-    vendor: ciphertrust
+    vendor: symantec
     verified: true
 tcp:
 - name: help
@@ -20,4 +22,4 @@ tcp:
   - name: smtp-proxy
     type: regex
     regex:
-    - ^220 SMTP SDC Ready\r\n250 \+OK entry follows, ends in \.\r\n
+    - ^220 ([-\w_.]+) SMTP; .* \+\d{4}\r\n500 Syntax error, command unrecognized\r\n

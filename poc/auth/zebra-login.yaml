@@ -3,13 +3,13 @@ id: zebra-login
 info:
   name: Zebra
   author: Nate
-  severity: high
+  severity: High
   description: Detect Zebra Printers Default Login
   metadata:
     max-request: 1
   tags: tech,zebra
 
-http:
+requests:
   - raw:
           - |
               POST /authorize HTTP/1.1

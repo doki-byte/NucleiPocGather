@@ -2,10 +2,10 @@ id: X-Rewrite-URl_Vulnerability
 info:
   name: X-Rewrite_URL Header to Bypass Cliend Side restriction
   author: p3n73st3r
-  severity: high
+  severity: High
   description: Bypassing Client Side restriction through X-Rewrite-URl and X-Original-URL Headers.
 
-requests:
+http:
   - method: GET
     path:
       - '{{BaseURL}}/'

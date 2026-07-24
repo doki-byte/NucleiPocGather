@@ -1,0 +1,56 @@
+http:
+- extractors:
+  - group: 1
+    internal: true
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - grou-random-image-widget
+  - dsl:
+    - compare_versions(version, '<= *')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/grou-random-image-widget/readme.txt'
+  redirects: true
+id: grou-random-image-widget-plugin-d41d8cd98f00b204e9800998ecf8427e
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    cvss-score: 7.5
+  description: 'The Grou Random Image Widget plugin for WordPress is vulnerable to
+    Full Path Disclosure via the ''g-random-img.php'' file. This makes it possible
+    for unauthenticated attackers to obtain the full path to a hosted installation
+    when accessing that file.
+
+    '
+  metadata:
+    fofa-query: wp-content/plugins/grou-random-image-widget/
+    google-query: inurl:"/wp-content/plugins/grou-random-image-widget/"
+    shodan-query: 'vuln:'
+  name: 'Grou Random Image Widget <= 1.18 - Full Path Disclosure
+
+    '
+  reference:
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/272c824a-0883-4c23-a814-bf0db3fec8a6?source=api-prod
+  severity: high
+  tags: cve,wordpress,wp-plugin,grou-random-image-widget,high

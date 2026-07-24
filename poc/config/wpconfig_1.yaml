@@ -3,7 +3,7 @@ id: wpconfig
 info:
   name: Database account information for WordPress blog leaked via txt configuration file
   author: c4sper0
-  severity: high
+  severity: High
   tags: config,backup,wordpress
     
 http:

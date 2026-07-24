@@ -1,21 +1,15 @@
-id: apache-ambari
-info:
-  name: apache-ambari
-  author: cn-kali-team
-  tags: detect,tech,apache-ambari
-  severity: info
-  metadata:
-    product: ambari
-    vendor: apache
-    verified: true
-http:
-- method: GET
-  path:
-  - '{{BaseURL}}/'
-  matchers:
-  - type: word
-    words:
-    - '"/licenses/notice.txt"'
-    - <title>ambari</title>
-    condition: and
-    case-insensitive: true
+name: apache-ambari
+priority: 1
+nuclei_tags:
+  - - ambari
+fingerprint:
+  - path: /
+    request_method: get
+    request_headers: {}
+    request_data: ''
+    status_code: 0
+    headers: {}
+    keyword:
+      - '"/licenses/NOTICE.txt"'
+      - <title>Ambari</title>
+    favicon_hash: []

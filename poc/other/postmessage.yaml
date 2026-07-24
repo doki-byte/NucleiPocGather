@@ -3,7 +3,7 @@ id: postmessage-detect
 info:
   name: postMessage functions detection
   author: pdteam,otterly
-  severity: low
+  severity: Low
   description: detectpostMessage methods
   metadata:
     max-request: 1

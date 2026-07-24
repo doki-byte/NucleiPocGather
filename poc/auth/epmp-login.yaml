@@ -5,28 +5,20 @@ info:
   author: dhiyaneshDk
   severity: info
   reference: https://www.exploit-db.com/ghdb/6826
-  tags: iot
+  tags: iot,panel
 
 requests:
-  - payloads:
-      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
-    attack: sniper
-    threads: 100
+  - method: GET
+    path:
+      - "{{BaseURL}}"
 
-    raw:
-      - |
-        GET / HTTP/1.1
-        Host: {{Subdomains}}
-        User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
-        Accept-Encoding: gzip, deflate
-        Accept: */*
-        
     matchers-condition: and
     matchers:
       - type: word
         words:
           - '<title>ePMP</title>'
         part: body
+
       - type: status
         status:
           - 200

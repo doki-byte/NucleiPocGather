@@ -3,7 +3,7 @@ id: ASVS-4-0-3-V5-5-2
 info:
   name: ASVS 5.5.2 Check
   author: AmirHossein Raeisi
-  severity: high
+  severity: High
   classification:
     cwe-id: CWE-611
   reference:

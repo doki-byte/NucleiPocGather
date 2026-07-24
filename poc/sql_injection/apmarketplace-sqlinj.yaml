@@ -3,7 +3,7 @@ id: apmarketplace-sqlinj
 info:
   name: PrestaShop Ap Marketplace SQL Injection
   author: mastercho
-  severity: critical
+  severity: Critical
   description: |
     The AP Marketplace Prestashop module is vulnerable to Blind/Time SQL Injection. An attacker can exploit this vulnerability to execute arbitrary SQL queries on the underlying database.
   reference:

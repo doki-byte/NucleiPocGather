@@ -1,0 +1,46 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - pricing-tables-for-wpbakery-page-builder
+  - dsl:
+    - compare_versions(version, '<= 2.0')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/pricing-tables-for-wpbakery-page-builder/readme.txt'
+  redirects: true
+id: pricing_tables_for_wpbakery_page_builder-3475c8fe-17fa-4d8e-bffd-a33e59f6e03b
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/pricing-tables-for-wpbakery-page-builder/
+    google-query: inurl:"/wp-content/plugins/pricing-tables-for-wpbakery-page-builder/"
+    shodan-query: http.html:"wp-content/plugins/pricing-tables-for-wpbakery-page-builder/"
+  name: 'Pricing Tables For WPBakery Page Builder (formerly Visual Composer) <= 2.0
+    - Authenticated (Subscriber+) Local File Inclusion via Shortcode
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/3475c8fe-17fa-4d8e-bffd-a33e59f6e03b?source=api-scan
+  severity: low
+  tags: cve,wordpress,wp-plugin,pricing-tables-for-wpbakery-page-builder,low,candidate

@@ -3,7 +3,8 @@ info:
   name: Assessment Basic HTTP Template
   description: A basic http template for nuclei
   author: Constant Vigneron
-  severity: info
+  severity: INFO
+
 http:
   - method: GET
     path:

@@ -4,10 +4,10 @@ info:
   name: HTML source code
   description: Password in HTML comment
   author: Tomitom13
-  severity: critical
+  severity: Critical
   tags: password,comment,html,rootme
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}"

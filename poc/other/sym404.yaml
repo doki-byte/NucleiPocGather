@@ -2,7 +2,7 @@ id: sym404
 info:
   name: sym404
   author: pussycat0x
-  severity: high
+  severity: High
   description: Searches for sensitive directories present in the sym404.
   reference:
     - https://twitter.com/momika233/status/1540325055280070656

@@ -3,7 +3,7 @@ id: imind-rce
 info:
   name: iMind RCE version based detection
   author: drew47qq
-  severity: critical
+  severity: Critical
   description: The vulnerability in the iMind video conferencing software is related to the possibility of code or data injection. Exploiting this vulnerability may allow a remote attacker to execute arbitrary code with administrative privileges.    
   reference:
     - https://bdu.fstec.ru/vul/2023-05317

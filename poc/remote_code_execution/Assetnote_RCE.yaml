@@ -3,7 +3,7 @@ id: AssetNote-RCE
 info:
   name: Assetnote RCE 
   author: Excis3
-  severity: critical
+  severity: Critical
   description: CVE-2022-47986
   tags: RCE
 

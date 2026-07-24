@@ -3,7 +3,7 @@ id: Argo-Information-Disclosure
 info:
   name: Argo information disclosure
   author: Excis3
-  severity: high
+  severity: High
   description: Disclosure of argo database information.
   tags: argo
 

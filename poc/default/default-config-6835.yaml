@@ -4,7 +4,7 @@ info:
   name: Config file exposure
   description: This template can be used to detect config files containing sensitive information.
   author: rahulkadavil
-  severity: low
+  severity: Low
   tags: exposure
 
 requests:

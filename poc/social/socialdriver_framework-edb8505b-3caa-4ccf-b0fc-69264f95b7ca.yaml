@@ -1,0 +1,45 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - socialdriver-framework
+  - dsl:
+    - compare_versions(version, '< 2024.04.30')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/socialdriver-framework/readme.txt'
+  redirects: true
+id: socialdriver_framework-edb8505b-3caa-4ccf-b0fc-69264f95b7ca
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/socialdriver-framework/
+    google-query: inurl:"/wp-content/plugins/socialdriver-framework/"
+    shodan-query: http.html:"wp-content/plugins/socialdriver-framework/"
+  name: 'Swift Framework < 2024.04.30 - Reflected Cross-Site Scripting
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/edb8505b-3caa-4ccf-b0fc-69264f95b7ca?source=api-scan
+  severity: medium
+  tags: cve,wordpress,wp-plugin,socialdriver-framework,medium,candidate

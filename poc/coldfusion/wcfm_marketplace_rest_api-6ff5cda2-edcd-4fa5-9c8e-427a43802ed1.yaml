@@ -1,0 +1,44 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - wcfm-marketplace-rest-api
+  - dsl:
+    - compare_versions(version, '<= 1.6.2')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/wcfm-marketplace-rest-api/readme.txt'
+  redirects: true
+id: wcfm_marketplace_rest_api-6ff5cda2-edcd-4fa5-9c8e-427a43802ed1
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/wcfm-marketplace-rest-api/
+    google-query: inurl:"/wp-content/plugins/wcfm-marketplace-rest-api/"
+    shodan-query: http.html:"wp-content/plugins/wcfm-marketplace-rest-api/"
+  name: "WooCommerce Multivendor Marketplace \u2013 REST API <= 1.6.2 - Authenticated\
+    \ (Subscriber+) SQL Injection\n"
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/6ff5cda2-edcd-4fa5-9c8e-427a43802ed1?source=api-scan
+  severity: low
+  tags: cve,wordpress,wp-plugin,wcfm-marketplace-rest-api,low,candidate

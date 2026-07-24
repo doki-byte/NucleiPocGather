@@ -1,15 +1,15 @@
 id: http
 info:
-  name: WildFly Application Server
+  name: PHP cli server
   author: nmap,cn-kali-team
   tags: detect,tech,http,service
   severity: info
   metadata:
-    product: wildfly
+    product: php
     rarity: 1
-    vendor: redhat
+    vendor: php
     verified: true
-    version: 15.0.0 - 29.0.1
+    version: 5.5 or later
 tcp:
 - name: get-request
   inputs:
@@ -21,4 +21,4 @@ tcp:
   - name: http
     type: regex
     regex:
-    - '^HTTP/1\.1 200 OK\r\nConnection: close\r\nLast-Modified: .*\r\nContent-Length: \d+\r\nContent-Type: text/html\r\nAccept-Ranges: bytes\r\nDate: .*\r\n\r\n<!DOCTYPE html>\n\n<html>\n<head>\n    <!-- proper charset -->\n    <meta http-equiv="content-type" content="text/html;charset=utf-8" />\n    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" />\n\n    <title>Welcome to WildFly</title>'
+    - '(?i)^HTTP/1\.0 404 Not Found\r\n(?:[^<]+<(?!/head>))*?style>\nbody { background-color: #fcfcfc; color: #333333; margin: 0; padding:0; }\nh1 { font-size: 1\.5em; font-weight: normal; background-color: #9999cc; min-height:2em; line-height:2em; border-bottom: 1px inset black; margin: 0; }\nh1, p { padding-left: 10px; }\ncode\.url { background-color: #eeeeee; font-family:monospace; padding:0 2px;}\n</style>'

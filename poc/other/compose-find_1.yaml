@@ -3,7 +3,7 @@ id: compose-find
 info:
   name: Docker Compose Check
   author: SirBugs
-  severity: critical
+  severity: Critical
   description: Checks for common Docker Compose configuration keys.
 
 requests:

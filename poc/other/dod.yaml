@@ -3,7 +3,7 @@ id: unauthorized-admin
 info:
   name: unauthorized administration pages - Detect
   author: rix4uni
-  severity: high
+  severity: High
   description: Accessing unauthorized administration pages and seeing admin password - speakerkit.state.gov
   reference: https://hackerone.com/reports/1806387
   tags: authetication,misconfig

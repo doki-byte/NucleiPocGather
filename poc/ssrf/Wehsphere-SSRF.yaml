@@ -3,7 +3,7 @@ id: WebSphere-SSRF
 info:
   name: Websphere SSRF
   author: Excis3
-  severity: high
+  severity: High
   description: websphere SSRF https://blog.assetnote.io/2021/12/25/advisory-websphere-portal/
   tags: SSRF
 

@@ -3,7 +3,7 @@ info:
   author: excis3
   description: Grafana default credentials
   name: Grafana basic auth
-  severity: critical
+  severity: Critical
   tags: Grafana
 requests:
 - matchers:

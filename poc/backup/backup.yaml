@@ -2,7 +2,7 @@ id: backup-files
 info:
   name: Backup Files Finder (information disclosure)
   author: Vabro
-  severity: high
+  severity: High
   description: |
     This template checks for common backup file extensions that may have been left exposed on a target.
 

@@ -3,7 +3,7 @@ id: ethereum-redundant-code
 info:
   name: Redundant Code
   author: Juan Pablo Lopez Yacubian
-  severity: low
+  severity: Low
   description: Redundant logic increases code complexity and maintenance difficulty.
   tags: ethereum,low
 

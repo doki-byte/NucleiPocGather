@@ -10,19 +10,10 @@ info:
     - https://github.com/bolt/bolt
 
 requests:
-  - payloads:
-      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
-    attack: sniper
-    threads: 100
+  - method: GET
+    path:
+      - "{{BaseURL}}/bolt/login"
 
-    raw:
-      - |
-        GET /bolt/login HTTP/1.1
-        Host: {{Subdomains}}
-        User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
-        Accept-Encoding: gzip, deflate
-        Accept: */*
-        
     matchers:
       - type: word
         part: body
@@ -38,5 +29,5 @@ requests:
           - '<script src="/app/view/js/bolt.min.js"'
           - '<script src="/assets/bolt.js"></script>'
           - 'Bolt requires JavaScript to function properly and continuing without it might corrupt or erase data.'
-          - 'Bolt Â» Login'
+          - 'Bolt » Login'
           - 'Cookies are required to log on to Bolt. Please allow cookies.'

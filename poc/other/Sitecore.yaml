@@ -3,7 +3,7 @@ info:
   author: excis3
   description: Sitecode LFI
   name: SiteCode-LFI
-  severity: high
+  severity: High
   tags: LFI
 requests:
 - matchers:

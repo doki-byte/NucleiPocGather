@@ -3,9 +3,9 @@ info:
   author: dhiyaneshDK
   name: Solr Admin Query Page
   reference: https://www.exploit-db.com/ghdb/5856
-  severity: high
+  severity: High
   tags: solr,unauth
-requests:
+http:
 - attack: sniper
   matchers:
   - type: word

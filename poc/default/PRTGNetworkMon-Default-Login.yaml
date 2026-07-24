@@ -3,7 +3,7 @@ info:
   author: YashVardhanTripathi
   description: PRTGNetworkMon Default Access Extraction
   name: PRTGNetworkMon Default Login
-  severity: high
+  severity: High
   tags:
   - tech
   - PRTGNetworkMon

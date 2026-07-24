@@ -7,16 +7,14 @@ info:
   description: An Argo CD login panel was discovered.
   reference:
     - https://argoproj.github.io/cd/
+  classification:
+    cwe-id: CWE-200
   metadata:
+    max-request: 1
     shodan-query: http.title:"Argo CD"
   tags: panel,argocd,login,kubernetes
-  classification:
-    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
-    cve-id:
-    cwe-id: CWE-200
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/login"
@@ -32,4 +30,4 @@ requests:
         status:
           - 200
 
-# Enhanced by mp on 2022/03/20
+# digest: 4a0a00473045022025f2ab21b49fc17ae34bd50a0f30ed72e31716e58078dc235b23768dc6d432340221009523088dadc3d7fa9ae5505145ec7af57fda9a31b89849b0cdb295a13802b849:922c64590222798bb761d5b6d8e72950

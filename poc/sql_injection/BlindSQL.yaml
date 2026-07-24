@@ -2,7 +2,7 @@ id: time-based-sqli
 info:
   name: Time-Based Blind SQL Injection
   author: KhukuriRimal
-  severity: critical
+  severity: Critical
   description: Detects time-based blind SQL injection vulnerability
 http:
   - method: GET

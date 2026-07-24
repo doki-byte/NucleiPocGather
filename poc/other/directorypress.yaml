@@ -2,13 +2,14 @@ id: directorypress
 
 info:
   name: >
-    DirectoryPress – Business Directory And Classified Ad Listing <= 3.6.7 - Reflected Cross-Site Scripting
+    DirectoryPress <= 3.6.19 - Cross-Site Request Forgery to Cross-Site Scripting
   author: topscoder
   severity: medium
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/14acb770-9a32-4308-993d-a3d3dec91f78?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/86b0558b-74ed-4ddd-9b18-e7795cefc00e?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 3.6.7')
+          - compare_versions(version, '<= 3.6.19')

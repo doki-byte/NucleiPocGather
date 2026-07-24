@@ -55,7 +55,7 @@ info:
   description: SSTI or CSTI via GET parameter
   name: Scanner Cross-Site Scripting Reflected
   reference: https://www.linkedin.com/in/hernanrodriguez-/ -
-  severity: critical
+  severity: Critical
   tags: SSTI
 variables:
   first: '{{rand_int(10000, 99999)}}'

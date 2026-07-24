@@ -1,0 +1,49 @@
+http:
+- extractors:
+  - group: 1
+    internal: true
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - twl-easy-call
+  - dsl:
+    - compare_versions(version, '<= 1.1.0')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/twl-easy-call/readme.txt'
+  redirects: true
+id: twl-easy-call-d41d8cd98f00b204e9800998ecf8427e
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: The Easy Call With Twilio plugin for WordPress is vulnerable to Cross-Site
+    Scripting via several parameters in versions up to 1.1.0.
+  metadata:
+    fofa-query: wp-content/plugins/twl-easy-call/
+    google-query: inurl:"/wp-content/plugins/twl-easy-call/"
+    shodan-query: 'vuln:'
+  name: Easy Call With Twilio <= 1.0.4 - Stored Cross-Site Scripting
+  reference: null
+  severity: high
+  tags: cve,wordpress,wp-plugin,twl-easy-call,high

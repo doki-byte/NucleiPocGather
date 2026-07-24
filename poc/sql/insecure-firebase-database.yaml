@@ -11,7 +11,7 @@ info:
     verified: true
   tags: firebase,google,misconfig
 
-requests:
+http:
   - raw:
       - |
         PUT /{{randstr}}.json HTTP/1.1
@@ -31,6 +31,11 @@ requests:
         part: body_2
         words:
           - '{"id":"insecure-firebase-database"}'
+
+      - type: word
+        part: header
+        words:
+          - "application/json"
 
       - type: status
         status:

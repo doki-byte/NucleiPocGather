@@ -1,0 +1,55 @@
+http:
+- extractors:
+  - group: 1
+    internal: true
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - stream
+  - dsl:
+    - compare_versions(version, '<= 3.0.5')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/stream/readme.txt'
+  redirects: true
+id: stream-plugin-d41d8cd98f00b204e9800998ecf8427e
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    cvss-score: 7.5
+  description: 'The Stream plugin for WordPress is vulnerable to Sensitive Data Exposure
+    in versions up to, and including, 3.0.5. This can allow unauthenticated attackers
+    to extract sensitive data including logged entries.
+
+    '
+  metadata:
+    fofa-query: wp-content/plugins/stream/
+    google-query: inurl:"/wp-content/plugins/stream/"
+    shodan-query: 'vuln:'
+  name: 'Stream <= 3.0.5 - Sensitive Data Exposure
+
+    '
+  reference:
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/ecd68933-e808-4816-b9d2-7491194f2347?source=api-prod
+  severity: high
+  tags: cve,wordpress,wp-plugin,stream,high

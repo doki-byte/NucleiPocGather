@@ -1,12 +1,12 @@
 id: wordpress-affiliatewp-log
 
 info:
-  name: WordPress Plugin "AffiliateWP -- Allowed Products" Log Disclosure
+  name: WordPress Plugin "AffiliateWP – Allowed Products" Log Disclosure
   author: dhiyaneshDK
   severity: low
   tags: wordpress,log,plugin
 
-requests:
+http:
   - method: GET
     path:
       - '{{BaseURL}}/wp-content/uploads/affwp-debug.log'
