@@ -1,5 +1,9 @@
 name: Daily Update Nuclei POCs
 
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 */2 * * *'
 
 env:
   CARGO_TERM_COLOR: always
@@ -11,6 +15,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
 
     - name: 0 Build Release
       run: |
@@ -43,6 +49,6 @@ jobs:
         echo $(date +'%Y%m%d%H') > date.txt
         git config --local user.email "admin@adysec.com"
         git config --local user.name "AdySec"
-        git add .
-        git commit -am "$(date +'%Y%m%d')" || echo "No changes to commit"
+        git add repo.csv date.txt src/ docs/ .github/ Cargo.lock
+        git commit -m "$(date +'%Y%m%d')" || echo "No changes to commit"
         git push -v --progress
