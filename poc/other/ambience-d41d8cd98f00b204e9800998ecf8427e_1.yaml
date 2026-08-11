@@ -1,0 +1,51 @@
+http:
+- extractors:
+  - group: 1
+    internal: true
+    name: version
+    part: body
+    regex:
+    - '(?mi)Version: ([0-9.]+)'
+    type: regex
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - '(?mi)Version: ([0-9.]+)'
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - ambience
+  - dsl:
+    - compare_versions(version, '*')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/themes/ambience/style.css'
+  redirects: true
+id: ambience-d41d8cd98f00b204e9800998ecf8427e
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: The Ambience Theme for WordPress is vulnerable to Cross-Site Scripting
+    via the 'src' parameter in the 'thumb.php' file. due to insufficient input sanitization
+    and output escaping. This makes it possible for attackers to inject arbitrary
+    web scripts that execute in a victim's browser.
+  metadata:
+    fofa-query: wp-content/unknown/ambience/
+    google-query: inurl:"/wp-content/unknown/ambience/"
+    shodan-query: 'vuln:'
+  name: Ambience (Unspecified Versions) - Cross-Site Scripting
+  reference: null
+  severity: high
+  tags: cve,wordpress,wp-theme,ambience,high

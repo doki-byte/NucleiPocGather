@@ -1,0 +1,49 @@
+http:
+- extractors:
+  - group: 1
+    internal: true
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - backup-backup
+  - dsl:
+    - compare_versions(version, '<= 1.2.8')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/backup-backup/readme.txt'
+  redirects: true
+id: backup-backup-customized
+info:
+  author: topscoder,wadeek
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/backup-backup/
+    google-query: inurl:"/wp-content/plugins/backup-backup/"
+  name: 'WordPress Backup Migration 1.2.8 Plugin - Unauthenticated Database Backup
+    Vulnerability '
+  reference:
+  - https://downloads.wordpress.org/plugin/backup-backup.1.2.8.zip
+  severity: high
+  tags: cve,wordpress,wp-plugin,backup-backup,high

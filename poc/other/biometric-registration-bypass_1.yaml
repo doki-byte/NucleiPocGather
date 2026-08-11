@@ -1,0 +1,22 @@
+id: biometric-registration-bypass
+info:
+  author: qaisar
+  description: 'Detects potential issues related to biometric data registration bypass
+    attempts.
+
+    '
+  name: Biometric Data Registration Bypass Attempt Test
+  severity: medium
+requests:
+- data:
+  - raw: '{"username": "new_user", "biometric_data": "spoofed-biometric-data", "password":
+      "strongpassword"}'
+  headers:
+    content-type:
+    - application/json
+  method: POST
+  path:
+  - /register
+  - /signup
+tags:
+- web

@@ -13,9 +13,12 @@ info:
     cvss-score: 10
     cve-id: CVE-2021-44228
     cwe-id: CWE-77
+    cpe: cpe:2.3:a:elastic:logstash:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
     shodan-query: html:"logstash"
+    product: logstash
+    vendor: elastic
   tags: cve,cve2021,rce,jndi,log4j,logstash,oast,kev
 variables:
   rand1: '{{rand_int(111, 999)}}'
@@ -40,20 +43,22 @@ http:
       - type: regex
         part: interactsh_request
         regex:
-
+          - '\d{6}\.([a-zA-Z0-9\.\-]+)\.([a-z0-9]+)\.([a-z0-9]+)\.([a-z0-9]+)\.\w+'
 
     extractors:
       - type: kval
         kval:
-
+          - interactsh_ip
 
       - type: regex
+        part: interactsh_request
         group: 2
         regex:
-        part: interactsh_request
+          - '\d{6}\.([a-zA-Z0-9\.\-]+)\.([a-z0-9]+)\.([a-z0-9]+)\.([a-z0-9]+)\.\w+'
 
       - type: regex
+        part: interactsh_request
         group: 1
         regex:
-        part: interactsh_request
-# digest: 490a0046304402203e9e0b6d4ece591457ba02078338707b74275521dfc273279f984634d9a4a3a10220689830404907a9b6dd857b2ebec6494f14d3da6084c91c67d828dc16df2d85c8:922c64590222798bb761d5b6d8e72950
+          - '\d{6}\.([a-zA-Z0-9\.\-]+)\.([a-z0-9]+)\.([a-z0-9]+)\.([a-z0-9]+)\.\w+'
+# digest: 4a0a0047304502200e4715c7f572d0e7f784394244f4c9a189a47bfe9ac558a8e1026d3e8c51285c022100a292685cbbfbfe0e0fc27f95d034b36f405c254b3f55f04c9554a56d76c094a0:922c64590222798bb761d5b6d8e72950

@@ -1,0 +1,57 @@
+http:
+- extractors:
+  - group: 1
+    internal: true
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - gravityforms
+  - dsl:
+    - compare_versions(version, '<= 1.9.15.11')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/gravityforms/readme.txt'
+  redirects: true
+id: gravityforms-plugin-d41d8cd98f00b204e9800998ecf8427e
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:N/I:L/A:N
+    cvss-score: 4.7
+  description: 'The Gravityforms plugin for WordPress is vulnerable to Reflected Cross-Site
+    Scripting up to, and including, 1.9.15.11 due to insufficient input sanitization
+    and output escaping. This makes it possible for unauthenticated attackers to inject
+    arbitrary web scripts in pages that execute if they can successfully trick a user
+    into performing an action such as clicking on a link.
+
+    '
+  metadata:
+    fofa-query: wp-content/plugins/gravityforms/
+    google-query: inurl:"/wp-content/plugins/gravityforms/"
+    shodan-query: 'vuln:'
+  name: 'Gravityforms <= 1.9.15.11 - Cross-Site Scripting
+
+    '
+  reference:
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/6b5d31c5-0516-4089-9867-2922670e1b04?source=api-prod
+  severity: medium
+  tags: cve,wordpress,wp-plugin,gravityforms,medium
