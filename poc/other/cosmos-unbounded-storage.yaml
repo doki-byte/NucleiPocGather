@@ -3,7 +3,7 @@ id: cosmos-unbounded-storage
 info:
   name: Unbounded Storage Growth
   author: Juan Pablo Lopez Yacubian
-  severity: Critical
+  severity: critical
   description: Allows unlimited storage growth, leading to Denial of Service (DoS).
   tags: cosmos-sdk,critical
 

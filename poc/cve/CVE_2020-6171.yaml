@@ -1,4 +1,4 @@
-id: CVE 2020-6171
+id: CVE-2020-6171
 info:
   author: pikpikcu
   description: 'A cross-site scripting (XSS) vulnerability in the index page of the

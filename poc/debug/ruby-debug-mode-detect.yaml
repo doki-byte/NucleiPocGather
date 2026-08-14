@@ -3,7 +3,7 @@ id: ruby-debug-mode-detect
 info:
   name: Enabled debug mode in a Ruby on Rails application detection
   author: thefir,vulnspace
-  severity: Medium
+  severity: medium
   description: Enabled debug mode in Ruby on Rails allows to call a stacktrace when accessing a non-existent endpoint.
 
   tags:

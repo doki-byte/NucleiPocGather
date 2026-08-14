@@ -3,9 +3,9 @@ id: axis2-detect
 info:
   name: Apache Axis2
   author: notnotnotveg
-  severity: info
+  severity: informative
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/axis2/services/listServices"

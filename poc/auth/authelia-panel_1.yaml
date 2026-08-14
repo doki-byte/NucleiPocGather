@@ -1,0 +1,30 @@
+http:
+- matchers:
+  - type: word
+    words:
+    - <title>Login - Authelia</title>
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}'
+id: authelia-panel
+info:
+  author: rxerium
+  description: 'Authelia is an open-source authentication and authorisation service
+    providing two-factor authentication and single sign-on (SSO) for applications
+    via a web portal.
+
+    '
+  metadata:
+    max-request: 1
+    shodan-query: title:"Login - Authelia"
+    verified: true
+  name: Authelia Panel - Detect
+  reference:
+  - https://github.com/authelia/authelia
+  - https://www.authelia.com/
+  severity: info
+  tags: login,panel,authelia

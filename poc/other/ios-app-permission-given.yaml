@@ -16,4 +16,4 @@ info:
   author: adibarsyad
   description: Check Info.plist for permission given to the application
   name: iOS App Permission
-  severity: Medium
+  severity: medium

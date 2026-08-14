@@ -3,7 +3,7 @@ id: wordpress-xmlrpc-enabled
 info:
   name: Wordpress XMLRPC Enabled
   author: h4rsh4d
-  severity: Low
+  severity: low
   description: XMLRPC.php is enabled, its possible to perform SSRF, DOS.
   reference:
     -

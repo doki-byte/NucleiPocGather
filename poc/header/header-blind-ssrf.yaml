@@ -6,9 +6,6 @@ info:
   severity: high
   description: Checks for Blind SSR via popular browser headers.
 
-variables:
-  ssrf_id: "{{randstr}}"
-
 requests:
   - payloads:
       header: helpers/payloads/request-headers.txt
@@ -17,16 +14,11 @@ requests:
       - |
         GET /?§header§ HTTP/1.1
         Host: {{Hostname}}
-        §header§: {{interactsh-url}}/header-ssrf-{{ssrf_id}}/§header§
+        §header§: {{interactsh-url}}
         Connection: close
 
-    matchers-condition: and
     matchers:
       - type: word
         part: interactsh_protocol
         words:
           - "http"
-      - type: word
-        part: interactsh_request
-        words:
-          - "header-ssrf-{{ssrf_id}}"

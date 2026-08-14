@@ -34,4 +34,4 @@ id: webmail-basic-RCE
 info:
   author: SirBugs
   name: Webmail Basic RCE
-  severity: Critical
+  severity: critical

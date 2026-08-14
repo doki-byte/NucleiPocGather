@@ -2,7 +2,7 @@ id: LFI-RCE
 info:
   author: 0x240x23elu & payloadallthings
   name: LFI Detection
-  severity: High
+  severity: high
 http:
 - matchers:
   - part: body

@@ -10,4 +10,4 @@ info:
   author: adibarsyad
   description: Check Info.plist for minimum ios supported
   name: iOS App minimum iOS supported
-  severity: Info
+  severity: info

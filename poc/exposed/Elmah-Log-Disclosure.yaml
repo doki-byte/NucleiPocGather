@@ -3,7 +3,7 @@ info:
   author: Excis3
   description: Unauthenticated exposure of logs.
   name: Elmah Log Disclosure
-  severity: Critical
+  severity: critical
   tags: log
 http:
 - matchers:
