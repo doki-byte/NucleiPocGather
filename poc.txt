@@ -14888,7 +14888,7 @@
 ./poc/backup/backupbuddy.yaml
 ./poc/backup/backupbuddy_1.yaml
 ./poc/backup/backupexec-remote.yaml
-./poc/backup/backuply-0dd53fad-1bd7-41ed-95cb-205a9b421724.yaml
+./poc/backup/backuply-0dd53fad-1bd7-41ed-95cb-205a9b421724_1.yaml
 ./poc/backup/backuply-1f955d88-ab4c-4cf4-a23b-91119d412716.yaml
 ./poc/backup/backuply-253411f9e6deece69610e01c03a5fe30.yaml
 ./poc/backup/backuply-43d155997720fa7e23035a473b39a8a5.yaml
@@ -14994,7 +14994,7 @@
 ./poc/backup/everest-backup-421c384b1afa892cba8ed3269d60faa4.yaml
 ./poc/backup/everest-backup-7761182ec8a559d2e3cae14625ef2ccd.yaml
 ./poc/backup/everest-backup-c5cfc7a8f5c040156a3bb37da7e93d2e.yaml
-./poc/backup/everest-backup-d41d8cd98f00b204e9800998ecf8427e_1.yaml
+./poc/backup/everest-backup-d41d8cd98f00b204e9800998ecf8427e.yaml
 ./poc/backup/everest-backup-e74f99161d093b9cb39fb38ddc9c1fa7.yaml
 ./poc/backup/everest-backup-plugin-d41d8cd98f00b204e9800998ecf8427e.yaml
 ./poc/backup/everest-backup-plugin.yaml
@@ -17659,7 +17659,7 @@
 ./poc/crlf_injection/viewlinc-crlf-injection_2.yaml
 ./poc/crlf_injection/viewlinc-crlf-injection_3.yaml
 ./poc/cross_site_request_forgery/CSRF-2025-06581-bitrix-sessid-bypass_1.yaml
-./poc/cross_site_request_forgery/bitrix-csrf-vulnerabilities.yaml
+./poc/cross_site_request_forgery/CSRF-bitrix-csrf-vulnerabilities.yaml
 ./poc/cross_site_request_forgery/csrf-guard-detect.yaml
 ./poc/cross_site_request_forgery/csrf-no-origin.yaml
 ./poc/cross_site_request_forgery/csrf-token-leakage.yaml
@@ -108197,7 +108197,7 @@
 ./poc/cve/CVE-2024-13500-wedevs_project_manager-70083f93-f110-4029-a3d3-ce8a77799a31.yaml
 ./poc/cve/CVE-2024-13500.yaml
 ./poc/cve/CVE-2024-13501.yaml
-./poc/cve/CVE-2024-13504-6b13b7190975c6b999104e3c16d82883.yaml
+./poc/cve/CVE-2024-13504.yaml
 ./poc/cve/CVE-2024-13505-survey_maker-fc3c22a2-b766-419c-a481-48e6a73b084c.yaml
 ./poc/cve/CVE-2024-13505.yaml
 ./poc/cve/CVE-2024-13506-geodirectory-d0d9ba14-c0c9-426e-927e-9139a0882f0d.yaml
@@ -158193,7 +158193,7 @@
 ./poc/drupal/drupal_module-expandable_formatter-cross-site-scripting.yaml
 ./poc/drupal/drupal_module-expandable_formatter-cross-site-scripting_2.yaml
 ./poc/drupal/drupal_module-expire_reset_pass_link-unsupported.yaml
-./poc/drupal/drupal_module-fac-access-bypass_1.yaml
+./poc/drupal/drupal_module-fac-access-bypass.yaml
 ./poc/drupal/drupal_module-facets-cross-site-scripting.yaml
 ./poc/drupal/drupal_module-facets-cross-site-scripting_1.yaml
 ./poc/drupal/drupal_module-fancy_file_delete-access-bypass_1.yaml
@@ -158315,7 +158315,7 @@
 ./poc/drupal/drupal_module-opigno_learning_path-access-bypass.yaml
 ./poc/drupal/drupal_module-opigno_learning_path-access-bypass_2.yaml
 ./poc/drupal/drupal_module-opigno_learning_path-access-bypass_3.yaml
-./poc/drupal/drupal_module-opigno_learning_path-ui-redressing.yaml
+./poc/drupal/drupal_module-opigno_learning_path-ui-redressing-.yaml
 ./poc/drupal/drupal_module-pages_restriction-access-bypass.yaml
 ./poc/drupal/drupal_module-pages_restriction-access-bypass_2.yaml
 ./poc/drupal/drupal_module-panels_breadcrumbs-cross-site-scripting.yaml
@@ -160496,6 +160496,7 @@
 ./poc/ftp/wd-nas-ftp-download-rce.yaml
 ./poc/ftp/web-ftp-detect-11135.yaml
 ./poc/ftp/web-ftp-detect-11136.yaml
+./poc/ftp/web-ftp-detect-11137.yaml
 ./poc/ftp/web-ftp-detect-11138.yaml
 ./poc/ftp/web-ftp-detect.yaml
 ./poc/ftp/web-ftp-detect_1.yaml
@@ -200654,6 +200655,7 @@
 ./poc/other/conditional-flow-negative.yaml
 ./poc/other/conditional-menus_1.yaml
 ./poc/other/conditional_menus-7f4cf85d-6105-4f7d-b4a0-18a3513a93a8.yaml
+./poc/other/conductor.yaml
 ./poc/other/coneblog-widgets-bc060695098fbf1df6eb67d564047f66.yaml
 ./poc/other/coneblog-widgets-ec4fe1cabb457f15256813e0e7ad1522.yaml
 ./poc/other/coneblog-widgets_1.yaml
@@ -211913,6 +211915,7 @@
 ./poc/other/fileorganizer-ffbed6540cd0ed660ed2118f5ce9a483.yaml
 ./poc/other/fileread.yaml
 ./poc/other/fileread.yml
+./poc/other/filerise.yaml
 ./poc/other/files-download-delay-08fd51fbc78181d1e34dd9d45b2727c0.yaml
 ./poc/other/files_download_delay-217f3595-3c35-46c1-a02c-e8829732a719.yaml
 ./poc/other/files_download_delay-570942bf-49b1-4217-abc6-5e83f27d9824.yaml
@@ -215459,6 +215462,7 @@
 ./poc/other/gossamer-forum.yaml
 ./poc/other/gostore-83abcebf-2d39-4ccd-9606-1a1b04f79675.yaml
 ./poc/other/gotcha_gesture_based_captcha-6e7f1fe6-0a23-48e1-a75f-f8c1c8d4f8e0.yaml
+./poc/other/gotenberg.yaml
 ./poc/other/gotham_block_extra_light-b194b241-d8f4-430c-b00c-d84190026bad.yaml
 ./poc/other/gotham_block_extra_light-b4c36899-3c7b-41b6-a38d-86c8834b4c03.yaml
 ./poc/other/gotify-panel.yaml
@@ -216557,6 +216561,7 @@
 ./poc/other/hejia-oa.yaml
 ./poc/other/hel_online_classroom-0612c0be-f1c0-4f74-a769-e4616f103ee6.yaml
 ./poc/other/helion-b0e63d48-8749-4c10-a086-425e81df6920.yaml
+./poc/other/helix3.yaml
 ./poc/other/hello-dolly.yaml
 ./poc/other/hello-dolly_1.yaml
 ./poc/other/hello-elementor-4871f7fef9821ad7021876ca49006f78.yaml
@@ -216934,6 +216939,7 @@
 ./poc/other/holmes.yaml
 ./poc/other/homarr-panel.yaml
 ./poc/other/homarr-panel_1.yaml
+./poc/other/homarr.yaml
 ./poc/other/home-assistant-7979.yaml
 ./poc/other/home-assistant-7980.yaml
 ./poc/other/home-assistant-7980_1.yaml
@@ -222388,6 +222394,7 @@
 ./poc/other/lightning-3b007d8a-3096-42f3-a7be-e0e0d3addf0b.yaml
 ./poc/other/lightning-42c8a5445d70abc166f93c14f3500712.yaml
 ./poc/other/lightning.yaml
+./poc/other/lightrag.yaml
 ./poc/other/lightspeed-6b2e713fae7e2284bc8b24ee72fe8540.yaml
 ./poc/other/lightspeed-89620065-b961-49c9-a662-bee300b5da72.yaml
 ./poc/other/lightspeed-b7255a0e25619c795aa92a8363da00bf.yaml
@@ -222963,6 +222970,7 @@
 ./poc/other/local_sync-11bb7190-023b-45e1-99a5-7313c489ef45.yaml
 ./poc/other/local_syndication-7774cdfd-622a-4608-9efd-273923a0d0aa.yaml
 ./poc/other/localai.yaml
+./poc/other/localgov_workflows.yaml
 ./poc/other/localgpt-panel.yaml
 ./poc/other/localgrid-302e80da-8a7e-4883-8e0f-658fff2579bd.yaml
 ./poc/other/localgrid.yaml
@@ -225273,6 +225281,7 @@
 ./poc/other/merlin-c2-jarm.yaml
 ./poc/other/merlin-c2-jarm_1.yaml
 ./poc/other/mesa_mesa_reservation_widget-fb66f8f4-1800-41f8-bd67-70d89f612144.yaml
+./poc/other/meshery.yaml
 ./poc/other/mesmerize-18eb8b2a-8e08-4f78-9501-927c025ea574.yaml
 ./poc/other/mesmerize-companion-7a3ee5be3b9ac3238f226b3bc5df64d0.yaml
 ./poc/other/mesmerize-companion-c42d9ca4525a34842cc41f3d5771cb41.yaml
@@ -229306,6 +229315,7 @@
 ./poc/other/opencats-panel.yaml
 ./poc/other/opencats-panel_1.yaml
 ./poc/other/opencats.yaml
+./poc/other/openchamber.yaml
 ./poc/other/openclaw-agent-files.yaml
 ./poc/other/openclaw-browser-cdp.yaml
 ./poc/other/openclaw-discord-interactions.yaml
@@ -255296,7 +255306,6 @@
 ./poc/php/phpstan-config.yaml
 ./poc/php/phpstan-config_1.yaml
 ./poc/php/phpstan-config_2.yaml
-./poc/php/phpstudy-rce.yaml
 ./poc/php/phpstudy-xmlrpc-backdoor.yml
 ./poc/php/phpstudy_2.yaml
 ./poc/php/phpsys-info.yaml
@@ -260503,6 +260512,7 @@
 ./poc/remote_code_execution/phpstudy-backdoor-rce.yaml
 ./poc/remote_code_execution/phpstudy-backdoor-rce.yml
 ./poc/remote_code_execution/phpstudy-backdoor-rce_1.yaml
+./poc/remote_code_execution/phpstudy-rce.yaml
 ./poc/remote_code_execution/phpstudy-rce_1.yaml
 ./poc/remote_code_execution/phpunit-cve-2017-9841-rce.yaml
 ./poc/remote_code_execution/pi-woocommerce-order-date-time-and-type-a44345779387d191aa1fdac0be1e3bd0.yaml
@@ -287218,7 +287228,7 @@
 ./poc/web/asp-webshell_1.yaml
 ./poc/web/aspnet-soap-webservices-asmx_1.yaml
 ./poc/web/aspnet-webconfig-exposure.yaml
-./poc/web/automatedlogiccorporation-webctrl_1.yaml
+./poc/web/automatedlogiccorporation-webctrl.yaml
 ./poc/web/automation-web-platform-d716f526e0bd5a4cefbe0695b45624df.yaml
 ./poc/web/automation-web-platform_1.yaml
 ./poc/web/automation_web_platform-97f7cdf1-1439-40b3-90de-cdf19de4108a.yaml
@@ -287397,7 +287407,7 @@
 ./poc/web/dahua-web-panel_2.yaml
 ./poc/web/dahua-web-panel_3.yaml
 ./poc/web/dahua-web-panel_4.yaml
-./poc/web/defaced-website-detect_1.yaml
+./poc/web/defaced-website-detect.yaml
 ./poc/web/default-detect-generic-website.yaml
 ./poc/web/default-detect-generic-website_1.yaml
 ./poc/web/default-websphere-liberty.yaml
@@ -288442,7 +288452,6 @@
 ./poc/web/web-file-manager.yaml
 ./poc/web/web-file-manager_1.yaml
 ./poc/web/web-framework-detect.yaml
-./poc/web/web-ftp-detect-11137.yaml
 ./poc/web/web-ftp-detect-11138_1.yaml
 ./poc/web/web-inf-disclosure.yaml
 ./poc/web/web-inf-web-xml-disclosure.yaml
@@ -291308,6 +291317,7 @@
 ./poc/wordpress/real-estate-listing-realtyna-wpl-51ddc21c56aeaae7a80c3f0f12d9836d.yaml
 ./poc/wordpress/real-estate-listing-realtyna-wpl-b5ea618e55cce4a46b2bff3603f967e7.yaml
 ./poc/wordpress/real-estate-listing-realtyna-wpl-f6a88f0b9b916f8e5f7f55275d656e2c.yaml
+./poc/wordpress/real-estate-listing-realtyna-wpl.yaml
 ./poc/wordpress/real_estate_listing_realtyna_wpl-23068a98-623d-4eb3-a7c5-6af410de4320.yaml
 ./poc/wordpress/real_estate_listing_realtyna_wpl-2d6cbfc8-1ced-4757-b090-39add17afc77.yaml
 ./poc/wordpress/real_estate_listing_realtyna_wpl-4a64f840-8570-4f98-8b72-27bee1607fc2.yaml
