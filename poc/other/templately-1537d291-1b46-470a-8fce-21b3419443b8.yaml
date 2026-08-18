@@ -1,15 +1,15 @@
-id: templately-4e68b2f2-12e4-4ff2-919d-26d6b21acd03
+id: templately-1537d291-1b46-470a-8fce-21b3419443b8
 
 info:
   name: >
-    Templately <= 3.7.1 - Authenticated (Contributor+) Arbitrary File Upload to Remote Code Execution via Gutenberg Cloud Import Attachment Filename Mismatch
+    Templately – Elementor & Gutenberg Template Library: 6500+ Free & Pro Ready Templates And Cloud! <= 3.7.1 - Unauthenticated Stored Cross-Site Scripting
   author: topscoder
-  severity: low
+  severity: high
   description: >
     
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/4e68b2f2-12e4-4ff2-919d-26d6b21acd03?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/1537d291-1b46-470a-8fce-21b3419443b8?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -18,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/templately/"
     google-query: inurl:"/wp-content/plugins/templately/"
     shodan-query: 'http.html:"wp-content/plugins/templately/"'
-  tags: cve,wordpress,wp-plugin,templately,low,candidate
+  tags: cve,wordpress,wp-plugin,templately,high,candidate
 
 http:
   - method: GET

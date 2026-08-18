@@ -1,15 +1,15 @@
-id: forminator-fd9a81eb-2211-42e9-a456-fb60f3ca2c0f
+id: forminator-263ac05d-f1ca-46e3-a43e-3b45eb8066d4
 
 info:
   name: >
-    Forminator Forms <= 1.56.1 - Unauthenticated Stored Cross-Site Scripting via Forged Upload Record via Select Field
+    Forminator Forms <= 1.56.1 - Unauthenticated Arbitrary File Upload via Forged Upload Field Configuration
   author: topscoder
-  severity: high
+  severity: critical
   description: >
     
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/fd9a81eb-2211-42e9-a456-fb60f3ca2c0f?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/263ac05d-f1ca-46e3-a43e-3b45eb8066d4?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -18,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/forminator/"
     google-query: inurl:"/wp-content/plugins/forminator/"
     shodan-query: 'http.html:"wp-content/plugins/forminator/"'
-  tags: cve,wordpress,wp-plugin,forminator,high,candidate
+  tags: cve,wordpress,wp-plugin,forminator,critical,candidate
 
 http:
   - method: GET

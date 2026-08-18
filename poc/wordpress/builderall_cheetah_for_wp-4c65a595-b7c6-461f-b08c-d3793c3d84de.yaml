@@ -1,15 +1,15 @@
-id: builderall_cheetah_for_wp-3f92c416-8e95-4097-9f16-e1f9389b2334
+id: builderall_cheetah_for_wp-4c65a595-b7c6-461f-b08c-d3793c3d84de
 
 info:
   name: >
-    Builderall for WordPress <= 3.0.1 - Authenticated (Contributor+) Remote Code Execution
+    Builderall for WordPress <= 3.0.1 - Missing Authorization to Unauthenticated OAuth Update
   author: topscoder
-  severity: low
+  severity: high
   description: >
     
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/3f92c416-8e95-4097-9f16-e1f9389b2334?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/4c65a595-b7c6-461f-b08c-d3793c3d84de?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -18,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/builderall-cheetah-for-wp/"
     google-query: inurl:"/wp-content/plugins/builderall-cheetah-for-wp/"
     shodan-query: 'http.html:"wp-content/plugins/builderall-cheetah-for-wp/"'
-  tags: cve,wordpress,wp-plugin,builderall-cheetah-for-wp,low,candidate
+  tags: cve,wordpress,wp-plugin,builderall-cheetah-for-wp,high,candidate
 
 http:
   - method: GET
