@@ -1,0 +1,23 @@
+expression: r0() && r1()
+id: iis-put-getshell
+info:
+  author: Cannae(github.com/thunderbarca)
+  name: IIS Put Getshell
+  severity: critical
+rules:
+  r0:
+    expression: response.status == 201
+    request:
+      body: '{{fileContent}}
+
+        '
+      method: PUT
+      path: /{{filename}}.txt
+  r1:
+    expression: response.status == 200 && response.body.bcontains(bytes(fileContent))
+    request:
+      method: GET
+      path: /{{filename}}.txt
+set:
+  fileContent: randomLowercase(6)
+  filename: randomLowercase(6)

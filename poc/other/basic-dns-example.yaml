@@ -1,17 +1,15 @@
-id: basic-dns-example
-
-info:
-  name: Test DNS Template
-  author: pdteam
-  severity: info
-
 dns:
-  - name: "{{FQDN}}"
-    type: A
-    class: inet
-    recursion: true
-    retries: 3
-    matchers:
-      - type: word
-        words:
-          - "1.1.1.1"
+- class: inet
+  matchers:
+  - type: word
+    words:
+    - "IN\tCNAME"
+  name: '{{FQDN}}'
+  recursion: true
+  retries: 3
+  type: CNAME
+id: basic-dns-example
+info:
+  author: pdteam
+  name: Basic DNS Request
+  severity: info

@@ -1,0 +1,50 @@
+http:
+- extractors:
+  - group: 1
+    internal: true
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - serp-rank
+  - dsl:
+    - compare_versions(version, '<=  1.0.7')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/serp-rank/readme.txt'
+  redirects: true
+id: serp-rank-d41d8cd98f00b204e9800998ecf8427e
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: The Keyword Rank Tracker plugin for WordPress is vulnerable to Stored
+    Cross-Site Scripting via multiple parameters in versions up to, and including
+    1.0.7. This appears to require authentication to exploit.
+  metadata:
+    fofa-query: wp-content/plugins/serp-rank/
+    google-query: inurl:"/wp-content/plugins/serp-rank/"
+    shodan-query: 'vuln:'
+  name: Keyword Rank Tracker <= 1.0.7 - Stored Cross-Site Scripting
+  reference: null
+  severity: high
+  tags: cve,wordpress,wp-plugin,serp-rank,high

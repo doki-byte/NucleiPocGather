@@ -1,0 +1,15 @@
+expression: r0()
+id: ikuai-login-panel
+info:
+  author: zan8in
+  description: "title=\"\u767B\u5F55\u7231\u5FEB\u6D41\u63A7\u8DEF\u7531\"\n"
+  name: "iKuai \u767B\u5F55\u7231\u5FEB\u6D41\u63A7\u8DEF\u7531\u767B\u5F55\u9875\u9762"
+  severity: info
+rules:
+  r0:
+    expression: "response.status == 200 && response.body.bcontains(b'<title>\u767B\
+      \u5F55\u7231\u5FEB\u6D41\u63A7\u8DEF\u7531')"
+    request:
+      follow_redirects: true
+      method: GET
+      path: /

@@ -1,0 +1,18 @@
+id: hidden-cookie-attributes
+info:
+  author: qaisar
+  description: 'Detects potential security issues related to hidden attributes in
+    cookies.
+
+    '
+  name: Hidden Cookie Attributes Test
+  severity: medium
+requests:
+- headers:
+    cookie: session_id=legitimate_session; httponly=true; secure=true; samesite=lax
+  method: GET
+  path:
+  - /dashboard
+  - /user-settings
+tags:
+- web

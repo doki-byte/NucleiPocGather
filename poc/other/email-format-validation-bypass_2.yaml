@@ -1,0 +1,29 @@
+id: email-format-validation-bypass
+info:
+  author: qaisar
+  description: 'Detects potential issues related to email format validation bypass
+    during the registration process.
+
+    '
+  name: Email Format Validation Bypass Test
+  severity: medium
+requests:
+- data:
+  - key: username
+    type: static
+    value: new_user
+  - key: email
+    type: static
+    value: invalid_email_format
+  - key: password
+    type: static
+    value: password123
+  headers:
+    content-type:
+    - application/x-www-form-urlencoded
+  method: POST
+  path:
+  - /register
+  - /signup
+tags:
+- web

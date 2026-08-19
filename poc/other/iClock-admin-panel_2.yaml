@@ -1,0 +1,29 @@
+http:
+- host-redirects: true
+  matchers:
+  - condition: or
+    part: body
+    type: word
+    words:
+    - <h1 id="site-name">iClock Automatic Data Master Server</h1>
+    - <title> | Django site admin</title>
+  - status:
+    - 200
+    type: status
+  matchers-condition: or
+  max-redirects: 2
+  method: GET
+  path:
+  - '{{BaseURL}}/iclock/accounts/login/'
+  - '{{BaseURL}}/iclock/accounts/login/?next=/iclock/data/iclock/'
+id: iClock-admin-panel
+info:
+  author: deFr0ggy
+  classification:
+    cwe-id: CWE-200
+  description: An iClock Automatic Data Master Server Admin login panel was detected.
+  metadata:
+    max-request: 1
+  name: iClock Automatic Data Master Server - Admin Panel
+  severity: info
+  tags: panel,iClock,login

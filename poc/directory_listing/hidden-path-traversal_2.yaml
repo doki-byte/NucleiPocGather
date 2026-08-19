@@ -1,0 +1,18 @@
+id: hidden-path-traversal
+info:
+  author: qaisar
+  description: 'Detects potential security issues related to hidden Path Traversal
+    vulnerabilities.
+
+    '
+  name: Hidden Path Traversal Vulnerability Test
+  severity: high
+requests:
+- method: GET
+  params:
+    file: ../../etc/passwd
+  path:
+  - /download
+  - /view-file
+tags:
+- web

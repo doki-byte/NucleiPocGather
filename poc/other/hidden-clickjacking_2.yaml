@@ -1,0 +1,17 @@
+id: hidden-clickjacking
+info:
+  author: Your Name
+  description: 'Detects potential security issues related to hidden Clickjacking vulnerabilities.
+
+    '
+  name: Hidden Clickjacking Test
+  severity: medium
+requests:
+- headers:
+    x-frame-options: DENY
+  method: GET
+  path:
+  - /view-page
+  - /display-content
+tags:
+- web

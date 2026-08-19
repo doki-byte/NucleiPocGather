@@ -1,0 +1,35 @@
+http:
+- body: '{"model":"probe","messages":[{"role":"user","content":"ping"}]}'
+  headers:
+    Content-Type: application/json
+  matchers:
+  - status:
+    - 200
+    type: status
+  - name: no-auth-bad-body
+    status:
+    - 400
+    type: status
+  matchers-condition: or
+  method: POST
+  path:
+  - '{{BaseURL}}/v1/chat/completions'
+id: openclaw-no-auth
+info:
+  author: LobsterGuard
+  classification:
+    cwe-id: CWE-306
+  description: "OpenClaw Gateway has auth.mode=none \u2014 full operator access without\
+    \ credentials"
+  metadata:
+    max-request: 1
+    product: openclaw
+    vendor: openclaw
+    verified: false
+  name: OpenClaw Gateway No Authentication
+  reference:
+  - https://github.com/openclaw/openclaw/blob/main/SECURITY.md
+  remediation: Set auth.mode=token in Gateway config and generate a strong random
+    token with openssl rand -hex 32.
+  severity: critical
+  tags: openclaw,misconfig,auth

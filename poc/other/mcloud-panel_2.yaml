@@ -1,0 +1,27 @@
+id: mcloud-panel
+info:
+  author: ritikchaddha
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0.0
+    cwe-id: CWE-200
+  description: mCloud login panel was detected.
+  metadata:
+    shodan-query: http.title:"mcloud-installer-web"
+    verified: true
+  name: mCloud Login Panel - Detect
+  severity: high
+  tags: panel,mcloud,exposure
+requests:
+- matchers:
+  - part: body
+    type: word
+    words:
+    - <title>mcloud-installer-web
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/clusterList'

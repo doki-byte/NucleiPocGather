@@ -1,0 +1,21 @@
+id: client-cert-auth-bypass
+info:
+  author: qaisar
+  description: 'Detects potential issues related to client certificate authentication
+    bypass during the login process.
+
+    '
+  name: Client Certificate Authentication Bypass Test
+  severity: medium
+requests:
+- headers:
+    content-type:
+    - application/json
+    x-client-certificate: malicious-certificate
+  method: POST
+  path:
+  - /login
+  - /signin
+  - /auth
+tags:
+- web

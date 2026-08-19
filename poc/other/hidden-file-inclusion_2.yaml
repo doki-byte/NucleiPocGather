@@ -1,0 +1,18 @@
+id: hidden-file-inclusion
+info:
+  author: qaisar
+  description: 'Detects potential security issues related to hidden File Inclusion
+    vulnerabilities.
+
+    '
+  name: Hidden File Inclusion Test
+  severity: high
+requests:
+- method: GET
+  params:
+    file: ../../../../etc/passwd
+  path:
+  - /view-file
+  - /include-file
+tags:
+- web

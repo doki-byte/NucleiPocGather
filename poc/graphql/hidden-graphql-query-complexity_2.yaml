@@ -1,0 +1,21 @@
+id: hidden-graphql-query-complexity
+info:
+  author: qaisar
+  description: 'Detects potential security issues related to hidden GraphQL query
+    complexity attacks.
+
+    '
+  name: Hidden GraphQL Query Complexity Attack Test
+  severity: high
+requests:
+- data:
+  - raw: '{"query": "query { expensiveQuery { field1 field2 } }"}'
+  headers:
+    content-type:
+    - application/json
+  method: POST
+  path:
+  - /graphql
+  - /api/graphql
+tags:
+- web

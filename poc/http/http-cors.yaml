@@ -1,19 +1,23 @@
 id: http-cors
+
 info:
-  author: Arqsz
-  description: Extract CORS header if possible
   name: HTTP CORS extraction
+  author: Arqsz
   severity: info
+  description: "Extract CORS header if possible"
   tags: misconfig,headers,remote,basic
+
 requests:
-- extractors:
-  - group: 1
-    part: all_headers
-    regex:
-    - (?i)cross-origin-resource-policy .*
-    type: regex
-  host-redirects: true
-  max-redirects: 3
-  method: GET
-  path:
-  - '{{BaseURL}}'
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    host-redirects: true
+    max-redirects: 3
+
+    extractors:
+      - type: regex
+        part: all_headers
+        group: 1
+        regex:
+          - "(?i)cross-origin-resource-policy .*"

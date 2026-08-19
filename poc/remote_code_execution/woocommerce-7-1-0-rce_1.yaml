@@ -1,0 +1,48 @@
+http:
+- extractors:
+  - group: 1
+    internal: true
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - woocommerce
+  - dsl:
+    - compare_versions(version, '7.1.0')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/woocommerce/readme.txt'
+  redirects: true
+id: woocommerce-7-1-0-rce
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+    cvss-score: 9.8
+  description: ''
+  metadata:
+    fofa-query: /wp-content/plugins/woocommerce/includes/admin/meta-boxes
+    google-query: inurl:"/wp-content/plugins/woocommerce/includes/admin/meta-boxes"
+  name: WooCommerce 7.1.0 - Unauthorized Remote Code Execution (RCE)
+  reference:
+  - https://vulners.com/packetstorm/PACKETSTORM:171609
+  severity: critical
+  tags: cve,wordpress,wp-plugin,woocommerce,critical,rce

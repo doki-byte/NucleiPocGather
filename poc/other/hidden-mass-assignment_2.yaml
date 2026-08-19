@@ -1,0 +1,21 @@
+id: hidden-mass-assignment
+info:
+  author: Your Name
+  description: 'Detects potential security issues related to hidden Mass Assignment
+    vulnerabilities.
+
+    '
+  name: Hidden Mass Assignment Vulnerability Test
+  severity: high
+requests:
+- data:
+  - raw: '{"username": "john_doe", "isAdmin": true}'
+  headers:
+    content-type:
+    - application/json
+  method: POST
+  path:
+  - /update-profile
+  - /modify-user
+tags:
+- web

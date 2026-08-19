@@ -1,25 +1,23 @@
 id: smtp-proxy
 info:
-  name: Symantec Mail Security smtp proxy
+  name: PineApp Mail-SeCure smtp proxy
   author: nmap,cn-kali-team
   tags: detect,tech,smtp-proxy,service
   severity: info
   metadata:
-    hostname: $1
-    operating_system: Windows
-    product: mail_security
-    rarity: 3
-    vendor: symantec
+    product: mail-secure
+    rarity: 8
+    vendor: pineapp
     verified: true
 tcp:
-- name: help
+- name: hello
   inputs:
-  - data: HELP\r\n
+  - data: EHLO\r\n
   host:
   - '{{Hostname}}'
-  port: 1,7,21,25,79,113,119,515,587,1111,1311,12345,2401,2627,3000,3493,6560,14690,22490,6666-6670
+  port: 25,587,3025
   extractors:
   - name: smtp-proxy
     type: regex
     regex:
-    - ^220 ([-\w_.]+) SMTP; .* \+\d{4}\r\n500 Syntax error, command unrecognized\r\n
+    - ^220 Ready to receive mail -=- ESMTP\r\n250-Ready to receive mail -=-\r\n250-AUTH LOGIN PLAIN\r\n250-AUTH=LOGIN PLAIN\r\n250-PIPELINING\r\n250 8BITMIME\r\n

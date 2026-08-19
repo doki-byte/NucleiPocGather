@@ -1,0 +1,21 @@
+id: hidden-graphql-introspection
+info:
+  author: qaisar
+  description: 'Detects potential security issues related to hidden GraphQL introspection
+    queries.
+
+    '
+  name: Hidden GraphQL Introspection Query Test
+  severity: medium
+requests:
+- data:
+  - raw: '{"query": "{__schema { types { name } } }"}'
+  headers:
+    content-type:
+    - application/json
+  method: POST
+  path:
+  - /graphql
+  - /api
+tags:
+- web

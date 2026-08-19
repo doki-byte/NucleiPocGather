@@ -1,0 +1,34 @@
+dns:
+- class: inet
+  id: fqdn
+  name: _dmarc.{{FQDN}}
+  recursion: true
+  retries: 3
+  type: TXT
+- class: inet
+  matchers:
+  - negative: true
+    part: fqdn_answer
+    type: word
+    words:
+    - v=dmarc1
+    - v=DMARC1
+  - negative: true
+    part: answer
+    type: word
+    words:
+    - v=dmarc1
+    - v=DMARC1
+  matchers-condition: and
+  name: _dmarc.{{RDN}}
+  recursion: true
+  retries: 3
+  type: TXT
+id: spoofable-mail-missingdmarc
+info:
+  author: brenocss
+  metadata:
+    verified: true
+  name: Missing DMARC - Spoofable Mail
+  severity: medium
+  tags: dns,dmarc

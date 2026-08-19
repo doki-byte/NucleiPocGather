@@ -1,0 +1,22 @@
+id: biometric-data-injection-registration
+info:
+  author: qaisar
+  description: 'Detects potential issues related to biometric data injection in the
+    registration form during the account registration process.
+
+    '
+  name: Biometric Data Injection in Registration Form Test
+  severity: high
+requests:
+- data:
+  - raw: '{"username": "new_user", "biometric_data": {"fingerprint": "injected-fingerprint"},
+      "password": "strongpassword"}'
+  headers:
+    content-type:
+    - application/json
+  method: POST
+  path:
+  - /register
+  - /signup
+tags:
+- web

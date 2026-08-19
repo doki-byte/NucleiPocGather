@@ -19,7 +19,7 @@ info:
       - html:"TrueNAS"
       - http.html:"truenas"
     fofa-query: body="truenas"
-  tags: login,panel,truenas,ixsystems
+  tags: login,panel,truenas,ixsystems,discovery
 
 http:
   - method: GET
@@ -38,4 +38,4 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a0046304402206b0623658dad6f1232df66717a13794ceac03809e527570d1229950504d2de8c02205aee3a04e8b9e5a0a5db55aaeea776c9ddff4cbd72e73784faace0f75cbf318f:922c64590222798bb761d5b6d8e72950
+# digest: 490a00463044022045ee86cd9fe3e72809d1aa49436afb515ba91c3cca5f0f5e8f7ed17ec7926e3f022005246307ca049b4a567cbb135ae877d7ba6a78faa87cd224dda8e1a1e0150ee1:922c64590222798bb761d5b6d8e72950

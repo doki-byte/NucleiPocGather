@@ -6,7 +6,7 @@ info:
   severity: info
   metadata:
     max-request: 3
-  tags: tech,bigip
+  tags: tech,bigip,discovery
 
 http:
   - method: GET
@@ -38,4 +38,4 @@ http:
         words:
           - "check your user-id and password and try again"
         part: body
-# digest: 4b0a00483046022100943640d37abe04a5f0af2ee33c04094601a1e73428836ee30328cff00cb33719022100b355787419e539082f38db5bd72b0294f6ce34110122d5eaff00715704240ac9:922c64590222798bb761d5b6d8e72950
+# digest: 490a00463044022027462e21bb7b71f15bac073ec5ebabf9ba8b0ae2e7e0cbbddf6cdaea72973e1b022075616aab34c08f3c0ce49ed0bbe080e81dd96b802ebed67a21a365ec94987009:922c64590222798bb761d5b6d8e72950

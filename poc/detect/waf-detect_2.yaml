@@ -2,7 +2,7 @@ id: waf-detect
 
 info:
   name: WAF Detection
-  author: dwisiswant0,lu4nx
+  author: dwisiswant0,lu4nx,s4e-io
   severity: info
   description: A web application firewall was detected.
   reference:
@@ -11,7 +11,7 @@ info:
     cwe-id: CWE-200
   metadata:
     max-request: 1
-  tags: waf,tech,misc
+  tags: waf,tech,misc,discovery
 
 http:
   - raw:
@@ -72,11 +72,17 @@ http:
         part: response
 
       - type: regex
+        name: fortiweb
+        regex:
+          - 'Set-Cookie: cookiesession1='
+        part: header
+
+      - type: regex
         name: teros
         regex:
-          - '(?i)st8(id|.wa|.wf)?.?(\d+|\w+)?'
+          - '(?i)st8(id|.wa|.wf)?.?(\d+|\w+)?='
         condition: or
-        part: response
+        part: header
 
       - type: regex
         name: stricthttp
@@ -106,7 +112,7 @@ http:
         regex:
           - '(?i)\ATS\w{4,}='
           - '(?i)bigipserver(.i)?|bigipserverinternal'
-          - '(?i)^TS[a-zA-Z0-9]{3,8}='
+          - '(?i)Set-Cookie:\s*TS[a-f0-9]{6,}='
           - '(?i)BigIP|BIG-IP|BIGIP'
           - '(?i)bigipserver'
         condition: or
@@ -153,14 +159,6 @@ http:
         regex:
           - '(?i)error(s)?.aliyun(dun)?.(com|net)'
           - '(?i)http(s)?://(www.)?aliyun.(com|net)'
-        condition: or
-        part: response
-
-      - type: regex
-        name: ats
-        regex:
-          - '(?i)(\()?apachetrafficserver((\/)?\d+(.\d+(.\d+)?)?)'
-          - '(?i)ats((\/)?(\d+(.\d+(.\d+)?)?))?'
         condition: or
         part: response
 
@@ -580,7 +578,6 @@ http:
         regex:
           - '(?i)This.request.is.blocked.by.the.SonicWALL'
           - '(?i)Dell.SonicWALL'
-          - '(?i)\bDell\b'
           - '(?i)Web.Site.Blocked.+\bnsa.banner'
           - '(?i)SonicWALL'
           - '(?i).>policy.this.site.is.blocked<.'
@@ -688,7 +685,6 @@ http:
         name: securesphere
         regex:
           - '(?i)<h2>error<.h2>'
-          - '(?i)<title>error<.title>'
           - '(?i)<b>error<.b>'
           - '(?i)<td.class="(errormessage|error)".height="[0-9]{1,3}".width="[0-9]{1,3}">'
           - '(?i)the.incident.id.(is|number.is).'
@@ -752,8 +748,62 @@ http:
         name: huaweicloud
         condition: and
         regex:
-          - '(?)content="CloudWAF"'
-          - 'Server: CloudWAF'
+          - '(?i)content="CloudWAF"'
           - 'Set-Cookie: HWWAFSESID='
+          - 'Set-Cookie: HWWAFSESTIME='
 
-# digest: 4a0a00473045022100838ec30faf54beae55c2295a830c3dc6e714ac961e1ab16e8229c1877a1953070220144f12e7589f000ee757e652b2ec786c4d05f0b2a2379badc6eb20c52d60c3d1:922c64590222798bb761d5b6d8e72950
+      - type: word
+        name: safe3webfirewall
+        part: header
+        words:
+          - "safe3 Web Firewall"
+
+      - type: word
+        name: safedog
+        part: header
+        words:
+          - "X-Safe-Firewall"
+          - "safedog-flow"
+        condition: or
+
+      - type: word
+        name: squarespace
+        part: header
+        words:
+          - "Squarespace"
+          - "Firewall_action"
+        condition: and
+
+      - type: word
+        name: yunsuo
+        part: body
+        words:
+          - "yunsuologo"
+
+      - type: word
+        name: godaddywebprotection
+        part: body
+        words:
+          - "GoDaddy Security"
+          - "seal.godaddy.com"
+          - "GoDaddy security"
+        condition: or
+
+      - type: word
+        name: transipwebfirewall
+        part: header
+        words:
+          - "X-TransIP-Balancer"
+
+      - type: word
+        name: xlabssecuritywaf
+        part: header
+        words:
+          - "Secured: By XLabs Security"
+
+      - type: word
+        name: shieldonfirewall
+        part: header
+        words:
+          - "X-Protected-By: shieldon.io"
+# digest: 4a0a0047304502200ff46324634d4b40268a8e75c00c0503db307d1575a45e99f8a8ca88b7719931022100d2930441abe8697ebc5d1e666b09289461c59b056e494e8cc3269243922384bb:922c64590222798bb761d5b6d8e72950

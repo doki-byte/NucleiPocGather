@@ -1,0 +1,20 @@
+http:
+- extractors:
+  - part: header
+    regex:
+    - 'Server: bytex/([0-9.]+)|bytex'
+    type: regex
+  method: GET
+  path:
+  - '{{BaseURL}}'
+id: bytex-detect
+info:
+  author: rix4uni
+  metadata:
+    fofa-query:
+    - 'Server: bytex'
+    shodan-query:
+    - 'Server: bytex'
+  name: bytex Detect
+  severity: info
+  tags: tech,bytex

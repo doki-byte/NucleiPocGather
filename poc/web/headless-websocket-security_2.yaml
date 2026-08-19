@@ -1,0 +1,375 @@
+headless:
+- extractors:
+  - name: websocket_security_summary
+    part: body
+    regex:
+    - '"scan_completed":\s*true'
+    type: regex
+  - name: websocket_vulnerabilities_found
+    part: body
+    regex:
+    - '"websocket_vulnerabilities_found":\s*true'
+    type: regex
+  matchers:
+  - name: websocket_security_issues_detected
+    regex:
+    - '"websocket_vulnerabilities_found":\s*true'
+    type: regex
+  - name: high_risk_websocket_vulnerabilities
+    regex:
+    - '"risk_level":\s*"(Critical|High)"'
+    type: regex
+  steps:
+  - action: navigate
+    args:
+      url: '{{BaseURL}}'
+  - action: waitload
+  - action: script
+    args:
+      code: "function() {\n  window.websocketResults = {\n    websocket_connections:\
+        \ [],\n    vulnerabilities: [],\n    test_results: [],\n    origin_tests:\
+        \ [],\n    message_tests: [],\n    handshake_analysis: [],\n    risk_assessment:\
+        \ {}\n  };\n\n  // Store original WebSocket constructor\n  var OriginalWebSocket\
+        \ = window.WebSocket;\n  window.websocketResults.original_websocket = OriginalWebSocket;\n\
+        \n  // Hook WebSocket constructor to detect connections\n  window.WebSocket\
+        \ = function(url, protocols) {\n    window.websocketResults.test_results.push('websocket_connection_detected');\n\
+        \n    var wsConnection = {\n      url: url,\n      protocols: protocols,\n\
+        \      origin: window.location.origin,\n      timestamp: Date.now(),\n   \
+        \   events: []\n    };\n\n    window.websocketResults.websocket_connections.push(wsConnection);\n\
+        \n    // Create actual WebSocket connection\n    var ws = new OriginalWebSocket(url,\
+        \ protocols);\n\n    // Hook WebSocket events\n    var originalOnOpen = ws.onopen;\n\
+        \    var originalOnMessage = ws.onmessage;\n    var originalOnError = ws.onerror;\n\
+        \    var originalOnClose = ws.onclose;\n    var originalSend = ws.send;\n\n\
+        \    ws.onopen = function(event) {\n      wsConnection.events.push({\n   \
+        \     type: 'open',\n        timestamp: Date.now(),\n        readyState: ws.readyState\n\
+        \      });\n\n      // Test origin validation\n      window.websocketResults.test_results.push('websocket_connection_opened');\n\
+        \n      if (originalOnOpen) {\n        originalOnOpen.call(this, event);\n\
+        \      }\n    };\n\n    ws.onmessage = function(event) {\n      wsConnection.events.push({\n\
+        \        type: 'message',\n        data: event.data,\n        timestamp: Date.now()\n\
+        \      });\n\n      // Analyze message content for security issues\n     \
+        \ if (typeof event.data === 'string') {\n        // Check for reflected content\n\
+        \        if (event.data.includes('<script>') || event.data.includes('javascript:'))\
+        \ {\n          window.websocketResults.vulnerabilities.push({\n          \
+        \  type: 'websocket_xss_reflection',\n            severity: 'high',\n    \
+        \        message_data: event.data,\n            websocket_url: url,\n    \
+        \        description: 'WebSocket message contains potential XSS content',\n\
+        \            confirmed: true\n          });\n        }\n\n        // Check\
+        \ for sensitive data exposure\n        var sensitivePatterns = [\n       \
+        \   /password/gi,\n          /token/gi,\n          /api[_-]?key/gi,\n    \
+        \      /secret/gi,\n          /private[_-]?key/gi\n        ];\n\n        sensitivePatterns.forEach(function(pattern)\
+        \ {\n          if (pattern.test(event.data)) {\n            window.websocketResults.vulnerabilities.push({\n\
+        \              type: 'websocket_sensitive_data_exposure',\n              severity:\
+        \ 'medium',\n              pattern: pattern.toString(),\n              websocket_url:\
+        \ url,\n              description: 'WebSocket message may contain sensitive\
+        \ data',\n              confirmed: true\n            });\n          }\n  \
+        \      });\n      }\n\n      if (originalOnMessage) {\n        originalOnMessage.call(this,\
+        \ event);\n      }\n    };\n\n    ws.onerror = function(event) {\n      wsConnection.events.push({\n\
+        \        type: 'error',\n        timestamp: Date.now(),\n        error: event.error\
+        \ || 'WebSocket error'\n      });\n\n      if (originalOnError) {\n      \
+        \  originalOnError.call(this, event);\n      }\n    };\n\n    ws.onclose =\
+        \ function(event) {\n      wsConnection.events.push({\n        type: 'close',\n\
+        \        code: event.code,\n        reason: event.reason,\n        timestamp:\
+        \ Date.now()\n      });\n\n      if (originalOnClose) {\n        originalOnClose.call(this,\
+        \ event);\n      }\n    };\n\n    // Hook send method to analyze outgoing\
+        \ messages\n    ws.send = function(data) {\n      wsConnection.events.push({\n\
+        \        type: 'send',\n        data: data,\n        timestamp: Date.now()\n\
+        \      });\n\n      // Analyze outgoing messages for security issues\n   \
+        \   if (typeof data === 'string') {\n        try {\n          var parsedData\
+        \ = JSON.parse(data);\n\n          // Check for potential injection attempts\n\
+        \          if (parsedData.eval || parsedData.script || parsedData.innerHTML)\
+        \ {\n            window.websocketResults.vulnerabilities.push({\n        \
+        \      type: 'websocket_injection_attempt',\n              severity: 'high',\n\
+        \              message_data: data,\n              websocket_url: url,\n  \
+        \            description: 'Outgoing WebSocket message contains potential injection\
+        \ payload',\n              confirmed: true\n            });\n          }\n\
+        \        } catch (e) {\n          // Not JSON, continue analysis\n       \
+        \ }\n      }\n\n      return originalSend.call(this, data);\n    };\n\n  \
+        \  return ws;\n  };\n\n  // Copy static methods and properties\n  for (var\
+        \ prop in OriginalWebSocket) {\n    if (OriginalWebSocket.hasOwnProperty(prop))\
+        \ {\n      window.WebSocket[prop] = OriginalWebSocket[prop];\n    }\n  }\n\
+        \n  // Scan page for existing WebSocket usage\n  var scripts = Array.from(document.scripts);\n\
+        \  scripts.forEach(function(script, index) {\n    if (script.textContent)\
+        \ {\n      var content = script.textContent;\n\n      // Look for WebSocket\
+        \ patterns\n      var wsPatterns = [\n        /new\\s+WebSocket\\s*\\(/gi,\n\
+        \        /WebSocket\\s*\\(/gi,\n        /ws:\\/\\/[^\\s\"')]+/gi,\n      \
+        \  /wss:\\/\\/[^\\s\"')]+/gi\n      ];\n\n      wsPatterns.forEach(function(pattern,\
+        \ patternIndex) {\n        var matches = content.match(pattern);\n       \
+        \ if (matches) {\n          matches.forEach(function(match) {\n          \
+        \  window.websocketResults.websocket_connections.push({\n              type:\
+        \ 'script_analysis',\n              script_index: index,\n              pattern_index:\
+        \ patternIndex,\n              match: match,\n              context: content.substring(\n\
+        \                Math.max(0, content.indexOf(match) - 50),\n             \
+        \   Math.min(content.length, content.indexOf(match) + 100)\n             \
+        \ )\n            });\n          });\n        }\n      });\n    }\n  });\n\n\
+        \  return window.websocketResults;\n}\n"
+    name: initialize_websocket_testing
+  - action: script
+    args:
+      code: "(function() {\n  window.websocketResults.test_results.push('websocket_origin_validation_testing');\n\
+        \n  try {\n    // Test various WebSocket URLs for origin validation\n    var\
+        \ testUrls = [];\n\n    // Extract WebSocket URLs from existing connections\
+        \ or common patterns\n    var currentProtocol = window.location.protocol ===\
+        \ 'https:' ? 'wss:' : 'ws:';\n    var currentHost = window.location.host;\n\
+        \n    // Common WebSocket endpoints\n    var commonEndpoints = [\n      '/ws',\n\
+        \      '/websocket',\n      '/socket',\n      '/api/ws',\n      '/live',\n\
+        \      '/chat',\n      '/notifications',\n      '/updates'\n    ];\n\n   \
+        \ commonEndpoints.forEach(function(endpoint) {\n      testUrls.push(currentProtocol\
+        \ + '//' + currentHost + endpoint);\n    });\n\n    // Test origin bypass\
+        \ techniques\n    var maliciousOrigins = [\n      'null',\n      '',\n   \
+        \   'evil.com',\n      currentHost + '.evil.com',\n      'evil.' + currentHost,\n\
+        \      'data:',\n      'javascript:'\n    ];\n\n    var originalOrigin = window.location.origin;\n\
+        \n    testUrls.forEach(function(wsUrl, urlIndex) {\n      maliciousOrigins.forEach(function(testOrigin,\
+        \ originIndex) {\n        setTimeout(function() {\n          try {\n     \
+        \       // Temporarily modify the origin (if possible)\n            var testConnection\
+        \ = {\n              url: wsUrl,\n              test_origin: testOrigin,\n\
+        \              timestamp: Date.now(),\n              result: null\n      \
+        \      };\n\n            // Attempt WebSocket connection\n            var\
+        \ ws = new window.websocketResults.original_websocket(wsUrl);\n\n        \
+        \    ws.onopen = function() {\n              testConnection.result = 'connection_successful';\n\
+        \              window.websocketResults.vulnerabilities.push({\n          \
+        \      type: 'websocket_origin_bypass',\n                severity: 'high',\n\
+        \                websocket_url: wsUrl,\n                test_origin: testOrigin,\n\
+        \                description: 'WebSocket connection succeeded with suspicious\
+        \ origin',\n                confirmed: true\n              });\n         \
+        \     ws.close();\n            };\n\n            ws.onerror = function(error)\
+        \ {\n              testConnection.result = 'connection_failed';\n        \
+        \      // This is expected for security-conscious implementations\n      \
+        \      };\n\n            ws.onclose = function() {\n              testConnection.result\
+        \ = 'connection_closed';\n            };\n\n            window.websocketResults.origin_tests.push(testConnection);\n\
+        \n            // Close connection after timeout\n            setTimeout(function()\
+        \ {\n              if (ws.readyState === WebSocket.CONNECTING || ws.readyState\
+        \ === WebSocket.OPEN) {\n                ws.close();\n              }\n  \
+        \          }, 2000);\n\n          } catch (e) {\n            window.websocketResults.test_results.push('origin_test_'\
+        \ + urlIndex + '_' + originIndex + '_error: ' + e.message);\n          }\n\
+        \        }, (urlIndex * maliciousOrigins.length + originIndex) * 300);\n \
+        \     });\n    });\n\n  } catch (e) {\n    window.websocketResults.test_results.push('websocket_origin_test_error:\
+        \ ' + e.message);\n  }\n\n  return window.websocketResults;\n})()\n"
+    name: test_websocket_origin_validation
+  - action: script
+    args:
+      code: "(function() {\n  window.websocketResults.test_results.push('websocket_message_injection_testing');\n\
+        \n  try {\n    // Test message injection payloads\n    var injectionPayloads\
+        \ = [\n      {\n        name: 'xss_injection',\n        payload: '{\"message\"\
+        : \"<script>window.wsXSSTest=true</script>\"}',\n        expected_result:\
+        \ 'xss_execution'\n      },\n      {\n        name: 'html_injection',\n  \
+        \      payload: '{\"content\": \"<img src=x onerror=window.wsHTMLTest=true>\"\
+        }',\n        expected_result: 'html_execution'\n      },\n      {\n      \
+        \  name: 'javascript_execution',\n        payload: '{\"eval\": \"window.wsJSTest=true\"\
+        }',\n        expected_result: 'js_execution'\n      },\n      {\n        name:\
+        \ 'command_injection',\n        payload: '{\"cmd\": \"alert(\\'WebSocket injection\\\
+        ')\"}',\n        expected_result: 'command_execution'\n      },\n      {\n\
+        \        name: 'prototype_pollution',\n        payload: '{\"__proto__\": {\"\
+        wsPolluted\": true}}',\n        expected_result: 'prototype_pollution'\n \
+        \     },\n      {\n        name: 'path_traversal',\n        payload: '{\"\
+        file\": \"../../../etc/passwd\"}',\n        expected_result: 'path_traversal'\n\
+        \      }\n    ];\n\n    // Initialize test result tracking\n    window.wsInjectionResults\
+        \ = {\n      xssExecution: false,\n      htmlExecution: false,\n      jsExecution:\
+        \ false,\n      commandExecution: false,\n      prototypePollution: false\n\
+        \    };\n\n    // Test each WebSocket connection found\n    if (window.websocketResults.websocket_connections.length\
+        \ > 0) {\n      window.websocketResults.websocket_connections.forEach(function(wsConn,\
+        \ connIndex) {\n        if (wsConn.url && !wsConn.type) { // Real WebSocket\
+        \ connection\n          injectionPayloads.forEach(function(payload, payloadIndex)\
+        \ {\n            setTimeout(function() {\n              try {\n          \
+        \      // Create test WebSocket connection\n                var testWs = new\
+        \ window.websocketResults.original_websocket(wsConn.url);\n\n            \
+        \    testWs.onopen = function() {\n                  // Send injection payload\n\
+        \                  testWs.send(payload.payload);\n\n                  window.websocketResults.message_tests.push({\n\
+        \                    connection_index: connIndex,\n                    payload_name:\
+        \ payload.name,\n                    payload_data: payload.payload,\n    \
+        \                timestamp: Date.now(),\n                    status: 'sent'\n\
+        \                  });\n\n                  // Close connection after sending\n\
+        \                  setTimeout(function() {\n                    testWs.close();\n\
+        \                  }, 1000);\n                };\n\n                testWs.onmessage\
+        \ = function(event) {\n                  // Analyze response for injection\
+        \ success\n                  var responseData = event.data;\n\n          \
+        \        if (typeof responseData === 'string') {\n                    // Check\
+        \ for reflected payload\n                    if (responseData.includes(payload.payload)\
+        \ ||\n                        responseData.includes('<script>') ||\n     \
+        \                   responseData.includes('onerror=')) {\n\n             \
+        \         window.websocketResults.vulnerabilities.push({\n               \
+        \         type: 'websocket_message_injection',\n                        subtype:\
+        \ payload.name,\n                        severity: 'high',\n             \
+        \           payload_sent: payload.payload,\n                        response_received:\
+        \ responseData,\n                        websocket_url: wsConn.url,\n    \
+        \                    description: 'WebSocket message injection successful',\n\
+        \                        confirmed: true\n                      });\n    \
+        \                }\n\n                    // Check for specific injection\
+        \ indicators\n                    if (payload.name === 'xss_injection' &&\
+        \ responseData.includes('<script>')) {\n                      window.wsInjectionResults.xssExecution\
+        \ = true;\n                    }\n                    if (payload.name ===\
+        \ 'html_injection' && responseData.includes('<img')) {\n                 \
+        \     window.wsInjectionResults.htmlExecution = true;\n                  \
+        \  }\n                    if (payload.name === 'javascript_execution' && responseData.includes('eval'))\
+        \ {\n                      window.wsInjectionResults.jsExecution = true;\n\
+        \                    }\n                  }\n\n                  // Check\
+        \ for prototype pollution\n                  if (payload.name === 'prototype_pollution')\
+        \ {\n                    if (({}).wsPolluted === true) {\n               \
+        \       window.websocketResults.vulnerabilities.push({\n                 \
+        \       type: 'websocket_prototype_pollution',\n                        severity:\
+        \ 'high',\n                        payload_sent: payload.payload,\n      \
+        \                  websocket_url: wsConn.url,\n                        description:\
+        \ 'WebSocket message caused prototype pollution',\n                      \
+        \  confirmed: true\n                      });\n                      window.wsInjectionResults.prototypePollution\
+        \ = true;\n                    }\n                  }\n                };\n\
+        \n                testWs.onerror = function(error) {\n                  window.websocketResults.message_tests.push({\n\
+        \                    connection_index: connIndex,\n                    payload_name:\
+        \ payload.name,\n                    error: error.message || 'WebSocket error',\n\
+        \                    timestamp: Date.now(),\n                    status: 'error'\n\
+        \                  });\n                };\n\n              } catch (e) {\n\
+        \                window.websocketResults.test_results.push('message_injection_'\
+        \ + connIndex + '_' + payloadIndex + '_error: ' + e.message);\n          \
+        \    }\n            }, (connIndex * injectionPayloads.length + payloadIndex)\
+        \ * 500);\n          });\n        }\n      });\n    }\n\n    // Test direct\
+        \ WebSocket creation with injection payloads\n    var commonWsUrls = [\n \
+        \     'ws://localhost:8080/ws',\n      'wss://' + window.location.host + '/ws',\n\
+        \      'wss://' + window.location.host + '/websocket'\n    ];\n\n    commonWsUrls.forEach(function(wsUrl,\
+        \ urlIndex) {\n      setTimeout(function() {\n        try {\n          var\
+        \ directTestWs = new window.websocketResults.original_websocket(wsUrl);\n\n\
+        \          directTestWs.onopen = function() {\n            // Send a basic\
+        \ injection test\n            var testPayload = '{\"test\": \"<script>window.wsDirectTest=true</script>\"\
+        }';\n            directTestWs.send(testPayload);\n\n            setTimeout(function()\
+        \ {\n              directTestWs.close();\n            }, 1000);\n        \
+        \  };\n\n          directTestWs.onmessage = function(event) {\n          \
+        \  if (event.data && event.data.includes('<script>')) {\n              window.websocketResults.vulnerabilities.push({\n\
+        \                type: 'websocket_direct_injection',\n                severity:\
+        \ 'high',\n                websocket_url: wsUrl,\n                response_data:\
+        \ event.data,\n                description: 'Direct WebSocket injection test\
+        \ successful',\n                confirmed: true\n              });\n     \
+        \       }\n          };\n\n          directTestWs.onerror = function() {\n\
+        \            // Expected for non-existent endpoints\n          };\n\n    \
+        \    } catch (e) {\n          window.websocketResults.test_results.push('direct_ws_test_'\
+        \ + urlIndex + '_error: ' + e.message);\n        }\n      }, urlIndex * 1000\
+        \ + 5000); // Delay to allow other tests to complete\n    });\n\n  } catch\
+        \ (e) {\n    window.websocketResults.test_results.push('websocket_message_injection_error:\
+        \ ' + e.message);\n  }\n\n  return window.websocketResults;\n})()\n"
+    name: test_websocket_message_injection
+  - action: script
+    args:
+      code: "(function() {\n  window.websocketResults.test_results.push('websocket_handshake_security_testing');\n\
+        \n  try {\n    // Analyze WebSocket handshake security\n    var handshakeTests\
+        \ = [\n      {\n        name: 'insecure_websocket_url',\n        test: function()\
+        \ {\n          // Check if any WebSocket connections use ws:// instead of\
+        \ wss://\n          var insecureConnections = window.websocketResults.websocket_connections.filter(function(conn)\
+        \ {\n            return conn.url && conn.url.startsWith('ws://');\n      \
+        \    });\n\n          return insecureConnections.length > 0 ? insecureConnections\
+        \ : null;\n        }\n      },\n      {\n        name: 'mixed_content_websocket',\n\
+        \        test: function() {\n          // Check for mixed content (HTTPS page\
+        \ with ws:// WebSocket)\n          if (window.location.protocol === 'https:')\
+        \ {\n            var mixedContentConnections = window.websocketResults.websocket_connections.filter(function(conn)\
+        \ {\n              return conn.url && conn.url.startsWith('ws://');\n    \
+        \        });\n            return mixedContentConnections.length > 0 ? mixedContentConnections\
+        \ : null;\n          }\n          return null;\n        }\n      },\n    \
+        \  {\n        name: 'websocket_without_origin_check',\n        test: function()\
+        \ {\n          // Check if WebSocket connections accept any origin\n     \
+        \     return window.websocketResults.origin_tests.filter(function(test) {\n\
+        \            return test.result === 'connection_successful' &&\n         \
+        \          (test.test_origin === 'evil.com' || test.test_origin === 'null');\n\
+        \          });\n        }\n      }\n    ];\n\n    handshakeTests.forEach(function(test,\
+        \ index) {\n      try {\n        var result = test.test();\n        if (result\
+        \ && result.length > 0) {\n          var severity = 'medium';\n          if\
+        \ (test.name === 'mixed_content_websocket' || test.name === 'websocket_without_origin_check')\
+        \ {\n            severity = 'high';\n          }\n\n          window.websocketResults.vulnerabilities.push({\n\
+        \            type: 'websocket_handshake_security',\n            subtype: test.name,\n\
+        \            severity: severity,\n            details: result,\n         \
+        \   description: 'WebSocket handshake security issue detected',\n        \
+        \    confirmed: true\n          });\n        }\n\n        window.websocketResults.handshake_analysis.push({\n\
+        \          test_name: test.name,\n          result: result ? 'vulnerable'\
+        \ : 'secure',\n          details: result || 'No issues found',\n         \
+        \ timestamp: Date.now()\n        });\n\n      } catch (e) {\n        window.websocketResults.test_results.push('handshake_test_'\
+        \ + index + '_error: ' + e.message);\n      }\n    });\n\n    // Test for\
+        \ WebSocket over HTTP (should be blocked by browsers)\n    if (window.location.protocol\
+        \ === 'https:') {\n      try {\n        var httpWsUrl = 'ws://' + window.location.host\
+        \ + '/test';\n        var httpWs = new window.websocketResults.original_websocket(httpWsUrl);\n\
+        \n        httpWs.onopen = function() {\n          window.websocketResults.vulnerabilities.push({\n\
+        \            type: 'websocket_mixed_content_allowed',\n            severity:\
+        \ 'high',\n            websocket_url: httpWsUrl,\n            description:\
+        \ 'Browser allowed WebSocket connection over HTTP from HTTPS page',\n    \
+        \        confirmed: true\n          });\n          httpWs.close();\n     \
+        \   };\n\n        httpWs.onerror = function() {\n          // This is expected\
+        \ and secure behavior\n          window.websocketResults.handshake_analysis.push({\n\
+        \            test_name: 'mixed_content_blocked',\n            result: 'secure',\n\
+        \            details: 'Browser correctly blocked mixed content WebSocket',\n\
+        \            timestamp: Date.now()\n          });\n        };\n\n      } catch\
+        \ (e) {\n        // Expected security error\n        window.websocketResults.handshake_analysis.push({\n\
+        \          test_name: 'mixed_content_security_error',\n          result: 'secure',\n\
+        \          details: 'Security error prevented mixed content WebSocket: ' +\
+        \ e.message,\n          timestamp: Date.now()\n        });\n      }\n    }\n\
+        \n  } catch (e) {\n    window.websocketResults.test_results.push('websocket_handshake_security_error:\
+        \ ' + e.message);\n  }\n\n  return window.websocketResults;\n})()\n"
+    name: test_websocket_handshake_security
+  - action: script
+    args:
+      code: "(function() {\n  // Restore original WebSocket constructor\n  try {\n\
+        \    window.WebSocket = window.websocketResults.original_websocket;\n  } catch\
+        \ (e) {\n    // Ignore restoration errors\n  }\n\n  // Calculate comprehensive\
+        \ WebSocket security risk score\n  var riskScore = 0;\n  var confirmedVulns\
+        \ = window.websocketResults.vulnerabilities.filter(function(v) {\n    return\
+        \ v.confirmed;\n  });\n\n  confirmedVulns.forEach(function(vuln) {\n    switch\
+        \ (vuln.severity) {\n      case 'critical': riskScore += 40; break;\n    \
+        \  case 'high': riskScore += 25; break;\n      case 'medium': riskScore +=\
+        \ 15; break;\n      case 'low': riskScore += 5; break;\n    }\n  });\n\n \
+        \ // Additional risk factors\n  var websocketConnectionsCount = window.websocketResults.websocket_connections.length;\n\
+        \  var failedOriginTests = window.websocketResults.origin_tests.filter(function(test)\
+        \ {\n    return test.result === 'connection_successful';\n  }).length;\n\n\
+        \  riskScore += websocketConnectionsCount * 2;\n  riskScore += failedOriginTests\
+        \ * 10;\n\n  window.websocketResults.risk_assessment = {\n    total_vulnerabilities:\
+        \ confirmedVulns.length,\n    websocket_connections_detected: websocketConnectionsCount,\n\
+        \    origin_validation_failures: failedOriginTests,\n    message_injection_attempts:\
+        \ window.websocketResults.message_tests.length,\n    handshake_security_issues:\
+        \ window.websocketResults.handshake_analysis.filter(function(h) {\n      return\
+        \ h.result === 'vulnerable';\n    }).length,\n    risk_score: Math.min(riskScore,\
+        \ 100),\n    risk_level: riskScore > 70 ? 'Critical' :\n               riskScore\
+        \ > 50 ? 'High' :\n               riskScore > 30 ? 'Medium' : 'Low',\n   \
+        \ test_coverage: window.websocketResults.test_results.length,\n    recommendations:\
+        \ []\n  };\n\n  // Generate specific recommendations\n  if (confirmedVulns.some(function(v)\
+        \ { return v.type.includes('origin_bypass'); })) {\n    window.websocketResults.risk_assessment.recommendations.push(\n\
+        \      'Implement strict origin validation for WebSocket connections',\n \
+        \     'Use allowlist of trusted origins for WebSocket handshakes'\n    );\n\
+        \  }\n\n  if (confirmedVulns.some(function(v) { return v.type.includes('message_injection');\
+        \ })) {\n    window.websocketResults.risk_assessment.recommendations.push(\n\
+        \      'Validate and sanitize all WebSocket message content',\n      'Implement\
+        \ message type validation and rate limiting'\n    );\n  }\n\n  if (confirmedVulns.some(function(v)\
+        \ { return v.subtype === 'insecure_websocket_url'; })) {\n    window.websocketResults.risk_assessment.recommendations.push(\n\
+        \      'Use WSS (WebSocket Secure) instead of WS for all connections',\n \
+        \     'Implement HTTPS-only WebSocket policy'\n    );\n  }\n\n  if (confirmedVulns.some(function(v)\
+        \ { return v.type.includes('xss'); })) {\n    window.websocketResults.risk_assessment.recommendations.push(\n\
+        \      'Escape HTML content in WebSocket messages',\n      'Implement Content\
+        \ Security Policy for WebSocket origins'\n    );\n  }\n\n  if (confirmedVulns.some(function(v)\
+        \ { return v.type.includes('prototype_pollution'); })) {\n    window.websocketResults.risk_assessment.recommendations.push(\n\
+        \      'Validate WebSocket message structure to prevent prototype pollution',\n\
+        \      'Use JSON schema validation for incoming messages'\n    );\n  }\n\n\
+        \  if (confirmedVulns.length > 0) {\n    window.websocketResults.risk_assessment.recommendations.push(\n\
+        \      'Regular security testing of WebSocket implementations',\n      'Implement\
+        \ WebSocket connection monitoring and logging',\n      'Use authentication\
+        \ and authorization for WebSocket connections'\n    );\n  }\n\n  window.websocketResults.summary\
+        \ = {\n    scan_completed: true,\n    timestamp: new Date().toISOString(),\n\
+        \    websocket_vulnerabilities_found: confirmedVulns.length > 0,\n    secure_connections:\
+        \ confirmedVulns.filter(function(v) { return v.subtype !== 'insecure_websocket_url';\
+        \ }).length === 0,\n    origin_validation_implemented: failedOriginTests ===\
+        \ 0,\n    message_security_adequate: confirmedVulns.filter(function(v) { return\
+        \ v.type.includes('injection'); }).length === 0,\n    comprehensive_testing_completed:\
+        \ true\n  };\n\n  return window.websocketResults;\n})()\n"
+    name: final_websocket_assessment
+id: headless-websocket-security
+info:
+  author: geeknik
+  description: 'Advanced WebSocket security analysis using Headless Protocol for comprehensive
+
+    WebSocket connection testing. This template performs WebSocket handshake analysis,
+
+    origin validation testing, message injection assessment, and protocol security
+
+    evaluation to identify WebSocket vulnerabilities including origin bypass,
+
+    message injection, and connection hijacking while maintaining defensive
+
+    research principles.
+
+    '
+  name: WebSocket Security Analyzer
+  reference:
+  - https://owasp.org/www-community/attacks/WebSocket_security_vulnerabilities
+  - https://portswigger.net/web-security/websockets
+  - https://tools.ietf.org/html/rfc6455
+  severity: medium
+  tags: websocket,real-time,headless,origin-validation,defensive

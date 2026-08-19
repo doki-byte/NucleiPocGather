@@ -1,0 +1,28 @@
+id: cloud-enum-azure-website
+info:
+  author: initstring
+  description: Searches for Azure websites that are registered and responding
+  name: Cloud Enumeration - Azure Websites
+  reference: tba
+  severity: info
+  tags: cloud,azure
+requests:
+- attack: batteringram
+  matchers:
+  - condition: or
+    name: Available Azure Website
+    status:
+    - 200
+    - 302
+    type: status
+  raw:
+  - 'GET https://{{keyword}}.{{baseDNS}} HTTP/1.1
+
+    Host: {{keyword}}.{{baseDNS}}
+
+    '
+  redirects: false
+  threads: 10
+self-contained: true
+variables:
+  baseDNS: azurewebsites.net

@@ -1,0 +1,31 @@
+http:
+- matchers:
+  - status:
+    - 200
+    type: status
+  - part: header
+    type: word
+    words:
+    - text/html
+  - condition: and
+    type: word
+    words:
+    - (C) COPYRIGHT American Megatrends Inc
+    - /Java/jviewer.jnlp
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/'
+id: supermicro-bmc-panel-old
+info:
+  author: gtrrnr, idealphase
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0
+    cwe-id: CWE-200
+  description: Old (pre 2016) Supermicro BMC login panel was detected.
+  metadata:
+    max-request: 1
+  name: Supermicro old BMC login panel
+  severity: medium
+  tags: panel,supermicro,bmc

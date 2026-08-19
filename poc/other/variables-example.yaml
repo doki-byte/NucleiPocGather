@@ -1,17 +1,20 @@
-headless:
-- matchers:
-  - type: word
-    words:
-    - '{{a1}}'
-  steps:
-  - action: navigate
-    args:
-      url: '{{BaseURL}}'
-  - action: waitload
 id: variables-example
+
 info:
-  author: pdteam
   name: Variables Example
+  author: pdteam
   severity: info
+
 variables:
-  a1: '{{base64(''hello'')}}'
+  a1: "{{base64('hello')}}"
+
+headless:
+  - steps:
+      - args:
+          url: "{{BaseURL}}"
+        action: navigate
+      - action: waitload
+    matchers:
+      - type: word
+        words:
+          - "{{a1}}"

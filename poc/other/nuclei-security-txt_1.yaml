@@ -1,0 +1,29 @@
+http:
+- extractors:
+  - group: 0
+    regex:
+    - (?mi)Contact:(.*)
+    - (?mi)Policy:(.*)
+    - (?mi)Canonical:(.*)
+    type: regex
+  matchers:
+  - condition: or
+    regex:
+    - 'Contact:'
+    - 'Expires:'
+    type: regex
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{RootURL}}/.well-known/security.txt'
+  - '{{RootURL}}/security.txt'
+  stop-at-first-match: true
+id: nuclei-security-txt
+info:
+  author: rix4uni
+  name: nuclei-security-txt File
+  severity: info
+  tags: miscellaneous,misc,generic
