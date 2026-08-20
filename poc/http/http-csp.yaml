@@ -1,22 +1,18 @@
 id: http-csp
-
 info:
-  name: HTTP CSP extraction
   author: Arqsz
+  description: Extract CSP header if possible
+  name: HTTP CSP extraction
   severity: info
-  description: "Extract CSP header if possible"
   tags: misconfig,headers,remote,basic
-
 requests:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
-
-    host-redirects: true
-    max-redirects: 3
-
-    extractors:
-      - type: regex
-        part: all_headers
-        regex:
-          - "(?i)content-security-policy: .*"
+- extractors:
+  - part: all_headers
+    regex:
+    - '(?i)content-security-policy: .*'
+    type: regex
+  host-redirects: true
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}'

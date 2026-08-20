@@ -13,7 +13,7 @@ info:
   - https://github.com/projectdiscovery/nuclei-templates/blob/main/ssl/insecure-cipher-suite-detect.yaml
   - https://owasp.org/www-project-web-security-testing-guide/v42/4-Web_Application_Security_Testing/09-Testing_for_Weak_Cryptography/01-Testing_for_Weak_Transport_Layer_Security
   - https://cheatsheetseries.owasp.org/cheatsheets/Transport_Layer_Security_Cheat_Sheet.html
-  severity: low
+  severity: Low
   tags: asvs,9.1.2
 ssl:
 - address: '{{Host}}:{{Port}}'

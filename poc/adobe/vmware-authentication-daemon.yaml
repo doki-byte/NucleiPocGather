@@ -1,34 +1,32 @@
 id: vmware-authentication-daemon
-
 info:
-  name: VMware Authentication Daemon Detection
   author: pussycat0x
-  severity: info
-  description: |
-    vmauthd is the VMWare authentication daemon that is included with many VMWare products, including ESX(i), and Workstation.
+  description: 'vmauthd is the VMWare authentication daemon that is included with
+    many VMWare products, including ESX(i), and Workstation.
+
+    '
   metadata:
     max-request: 1
     shodan-query: product:"VMware Authentication Daemon"
     verified: true
+  name: VMware Authentication Daemon Detection
+  severity: info
   tags: network,vmware,authenticated,detect
-
 tcp:
+- extractors:
+  - regex:
+    - VMware Authentication Daemon Version ([0-9.]+)
+    type: regex
+  host:
+  - '{{Hostname}}'
+  inputs:
+  - data: '
 
-  - inputs:
-      - data: "\n"
-    host:
-      - "{{Hostname}}"
-    port: 902
-
-    matchers:
-      - type: word
-        words:
-          - "ServerDaemonProtocol:SOAP"
-          - "MKSDisplayProtocol:VNC"
-        condition: and
-
-    extractors:
-      - type: regex
-        regex:
-          - "VMware Authentication Daemon Version ([0-9.]+)"
-# digest: 4b0a00483046022100add76e9416a775c6a103bf440021834239728444a60b926aa23eb09845f2117d022100c7f2bc47f4a531836f8390e9df199a639fdfcd5d757b94fb74f1fa1aced91cde:922c64590222798bb761d5b6d8e72950
+      '
+  matchers:
+  - condition: and
+    type: word
+    words:
+    - ServerDaemonProtocol:SOAP
+    - MKSDisplayProtocol:VNC
+  port: 902

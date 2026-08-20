@@ -2,8 +2,8 @@ id: LFI-Detector
 info:
   author: Reksy
   name: Local File Inclusion Detector
-  severity: high
-requests:
+  severity: High
+http:
 - matchers:
   - part: body
     type: word

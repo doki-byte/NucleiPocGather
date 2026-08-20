@@ -3,7 +3,7 @@ info:
   author: Excis3
   description: Serialization issue.
   name: Serialization
-  severity: critical
+  severity: Critical
   tags: cve,cisco
 http:
 - matchers:

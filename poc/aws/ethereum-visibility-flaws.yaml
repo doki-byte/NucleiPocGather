@@ -3,7 +3,7 @@ id: ethereum-visibility-flaws
 info:
   name: Incorrect Function Visibility
   author: Juan Pablo Lopez Yacubian
-  severity: high
+  severity: High
   description: Functions are incorrectly marked as public, exposing them to attackers.
   tags: ethereum,high
 

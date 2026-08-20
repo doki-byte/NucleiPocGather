@@ -207,5 +207,5 @@ info:
 
     '
   name: Sensitive Config Files Disclosure
-  severity: high
+  severity: High
   tags: exposure,config,info-disclosure,sensitive

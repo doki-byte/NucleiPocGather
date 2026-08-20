@@ -1,4 +1,4 @@
-id: eid-easy-qualified-electonic-signature
+id: eid-easy-qualified-electonic-signature-8b5481747ff85f1f4ed93a030334d23b
 
 info:
   name: >
@@ -56,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= *')
+          - compare_versions(version, '<= 3.3.0')

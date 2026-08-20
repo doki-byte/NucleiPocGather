@@ -2,7 +2,7 @@ id: timebased-sqli
 info:
   name: Blind SQL Injection time based detection of sql backend (time 7)
   author: oscuridad1010
-  severity: high
+  severity: High
   tags: sql2,bsql
 
 requests:

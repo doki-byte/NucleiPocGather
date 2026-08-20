@@ -20,5 +20,5 @@ info:
   description: This template can be used to detect basic Configuration issues from
     the apk
   name: Configuration issues in Android apk file
-  severity: medium
+  severity: Medium
   tags: Configuration issues

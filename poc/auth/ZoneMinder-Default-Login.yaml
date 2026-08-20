@@ -3,13 +3,13 @@ id: ZoneMinder-Default-Login
 info:
   name: ZoneMinder Default Login
   author: YashVardhanTripathi
-  severity: high
+  severity: High
   description: ZoneMinder Default Credential Access Extraction
   tags:
     - tech
     - ZoneMinder
 
-requests:
+http:
   - raw:
       - |
         POST /zm/ HTTP/1.1

@@ -2,7 +2,7 @@ id: Search-for-IOC-for-Fancy-Product-Designer
 info:
   author: Clark
   name: Find Indicators of Compromise for Fancy Product Designer
-  severity: high
+  severity: High
 http:
 - matchers:
   - type: word

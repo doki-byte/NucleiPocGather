@@ -7,7 +7,7 @@ info:
   name: ascom
   severity: High
   tags: tech,ascom
-requests:
+http:
 - digest-password: changeme
   digest-username: admin
   matchers:

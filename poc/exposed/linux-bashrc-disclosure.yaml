@@ -3,7 +3,7 @@ id: Linux-bashrc-file
 info:
   name: Linux .bashrc File - Detect
   author: h4rsh4d
-  severity: medium
+  severity: Medium
   description: bashrc file 
   remediation: remove access to .bashrc file 
   reference:

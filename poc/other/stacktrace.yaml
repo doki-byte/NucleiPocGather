@@ -3,7 +3,7 @@ id: stacktrace-detect
 info:
   name: Stacktrace detect
   author: otterly
-  severity: low
+  severity: Low
   metadata:
     max-request: 3
   tags: stacktrace,detect

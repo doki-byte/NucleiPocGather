@@ -1,16 +1,15 @@
 id: open-elasticsearch
 info:
-  name: Open Elasticsearch Instance Check
   author: CyberCavalcante
+  name: Open Elasticsearch Instance Check
   severity: medium
-
 network:
-  - payload: null
-    protocol: tcp
-    ports:
-      - 9200
-    matchers:
-      - type: word
-        words:
-          - "name"
-          - "cluster_name"
+- matchers:
+  - type: word
+    words:
+    - name
+    - cluster_name
+  payload: null
+  ports:
+  - 9200
+  protocol: tcp

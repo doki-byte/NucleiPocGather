@@ -3,7 +3,7 @@ id: CVE-2024-43360
 info:
   name: ZoneMinder time based sql injection detection
   author: securitytaters
-  severity: critical
+  severity: Critical
   description: |
     Zoneminder v1.36.33 and v1.37.43 are affected by a SQL Injection vulnerability.
   reference:

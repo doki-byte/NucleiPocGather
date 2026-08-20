@@ -7,7 +7,7 @@ info:
   name: Wordpress XMLRPC Enabled
   reference:
   - null
-  severity: low
+  severity: Low
   tags: wordpress,xmlrpc
 requests:
 - matchers:
