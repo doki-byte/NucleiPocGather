@@ -1,15 +1,15 @@
-id: gutenverse-b7eb4cac-cf16-438e-81cc-516646e77cdc
+id: gutenverse-3b345f84-97b5-4a55-9c66-0e9ece048a3c
 
 info:
   name: >
-    Gutenverse <= 4.0.2 - Authenticated (Contributor+) Stored Cross-Site Scripting via 'titleTag' Block Attribute
+    Gutenverse <= 4.0.2 - Authenticated (Contributor+) Stored Cross-Site Scripting via Multiple Blocks
   author: topscoder
   severity: low
   description: >
     
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/b7eb4cac-cf16-438e-81cc-516646e77cdc?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/3b345f84-97b5-4a55-9c66-0e9ece048a3c?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
