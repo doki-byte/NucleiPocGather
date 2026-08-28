@@ -1,15 +1,15 @@
-id: everest_forms-8641eb53-6a9a-4549-b8ef-e37acbcc7f03
+id: everest_forms-c5bbf7ed-c154-4153-adbf-59f0f7aa3a18
 
 info:
   name: >
-    Everest Forms <= 3.4.4 - Unauthenticated Arbitrary File Read and Deletion via Upload Field 'old_files' Parameter
+    Everest Forms <= 3.4.4 - Unauthenticated Server-Side Request Forgery via Upload Field 'Previous Value'
   author: topscoder
   severity: low
   description: >
     
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/8641eb53-6a9a-4549-b8ef-e37acbcc7f03?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/c5bbf7ed-c154-4153-adbf-59f0f7aa3a18?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 

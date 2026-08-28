@@ -1,15 +1,15 @@
-id: envira_gallery_lite-d2b1e973-f22d-4e69-b3b8-d6ea5df3f047
+id: envira_gallery_lite-17de5b96-7a61-4f37-a921-6a023cc40812
 
 info:
   name: >
-    Envira Gallery <= 1.12.4 - Authenticated (Author+) Stored Cross-Site Scripting via 'arrows' Parameter
+    Envira Gallery <= 1.12.4 - Authenticated (Author+) Stored Cross-Site Scripting via Gallery Description
   author: topscoder
   severity: low
   description: >
     
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/d2b1e973-f22d-4e69-b3b8-d6ea5df3f047?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/17de5b96-7a61-4f37-a921-6a023cc40812?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
