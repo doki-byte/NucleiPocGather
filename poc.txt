@@ -140286,6 +140286,7 @@
 ./poc/cve/CVE-2026-15963-quiz_master_next-b1de31ae-4095-4863-9971-9de45c36f5a0.yaml
 ./poc/cve/CVE-2026-15964-single_sign_on_for_tng-1d8d393e-764c-491d-8afb-7d4f8d0c387a.yaml
 ./poc/cve/CVE-2026-15979-content_egg-bc1600b9-b590-47ca-b2d9-d521381da541.yaml
+./poc/cve/CVE-2026-15980-myhome_core-c458e018-5901-4917-9847-35f07646e068.yaml
 ./poc/cve/CVE-2026-15981-miniorange_saml_20_single_sign_on-b412f60f-61ea-47b1-a3ef-17275f7951df.yaml
 ./poc/cve/CVE-2026-15982-aimogen_pro-53cc91fa-51fd-4d16-b740-a48f8d446b5d.yaml
 ./poc/cve/CVE-2026-15985-rtcl_verification-01ac87f7-3f09-42cd-a344-05b8bd6b730d.yaml
@@ -158674,7 +158675,7 @@
 ./poc/joomla/joomla-registration-enabled_1.yaml
 ./poc/joomla/joomla-sensitive-config.yaml
 ./poc/joomla/joomla-solidres-xss.yaml
-./poc/joomla/joomla-unserialized-user_agent.yaml
+./poc/joomla/joomla-unserialized-user_agent_1.yaml
 ./poc/joomla/joomla-version-disclosure.yaml
 ./poc/joomla/joomla-version.yaml
 ./poc/joomla/joomla-workflow-8393.yaml
@@ -218629,6 +218630,7 @@
 ./poc/other/mygallery-93ff685789541772965066888c97fb99.yaml
 ./poc/other/mygallery.yaml
 ./poc/other/myhome_core-120d6040-1af1-46fd-9a9c-9c0d4c2e3b64.yaml
+./poc/other/myhome_core-c458e018-5901-4917-9847-35f07646e068.yaml
 ./poc/other/mylco-132efd40-1c90-4d2a-a87c-504526b7a7d4.yaml
 ./poc/other/mylinksdump-02b03c4a-1b2a-4fd0-887d-930229dc384f.yaml
 ./poc/other/mylinksdump-55bc7905ed021dea782344da8f85da7a.yaml
