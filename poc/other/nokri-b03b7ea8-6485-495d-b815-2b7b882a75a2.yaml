@@ -1,15 +1,15 @@
-id: nokri-c240826d-6b1c-424a-9bb0-eab627d7f5ed
+id: nokri-b03b7ea8-6485-495d-b815-2b7b882a75a2
 
 info:
   name: >
-    Nokri – Job Board WordPress Theme <= 1.6.6 - Missing Authorization
+    Nokri - Job Board WordPress Theme <= 1.6.6 - Unauthenticated Privilege Escalation via 'token' Parameter
   author: topscoder
-  severity: high
+  severity: low
   description: >
     
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/c240826d-6b1c-424a-9bb0-eab627d7f5ed?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/b03b7ea8-6485-495d-b815-2b7b882a75a2?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -18,7 +18,7 @@ info:
     fofa-query: "wp-content/themes/nokri/"
     google-query: inurl:"/wp-content/themes/nokri/"
     shodan-query: 'http.html:"wp-content/themes/nokri/"'
-  tags: cve,wordpress,wp-theme,nokri,high,candidate
+  tags: cve,wordpress,wp-theme,nokri,low,candidate
 
 http:
   - method: GET

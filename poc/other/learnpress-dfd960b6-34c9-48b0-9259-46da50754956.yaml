@@ -1,15 +1,15 @@
-id: learnpress-2f8b8bfe-8d73-4289-b212-7baf7bceaaf6
+id: learnpress-dfd960b6-34c9-48b0-9259-46da50754956
 
 info:
   name: >
-    LearnPress <= 4.4.4 - Missing Authorization to Authenticated (Editor+) Limited Option Update via 'field_name' Parameter
+    LearnPress <= 4.4.4 - Authenticated (Administrator+) SQL Injection via 'orderby' Parameter
   author: topscoder
   severity: low
   description: >
     
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/2f8b8bfe-8d73-4289-b212-7baf7bceaaf6?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/dfd960b6-34c9-48b0-9259-46da50754956?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
