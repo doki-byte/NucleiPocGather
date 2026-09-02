@@ -1,31 +1,31 @@
-id: fluent_boards_pro-bec19d80-ba51-4ff8-a111-c2e45928fb51
+id: woo_suggestion_engine-5dc36acb-94f9-46e0-a7ae-2ae99158425f
 
 info:
   name: >
-    Fluent Boards Pro <= 2.0.11 - Authenticated (Subscriber+) Insecure Direct Object Reference
+    Suggestion Engine for WooCommerce <= 2.0.11 - Authenticated (Contributor+) SQL Injection
   author: topscoder
   severity: low
   description: >
     
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/bec19d80-ba51-4ff8-a111-c2e45928fb51?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/5dc36acb-94f9-46e0-a7ae-2ae99158425f?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
     cve-id: 
   metadata:
-    fofa-query: "wp-content/plugins/fluent-boards-pro/"
-    google-query: inurl:"/wp-content/plugins/fluent-boards-pro/"
-    shodan-query: 'http.html:"wp-content/plugins/fluent-boards-pro/"'
-  tags: cve,wordpress,wp-plugin,fluent-boards-pro,low,candidate
+    fofa-query: "wp-content/plugins/woo-suggestion-engine/"
+    google-query: inurl:"/wp-content/plugins/woo-suggestion-engine/"
+    shodan-query: 'http.html:"wp-content/plugins/woo-suggestion-engine/"'
+  tags: cve,wordpress,wp-plugin,woo-suggestion-engine,low,candidate
 
 http:
   - method: GET
     redirects: true
     max-redirects: 3
     path:
-      - "{{BaseURL}}/wp-content/plugins/fluent-boards-pro/readme.txt"
+      - "{{BaseURL}}/wp-content/plugins/woo-suggestion-engine/readme.txt"
 
     extractors:
       - type: regex
@@ -43,7 +43,7 @@ http:
 
       - type: word
         words:
-          - "fluent-boards-pro"
+          - "woo-suggestion-engine"
         part: body
 
       - type: dsl

@@ -1,15 +1,15 @@
-id: custom_registration_form_builder_with_submission_manager-fd4eeb13-869d-47ba-a2d3-73886abc1e03
+id: custom_registration_form_builder_with_submission_manager-7e738142-d1db-48e5-9c5a-823136aa1d05
 
 info:
   name: >
-    RegistrationMagic – Custom Registration Forms, User Registration, Payment, and User Login < 6.0.9.4 - Unauthenticated Insecure Direct Object Reference
+    RegistrationMagic – Custom Registration Forms, User Registration, Payment, and User Login < 6.0.9.4 - Authenticated (Administrator+) SQL Injection
   author: topscoder
   severity: low
   description: >
     
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/fd4eeb13-869d-47ba-a2d3-73886abc1e03?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/7e738142-d1db-48e5-9c5a-823136aa1d05?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 

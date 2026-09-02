@@ -1,15 +1,15 @@
-id: royal_elementor_addons-39242dd0-f968-403e-82f8-2f1d1fccce49
+id: royal_elementor_addons-df06f6c7-98b8-4d17-aa53-c5f13ada7c62
 
 info:
   name: >
-    Royal Addons for Elementor – Addons and Templates Kit for Elementor < 1.7.1066 - Authenticated (Administrator+) Remote Code Execution
+    Royal Addons for Elementor – Addons and Templates Kit for Elementor < 1.7.1066 - Missing Authorization
   author: topscoder
-  severity: low
+  severity: high
   description: >
     
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/39242dd0-f968-403e-82f8-2f1d1fccce49?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/df06f6c7-98b8-4d17-aa53-c5f13ada7c62?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -18,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/royal-elementor-addons/"
     google-query: inurl:"/wp-content/plugins/royal-elementor-addons/"
     shodan-query: 'http.html:"wp-content/plugins/royal-elementor-addons/"'
-  tags: cve,wordpress,wp-plugin,royal-elementor-addons,low,candidate
+  tags: cve,wordpress,wp-plugin,royal-elementor-addons,high,candidate
 
 http:
   - method: GET
