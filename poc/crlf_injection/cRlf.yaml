@@ -2,7 +2,7 @@ id: CRLFInjection
 info:
   name: CRLF Injection Detection
   author: coffin
-  severity: high
+  severity: High
   description: Detects various CRLF injection vectors that can be exploited for attacks such as header injection, response splitting, and XSS.
   reference:
     - https://book.hacktricks.xyz/pentesting-web/crlf-0d-0a

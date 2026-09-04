@@ -1,44 +1,32 @@
-run:
-  go: "1.14"
-  deadline: 10m
-  allow-parallel-runners: true
+linters-settings:
+  golint:
+    min-confidence: 0
+
+  misspell:
+    locale: US
+
 linters:
   disable-all: true
   enable:
-    # Default linters
-    - deadcode
-    - errcheck
-    - gosimple
-    - govet
-    - ineffassign
-    - staticcheck
-    - structcheck
     - typecheck
-    - unused
-    - varcheck
-    # Optional linters
-    - asciicheck
-    - bidichk
-    - bodyclose
-    - containedctx
-    - contextcheck
-    - durationcheck
-    - errchkjson
-    - errname
-    - errorlint
-    - exportloopref
-    - gosec
+    - goimports
     - misspell
-    - noctx
-    - nolintlint
-    - revive
-    - stylecheck
-    - whitespace
-linters-settings:
-  revive:
-    ignore-generated-header: true
-    severity: error
-  staticcheck:
-    go: "1.14"
-  stylecheck:
-    go: "1.14"
+    - govet
+    - golint
+    - ineffassign
+    - gosimple
+    - deadcode
+    - unparam
+    - unused
+    - structcheck
+    - prealloc
+    - maligned
+    - unconvert
+
+issues:
+  exclude-use-default: false
+  exclude:
+      - should have a package comment
+      - error strings should not be capitalized or end with punctuation or a newline
+service:
+  golangci-lint-version: 1.35.0 # use the fixed version to not introduce new linters unexpectedly

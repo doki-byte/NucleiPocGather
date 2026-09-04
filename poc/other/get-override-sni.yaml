@@ -5,14 +5,14 @@ info:
   author: pdteam
   severity: info
 
-requests:
+http:
   - raw:
       - |
+        @tls-sni:request.host
         GET / HTTP/1.1
-        Host: {{Hostname}}
-        Origin: {{BaseURL}}
+        Host: test
 
     matchers:
       - type: word
         words:
-          - "Test is test raw-get-matcher text"
+          - "test-ok"
