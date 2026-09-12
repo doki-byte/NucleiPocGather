@@ -1,15 +1,15 @@
-id: wp_dispatcher-a9b3b6cc-faaa-46c2-ab82-00c7138a8f27
+id: wp_dispatcher-f0b9c46d-72db-43f3-b17b-0747375d45c9
 
 info:
   name: >
-    WP Dispatcher <= 1.3.0 - Authenticated (Contributor+) SQL Injection
+    WP Dispatcher <= 1.2.0 - Authenticated (Subscriber+) Arbitrary File Upload
   author: topscoder
   severity: low
   description: >
     
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/a9b3b6cc-faaa-46c2-ab82-00c7138a8f27?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/f0b9c46d-72db-43f3-b17b-0747375d45c9?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -48,4 +48,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.3.0')
+          - compare_versions(version, '<= 1.2.0')

@@ -1,15 +1,15 @@
-id: buddypress_media-c4796b65-4f55-4af9-bfc7-2ccec32f3414
+id: buddypress_media-53d9b351-ba17-431a-b371-7dc1a87bd757
 
 info:
   name: >
-    rtMedia for WordPress, BuddyPress and bbPress <= 4.7.11 - Unauthenticated SQL Injection
+    rtMedia for WordPress, BuddyPress and bbPress <= 4.7.11 - Unauthenticated SQL Injection via 'compare' Parameter
   author: topscoder
   severity: critical
   description: >
     
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/c4796b65-4f55-4af9-bfc7-2ccec32f3414?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/53d9b351-ba17-431a-b371-7dc1a87bd757?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
