@@ -1878,7 +1878,6 @@
 ./poc/api/heroku-api-key_2.yaml
 ./poc/api/hidden-api-endpoint-discovery_1.yaml
 ./poc/api/hidden-api-key-exposure_3.yaml
-./poc/api/ibm-api-connect-developer-portal-detect.yaml
 ./poc/api/ibm-api-connect-panel.yaml
 ./poc/api/ibm-api-connect-panel_1.yaml
 ./poc/api/ibm-api-csp-bypass.yaml
@@ -5557,6 +5556,7 @@
 ./poc/auth/external_login-488f1a2f-01c8-40cf-b52f-d707271105f5.yaml
 ./poc/auth/external_login-bdb40f51-dac2-40e7-beb1-154d982f7af3.yaml
 ./poc/auth/extplorer-login-bypass.yaml
+./poc/auth/extplorer-login-bypass_2.yaml
 ./poc/auth/extra-secrets.yaml
 ./poc/auth/f5-bigip-unauthorized-access.yaml
 ./poc/auth/facebook-access-token.yaml
@@ -156917,9 +156917,6 @@
 ./poc/debug/go-pprof-debug.yaml
 ./poc/debug/imageresizer-debug-exposure.yaml
 ./poc/debug/istio-pilot-debug-anonymous.yaml
-./poc/debug/jboss-seam-debug-page-8238.yaml
-./poc/debug/jboss-seam-debug-page-8239.yaml
-./poc/debug/jboss-seam-debug-page.yaml
 ./poc/debug/lanhai-jifei-debug-rce.yaml
 ./poc/debug/lanhaizhuoyue-debug-rce.yaml
 ./poc/debug/laravel-debug-405.yaml
@@ -156976,8 +156973,6 @@
 ./poc/debug/soap-ajax-debugshell_2.yaml
 ./poc/debug/ssp_debugging-66f29499-1522-43cd-af78-9b734c66af8c.yaml
 ./poc/debug/ssrf-proxy-header-debug.yaml
-./poc/debug/struts-debug-mode-10561.yaml
-./poc/debug/struts-debug-mode.yaml
 ./poc/debug/symfony-debug-pro.yaml
 ./poc/debug/symfony-debug.yaml
 ./poc/debug/symfony-debug_1.yaml
@@ -158957,6 +158952,7 @@
 ./poc/detect/huggingface-tei-tgi-detect_1.yaml
 ./poc/detect/hugo-detect.yaml
 ./poc/detect/ibm-api-connect-detect.yaml
+./poc/detect/ibm-api-connect-developer-portal-detect_1.yaml
 ./poc/detect/ibm-aspera-version-detect.yaml
 ./poc/detect/ibm-aspera-version-detect_1.yaml
 ./poc/detect/ibm-maximo-panel-detect.yaml
@@ -160389,7 +160385,6 @@
 ./poc/detect/tyk-gateway-detect.yaml
 ./poc/detect/tyk-gateway-detect_1.yaml
 ./poc/detect/typo3-detect.yaml
-./poc/detect/unauth-java-message-broker-detect_6.yaml
 ./poc/detect/unauthorized-brother-access-detect.yaml
 ./poc/detect/unauthorized-brother-access-detect_1.yaml
 ./poc/detect/unauthorized-puppet-node-manager-detect-10958.yaml
@@ -162410,7 +162405,6 @@
 ./poc/exposed/opcache-status-exposure_3.yaml
 ./poc/exposed/openclaw-agent-files-exposed.yaml
 ./poc/exposed/openclaw-browser-cdp-exposed_1.yaml
-./poc/exposed/openclaw-canvas-exposed.yaml
 ./poc/exposed/openclaw-canvas-exposed_1.yaml
 ./poc/exposed/openclaw-exec-approvals-exposed_1.yaml
 ./poc/exposed/openclaw-exposure.yaml
@@ -166294,7 +166288,6 @@
 ./poc/http/http-value-share-template-1_1.yaml
 ./poc/http/http-value-share-template-2.yaml
 ./poc/http/http-value-share-workflow.yaml
-./poc/http/http-verb-tampering.yaml
 ./poc/http/http-verb-tampering_1.yaml
 ./poc/http/http-xframe-header.yaml
 ./poc/http/http2-request-smuggling.yaml
@@ -166906,7 +166899,10 @@
 ./poc/java/jboss-juddi-panel.yaml
 ./poc/java/jboss-juddi.yaml
 ./poc/java/jboss-remoting.yaml
+./poc/java/jboss-seam-debug-page-8238.yaml
+./poc/java/jboss-seam-debug-page-8239.yaml
 ./poc/java/jboss-seam-debug-page-8240.yaml
+./poc/java/jboss-seam-debug-page.yaml
 ./poc/java/jboss-sensitive-disclose.yaml
 ./poc/java/jboss-soa-platform.yaml
 ./poc/java/jboss-soa-platform_1.yaml
@@ -167329,6 +167325,8 @@
 ./poc/java/springer.yaml
 ./poc/java/struts-debug-mode-10559.yaml
 ./poc/java/struts-debug-mode-10560.yaml
+./poc/java/struts-debug-mode-10561.yaml
+./poc/java/struts-debug-mode.yaml
 ./poc/java/struts-ognl-console.yaml
 ./poc/java/struts-problem-report-10562.yaml
 ./poc/java/struts-problem-report-10563.yaml
@@ -167497,6 +167495,7 @@
 ./poc/java/tomcat.yaml
 ./poc/java/tomcat_jk_connector.yaml
 ./poc/java/unauth-java-message-broker-detect_25.yaml
+./poc/java/unauth-java-message-broker-detect_6.yaml
 ./poc/java/wanhu-ezoffice-documentedit-jsp-sqli.yaml
 ./poc/java/wanhu-ezoffice-download-ftp-jsp-filedownload.yaml
 ./poc/java/wanhu-ezoffice-download-jsp-filedownload.yaml
@@ -168050,7 +168049,6 @@
 ./poc/javascript/js-restaurant.yaml
 ./poc/javascript/js-restaurant_1.yaml
 ./poc/javascript/js-restaurant_2.yaml
-./poc/javascript/js-secret-token-api.yaml
 ./poc/javascript/js-secret-token-api_1.yaml
 ./poc/javascript/js-support-ticket-09e9d6c4b98d8b79c7a4a28536f7aa6c.yaml
 ./poc/javascript/js-support-ticket-34b1638fe86184cfb10a838d8f49b3e5.yaml
@@ -168629,6 +168627,7 @@
 ./poc/joomla/joomla-htaccess-file.yaml
 ./poc/joomla/joomla-htaccess.yaml
 ./poc/joomla/joomla-installer.yaml
+./poc/joomla/joomla-iproperty-real-estate-xss.yaml
 ./poc/joomla/joomla-iproperty-xss.yaml
 ./poc/joomla/joomla-jlex-review-xss.yaml
 ./poc/joomla/joomla-jlex-xss.yaml
@@ -234376,7 +234375,6 @@
 ./poc/other/nuclei-flow-dns-prefix.yaml
 ./poc/other/nuclei-flow-dns.yaml
 ./poc/other/nuclei-openssl.yaml
-./poc/other/nuclei-security-txt.yaml
 ./poc/other/nuclei-security-txt_1.yaml
 ./poc/other/nuclei.yaml
 ./poc/other/nuclei_template.yaml
@@ -234563,6 +234561,7 @@
 ./poc/other/office-macros-not-restricted_1.yaml
 ./poc/other/office365-indexs-fileread.yaml
 ./poc/other/officeDown-file-read.yaml
+./poc/other/officeDown-file-read_1.yaml
 ./poc/other/office_anywhere.yaml
 ./poc/other/office_anywhere_2017.yaml
 ./poc/other/office_locator-74f15066-097d-4d4f-9cf2-a4889043496b.yaml
@@ -239897,7 +239896,6 @@
 ./poc/other/proxmox-ve.yaml
 ./poc/other/proxmox_mail_gateway.yaml
 ./poc/other/proxy-checker.yaml
-./poc/other/proxy-checker_2.yaml
 ./poc/other/proxy_vpn_blocker-033c0088-9562-46ee-9916-11a29162529b.yaml
 ./poc/other/proxy_vpn_blocker-b034605b-284c-478a-baec-224c4533b2e0.yaml
 ./poc/other/proxyshell.yaml
@@ -283074,7 +283072,7 @@
 ./poc/web/zingiri-web-shop-1f9ea959eaa7dfc9f5b881f55bb49da3.yaml
 ./poc/web/zingiri-web-shop-f406540ed24a47e0daf12414ccf28530.yaml
 ./poc/web/zingiri-web-shop.yaml
-./poc/web/zingiri_web_shop-a946cca6-670b-4baf-a941-43d0a0261c0d_1.yaml
+./poc/web/zingiri_web_shop-a946cca6-670b-4baf-a941-43d0a0261c0d.yaml
 ./poc/web/zingiri_web_shop-dd5b0c3a-0dd0-440f-b3a5-6d80f70e0f7c.yaml
 ./poc/web/佑友-mailgard-webmail.yaml
 ./poc/web/启明星辰-天清web应用安全网关.yaml
@@ -297136,7 +297134,6 @@
 ./poc/xml_external_entity/basic-xxe-post.yaml
 ./poc/xml_external_entity/basic-xxe-put.yaml
 ./poc/xml_external_entity/blind-xxe.yaml
-./poc/xml_external_entity/e-cology-xxe.yaml
 ./poc/xml_external_entity/e-cology-xxe_2.yaml
 ./poc/xml_external_entity/ecology-deleteUserRequestInfoByXml-xxe.yaml
 ./poc/xml_external_entity/ecology-deleterequestinfobyxml-xxe.yaml
