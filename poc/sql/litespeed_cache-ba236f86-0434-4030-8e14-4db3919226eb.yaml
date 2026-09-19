@@ -1,15 +1,15 @@
-id: litespeed_cache-0dc9adad-0bf5-4e21-8dd0-19d4d5311aa8
+id: litespeed_cache-ba236f86-0434-4030-8e14-4db3919226eb
 
 info:
   name: >
-    LiteSpeed Cache <= 7.9 - Unauthenticated Server-Side Request Forgery
+    LiteSpeed Cache <= 7.9 - Reflected Cross-Site Scripting via ESI 'esi' Parameter
   author: topscoder
-  severity: low
+  severity: medium
   description: >
     
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/0dc9adad-0bf5-4e21-8dd0-19d4d5311aa8?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/ba236f86-0434-4030-8e14-4db3919226eb?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -18,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/litespeed-cache/"
     google-query: inurl:"/wp-content/plugins/litespeed-cache/"
     shodan-query: 'http.html:"wp-content/plugins/litespeed-cache/"'
-  tags: cve,wordpress,wp-plugin,litespeed-cache,low,candidate
+  tags: cve,wordpress,wp-plugin,litespeed-cache,medium,candidate
 
 http:
   - method: GET

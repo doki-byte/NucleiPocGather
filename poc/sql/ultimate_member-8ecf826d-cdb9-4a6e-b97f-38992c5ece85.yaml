@@ -1,15 +1,15 @@
-id: ultimate_member-aad57a68-c385-491f-a5a2-32906df4b52b
+id: ultimate_member-8ecf826d-cdb9-4a6e-b97f-38992c5ece85
 
 info:
   name: >
-    Ultimate Member <= 2.11.0 - Authenticated (Subscriber+) Profile Privacy Setting Bypass
+    Ultimate Member <= 2.11.0 - Authenticated (Subscriber+) Stored Cross-Site Scripting
   author: topscoder
   severity: low
   description: >
     
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/aad57a68-c385-491f-a5a2-32906df4b52b?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/8ecf826d-cdb9-4a6e-b97f-38992c5ece85?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 

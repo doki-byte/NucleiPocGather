@@ -1,15 +1,15 @@
-id: mediavine_create-393bf415-f4fb-43c4-86b9-f066457e3526
+id: mediavine_create-066077db-85ad-449a-9519-325703bcfec6
 
 info:
   name: >
-    Create <= 2.5.3 - Authenticated (Contributor+) SQL Injection
+    Create by Mediavine <= 2.5.3 - Unauthenticated Information Exposure
   author: topscoder
   severity: low
   description: >
     
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/393bf415-f4fb-43c4-86b9-f066457e3526?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/066077db-85ad-449a-9519-325703bcfec6?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 

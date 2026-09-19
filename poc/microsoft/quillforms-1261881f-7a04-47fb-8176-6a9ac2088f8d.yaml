@@ -1,15 +1,15 @@
-id: quillforms-7ae927b1-401f-4227-9d50-4adde8e95f24
+id: quillforms-1261881f-7a04-47fb-8176-6a9ac2088f8d
 
 info:
   name: >
-    Quill Forms  <= 5.7.1 - Unauthenticated Stored Cross-Site Scripting
+    Quill Forms | Conversational Multi Step Forms, Surveys & quizzes <= 5.7.1 - Unauthenticated Stored Cross-Site Scripting via Multiple Choice 'Other' Value
   author: topscoder
   severity: high
   description: >
     
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/7ae927b1-401f-4227-9d50-4adde8e95f24?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/1261881f-7a04-47fb-8176-6a9ac2088f8d?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 

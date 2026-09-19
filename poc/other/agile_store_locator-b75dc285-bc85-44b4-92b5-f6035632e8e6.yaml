@@ -1,15 +1,15 @@
-id: agile_store_locator-84bad995-e653-46d6-96ff-e41cbac29b01
+id: agile_store_locator-b75dc285-bc85-44b4-92b5-f6035632e8e6
 
 info:
   name: >
-    Agile Store Locator <= 1.6.8 - Authenticated (Admin+) Arbitrary File Read
+    Agile Store Locator <= 1.6.8 - Authenticated (Admin+) Stored Cross-Site Scripting
   author: topscoder
   severity: low
   description: >
     
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/84bad995-e653-46d6-96ff-e41cbac29b01?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/b75dc285-bc85-44b4-92b5-f6035632e8e6?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 

@@ -1,15 +1,15 @@
-id: wp_recipe_maker-7238a6ba-4ef2-4ae1-ba20-7e0a499c98a9
+id: wp_recipe_maker-d6ad49ff-85eb-4d05-ba23-51d89695add3
 
 info:
   name: >
-    WP Recipe Maker <= 10.8.1 - Authenticated (Contributor+) Stored Cross-Site Scripting via 'notes' Parameter via REST Preview Endpoint
+    WP Recipe Maker <= 10.8.1 - Unauthenticated Arbitrary Shortcode Execution via Recipe Comment Content
   author: topscoder
   severity: low
   description: >
     
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/7238a6ba-4ef2-4ae1-ba20-7e0a499c98a9?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/d6ad49ff-85eb-4d05-ba23-51d89695add3?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
