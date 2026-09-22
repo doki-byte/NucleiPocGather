@@ -1,0 +1,45 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - mystickyelements
+  - dsl:
+    - compare_versions(version, '<= 2.3.3')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/mystickyelements/readme.txt'
+  redirects: true
+id: mystickyelements-901cc40d-fa20-4a1f-b01a-e3295891ebda
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/mystickyelements/
+    google-query: inurl:"/wp-content/plugins/mystickyelements/"
+    shodan-query: http.html:"wp-content/plugins/mystickyelements/"
+  name: 'My Sticky Elements <= 2.3.3 - Missing Authorization
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/901cc40d-fa20-4a1f-b01a-e3295891ebda?source=api-scan
+  severity: high
+  tags: cve,wordpress,wp-plugin,mystickyelements,high,candidate

@@ -1,0 +1,15 @@
+id: hidden-api-endpoint-discovery
+info:
+  author: qaisar
+  description: 'Detects potential security issues related to hidden API endpoint discovery.
+
+    '
+  name: Hidden API Endpoint Discovery Test
+  severity: medium
+requests:
+- method: GET
+  path:
+  - /api
+  - /services
+tags:
+- web

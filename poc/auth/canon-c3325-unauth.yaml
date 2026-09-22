@@ -1,0 +1,28 @@
+http:
+- matchers:
+  - condition: and
+    part: body
+    type: word
+    words:
+    - writeln('Log Out
+    - 'Remote UI : Portal'
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}'
+id: canon-c3325-unauth
+info:
+  author: ritikchaddha
+  description: 'Canon R-ADV C3325 unauthenticated dashboard has been exposed.
+
+    '
+  metadata:
+    max-request: 1
+    shodan-query: title:"c3325"
+    verified: true
+  name: Canon R-ADV C3325 - Unauth
+  severity: high
+  tags: canon,c3325,unauth,exposure,vuln

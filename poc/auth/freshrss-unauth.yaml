@@ -1,0 +1,33 @@
+http:
+- matchers:
+  - condition: and
+    part: body
+    type: word
+    words:
+    - a=logout
+    - FreshRSS
+    - c=user&amp;a=profile
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/i/?a=logs'
+id: freshrss-unauth
+info:
+  author: ritikchaddha
+  classification:
+    cpe: cpe:2.3:a:freshrss:freshrss:*:*:*:*:*:*:*:*
+  description: 'Freshrss Admin Dashboard has been exposed.
+
+    '
+  metadata:
+    max-request: 1
+    product: freshrss
+    shodan-query: title:"Freshrss"
+    vendor: freshrss
+    verified: true
+  name: Freshrss Admin Dashboard - Exposed
+  severity: high
+  tags: freshrss,misconfig,unauth,exposed,vuln

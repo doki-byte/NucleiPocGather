@@ -1,0 +1,51 @@
+id: signoz-panel
+info:
+  name: SigNoz Panel - Detect
+  author: ChrisJr404,rxerium
+  severity: info
+  description: |
+    SigNoz is an open-source observability platform for metrics, traces and logs. It ships a React frontend and a Go query service that exposes an unauthenticated version endpoint at /api/v1/version.
+  reference:
+    - https://github.com/SigNoz/signoz
+    - https://signoz.io/
+  metadata:
+    runzero-match: any(each(service["html.titles"]), {# matches "Open source Observability platform \\| SigNoz"})
+    fofa-query: title="SigNoz"
+    max-request: 2
+    product: signoz
+    shodan-query: http.title:"SigNoz"
+    vendor: signoz
+    verified: false
+  tags: detect,observability,oss,panel,signoz
+flow: http(1) && http(2)
+http:
+  - host-redirects: true
+    matchers:
+      - condition: and
+        dsl:
+          - status_code == 200
+          - contains(to_lower(body), "signoz")
+        internal: true
+        type: dsl
+    max-redirects: 2
+    method: GET
+    path:
+      - '{{BaseURL}}'
+  - extractors:
+      - group: 1
+        part: body
+        regex:
+          - '"version"\s*:\s*"([^"]+)"'
+        # digest: 4b0a00483046022100e0996b004410ed7de44782652071a0149a937221dcc53b0cdca66fd66368632f022100bf5ff31bffbe8b24db68812a997363022320d93483d83b56692ceb225c746e12:922c64590222798bb761d5b6d8e72950
+
+        type: regex
+    matchers:
+      - condition: and
+        dsl:
+          - status_code == 200
+          - contains(content_type, "application/json")
+          - contains_all(body, "\"version\"", "\"ee\"", "\"setupCompleted\"")
+        type: dsl
+    method: GET
+    path:
+      - '{{BaseURL}}/api/v1/version'

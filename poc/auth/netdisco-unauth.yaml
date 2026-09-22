@@ -1,0 +1,30 @@
+http:
+- host-redirects: true
+  matchers:
+  - condition: and
+    dsl:
+    - contains_all(body, "User Management", "/admin/discoverall", "Logged in as")
+    - status_code == 200
+    type: dsl
+  max-redirects: 2
+  method: GET
+  path:
+  - '{{BaseURL}}/inventory'
+id: netdisco-unauth
+info:
+  author: ritikchaddha
+  description: 'Detects an unauth dashboard access of Netdisco.
+
+    '
+  impact: 'Attackers can potentially exploit this vulnerability to gain unauthorized
+    access to sensitive information.
+
+    '
+  metadata:
+    fofa-query: title="Netdisco"
+    max-request: 1
+    shodan-query: title:"Netdisco"
+    verified: true
+  name: Netdisco - Unauth Access
+  severity: critical
+  tags: netdisco,misconfig,unauth,vuln
