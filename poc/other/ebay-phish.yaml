@@ -1,30 +1,34 @@
-http:
-- host-redirects: true
-  matchers:
-  - type: word
-    words:
-    - Electronics, Cars, Fashion, Collectibles &amp; More | eBay
-  - status:
-    - 200
-    type: status
-  - dsl:
-    - '!contains(host,"ebay.com")'
-    type: dsl
-  matchers-condition: and
-  max-redirects: 2
-  method: GET
-  path:
-  - '{{BaseURL}}'
 id: ebay-phish
-info:
-  author: rxerium
-  description: 'A ebay phishing website was detected
 
-    '
-  metadata:
-    max-request: 1
+info:
   name: ebay phishing Detection
-  reference:
-  - https://ebay.com
+  author: rxerium
   severity: info
+  description: |
+    A ebay phishing website was detected
+  reference:
+    - https://ebay.com
   tags: phishing,ebay,osint
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    host-redirects: true
+    max-redirects: 2
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        words:
+          - 'Electronics, Cars, Fashion, Collectibles &amp; More | eBay'
+
+      - type: status
+        status:
+          - 200
+
+      - type: dsl
+        dsl:
+          - '!contains(host,"ebay.com")'
+# digest: 4a0a0047304502200a670e62c7204a5bf659e564abd9f1a198f3ad0fa1f42abf8b1ef2b827f64479022100a687a998ad104ebda14363e512d103ce127b28d559c9a5c48b4b61a2e58d97ca:922c64590222798bb761d5b6d8e72950
