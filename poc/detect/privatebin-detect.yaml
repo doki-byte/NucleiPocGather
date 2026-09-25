@@ -1,0 +1,33 @@
+http:
+- extractors:
+  - group: 1
+    part: body
+    regex:
+    - privatebin\.[a-z]{2,3}\?([0-9.]+)
+    type: regex
+  matchers:
+  - condition: and
+    dsl:
+    - status_code == 200
+    - contains_any(to_lower(body), "privatebin.js", "privatebin</title>", "content=\"privatebin")
+    type: dsl
+  max-redirects: 2
+  method: GET
+  path:
+  - '{{BaseURL}}'
+  redirects: true
+id: privatebin-detect
+info:
+  author: righettod
+  description: 'PrivateBin was detected.
+
+    '
+  metadata:
+    max-request: 1
+    shodan-query: title:"PrivateBin"
+    verified: true
+  name: PrivateBin - Detect
+  reference:
+  - https://privatebin.info/
+  severity: info
+  tags: tech,privatebin,detect
