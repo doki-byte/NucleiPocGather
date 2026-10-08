@@ -1,0 +1,17 @@
+id: hidden-api-key-exposure
+info:
+  author: qaisar
+  description: 'Detects potential security issues related to hidden API key exposure.
+
+    '
+  name: Hidden API Key Exposure Test
+  severity: high
+requests:
+- headers:
+    authorization: Bearer {{base64encode('API_KEY:SECRET')}}
+  method: GET
+  path:
+  - /get-api-key
+  - /fetch-config
+tags:
+- web
